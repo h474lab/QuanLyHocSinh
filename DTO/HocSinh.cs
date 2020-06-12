@@ -10,11 +10,11 @@ namespace DTO
     {
         public long MaHocSinh { get; set; }
         public string HoTen { get; set; }
-        public bool GioiTinh { get; set; }
+        public short GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public string Email { get; set; }
-        HocSinh(long mahs, string hten, bool gtinh, DateTime ngsinh, string dchi, string em)
+        HocSinh(long mahs, string hten, short gtinh, DateTime ngsinh, string dchi, string em)
         {
             MaHocSinh = mahs;
             HoTen = hten;

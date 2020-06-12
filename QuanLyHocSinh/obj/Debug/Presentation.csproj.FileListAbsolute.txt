@@ -13,8 +13,6 @@ C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\P
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
-C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\CoSoDuLieu.mdf
-C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\CoSoDuLieu_log.ldf
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\BU.exe
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\BU.pdb
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\BU.exe.config

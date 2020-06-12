@@ -54,7 +54,7 @@ namespace DAO
                     if (rd.Read())
                     {
                         result.TuoiToiThieu = Convert.ToInt32(rd["TuoiToiThieu"]);
-                        Console.WriteLine(result.TuoiToiThieu);
+                        //Console.WriteLine(result.TuoiToiThieu);
                         result.TuoiToiDa = Convert.ToInt32(rd["TuoiToiDa"]);
                         result.SiSoToiDa = Convert.ToInt32(rd["SiSoToiDa"]);
                         result.DiemToiThieu = Convert.ToDouble(rd["DiemToiThieu"]);

@@ -15,7 +15,7 @@ namespace DTO
         public double DiemToiDa { get; set; }
         public double DiemDat { get; set; }
         public ThamSo() { }
-        public ThamSo(int tuoimin, int tuoimax, int sisomax, float diemmin, float diemmax, float diemdat)
+        public ThamSo(int tuoimin, int tuoimax, int sisomax, double diemmin, double diemmax, double diemdat)
         {
             TuoiToiThieu = tuoimin;
             TuoiToiDa = tuoimax;

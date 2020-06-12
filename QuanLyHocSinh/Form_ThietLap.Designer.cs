@@ -49,6 +49,8 @@
             this.GroupBox_DSLop = new System.Windows.Forms.GroupBox();
             this.GridView_DSLop = new System.Windows.Forms.DataGridView();
             this.GroupBox_ThaoTacLop = new System.Windows.Forms.GroupBox();
+            this.ComboBox_HocKy = new System.Windows.Forms.ComboBox();
+            this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
             this.Button_XoaLop = new System.Windows.Forms.Button();
             this.Button_SuaLop = new System.Windows.Forms.Button();
             this.TextBox_TenLop = new System.Windows.Forms.TextBox();
@@ -63,8 +65,6 @@
             this.Button_ThemMon = new System.Windows.Forms.Button();
             this.Button_SuaMon = new System.Windows.Forms.Button();
             this.Button_Close = new System.Windows.Forms.Button();
-            this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
-            this.ComboBox_HocKy = new System.Windows.Forms.ComboBox();
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThayDoiQD.SuspendLayout();
             this.GroupBox_DSMonHoc.SuspendLayout();
@@ -123,6 +123,7 @@
             this.Button_Luu.TabIndex = 18;
             this.Button_Luu.Text = "Lưu";
             this.Button_Luu.UseVisualStyleBackColor = true;
+            this.Button_Luu.Click += new System.EventHandler(this.Button_Luu_Click);
             // 
             // Label_2
             // 
@@ -274,6 +275,22 @@
             this.GroupBox_ThaoTacLop.TabStop = false;
             this.GroupBox_ThaoTacLop.Text = "Thao tác lớp";
             // 
+            // ComboBox_HocKy
+            // 
+            this.ComboBox_HocKy.FormattingEnabled = true;
+            this.ComboBox_HocKy.Location = new System.Drawing.Point(86, 66);
+            this.ComboBox_HocKy.Name = "ComboBox_HocKy";
+            this.ComboBox_HocKy.Size = new System.Drawing.Size(142, 21);
+            this.ComboBox_HocKy.TabIndex = 19;
+            // 
+            // ComboBox_KhoiLop
+            // 
+            this.ComboBox_KhoiLop.FormattingEnabled = true;
+            this.ComboBox_KhoiLop.Location = new System.Drawing.Point(86, 42);
+            this.ComboBox_KhoiLop.Name = "ComboBox_KhoiLop";
+            this.ComboBox_KhoiLop.Size = new System.Drawing.Size(142, 21);
+            this.ComboBox_KhoiLop.TabIndex = 18;
+            // 
             // Button_XoaLop
             // 
             this.Button_XoaLop.Location = new System.Drawing.Point(160, 94);
@@ -403,22 +420,6 @@
             this.Button_Close.Size = new System.Drawing.Size(53, 50);
             this.Button_Close.TabIndex = 10;
             this.Button_Close.UseVisualStyleBackColor = true;
-            // 
-            // ComboBox_KhoiLop
-            // 
-            this.ComboBox_KhoiLop.FormattingEnabled = true;
-            this.ComboBox_KhoiLop.Location = new System.Drawing.Point(86, 42);
-            this.ComboBox_KhoiLop.Name = "ComboBox_KhoiLop";
-            this.ComboBox_KhoiLop.Size = new System.Drawing.Size(142, 21);
-            this.ComboBox_KhoiLop.TabIndex = 18;
-            // 
-            // ComboBox_HocKy
-            // 
-            this.ComboBox_HocKy.FormattingEnabled = true;
-            this.ComboBox_HocKy.Location = new System.Drawing.Point(86, 66);
-            this.ComboBox_HocKy.Name = "ComboBox_HocKy";
-            this.ComboBox_HocKy.Size = new System.Drawing.Size(142, 21);
-            this.ComboBox_HocKy.TabIndex = 19;
             // 
             // Form_ThietLap
             // 
