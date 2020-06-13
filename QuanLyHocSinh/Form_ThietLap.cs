@@ -15,11 +15,19 @@ namespace QuanLyHocSinh
     public partial class Form_ThietLap : Form
     {
         BUS_ThamSo thamso = new BUS_ThamSo();
+        BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
+        BUS_KhoiLop khoilop = new BUS_KhoiLop();
+
+        string currentMaLop = "";
         public Form_ThietLap()
         {
             InitializeComponent();
 
             SetQuyDinh();
+
+            LoadDSLop();
+
+            LoadDSKhoi();
         }
         void SetQuyDinh()
         {
@@ -30,7 +38,42 @@ namespace QuanLyHocSinh
             TextBox_DiemMin.Text = temp.DiemToiThieu.ToString();
             TextBox_DiemMax.Text = temp.DiemToiDa.ToString();
             TextBox_DiemDat.Text = temp.DiemDat.ToString();
+            TextBox_DiemDatMon.Text = temp.DiemDatMon.ToString();
         }
+        void LoadDSLop()
+        {
+            // Load Danh sach Lop
+            GridView_DSLop.DataSource = danhsachlop.GetTatCaLop();
+            GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSLop.ReadOnly = true;
+            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSLop.CellClick += GridView_DSLop_CellClick;
+        }
+
+        void LoadDSKhoi()
+        {
+            // Load Danh sach Khoi
+            ComboBox_KhoiLop.DataSource = khoilop.GetTatCaKhoiLop();
+            ComboBox_KhoiLop.DisplayMember = "TenKhoiLop";
+            ComboBox_KhoiLop.ValueMember = "MaKhoiLop";
+        }
+
+        private void GridView_DSLop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = GridView_DSLop.Rows[e.RowIndex];
+                currentMaLop = row.Cells[0].Value.ToString();
+                TextBox_TenLop.Text = row.Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private int Check()
         {
             if (TextBox_TuoiMin.Text == "" || TextBox_TuoiMax.Text == "" || TextBox_SiSoMax.Text == "" ||
@@ -60,9 +103,42 @@ namespace QuanLyHocSinh
                 double DiemMin = double.Parse(TextBox_DiemMin.Text);
                 double DiemMax = double.Parse(TextBox_DiemMax.Text);
                 double DiemDat = double.Parse(TextBox_DiemDat.Text);
-                ThamSo temp = new ThamSo(TuoiMin, TuoiMax, SiSoMax, DiemMin, DiemMax, DiemDat);
+                double DiemDatMon = double.Parse(TextBox_DiemDatMon.Text);
+                ThamSo temp = new ThamSo(TuoiMin, TuoiMax, SiSoMax, DiemMin, DiemMax, DiemDat, DiemDatMon);
                 thamso.UpdateThamSo(temp);
             }
+        }
+
+        private void Button_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_ThemLop_Click(object sender, EventArgs e)
+        {
+            DanhSachLop dslop = new DanhSachLop();
+            dslop.TenLop = TextBox_TenLop.Text;
+            dslop.SiSo = 0;
+            dslop.MaKhoiLop = long.Parse(ComboBox_KhoiLop.SelectedValue.ToString());
+            danhsachlop.Insert_Lop(dslop);
+            LoadDSLop();
+        }
+
+        private void Button_SuaLop_Click(object sender, EventArgs e)
+        {
+            if (currentMaLop == "") return;
+            DanhSachLop dslop = new DanhSachLop();
+            dslop.MaLop = long.Parse(currentMaLop);
+            dslop.TenLop = TextBox_TenLop.Text;
+            dslop.MaKhoiLop = long.Parse(ComboBox_KhoiLop.SelectedValue.ToString());
+            danhsachlop.Update_Lop(dslop);
+            LoadDSLop();
+        }
+
+        private void Button_XoaLop_Click(object sender, EventArgs e)
+        {
+            if (currentMaLop == "") return;
+            danhsachlop.Delete_Lop(currentMaLop);
         }
     }
 }

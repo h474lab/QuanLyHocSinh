@@ -24,6 +24,7 @@ namespace DAO
                 command.Parameters.Add("@DIEMMIN", System.Data.SqlDbType.Float).Value = thamso.DiemToiThieu;
                 command.Parameters.Add("@DIEMMAX", System.Data.SqlDbType.Float).Value = thamso.DiemToiDa;
                 command.Parameters.Add("@DIEMDAT", System.Data.SqlDbType.Float).Value = thamso.DiemDat;
+                command.Parameters.Add("@DIEMDATMON", System.Data.SqlDbType.Float).Value = thamso.DiemDatMon;
 
                 try
                 {
@@ -60,6 +61,7 @@ namespace DAO
                         result.DiemToiThieu = Convert.ToDouble(rd["DiemToiThieu"]);
                         result.DiemToiDa = Convert.ToDouble(rd["DiemToiDa"]);
                         result.DiemDat = Convert.ToDouble(rd["DiemDat"]);
+                        result.DiemDatMon = Convert.ToDouble(rd["DiemDatMon"]);
                         rd.Close();
                     }
                     Console.WriteLine("---------------------------------");

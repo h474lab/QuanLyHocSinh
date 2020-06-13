@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DanhSachLop
+    public class DanhSachLop
     {
         public long MaLop { get; set; }
         public string TenLop { get; set; }
         public int SiSo { get; set; }
-        public KhoiLop MaKhoiLop { get; set; }
+        public long MaKhoiLop { get; set; }
+        public DanhSachLop() { }
     }
 }

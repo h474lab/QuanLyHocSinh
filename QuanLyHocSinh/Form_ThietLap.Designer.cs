@@ -31,6 +31,8 @@
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.GroupBox_ThayDoiQD = new System.Windows.Forms.GroupBox();
+            this.TextBox_DiemDatMon = new System.Windows.Forms.TextBox();
+            this.Label_DiemDatMon = new System.Windows.Forms.Label();
             this.Button_Luu = new System.Windows.Forms.Button();
             this.Label_2 = new System.Windows.Forms.Label();
             this.TextBox_DiemMax = new System.Windows.Forms.TextBox();
@@ -49,12 +51,10 @@
             this.GroupBox_DSLop = new System.Windows.Forms.GroupBox();
             this.GridView_DSLop = new System.Windows.Forms.DataGridView();
             this.GroupBox_ThaoTacLop = new System.Windows.Forms.GroupBox();
-            this.ComboBox_HocKy = new System.Windows.Forms.ComboBox();
             this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
             this.Button_XoaLop = new System.Windows.Forms.Button();
             this.Button_SuaLop = new System.Windows.Forms.Button();
             this.TextBox_TenLop = new System.Windows.Forms.TextBox();
-            this.Label_HocKy = new System.Windows.Forms.Label();
             this.Label_KhoiLop = new System.Windows.Forms.Label();
             this.Label_TenLop = new System.Windows.Forms.Label();
             this.Button_ThemLop = new System.Windows.Forms.Button();
@@ -95,6 +95,8 @@
             // 
             // GroupBox_ThayDoiQD
             // 
+            this.GroupBox_ThayDoiQD.Controls.Add(this.TextBox_DiemDatMon);
+            this.GroupBox_ThayDoiQD.Controls.Add(this.Label_DiemDatMon);
             this.GroupBox_ThayDoiQD.Controls.Add(this.Button_Luu);
             this.GroupBox_ThayDoiQD.Controls.Add(this.Label_2);
             this.GroupBox_ThayDoiQD.Controls.Add(this.TextBox_DiemMax);
@@ -115,6 +117,22 @@
             this.GroupBox_ThayDoiQD.TabStop = false;
             this.GroupBox_ThayDoiQD.Text = "Thay đổi quy định";
             // 
+            // TextBox_DiemDatMon
+            // 
+            this.TextBox_DiemDatMon.Location = new System.Drawing.Point(87, 116);
+            this.TextBox_DiemDatMon.Name = "TextBox_DiemDatMon";
+            this.TextBox_DiemDatMon.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_DiemDatMon.TabIndex = 20;
+            // 
+            // Label_DiemDatMon
+            // 
+            this.Label_DiemDatMon.AutoSize = true;
+            this.Label_DiemDatMon.Location = new System.Drawing.Point(7, 118);
+            this.Label_DiemDatMon.Name = "Label_DiemDatMon";
+            this.Label_DiemDatMon.Size = new System.Drawing.Size(76, 13);
+            this.Label_DiemDatMon.TabIndex = 19;
+            this.Label_DiemDatMon.Text = "Điểm đạt môn:";
+            // 
             // Button_Luu
             // 
             this.Button_Luu.Location = new System.Drawing.Point(87, 142);
@@ -128,7 +146,7 @@
             // Label_2
             // 
             this.Label_2.AutoSize = true;
-            this.Label_2.Location = new System.Drawing.Point(152, 86);
+            this.Label_2.Location = new System.Drawing.Point(152, 70);
             this.Label_2.Name = "Label_2";
             this.Label_2.Size = new System.Drawing.Size(10, 13);
             this.Label_2.TabIndex = 12;
@@ -136,21 +154,21 @@
             // 
             // TextBox_DiemMax
             // 
-            this.TextBox_DiemMax.Location = new System.Drawing.Point(179, 83);
+            this.TextBox_DiemMax.Location = new System.Drawing.Point(179, 67);
             this.TextBox_DiemMax.Name = "TextBox_DiemMax";
             this.TextBox_DiemMax.Size = new System.Drawing.Size(49, 20);
             this.TextBox_DiemMax.TabIndex = 11;
             // 
             // TextBox_DiemMin
             // 
-            this.TextBox_DiemMin.Location = new System.Drawing.Point(86, 83);
+            this.TextBox_DiemMin.Location = new System.Drawing.Point(86, 67);
             this.TextBox_DiemMin.Name = "TextBox_DiemMin";
             this.TextBox_DiemMin.Size = new System.Drawing.Size(49, 20);
             this.TextBox_DiemMin.TabIndex = 10;
             // 
             // TextBox_DiemDat
             // 
-            this.TextBox_DiemDat.Location = new System.Drawing.Point(86, 113);
+            this.TextBox_DiemDat.Location = new System.Drawing.Point(86, 92);
             this.TextBox_DiemDat.Name = "TextBox_DiemDat";
             this.TextBox_DiemDat.Size = new System.Drawing.Size(142, 20);
             this.TextBox_DiemDat.TabIndex = 9;
@@ -158,7 +176,7 @@
             // Label_DiemDat
             // 
             this.Label_DiemDat.AutoSize = true;
-            this.Label_DiemDat.Location = new System.Drawing.Point(6, 116);
+            this.Label_DiemDat.Location = new System.Drawing.Point(6, 94);
             this.Label_DiemDat.Name = "Label_DiemDat";
             this.Label_DiemDat.Size = new System.Drawing.Size(53, 13);
             this.Label_DiemDat.TabIndex = 8;
@@ -167,7 +185,7 @@
             // Label_KhoangDiem
             // 
             this.Label_KhoangDiem.AutoSize = true;
-            this.Label_KhoangDiem.Location = new System.Drawing.Point(6, 86);
+            this.Label_KhoangDiem.Location = new System.Drawing.Point(6, 70);
             this.Label_KhoangDiem.Name = "Label_KhoangDiem";
             this.Label_KhoangDiem.Size = new System.Drawing.Size(73, 13);
             this.Label_KhoangDiem.TabIndex = 6;
@@ -175,7 +193,7 @@
             // 
             // TextBox_SiSoMax
             // 
-            this.TextBox_SiSoMax.Location = new System.Drawing.Point(86, 52);
+            this.TextBox_SiSoMax.Location = new System.Drawing.Point(86, 44);
             this.TextBox_SiSoMax.Name = "TextBox_SiSoMax";
             this.TextBox_SiSoMax.Size = new System.Drawing.Size(142, 20);
             this.TextBox_SiSoMax.TabIndex = 5;
@@ -183,7 +201,7 @@
             // Label_SiSoMax
             // 
             this.Label_SiSoMax.AutoSize = true;
-            this.Label_SiSoMax.Location = new System.Drawing.Point(6, 55);
+            this.Label_SiSoMax.Location = new System.Drawing.Point(6, 47);
             this.Label_SiSoMax.Name = "Label_SiSoMax";
             this.Label_SiSoMax.Size = new System.Drawing.Size(66, 13);
             this.Label_SiSoMax.TabIndex = 4;
@@ -192,7 +210,7 @@
             // Label_1
             // 
             this.Label_1.AutoSize = true;
-            this.Label_1.Location = new System.Drawing.Point(152, 25);
+            this.Label_1.Location = new System.Drawing.Point(152, 22);
             this.Label_1.Name = "Label_1";
             this.Label_1.Size = new System.Drawing.Size(10, 13);
             this.Label_1.TabIndex = 3;
@@ -200,14 +218,14 @@
             // 
             // TextBox_TuoiMax
             // 
-            this.TextBox_TuoiMax.Location = new System.Drawing.Point(179, 22);
+            this.TextBox_TuoiMax.Location = new System.Drawing.Point(179, 19);
             this.TextBox_TuoiMax.Name = "TextBox_TuoiMax";
             this.TextBox_TuoiMax.Size = new System.Drawing.Size(49, 20);
             this.TextBox_TuoiMax.TabIndex = 2;
             // 
             // TextBox_TuoiMin
             // 
-            this.TextBox_TuoiMin.Location = new System.Drawing.Point(86, 22);
+            this.TextBox_TuoiMin.Location = new System.Drawing.Point(86, 19);
             this.TextBox_TuoiMin.Name = "TextBox_TuoiMin";
             this.TextBox_TuoiMin.Size = new System.Drawing.Size(49, 20);
             this.TextBox_TuoiMin.TabIndex = 1;
@@ -215,7 +233,7 @@
             // Label_Tuoi
             // 
             this.Label_Tuoi.AutoSize = true;
-            this.Label_Tuoi.Location = new System.Drawing.Point(6, 25);
+            this.Label_Tuoi.Location = new System.Drawing.Point(6, 22);
             this.Label_Tuoi.Name = "Label_Tuoi";
             this.Label_Tuoi.Size = new System.Drawing.Size(74, 13);
             this.Label_Tuoi.TabIndex = 0;
@@ -224,9 +242,9 @@
             // GroupBox_DSMonHoc
             // 
             this.GroupBox_DSMonHoc.Controls.Add(this.GridView_DSMonHoc);
-            this.GroupBox_DSMonHoc.Location = new System.Drawing.Point(6, 272);
+            this.GroupBox_DSMonHoc.Location = new System.Drawing.Point(6, 292);
             this.GroupBox_DSMonHoc.Name = "GroupBox_DSMonHoc";
-            this.GroupBox_DSMonHoc.Size = new System.Drawing.Size(536, 188);
+            this.GroupBox_DSMonHoc.Size = new System.Drawing.Size(536, 141);
             this.GroupBox_DSMonHoc.TabIndex = 5;
             this.GroupBox_DSMonHoc.TabStop = false;
             this.GroupBox_DSMonHoc.Text = "Danh sách môn học";
@@ -236,7 +254,8 @@
             this.GridView_DSMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_DSMonHoc.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSMonHoc.Name = "GridView_DSMonHoc";
-            this.GridView_DSMonHoc.Size = new System.Drawing.Size(524, 163);
+            this.GridView_DSMonHoc.RowHeadersWidth = 62;
+            this.GridView_DSMonHoc.Size = new System.Drawing.Size(524, 113);
             this.GridView_DSMonHoc.TabIndex = 6;
             // 
             // GroupBox_DSLop
@@ -244,7 +263,7 @@
             this.GroupBox_DSLop.Controls.Add(this.GridView_DSLop);
             this.GroupBox_DSLop.Location = new System.Drawing.Point(6, 69);
             this.GroupBox_DSLop.Name = "GroupBox_DSLop";
-            this.GroupBox_DSLop.Size = new System.Drawing.Size(536, 197);
+            this.GroupBox_DSLop.Size = new System.Drawing.Size(536, 217);
             this.GroupBox_DSLop.TabIndex = 7;
             this.GroupBox_DSLop.TabStop = false;
             this.GroupBox_DSLop.Text = "Danh sách lớp";
@@ -254,34 +273,25 @@
             this.GridView_DSLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_DSLop.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSLop.Name = "GridView_DSLop";
-            this.GridView_DSLop.Size = new System.Drawing.Size(524, 172);
+            this.GridView_DSLop.RowHeadersWidth = 62;
+            this.GridView_DSLop.Size = new System.Drawing.Size(524, 192);
             this.GridView_DSLop.TabIndex = 6;
             // 
             // GroupBox_ThaoTacLop
             // 
-            this.GroupBox_ThaoTacLop.Controls.Add(this.ComboBox_HocKy);
             this.GroupBox_ThaoTacLop.Controls.Add(this.ComboBox_KhoiLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Button_XoaLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Button_SuaLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.TextBox_TenLop);
-            this.GroupBox_ThaoTacLop.Controls.Add(this.Label_HocKy);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Label_KhoiLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Label_TenLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Button_ThemLop);
             this.GroupBox_ThaoTacLop.Location = new System.Drawing.Point(548, 247);
             this.GroupBox_ThaoTacLop.Name = "GroupBox_ThaoTacLop";
-            this.GroupBox_ThaoTacLop.Size = new System.Drawing.Size(240, 127);
+            this.GroupBox_ThaoTacLop.Size = new System.Drawing.Size(240, 100);
             this.GroupBox_ThaoTacLop.TabIndex = 8;
             this.GroupBox_ThaoTacLop.TabStop = false;
             this.GroupBox_ThaoTacLop.Text = "Thao tác lớp";
-            // 
-            // ComboBox_HocKy
-            // 
-            this.ComboBox_HocKy.FormattingEnabled = true;
-            this.ComboBox_HocKy.Location = new System.Drawing.Point(86, 66);
-            this.ComboBox_HocKy.Name = "ComboBox_HocKy";
-            this.ComboBox_HocKy.Size = new System.Drawing.Size(142, 21);
-            this.ComboBox_HocKy.TabIndex = 19;
             // 
             // ComboBox_KhoiLop
             // 
@@ -293,21 +303,23 @@
             // 
             // Button_XoaLop
             // 
-            this.Button_XoaLop.Location = new System.Drawing.Point(160, 94);
+            this.Button_XoaLop.Location = new System.Drawing.Point(160, 68);
             this.Button_XoaLop.Name = "Button_XoaLop";
             this.Button_XoaLop.Size = new System.Drawing.Size(75, 23);
             this.Button_XoaLop.TabIndex = 17;
             this.Button_XoaLop.Text = "Xóa";
             this.Button_XoaLop.UseVisualStyleBackColor = true;
+            this.Button_XoaLop.Click += new System.EventHandler(this.Button_XoaLop_Click);
             // 
             // Button_SuaLop
             // 
-            this.Button_SuaLop.Location = new System.Drawing.Point(83, 94);
+            this.Button_SuaLop.Location = new System.Drawing.Point(83, 68);
             this.Button_SuaLop.Name = "Button_SuaLop";
             this.Button_SuaLop.Size = new System.Drawing.Size(75, 23);
             this.Button_SuaLop.TabIndex = 16;
             this.Button_SuaLop.Text = "Chỉnh sửa";
             this.Button_SuaLop.UseVisualStyleBackColor = true;
+            this.Button_SuaLop.Click += new System.EventHandler(this.Button_SuaLop_Click);
             // 
             // TextBox_TenLop
             // 
@@ -315,15 +327,6 @@
             this.TextBox_TenLop.Name = "TextBox_TenLop";
             this.TextBox_TenLop.Size = new System.Drawing.Size(142, 20);
             this.TextBox_TenLop.TabIndex = 12;
-            // 
-            // Label_HocKy
-            // 
-            this.Label_HocKy.AutoSize = true;
-            this.Label_HocKy.Location = new System.Drawing.Point(6, 69);
-            this.Label_HocKy.Name = "Label_HocKy";
-            this.Label_HocKy.Size = new System.Drawing.Size(44, 13);
-            this.Label_HocKy.TabIndex = 10;
-            this.Label_HocKy.Text = "Học kỳ:";
             // 
             // Label_KhoiLop
             // 
@@ -345,12 +348,13 @@
             // 
             // Button_ThemLop
             // 
-            this.Button_ThemLop.Location = new System.Drawing.Point(6, 94);
+            this.Button_ThemLop.Location = new System.Drawing.Point(6, 68);
             this.Button_ThemLop.Name = "Button_ThemLop";
             this.Button_ThemLop.Size = new System.Drawing.Size(75, 23);
             this.Button_ThemLop.TabIndex = 0;
             this.Button_ThemLop.Text = "Thêm";
             this.Button_ThemLop.UseVisualStyleBackColor = true;
+            this.Button_ThemLop.Click += new System.EventHandler(this.Button_ThemLop_Click);
             // 
             // GroupBox_ThaoTacMonHoc
             // 
@@ -359,7 +363,7 @@
             this.GroupBox_ThaoTacMonHoc.Controls.Add(this.Label_TenMonHoc);
             this.GroupBox_ThaoTacMonHoc.Controls.Add(this.Button_ThemMon);
             this.GroupBox_ThaoTacMonHoc.Controls.Add(this.Button_SuaMon);
-            this.GroupBox_ThaoTacMonHoc.Location = new System.Drawing.Point(548, 380);
+            this.GroupBox_ThaoTacMonHoc.Location = new System.Drawing.Point(548, 353);
             this.GroupBox_ThaoTacMonHoc.Name = "GroupBox_ThaoTacMonHoc";
             this.GroupBox_ThaoTacMonHoc.Size = new System.Drawing.Size(240, 80);
             this.GroupBox_ThaoTacMonHoc.TabIndex = 9;
@@ -420,12 +424,13 @@
             this.Button_Close.Size = new System.Drawing.Size(53, 50);
             this.Button_Close.TabIndex = 10;
             this.Button_Close.UseVisualStyleBackColor = true;
+            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
             // 
             // Form_ThietLap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 462);
+            this.ClientSize = new System.Drawing.Size(796, 440);
             this.Controls.Add(this.Button_Close);
             this.Controls.Add(this.GroupBox_ThaoTacMonHoc);
             this.Controls.Add(this.GroupBox_ThaoTacLop);
@@ -472,7 +477,6 @@
         private System.Windows.Forms.Button Button_XoaLop;
         private System.Windows.Forms.Button Button_SuaLop;
         private System.Windows.Forms.TextBox TextBox_TenLop;
-        private System.Windows.Forms.Label Label_HocKy;
         private System.Windows.Forms.Label Label_KhoiLop;
         private System.Windows.Forms.Label Label_TenLop;
         private System.Windows.Forms.GroupBox GroupBox_ThaoTacMonHoc;
@@ -488,7 +492,8 @@
         private System.Windows.Forms.TextBox TextBox_DiemMin;
         private System.Windows.Forms.TextBox TextBox_DiemDat;
         private System.Windows.Forms.Label Label_DiemDat;
-        private System.Windows.Forms.ComboBox ComboBox_HocKy;
         private System.Windows.Forms.ComboBox ComboBox_KhoiLop;
+        private System.Windows.Forms.TextBox TextBox_DiemDatMon;
+        private System.Windows.Forms.Label Label_DiemDatMon;
     }
 }

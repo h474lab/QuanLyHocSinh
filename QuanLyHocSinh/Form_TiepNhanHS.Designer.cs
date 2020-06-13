@@ -51,15 +51,27 @@
             this.Button_Xoa = new System.Windows.Forms.Button();
             this.Button_Them = new System.Windows.Forms.Button();
             this.Button_Close = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkedProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_HoTen = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkedProvider_HoTen = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_NgaySinh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkedProvider_NgaySinh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_DiaChi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkedProvider_DiaChi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkedProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThongTin.SuspendLayout();
             this.GroupBox_DSHocSinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSHocSinh)).BeginInit();
             this.GroupBox_ThaoTac.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_HoTen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_HoTen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_NgaySinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_NgaySinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_DiaChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_DiaChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Email)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_Email)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -147,6 +159,7 @@
             this.DateTimePicker_NgaySinh.Name = "DateTimePicker_NgaySinh";
             this.DateTimePicker_NgaySinh.Size = new System.Drawing.Size(298, 26);
             this.DateTimePicker_NgaySinh.TabIndex = 6;
+            this.DateTimePicker_NgaySinh.Validating += new System.ComponentModel.CancelEventHandler(this.DateTimePicker_NgaySinh_Validating);
             // 
             // Label_NgaySinh
             // 
@@ -199,6 +212,7 @@
             this.TextBox_HoTen.Name = "TextBox_HoTen";
             this.TextBox_HoTen.Size = new System.Drawing.Size(586, 26);
             this.TextBox_HoTen.TabIndex = 1;
+            this.TextBox_HoTen.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_HoTen_Validating);
             // 
             // Label_HoTen
             // 
@@ -295,14 +309,41 @@
             this.Button_Close.TabIndex = 4;
             this.Button_Close.UseVisualStyleBackColor = true;
             // 
-            // errorProvider
+            // errorProvider_HoTen
             // 
-            this.errorProvider.ContainerControl = this;
+            this.errorProvider_HoTen.ContainerControl = this;
             // 
-            // checkedProvider
+            // checkedProvider_HoTen
             // 
-            this.checkedProvider.ContainerControl = this;
-            this.checkedProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider.Icon")));
+            this.checkedProvider_HoTen.ContainerControl = this;
+            this.checkedProvider_HoTen.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_HoTen.Icon")));
+            // 
+            // errorProvider_NgaySinh
+            // 
+            this.errorProvider_NgaySinh.ContainerControl = this;
+            // 
+            // checkedProvider_NgaySinh
+            // 
+            this.checkedProvider_NgaySinh.ContainerControl = this;
+            this.checkedProvider_NgaySinh.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_NgaySinh.Icon")));
+            // 
+            // errorProvider_DiaChi
+            // 
+            this.errorProvider_DiaChi.ContainerControl = this;
+            // 
+            // checkedProvider_DiaChi
+            // 
+            this.checkedProvider_DiaChi.ContainerControl = this;
+            this.checkedProvider_DiaChi.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_DiaChi.Icon")));
+            // 
+            // errorProvider_Email
+            // 
+            this.errorProvider_Email.ContainerControl = this;
+            // 
+            // checkedProvider_Email
+            // 
+            this.checkedProvider_Email.ContainerControl = this;
+            this.checkedProvider_Email.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_Email.Icon")));
             // 
             // Form_TiepNhanHS
             // 
@@ -316,7 +357,7 @@
             this.Controls.Add(this.Panel_Title);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_TiepNhanHS";
-            this.Text = "ssssss";
+            this.Text = "Tiếp Nhận Học Sinh";
             this.Panel_Title.ResumeLayout(false);
             this.Panel_Title.PerformLayout();
             this.GroupBox_ThongTin.ResumeLayout(false);
@@ -324,8 +365,14 @@
             this.GroupBox_DSHocSinh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSHocSinh)).EndInit();
             this.GroupBox_ThaoTac.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_HoTen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_HoTen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_NgaySinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_NgaySinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_DiaChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_DiaChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Email)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_Email)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,7 +400,13 @@
         private System.Windows.Forms.Button Button_Xoa;
         private System.Windows.Forms.Button Button_Them;
         private System.Windows.Forms.Button Button_Close;
-        private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.ErrorProvider checkedProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider_HoTen;
+        private System.Windows.Forms.ErrorProvider checkedProvider_HoTen;
+        private System.Windows.Forms.ErrorProvider errorProvider_NgaySinh;
+        private System.Windows.Forms.ErrorProvider checkedProvider_NgaySinh;
+        private System.Windows.Forms.ErrorProvider errorProvider_DiaChi;
+        private System.Windows.Forms.ErrorProvider checkedProvider_DiaChi;
+        private System.Windows.Forms.ErrorProvider errorProvider_Email;
+        private System.Windows.Forms.ErrorProvider checkedProvider_Email;
     }
 }

@@ -8,5 +8,8 @@ namespace DTO
 {
     class ChiTietDSLop
     {
+        public long MaChiTietDSLop { get; set; }
+        public long MaHocSinh { get; set; }
+        public long MaLop { get; set; }
     }
 }

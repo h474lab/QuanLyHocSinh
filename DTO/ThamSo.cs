@@ -14,8 +14,9 @@ namespace DTO
         public double DiemToiThieu { get; set; }
         public double DiemToiDa { get; set; }
         public double DiemDat { get; set; }
+        public double DiemDatMon { get; set; }
         public ThamSo() { }
-        public ThamSo(int tuoimin, int tuoimax, int sisomax, double diemmin, double diemmax, double diemdat)
+        public ThamSo(int tuoimin, int tuoimax, int sisomax, double diemmin, double diemmax, double diemdat, double diemdatmon)
         {
             TuoiToiThieu = tuoimin;
             TuoiToiDa = tuoimax;
@@ -23,6 +24,7 @@ namespace DTO
             DiemToiThieu = diemmin;
             DiemToiDa = diemmax;
             DiemDat = diemdat;
+            DiemDatMon = diemdatmon;
         }
     }
 }
