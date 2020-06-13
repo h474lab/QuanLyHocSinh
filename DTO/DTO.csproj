@@ -60,6 +60,7 @@
     <Compile Include="KhoiLop.cs" />
     <Compile Include="LoaiKT.cs" />
     <Compile Include="MonHoc.cs" />
+    <Compile Include="NamHoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThamSo.cs" />

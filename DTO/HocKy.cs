@@ -8,5 +8,8 @@ namespace DTO
 {
     class HocKy
     {
+        public long MaHocKy { get; set; }
+        public string TenHocKy { get; set; }
+        public HocKy() { }
     }
 }

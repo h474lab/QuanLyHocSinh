@@ -20,6 +20,7 @@ namespace QuanLyHocSinh
         BUS_MonHoc monhoc = new BUS_MonHoc();
 
         string currentMaLop = "";
+        string currentKhoiLop = "";
         string currentMaMH = "";
         public Form_ThietLap()
         {
@@ -82,6 +83,13 @@ namespace QuanLyHocSinh
             ComboBox_KhoiLop.DataSource = khoilop.GetTatCaKhoiLop();
             ComboBox_KhoiLop.DisplayMember = "TenKhoiLop";
             ComboBox_KhoiLop.ValueMember = "MaKhoiLop";
+            currentKhoiLop = ComboBox_KhoiLop.SelectedValue.ToString();
+            ComboBox_KhoiLop.SelectedValueChanged += ComboBox_KhoiLop_SelectedValueChanged;
+        }
+
+        private void ComboBox_KhoiLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            currentKhoiLop = ComboBox_KhoiLop.SelectedValue.ToString();
         }
 
         private void GridView_DSLop_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -145,7 +153,7 @@ namespace QuanLyHocSinh
             DanhSachLop dslop = new DanhSachLop();
             dslop.TenLop = TextBox_TenLop.Text;
             dslop.SiSo = 0;
-            dslop.MaKhoiLop = long.Parse(ComboBox_KhoiLop.SelectedValue.ToString());
+            dslop.MaKhoiLop = long.Parse(currentKhoiLop);
             danhsachlop.Insert_Lop(dslop);
             LoadDSLop();
         }

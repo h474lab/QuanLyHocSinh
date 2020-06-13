@@ -28,5 +28,9 @@ namespace BUS
         {
             hocsinh.Delete_HocSinh(MaHS);
         }
+        public DataTable GetHocSinhCho()
+        {
+            return hocsinh.GetHocSinhCho();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,93 @@ namespace QuanLyHocSinh
 {
     public partial class Form_LapDSLop : Form
     {
+        BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
+        BUS_HocSinh hocsinh = new BUS_HocSinh();
+        BUS_HocKy hocky = new BUS_HocKy();
+        BUS_NamHoc namhoc = new BUS_NamHoc();
+
+        string currentLop = "";
+        string currentHocKy = "";
+        string currentNamHoc = "";
+        string currentHSCho = "";
+
         public Form_LapDSLop()
         {
             InitializeComponent();
+
+            LoadDanhSachLop();
+            LoadDanhSachHocKy();
+            LoadDanhSachNamHoc();
+            LoadHocSinhCho();
+        }
+
+        void LoadDanhSachLop()
+        {
+            ComboBox_Lop.DataSource = danhsachlop.GetTatCaLop();
+            ComboBox_Lop.DisplayMember = "TenLop";
+            ComboBox_Lop.ValueMember = "MaLop";
+            currentLop = ComboBox_Lop.SelectedValue.ToString();
+            ComboBox_Lop.SelectedValueChanged += ComboBox_Lop_SelectedValueChanged;
+        }
+
+        private void ComboBox_Lop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            currentLop = ComboBox_Lop.SelectedValue.ToString();
+            Console.WriteLine(currentLop);
+        }
+
+        void LoadDanhSachHocKy()
+        {
+            ComboBox_HocKy.DataSource = hocky.GetTatCaHK();
+            ComboBox_HocKy.DisplayMember = "TenHocKy";
+            ComboBox_HocKy.ValueMember = "MaHocKy";
+            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+            ComboBox_HocKy.SelectedValueChanged += ComboBox_HocKy_SelectedValueChanged;
+        }
+
+        private void ComboBox_HocKy_SelectedValueChanged(object sender, EventArgs e)
+        {
+            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+        }
+
+        void LoadDanhSachNamHoc()
+        {
+            DataTable temp = namhoc.GetTatCaNH();
+            temp.Columns.Add("Full_NamHoc", typeof(string), "NamBD + ' - ' + NamKT");
+            ComboBox_NamHoc.DataSource = temp;
+            ComboBox_NamHoc.DisplayMember = "Full_NamHoc";
+            ComboBox_NamHoc.ValueMember = "MaNamHoc";
+            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+            ComboBox_NamHoc.SelectedValueChanged += ComboBox_NamHoc_SelectedValueChanged;
+        }
+
+        private void ComboBox_NamHoc_SelectedValueChanged(object sender, EventArgs e)
+        {
+            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+        }
+
+        void LoadHocSinhCho()
+        {
+            GridView_DSCho.DataSource = hocsinh.GetHocSinhCho();
+            GridView_DSCho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSCho.ReadOnly = true;
+            GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSCho.CellClick += GridView_DSCho_CellClick;
+        }
+
+        private void GridView_DSCho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = GridView_DSCho.Rows[e.RowIndex];
+                currentHSCho = row.Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

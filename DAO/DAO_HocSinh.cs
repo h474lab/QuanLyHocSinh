@@ -109,5 +109,27 @@ namespace DAO
             }
             return result;
         }
+        public DataTable GetHocSinhCho()
+        {
+            DataTable result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_HOCSINHCHO", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    result = new DataTable();
+                    da.Fill(result);
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
     }
 }
