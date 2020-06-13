@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BUS_DanhSachLop.cs" />
     <Compile Include="BUS_KhoiLop.cs" />
+    <Compile Include="BUS_MonHoc.cs" />
     <Compile Include="BUS_ThamSo.cs" />
     <Compile Include="BUS_HocSinh.cs" />
     <Compile Include="Program.cs" />

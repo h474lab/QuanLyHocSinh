@@ -385,6 +385,7 @@
             this.Button_XoaMon.TabIndex = 20;
             this.Button_XoaMon.Text = "Xóa";
             this.Button_XoaMon.UseVisualStyleBackColor = true;
+            this.Button_XoaMon.Click += new System.EventHandler(this.Button_XoaMon_Click);
             // 
             // Label_TenMonHoc
             // 
@@ -403,6 +404,7 @@
             this.Button_ThemMon.TabIndex = 18;
             this.Button_ThemMon.Text = "Thêm";
             this.Button_ThemMon.UseVisualStyleBackColor = true;
+            this.Button_ThemMon.Click += new System.EventHandler(this.Button_ThemMon_Click);
             // 
             // Button_SuaMon
             // 
@@ -412,6 +414,7 @@
             this.Button_SuaMon.TabIndex = 19;
             this.Button_SuaMon.Text = "Chỉnh sửa";
             this.Button_SuaMon.UseVisualStyleBackColor = true;
+            this.Button_SuaMon.Click += new System.EventHandler(this.Button_SuaMon_Click);
             // 
             // Button_Close
             // 

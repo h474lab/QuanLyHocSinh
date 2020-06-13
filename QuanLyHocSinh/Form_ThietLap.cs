@@ -17,8 +17,10 @@ namespace QuanLyHocSinh
         BUS_ThamSo thamso = new BUS_ThamSo();
         BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
         BUS_KhoiLop khoilop = new BUS_KhoiLop();
+        BUS_MonHoc monhoc = new BUS_MonHoc();
 
         string currentMaLop = "";
+        string currentMaMH = "";
         public Form_ThietLap()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace QuanLyHocSinh
             SetQuyDinh();
 
             LoadDSLop();
-
+            LoadDSMonHoc();
             LoadDSKhoi();
         }
         void SetQuyDinh()
@@ -42,7 +44,6 @@ namespace QuanLyHocSinh
         }
         void LoadDSLop()
         {
-            // Load Danh sach Lop
             GridView_DSLop.DataSource = danhsachlop.GetTatCaLop();
             GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -51,9 +52,33 @@ namespace QuanLyHocSinh
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
         }
 
+        void LoadDSMonHoc()
+        {
+            GridView_DSMonHoc.DataSource = monhoc.GetTatCaMonHoc();
+            GridView_DSMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSMonHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSMonHoc.ReadOnly = true;
+            GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSMonHoc.CellClick += GridView_DSMonHoc_CellClick;
+        }
+
+        private void GridView_DSMonHoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = GridView_DSMonHoc.Rows[e.RowIndex];
+                currentMaMH = row.Cells[0].Value.ToString();
+                TextBox_TenMonHoc.Text = row.Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         void LoadDSKhoi()
         {
-            // Load Danh sach Khoi
             ComboBox_KhoiLop.DataSource = khoilop.GetTatCaKhoiLop();
             ComboBox_KhoiLop.DisplayMember = "TenKhoiLop";
             ComboBox_KhoiLop.ValueMember = "MaKhoiLop";
@@ -67,6 +92,7 @@ namespace QuanLyHocSinh
                 row = GridView_DSLop.Rows[e.RowIndex];
                 currentMaLop = row.Cells[0].Value.ToString();
                 TextBox_TenLop.Text = row.Cells[1].Value.ToString();
+                ComboBox_KhoiLop.SelectedValue = int.Parse(row.Cells[3].Value.ToString());
             }
             catch (Exception ex)
             {
@@ -139,6 +165,31 @@ namespace QuanLyHocSinh
         {
             if (currentMaLop == "") return;
             danhsachlop.Delete_Lop(currentMaLop);
+        }
+
+        private void Button_ThemMon_Click(object sender, EventArgs e)
+        {
+            MonHoc mh = new MonHoc();
+            mh.TenMonHoc = TextBox_TenMonHoc.Text;
+            monhoc.Insert_MonHoc(mh);
+            LoadDSMonHoc();
+        }
+
+        private void Button_SuaMon_Click(object sender, EventArgs e)
+        {
+            if (currentMaMH == "") return;
+            MonHoc mh = new MonHoc();
+            mh.MaMonHoc = long.Parse(currentMaMH);
+            mh.TenMonHoc = TextBox_TenMonHoc.Text;
+            monhoc.Update_MonHoc(mh);
+            LoadDSMonHoc();
+        }
+
+        private void Button_XoaMon_Click(object sender, EventArgs e)
+        {
+            if (currentMaMH == "") return;
+            monhoc.Delete_MonHoc(currentMaMH);
+            LoadDSMonHoc();
         }
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class MonHoc
+    public class MonHoc
     {
         public long MaMonHoc { get; set; }
         public string TenMonHoc { get; set; }
-        MonHoc(long mamh, string tenmh)
+        public MonHoc() { }
+        public MonHoc(long mamh, string tenmh)
         {
             MaMonHoc = mamh;
             TenMonHoc = tenmh;
