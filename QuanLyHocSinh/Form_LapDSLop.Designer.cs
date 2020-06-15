@@ -34,6 +34,8 @@
             this.Button_Xoa = new System.Windows.Forms.Button();
             this.GridView_DSLop = new System.Windows.Forms.DataGridView();
             this.GroupBox_ChonLop = new System.Windows.Forms.GroupBox();
+            this.ComboBox_NamHoc = new System.Windows.Forms.ComboBox();
+            this.Label_NamHoc = new System.Windows.Forms.Label();
             this.TextBox_SiSo = new System.Windows.Forms.TextBox();
             this.Label_SiSo = new System.Windows.Forms.Label();
             this.ComboBox_HocKy = new System.Windows.Forms.ComboBox();
@@ -56,8 +58,6 @@
             this.Label_MaHS = new System.Windows.Forms.Label();
             this.Label_HoTen = new System.Windows.Forms.Label();
             this.Button_Close = new System.Windows.Forms.Button();
-            this.ComboBox_NamHoc = new System.Windows.Forms.ComboBox();
-            this.Label_NamHoc = new System.Windows.Forms.Label();
             this.Panel_Tittle.SuspendLayout();
             this.GroupBox_DSLop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).BeginInit();
@@ -104,6 +104,7 @@
             this.Button_Xoa.TabIndex = 1;
             this.Button_Xoa.Text = "Xóa khỏi danh sách lớp";
             this.Button_Xoa.UseVisualStyleBackColor = true;
+            this.Button_Xoa.Click += new System.EventHandler(this.Button_Xoa_Click);
             // 
             // GridView_DSLop
             // 
@@ -129,6 +130,23 @@
             this.GroupBox_ChonLop.TabIndex = 7;
             this.GroupBox_ChonLop.TabStop = false;
             this.GroupBox_ChonLop.Text = "Chọn lớp";
+            // 
+            // ComboBox_NamHoc
+            // 
+            this.ComboBox_NamHoc.FormattingEnabled = true;
+            this.ComboBox_NamHoc.Location = new System.Drawing.Point(404, 21);
+            this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
+            this.ComboBox_NamHoc.Size = new System.Drawing.Size(153, 21);
+            this.ComboBox_NamHoc.TabIndex = 14;
+            // 
+            // Label_NamHoc
+            // 
+            this.Label_NamHoc.AutoSize = true;
+            this.Label_NamHoc.Location = new System.Drawing.Point(345, 25);
+            this.Label_NamHoc.Name = "Label_NamHoc";
+            this.Label_NamHoc.Size = new System.Drawing.Size(53, 13);
+            this.Label_NamHoc.TabIndex = 13;
+            this.Label_NamHoc.Text = "Năm học:";
             // 
             // TextBox_SiSo
             // 
@@ -201,6 +219,7 @@
             this.Button_Them.TabIndex = 2;
             this.Button_Them.Text = "Thêm vào lớp";
             this.Button_Them.UseVisualStyleBackColor = true;
+            this.Button_Them.Click += new System.EventHandler(this.Button_Them_Click);
             // 
             // GridView_DSCho
             // 
@@ -340,23 +359,6 @@
             this.Button_Close.Size = new System.Drawing.Size(53, 50);
             this.Button_Close.TabIndex = 5;
             this.Button_Close.UseVisualStyleBackColor = true;
-            // 
-            // ComboBox_NamHoc
-            // 
-            this.ComboBox_NamHoc.FormattingEnabled = true;
-            this.ComboBox_NamHoc.Location = new System.Drawing.Point(404, 21);
-            this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
-            this.ComboBox_NamHoc.Size = new System.Drawing.Size(153, 21);
-            this.ComboBox_NamHoc.TabIndex = 14;
-            // 
-            // Label_NamHoc
-            // 
-            this.Label_NamHoc.AutoSize = true;
-            this.Label_NamHoc.Location = new System.Drawing.Point(345, 25);
-            this.Label_NamHoc.Name = "Label_NamHoc";
-            this.Label_NamHoc.Size = new System.Drawing.Size(53, 13);
-            this.Label_NamHoc.TabIndex = 13;
-            this.Label_NamHoc.Text = "Năm học:";
             // 
             // Form_LapDSLop
             // 

@@ -105,5 +105,29 @@ namespace DAO
             }
             return result;
         }
+        public int GetSiSo(string malop)
+        {
+            int result = -1;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_SISO", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    result = int.Parse(dt.Rows[0][0].ToString());
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
     }
 }

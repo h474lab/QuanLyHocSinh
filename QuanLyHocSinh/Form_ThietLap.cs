@@ -122,7 +122,7 @@ namespace QuanLyHocSinh
             if (TuoiMin <= 0 || TuoiMax <= 0 || SiSoMax <= 0 || DiemMin < 0 || DiemMax <= 0 || DiemDat < 0 ||
                 TuoiMax - TuoiMin < 0 || DiemMax - DiemMin < 0 || DiemDat > DiemMax || DiemDat < DiemMin)
             {
-                MessageBox.Show("Không thể lưu", "Các tham số không thỏa điều kiện", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thông tin không hợp lệ!", "Không thể lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
             return 1;

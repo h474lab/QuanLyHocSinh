@@ -28,9 +28,21 @@ namespace BUS
         {
             hocsinh.Delete_HocSinh(MaHS);
         }
-        public DataTable GetHocSinhCho()
+        public DataTable GetHocSinhCho(string mahk, string manh)
         {
-            return hocsinh.GetHocSinhCho();
+            return hocsinh.GetHocSinhCho(mahk, manh);
+        }
+        public DataTable GetHocSinh(string malop, string mahk, string manh)
+        {
+            return hocsinh.GetHocSinh(malop, mahk, manh);
+        }
+        public void AddHocSinhVaoLop(string mahs, string malop, string mahk, string manh)
+        {
+            hocsinh.AddHocSinhVaoLop(mahs, malop, mahk, manh);
+        }
+        public void Delete_HSTrongLop(string mahs, string malop, string mahk, string manh)
+        {
+            hocsinh.Delete_HSTrongLop(mahs, malop, mahk, manh);
         }
     }
 }

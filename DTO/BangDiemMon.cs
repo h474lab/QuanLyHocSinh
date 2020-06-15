@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class BangDiemMon
+    public class BangDiemMon
     {
+        public long MaBangDiemMH { get; set; }
+        public long MaMonHoc { get; set; }
+        public long MaQuaTrinh { get; set; }
+        public double DiemTB { get; set; }
+        public BangDiemMon() { }
     }
 }

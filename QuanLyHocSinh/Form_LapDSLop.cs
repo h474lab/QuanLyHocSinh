@@ -21,6 +21,7 @@ namespace QuanLyHocSinh
         string currentLop = "";
         string currentHocKy = "";
         string currentNamHoc = "";
+        string currentHSLop = "";
         string currentHSCho = "";
 
         public Form_LapDSLop()
@@ -30,22 +31,29 @@ namespace QuanLyHocSinh
             LoadDanhSachLop();
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
+            LoadDanhSachHocSinh();
             LoadHocSinhCho();
         }
 
         void LoadDanhSachLop()
         {
-            ComboBox_Lop.DataSource = danhsachlop.GetTatCaLop();
+            DataTable temp = danhsachlop.GetTatCaLop();
+            ComboBox_Lop.DataSource = temp;
             ComboBox_Lop.DisplayMember = "TenLop";
             ComboBox_Lop.ValueMember = "MaLop";
+
             currentLop = ComboBox_Lop.SelectedValue.ToString();
+
+            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop).ToString();
+
             ComboBox_Lop.SelectedValueChanged += ComboBox_Lop_SelectedValueChanged;
         }
 
         private void ComboBox_Lop_SelectedValueChanged(object sender, EventArgs e)
         {
             currentLop = ComboBox_Lop.SelectedValue.ToString();
-            Console.WriteLine(currentLop);
+            //Console.WriteLine(currentLop);
+            LoadDanhSachHocSinh();
         }
 
         void LoadDanhSachHocKy()
@@ -53,13 +61,16 @@ namespace QuanLyHocSinh
             ComboBox_HocKy.DataSource = hocky.GetTatCaHK();
             ComboBox_HocKy.DisplayMember = "TenHocKy";
             ComboBox_HocKy.ValueMember = "MaHocKy";
+
             currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+
             ComboBox_HocKy.SelectedValueChanged += ComboBox_HocKy_SelectedValueChanged;
         }
 
         private void ComboBox_HocKy_SelectedValueChanged(object sender, EventArgs e)
         {
             currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+            LoadDanhSachHocSinh();
         }
 
         void LoadDanhSachNamHoc()
@@ -69,18 +80,46 @@ namespace QuanLyHocSinh
             ComboBox_NamHoc.DataSource = temp;
             ComboBox_NamHoc.DisplayMember = "Full_NamHoc";
             ComboBox_NamHoc.ValueMember = "MaNamHoc";
+
             currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+
             ComboBox_NamHoc.SelectedValueChanged += ComboBox_NamHoc_SelectedValueChanged;
         }
 
         private void ComboBox_NamHoc_SelectedValueChanged(object sender, EventArgs e)
         {
             currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+            LoadDanhSachHocSinh();
+        }
+
+        void LoadDanhSachHocSinh()
+        {
+            if (currentLop == "" | currentHocKy == "" | currentNamHoc == "") return;
+            GridView_DSLop.DataSource = hocsinh.GetHocSinh(currentLop, currentHocKy, currentNamHoc);
+            GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSLop.ReadOnly = true;
+            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSLop.CellClick += GridView_DSLop_CellClick;
+        }
+
+        private void GridView_DSLop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = GridView_DSLop.Rows[e.RowIndex];
+                currentHSLop = row.Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         void LoadHocSinhCho()
         {
-            GridView_DSCho.DataSource = hocsinh.GetHocSinhCho();
+            GridView_DSCho.DataSource = hocsinh.GetHocSinhCho(currentHocKy, currentNamHoc);
             GridView_DSCho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSCho.ReadOnly = true;
@@ -100,6 +139,20 @@ namespace QuanLyHocSinh
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        
+        private void Button_Them_Click(object sender, EventArgs e)
+        {
+            hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
+            LoadDanhSachLop();
+            LoadHocSinhCho();
+        }
+
+        private void Button_Xoa_Click(object sender, EventArgs e)
+        {
+            hocsinh.Delete_HSTrongLop(currentHSLop, currentLop, currentHocKy, currentNamHoc);
+            LoadDanhSachLop();
+            LoadHocSinhCho();
         }
     }
 }

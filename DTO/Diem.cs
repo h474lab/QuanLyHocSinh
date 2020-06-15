@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Diem
+    public class Diem
     {
+        public long MaBangDiemMH { get; set; }
+        public long MaLoaiKT { get; set; }
+        public double DiemSo { get; set; }
+        public Diem() { }
     }
 }

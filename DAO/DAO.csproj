@@ -61,11 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_LoaiKT.cs" />
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="DAO_BangDiemMon.cs" />
     <Compile Include="DAO_DanhSachLop.cs" />
+    <Compile Include="DAO_Diem.cs" />
     <Compile Include="DAO_HocKy.cs" />
     <Compile Include="DAO_HocSinh.cs" />
     <Compile Include="DAO_KhoiLop.cs" />
+    <Compile Include="DAO_LoaiKT.cs" />
     <Compile Include="DAO_MonHoc.cs" />
     <Compile Include="DAO_NamHoc.cs" />
     <Compile Include="DAO_ThamSo.cs" />

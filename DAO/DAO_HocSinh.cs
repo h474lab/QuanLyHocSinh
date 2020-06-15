@@ -109,19 +109,96 @@ namespace DAO
             }
             return result;
         }
-        public DataTable GetHocSinhCho()
+        public DataTable GetHocSinhCho(string mahk, string manh)
         {
             DataTable result = null;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("SELECT_HOCSINHCHO", conn);
                 command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
                 try
                 {
                     command.Connection.Open();
                     SqlDataAdapter da = new SqlDataAdapter(command);
                     result = new DataTable();
                     da.Fill(result);
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
+        public DataTable GetHocSinh(string malop, string mahk, string manh)
+        {
+            DataTable result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_HOCSINHTHEOLOP", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    result = new DataTable();
+                    da.Fill(result);
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
+        public int? AddHocSinhVaoLop(string MaHS, string MaLop, string MaHocKy, string MaNamHoc)
+        {
+            int? result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("INSERT_HS_INTO_LOP", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(MaHS);
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(MaLop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(MaHocKy);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(MaNamHoc);
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    result = 1;
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
+        public int? Delete_HSTrongLop(string MaHS, string MaLop, string MaHocKy, string MaNamHoc)
+        {
+            int? result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("DELETE_HSTRONGLOP", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(MaHS);
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(MaLop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(MaHocKy);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(MaNamHoc);
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    result = 1;
                     command.Connection.Close();
                 }
                 catch

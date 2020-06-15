@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class LoaiKT
+    public class LoaiKT
     {
+        public long MaLoaiKT { get; set; }
+        public string TenLoaiKT { get; set; }
+        public string HeSo { get; set; }
+        public LoaiKT() { }
     }
 }

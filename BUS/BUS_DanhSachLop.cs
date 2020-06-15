@@ -28,5 +28,9 @@ namespace BUS
         {
             danhsachlop.Delete_Lop(malop);
         }
+        public int GetSiSo(string malop)
+        {
+            return danhsachlop.GetSiSo(malop);
+        }
     }
 }
