@@ -19,7 +19,9 @@ namespace QuanLyHocSinh
         BUS_MonHoc monhoc = new BUS_MonHoc();
         BUS_HocSinh hocsinh = new BUS_HocSinh();
         BUS_BangDiemMon bangdiemmon = new BUS_BangDiemMon();
+        BUS_Diem diem = new BUS_Diem();
 
+        string currentHocSinh = "";
         string currentLop = "";
         string currentHocKy = "";
         string currentNamHoc = "";
@@ -112,6 +114,13 @@ namespace QuanLyHocSinh
             GridView_BangDiem.DataSource = bangdiemmon.GetBangDiem(currentLop, currentHocKy, currentNamHoc, currentMonHoc);
             GridView_BangDiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BangDiem.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            GridView_BangDiem.CellBeginEdit += GridView_BangDiem_CellBeginEdit;
+            GridView_BangDiem.CellEndEdit += GridView_BangDiem_CellEndEdit;
+
+            foreach(DataGridViewColumn column in GridView_BangDiem.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
 
             // Edit theme
             GridView_BangDiem.BorderStyle = BorderStyle.None;
@@ -125,8 +134,41 @@ namespace QuanLyHocSinh
             GridView_BangDiem.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             GridView_BangDiem.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_BangDiem.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
         }
 
+        private void GridView_BangDiem_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            
+        }
+
+        private void GridView_BangDiem_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            int column = e.ColumnIndex;
+            currentHocSinh = GridView_BangDiem.Rows[row].Cells[0].Value.ToString();
+            string MaLoaiKT = GridView_BangDiem.Columns[column].DataPropertyName.ToString();
+            //Console.WriteLine(MaLoaiKT);
+
+            double? d;
+            if (GridView_BangDiem.Rows[row].Cells[column].Value == DBNull.Value)
+                d = null;
+            else
+                d = double.Parse(GridView_BangDiem.Rows[row].Cells[column].Value.ToString());
+
+            // Console.WriteLine(diem.ToString());
+            if (d != null)
+            {
+                if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) == null)
+                    diem.Insert_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, d);
+                else
+                    diem.Update_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, d);
+            }
+            else
+            {
+                if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) != null)
+                    diem.Delete_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT);
+            }
+            LoadBangDiem();
+        }
     }
 }

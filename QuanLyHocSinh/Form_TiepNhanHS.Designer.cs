@@ -83,20 +83,18 @@
             // 
             this.Panel_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Panel_Title.Controls.Add(this.Label_Title);
-            this.Panel_Title.Location = new System.Drawing.Point(69, 18);
-            this.Panel_Title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Panel_Title.Location = new System.Drawing.Point(46, 12);
             this.Panel_Title.Name = "Panel_Title";
-            this.Panel_Title.Size = new System.Drawing.Size(746, 77);
+            this.Panel_Title.Size = new System.Drawing.Size(497, 50);
             this.Panel_Title.TabIndex = 0;
             // 
             // Label_Title
             // 
             this.Label_Title.AutoSize = true;
             this.Label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Title.Location = new System.Drawing.Point(176, 15);
-            this.Label_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_Title.Location = new System.Drawing.Point(117, 10);
             this.Label_Title.Name = "Label_Title";
-            this.Label_Title.Size = new System.Drawing.Size(411, 40);
+            this.Label_Title.Size = new System.Drawing.Size(281, 29);
             this.Label_Title.TabIndex = 0;
             this.Label_Title.Text = "TIẾP NHẬN HỌC SINH";
             // 
@@ -115,11 +113,9 @@
             this.GroupBox_ThongTin.Controls.Add(this.Label_GioiTinh);
             this.GroupBox_ThongTin.Controls.Add(this.TextBox_HoTen);
             this.GroupBox_ThongTin.Controls.Add(this.Label_HoTen);
-            this.GroupBox_ThongTin.Location = new System.Drawing.Point(18, 105);
-            this.GroupBox_ThongTin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GroupBox_ThongTin.Location = new System.Drawing.Point(12, 68);
             this.GroupBox_ThongTin.Name = "GroupBox_ThongTin";
-            this.GroupBox_ThongTin.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GroupBox_ThongTin.Size = new System.Drawing.Size(760, 209);
+            this.GroupBox_ThongTin.Size = new System.Drawing.Size(507, 136);
             this.GroupBox_ThongTin.TabIndex = 1;
             this.GroupBox_ThongTin.TabStop = false;
             this.GroupBox_ThongTin.Text = "Thông tin cá nhân";
@@ -128,20 +124,18 @@
             // 
             this.TextBox_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox_Email.Location = new System.Drawing.Point(126, 162);
-            this.TextBox_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBox_Email.Location = new System.Drawing.Point(84, 105);
             this.TextBox_Email.Name = "TextBox_Email";
-            this.TextBox_Email.Size = new System.Drawing.Size(586, 26);
+            this.TextBox_Email.Size = new System.Drawing.Size(392, 20);
             this.TextBox_Email.TabIndex = 10;
             this.TextBox_Email.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Email_Validating);
             // 
             // Label_Email
             // 
             this.Label_Email.AutoSize = true;
-            this.Label_Email.Location = new System.Drawing.Point(9, 166);
-            this.Label_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_Email.Location = new System.Drawing.Point(6, 108);
             this.Label_Email.Name = "Label_Email";
-            this.Label_Email.Size = new System.Drawing.Size(52, 20);
+            this.Label_Email.Size = new System.Drawing.Size(35, 13);
             this.Label_Email.TabIndex = 9;
             this.Label_Email.Text = "Email:";
             // 
@@ -149,20 +143,18 @@
             // 
             this.TextBox_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox_DiaChi.Location = new System.Drawing.Point(126, 115);
-            this.TextBox_DiaChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBox_DiaChi.Location = new System.Drawing.Point(84, 75);
             this.TextBox_DiaChi.Name = "TextBox_DiaChi";
-            this.TextBox_DiaChi.Size = new System.Drawing.Size(586, 26);
+            this.TextBox_DiaChi.Size = new System.Drawing.Size(392, 20);
             this.TextBox_DiaChi.TabIndex = 8;
             this.TextBox_DiaChi.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_DiaChi_Validating);
             // 
             // Label_DiaChi
             // 
             this.Label_DiaChi.AutoSize = true;
-            this.Label_DiaChi.Location = new System.Drawing.Point(9, 120);
-            this.Label_DiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_DiaChi.Location = new System.Drawing.Point(6, 78);
             this.Label_DiaChi.Name = "Label_DiaChi";
-            this.Label_DiaChi.Size = new System.Drawing.Size(61, 20);
+            this.Label_DiaChi.Size = new System.Drawing.Size(43, 13);
             this.Label_DiaChi.TabIndex = 7;
             this.Label_DiaChi.Text = "Địa chỉ:";
             // 
@@ -170,30 +162,27 @@
             // 
             this.DateTimePicker_NgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DateTimePicker_NgaySinh.Location = new System.Drawing.Point(414, 71);
-            this.DateTimePicker_NgaySinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DateTimePicker_NgaySinh.Location = new System.Drawing.Point(276, 46);
             this.DateTimePicker_NgaySinh.Name = "DateTimePicker_NgaySinh";
-            this.DateTimePicker_NgaySinh.Size = new System.Drawing.Size(298, 26);
+            this.DateTimePicker_NgaySinh.Size = new System.Drawing.Size(200, 20);
             this.DateTimePicker_NgaySinh.TabIndex = 6;
             this.DateTimePicker_NgaySinh.Validating += new System.ComponentModel.CancelEventHandler(this.DateTimePicker_NgaySinh_Validating);
             // 
             // Label_NgaySinh
             // 
             this.Label_NgaySinh.AutoSize = true;
-            this.Label_NgaySinh.Location = new System.Drawing.Point(320, 74);
-            this.Label_NgaySinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_NgaySinh.Location = new System.Drawing.Point(213, 48);
             this.Label_NgaySinh.Name = "Label_NgaySinh";
-            this.Label_NgaySinh.Size = new System.Drawing.Size(82, 20);
+            this.Label_NgaySinh.Size = new System.Drawing.Size(57, 13);
             this.Label_NgaySinh.TabIndex = 5;
             this.Label_NgaySinh.Text = "Ngày sinh:";
             // 
             // RadioButton_Nu
             // 
             this.RadioButton_Nu.AutoSize = true;
-            this.RadioButton_Nu.Location = new System.Drawing.Point(225, 71);
-            this.RadioButton_Nu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RadioButton_Nu.Location = new System.Drawing.Point(150, 46);
             this.RadioButton_Nu.Name = "RadioButton_Nu";
-            this.RadioButton_Nu.Size = new System.Drawing.Size(54, 24);
+            this.RadioButton_Nu.Size = new System.Drawing.Size(39, 17);
             this.RadioButton_Nu.TabIndex = 4;
             this.RadioButton_Nu.TabStop = true;
             this.RadioButton_Nu.Text = "Nữ";
@@ -202,10 +191,9 @@
             // RadioButton_Nam
             // 
             this.RadioButton_Nam.AutoSize = true;
-            this.RadioButton_Nam.Location = new System.Drawing.Point(126, 71);
-            this.RadioButton_Nam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RadioButton_Nam.Location = new System.Drawing.Point(84, 46);
             this.RadioButton_Nam.Name = "RadioButton_Nam";
-            this.RadioButton_Nam.Size = new System.Drawing.Size(67, 24);
+            this.RadioButton_Nam.Size = new System.Drawing.Size(47, 17);
             this.RadioButton_Nam.TabIndex = 3;
             this.RadioButton_Nam.TabStop = true;
             this.RadioButton_Nam.Text = "Nam";
@@ -214,10 +202,9 @@
             // Label_GioiTinh
             // 
             this.Label_GioiTinh.AutoSize = true;
-            this.Label_GioiTinh.Location = new System.Drawing.Point(9, 74);
-            this.Label_GioiTinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_GioiTinh.Location = new System.Drawing.Point(6, 48);
             this.Label_GioiTinh.Name = "Label_GioiTinh";
-            this.Label_GioiTinh.Size = new System.Drawing.Size(71, 20);
+            this.Label_GioiTinh.Size = new System.Drawing.Size(50, 13);
             this.Label_GioiTinh.TabIndex = 2;
             this.Label_GioiTinh.Text = "Giới tính:";
             // 
@@ -225,20 +212,18 @@
             // 
             this.TextBox_HoTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox_HoTen.Location = new System.Drawing.Point(126, 26);
-            this.TextBox_HoTen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBox_HoTen.Location = new System.Drawing.Point(84, 17);
             this.TextBox_HoTen.Name = "TextBox_HoTen";
-            this.TextBox_HoTen.Size = new System.Drawing.Size(586, 26);
+            this.TextBox_HoTen.Size = new System.Drawing.Size(392, 20);
             this.TextBox_HoTen.TabIndex = 1;
             this.TextBox_HoTen.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_HoTen_Validating);
             // 
             // Label_HoTen
             // 
             this.Label_HoTen.AutoSize = true;
-            this.Label_HoTen.Location = new System.Drawing.Point(9, 31);
-            this.Label_HoTen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_HoTen.Location = new System.Drawing.Point(6, 20);
             this.Label_HoTen.Name = "Label_HoTen";
-            this.Label_HoTen.Size = new System.Drawing.Size(81, 20);
+            this.Label_HoTen.Size = new System.Drawing.Size(57, 13);
             this.Label_HoTen.TabIndex = 0;
             this.Label_HoTen.Text = "Họ và tên:";
             // 
@@ -248,11 +233,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox_DSHocSinh.Controls.Add(this.GridView_DSHocSinh);
-            this.GroupBox_DSHocSinh.Location = new System.Drawing.Point(18, 323);
-            this.GroupBox_DSHocSinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GroupBox_DSHocSinh.Location = new System.Drawing.Point(12, 210);
             this.GroupBox_DSHocSinh.Name = "GroupBox_DSHocSinh";
-            this.GroupBox_DSHocSinh.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GroupBox_DSHocSinh.Size = new System.Drawing.Size(906, 508);
+            this.GroupBox_DSHocSinh.Size = new System.Drawing.Size(604, 330);
             this.GroupBox_DSHocSinh.TabIndex = 2;
             this.GroupBox_DSHocSinh.TabStop = false;
             this.GroupBox_DSHocSinh.Text = "Danh sách học sinh";
@@ -270,11 +253,10 @@
             this.NgaySinh,
             this.DiaChi,
             this.Email});
-            this.GridView_DSHocSinh.Location = new System.Drawing.Point(12, 29);
-            this.GridView_DSHocSinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GridView_DSHocSinh.Location = new System.Drawing.Point(8, 19);
             this.GridView_DSHocSinh.Name = "GridView_DSHocSinh";
             this.GridView_DSHocSinh.RowHeadersWidth = 62;
-            this.GridView_DSHocSinh.Size = new System.Drawing.Size(882, 469);
+            this.GridView_DSHocSinh.Size = new System.Drawing.Size(588, 305);
             this.GridView_DSHocSinh.TabIndex = 0;
             // 
             // MaHocSinh
@@ -335,11 +317,9 @@
             this.GroupBox_ThaoTac.Controls.Add(this.Button_Sua);
             this.GroupBox_ThaoTac.Controls.Add(this.Button_Xoa);
             this.GroupBox_ThaoTac.Controls.Add(this.Button_Them);
-            this.GroupBox_ThaoTac.Location = new System.Drawing.Point(788, 105);
-            this.GroupBox_ThaoTac.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GroupBox_ThaoTac.Location = new System.Drawing.Point(525, 68);
             this.GroupBox_ThaoTac.Name = "GroupBox_ThaoTac";
-            this.GroupBox_ThaoTac.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GroupBox_ThaoTac.Size = new System.Drawing.Size(136, 209);
+            this.GroupBox_ThaoTac.Size = new System.Drawing.Size(91, 136);
             this.GroupBox_ThaoTac.TabIndex = 3;
             this.GroupBox_ThaoTac.TabStop = false;
             this.GroupBox_ThaoTac.Text = "Thao tác";
@@ -347,10 +327,9 @@
             // Button_Sua
             // 
             this.Button_Sua.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
-            this.Button_Sua.Location = new System.Drawing.Point(12, 89);
-            this.Button_Sua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button_Sua.Location = new System.Drawing.Point(8, 58);
             this.Button_Sua.Name = "Button_Sua";
-            this.Button_Sua.Size = new System.Drawing.Size(112, 46);
+            this.Button_Sua.Size = new System.Drawing.Size(75, 30);
             this.Button_Sua.TabIndex = 2;
             this.Button_Sua.Text = "Chỉnh sửa";
             this.Button_Sua.UseVisualStyleBackColor = true;
@@ -359,10 +338,9 @@
             // Button_Xoa
             // 
             this.Button_Xoa.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
-            this.Button_Xoa.Location = new System.Drawing.Point(12, 149);
-            this.Button_Xoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button_Xoa.Location = new System.Drawing.Point(8, 97);
             this.Button_Xoa.Name = "Button_Xoa";
-            this.Button_Xoa.Size = new System.Drawing.Size(112, 46);
+            this.Button_Xoa.Size = new System.Drawing.Size(75, 30);
             this.Button_Xoa.TabIndex = 1;
             this.Button_Xoa.Text = "Xóa";
             this.Button_Xoa.UseVisualStyleBackColor = true;
@@ -371,10 +349,9 @@
             // Button_Them
             // 
             this.Button_Them.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
-            this.Button_Them.Location = new System.Drawing.Point(12, 31);
-            this.Button_Them.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button_Them.Location = new System.Drawing.Point(8, 20);
             this.Button_Them.Name = "Button_Them";
-            this.Button_Them.Size = new System.Drawing.Size(112, 46);
+            this.Button_Them.Size = new System.Drawing.Size(75, 30);
             this.Button_Them.TabIndex = 0;
             this.Button_Them.Text = "Thêm";
             this.Button_Them.UseVisualStyleBackColor = true;
@@ -418,14 +395,14 @@
             // 
             // Form_TiepNhanHS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 846);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(627, 550);
             this.Controls.Add(this.GroupBox_ThaoTac);
             this.Controls.Add(this.GroupBox_DSHocSinh);
             this.Controls.Add(this.GroupBox_ThongTin);
             this.Controls.Add(this.Panel_Title);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_TiepNhanHS";
             this.Text = "Tiếp Nhận Học Sinh";
             this.Panel_Title.ResumeLayout(false);

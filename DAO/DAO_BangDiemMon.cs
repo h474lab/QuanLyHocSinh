@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
@@ -13,29 +14,31 @@ namespace DAO
         public DAO_BangDiemMon() : base() { }
         public double GetDiemTBMon(string mahs, string mahk, string manh, string mamh)
         {
-            double result = -1;
+            double result = 0;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
-                SqlCommand command = new SqlCommand("SELECT_SISO", conn);
+                SqlCommand command = new SqlCommand("SELECT_DIEMTBMON", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
                 command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
                 command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
                 command.Parameters.Add("@MAMONHOC", SqlDbType.Decimal).Value = long.Parse(mamh);
 
-                command.Parameters.Add("@ReturnValue", SqlDbType.Float).Direction = ParameterDirection.ReturnValue;
-
                 try
                 {
                     command.Connection.Open();
-                    command.ExecuteNonQuery();
-
-                    result = (double)command.Parameters["ReturnValue"].Value;
-
+                    SqlDataReader rd = command.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        if (rd["DiemTBMon"] != DBNull.Value)
+                            result = double.Parse(rd["DiemTBMon"].ToString());
+                        rd.Close();
+                    }
                     command.Connection.Close();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                     command.Connection.Close();
                 }
             }

@@ -54,6 +54,7 @@ namespace QuanLyHocSinh
             currentLop = ComboBox_Lop.SelectedValue.ToString();
             //Console.WriteLine(currentLop);
             LoadDanhSachHocSinh();
+            LoadHocSinhCho();
         }
 
         void LoadDanhSachHocKy()
@@ -71,6 +72,7 @@ namespace QuanLyHocSinh
         {
             currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
             LoadDanhSachHocSinh();
+            LoadHocSinhCho();
         }
 
         void LoadDanhSachNamHoc()
@@ -90,6 +92,7 @@ namespace QuanLyHocSinh
         {
             currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
             LoadDanhSachHocSinh();
+            LoadHocSinhCho();
         }
 
         void LoadDanhSachHocSinh()

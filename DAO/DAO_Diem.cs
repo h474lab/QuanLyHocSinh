@@ -43,16 +43,20 @@ namespace DAO
             }
             return result;
         }
-        public int? Insert_Diem(Diem diem)
+        public int? Insert_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
         {
             int? result = null;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("INSERT_DIEM", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("@MABANGDIEMMH", SqlDbType.Decimal).Value = diem.MaBangDiemMH;
-                command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = diem.MaLoaiKT;
-                command.Parameters.Add("@DIEMSO", SqlDbType.Float).Value = diem.DiemSo;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                command.Parameters.Add("@MAMONHOC", SqlDbType.Decimal).Value = long.Parse(mamh);
+                command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = long.Parse(makt);
+                command.Parameters.Add("@DIEMSO", SqlDbType.Float).Value = d;
 
                 try
                 {
@@ -68,16 +72,20 @@ namespace DAO
             }
             return result;
         }
-        public int? Update_Diem(Diem diem)
+        public int? Update_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
         {
             int? result = null;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("UPDATE_DIEM", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("@MABANGDIEMMH", SqlDbType.Decimal).Value = diem.MaBangDiemMH;
-                command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = diem.MaLoaiKT;
-                command.Parameters.Add("@DIEMSO", SqlDbType.Float).Value = diem.DiemSo;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                command.Parameters.Add("@MAMONHOC", SqlDbType.Decimal).Value = long.Parse(mamh);
+                command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = long.Parse(makt);
+                command.Parameters.Add("@DIEMSO", SqlDbType.Float).Value = d;
 
                 try
                 {
@@ -93,15 +101,19 @@ namespace DAO
             }
             return result;
         }
-        public int? Delete_Diem(Diem diem)
+        public int? Delete_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt)
         {
             int? result = null;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("DELETE_DIEM", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("@MABANGDIEMMH", SqlDbType.Decimal).Value = diem.MaBangDiemMH;
-                command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = diem.MaLoaiKT;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                command.Parameters.Add("@MAMONHOC", SqlDbType.Decimal).Value = long.Parse(mamh);
+                command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = long.Parse(makt);
 
                 try
                 {
