@@ -109,17 +109,24 @@ namespace QuanLyHocSinh
         void LoadBangDiem()
         {
             if (currentLop == "" | currentHocKy == "" | currentNamHoc == "") return;
-            GridView_BangDiem.DataSource = bangdiemmon.GetBangDiem(currentLop, currentHocKy,currentNamHoc, currentMonHoc);
+            GridView_BangDiem.DataSource = bangdiemmon.GetBangDiem(currentLop, currentHocKy, currentNamHoc, currentMonHoc);
             GridView_BangDiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridView_BangDiem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            GridView_BangDiem.ReadOnly = true;
-            GridView_BangDiem.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
-            GridView_BangDiem.CellClick += GridView_BangDiem_CellClick;
+            GridView_BangDiem.SelectionMode = DataGridViewSelectionMode.CellSelect;
+
+            // Edit theme
+            GridView_BangDiem.BorderStyle = BorderStyle.None;
+            GridView_BangDiem.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_BangDiem.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_BangDiem.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_BangDiem.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_BangDiem.BackgroundColor = Color.White;
+
+            GridView_BangDiem.EnableHeadersVisualStyles = false;
+            GridView_BangDiem.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_BangDiem.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_BangDiem.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
         }
 
-        private void GridView_BangDiem_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

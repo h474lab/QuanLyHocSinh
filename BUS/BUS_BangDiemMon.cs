@@ -31,7 +31,7 @@ namespace BUS
 
             foreach (DataRow row in result.Rows)
             {
-                string mahs = row["MAHS"].ToString();
+                string mahs = row["MaHocSinh"].ToString();
                 row["1"] = (object)diem.GetDiem(mahs, mahk, manh, mamh, "1") ?? DBNull.Value;
                 row["2"] = (object)diem.GetDiem(mahs, mahk, manh, mamh, "2") ?? DBNull.Value;
                 row["3"] = (object)diem.GetDiem(mahs, mahk, manh, mamh, "3") ?? DBNull.Value;

@@ -51,6 +51,19 @@ namespace QuanLyHocSinh
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
+
+            // Edit theme
+            GridView_DSLop.BorderStyle = BorderStyle.None;
+            GridView_DSLop.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_DSLop.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSLop.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_DSLop.BackgroundColor = Color.White;
+
+            GridView_DSLop.EnableHeadersVisualStyles = false;
+            GridView_DSLop.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSLop.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_DSLop.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         void LoadDSMonHoc()
@@ -61,6 +74,19 @@ namespace QuanLyHocSinh
             GridView_DSMonHoc.ReadOnly = true;
             GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSMonHoc.CellClick += GridView_DSMonHoc_CellClick;
+
+            // Edit theme
+            GridView_DSMonHoc.BorderStyle = BorderStyle.None;
+            GridView_DSMonHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_DSMonHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSMonHoc.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_DSMonHoc.BackgroundColor = Color.White;
+
+            GridView_DSMonHoc.EnableHeadersVisualStyles = false;
+            GridView_DSMonHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSMonHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_DSMonHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         private void GridView_DSMonHoc_CellClick(object sender, DataGridViewCellEventArgs e)

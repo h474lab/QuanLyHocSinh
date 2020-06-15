@@ -21,10 +21,12 @@ namespace QuanLyHocSinh
             Initialize();
             LoadThongTin();
         }
+
         private void Initialize()
         {
             RadioButton_Nam.Checked = true;
         }
+
         private void LoadThongTin()
         {
             // Load Danh sach Hoc sinh
@@ -32,9 +34,22 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocSinh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSHocSinh.ReadOnly = true;
-            GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSHocSinh.CellClick += GridView_DSHocSinh_CellClick;
+
+            // Edit theme
+            GridView_DSHocSinh.BorderStyle = BorderStyle.None;
+            GridView_DSHocSinh.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_DSHocSinh.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSHocSinh.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_DSHocSinh.BackgroundColor = Color.White;
+
+            GridView_DSHocSinh.EnableHeadersVisualStyles = false;
+            GridView_DSHocSinh.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSHocSinh.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_DSHocSinh.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+
         private void GridView_DSHocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -52,12 +67,12 @@ namespace QuanLyHocSinh
                 TextBox_Email.Text = row.Cells[5].Value.ToString();
             } catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
         private void Button_Them_Click(object sender, EventArgs e)
         {
-            if (!checkThongTin()) return;
+            //if (!checkThongTin()) return;
             HocSinh temp = new HocSinh();
             temp.HoTen = TextBox_HoTen.Text;
             if (RadioButton_Nam.Checked)
@@ -207,7 +222,7 @@ namespace QuanLyHocSinh
 
         private void DateTimePicker_NgaySinh_Validating(object sender, CancelEventArgs e)
         {
-            
+            SetChecked(1, "Thông tin hợp lệ!");
         }
 
         private void TextBox_DiaChi_Validating(object sender, CancelEventArgs e)
@@ -224,7 +239,7 @@ namespace QuanLyHocSinh
                 return;
             }
 
-            SetChecked(2, "Thông tin hợp lệ");
+            SetChecked(2, "Thông tin hợp lệ!");
 
             // Chuan hoa
             for (int i = 0; i < diachi.Length - 1; i++)
