@@ -124,6 +124,9 @@
   <data name="ScoreButton(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ScoreButton(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ExitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ReportButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ReportButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +148,34 @@
   <data name="AddButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddStudentButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddStudentButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassroomButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClassroomButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReportButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScoreButton(1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScoreButton(1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScoreButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScoreButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchButton(1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchButton(1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingsButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SettingsButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

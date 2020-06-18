@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,10 @@ namespace QuanLyHocSinh
         BUS_HocSinh hocsinh = new BUS_HocSinh();
         BUS_BangDiemMon bangdiemmon = new BUS_BangDiemMon();
         BUS_Diem diem = new BUS_Diem();
+        BUS_ThamSo thamso = new BUS_ThamSo();
+
+        ThamSo listThamSo;
+        string lastScore;
 
         string currentHocSinh = "";
         string currentLop = "";
@@ -29,6 +34,9 @@ namespace QuanLyHocSinh
         public Form_BangDiemMonHoc()
         {
             InitializeComponent();
+
+            listThamSo = thamso.GetThamSo();
+
             LoadDanhSachLop();
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
@@ -138,7 +146,19 @@ namespace QuanLyHocSinh
 
         private void GridView_BangDiem_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            
+            int row = e.RowIndex;
+            int column = e.ColumnIndex;
+            lastScore = GridView_BangDiem.Rows[row].Cells[column].Value.ToString();
+        }
+
+        private void reverseCurrentCell()
+        {
+            if (lastScore == "")
+            {
+                GridView_BangDiem.CurrentCell.Value = DBNull.Value;
+                return;
+            }
+            GridView_BangDiem.CurrentCell.Value = lastScore.ToString();
         }
 
         private void GridView_BangDiem_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -156,6 +176,14 @@ namespace QuanLyHocSinh
                 d = double.Parse(GridView_BangDiem.Rows[row].Cells[column].Value.ToString());
 
             // Console.WriteLine(diem.ToString());
+
+            if (d < listThamSo.DiemToiThieu || d > listThamSo.DiemToiDa)
+            {
+                MessageBox.Show("Điểm phải nằm trong khoảng từ " + listThamSo.DiemToiThieu + " đến " + listThamSo.DiemToiDa, "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                reverseCurrentCell();
+                return;
+            }
+
             if (d != null)
             {
                 if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) == null)

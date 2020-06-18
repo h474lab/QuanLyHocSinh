@@ -37,103 +37,135 @@
             this.SearchBtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Main_Panel = new System.Windows.Forms.Panel();
-            this.OptionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // OptionsPanel
             // 
-            this.OptionsPanel.Controls.Add(this.SettingsBtn);
-            this.OptionsPanel.Controls.Add(this.ReportBtn);
-            this.OptionsPanel.Controls.Add(this.ScoreBtn);
-            this.OptionsPanel.Controls.Add(this.ClassBtn);
-            this.OptionsPanel.Controls.Add(this.AddStudentBtn);
-            this.OptionsPanel.Controls.Add(this.SearchBtn);
-            this.OptionsPanel.Location = new System.Drawing.Point(9, 12);
+            this.OptionsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.OptionsPanel.BackColor = System.Drawing.Color.Lavender;
+            this.OptionsPanel.Location = new System.Drawing.Point(0, -1);
             this.OptionsPanel.Name = "OptionsPanel";
-            this.OptionsPanel.Size = new System.Drawing.Size(103, 517);
+            this.OptionsPanel.Size = new System.Drawing.Size(72, 644);
             this.OptionsPanel.TabIndex = 0;
             // 
             // SettingsBtn
             // 
-            this.SettingsBtn.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.SettingsButton;
+            this.SettingsBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.SettingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsBtn.Location = new System.Drawing.Point(14, 418);
+            this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingsBtn.Image = global::QuanLyHocSinh.Properties.Resources.SettingsButton1;
+            this.SettingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SettingsBtn.Location = new System.Drawing.Point(-1, 369);
             this.SettingsBtn.Name = "SettingsBtn";
-            this.SettingsBtn.Size = new System.Drawing.Size(75, 75);
+            this.SettingsBtn.Size = new System.Drawing.Size(72, 75);
             this.SettingsBtn.TabIndex = 5;
-            this.SettingsBtn.UseVisualStyleBackColor = true;
+            this.SettingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SettingsBtn.UseVisualStyleBackColor = false;
             this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
+            this.SettingsBtn.MouseLeave += new System.EventHandler(this.SettingsBtn_MouseLeave);
+            this.SettingsBtn.MouseHover += new System.EventHandler(this.SettingsBtn_MouseHover);
             // 
             // ReportBtn
             // 
-            this.ReportBtn.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.ReportButton;
+            this.ReportBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ReportBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReportBtn.Location = new System.Drawing.Point(14, 337);
+            this.ReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportBtn.Image = global::QuanLyHocSinh.Properties.Resources.ReportButton1;
+            this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReportBtn.Location = new System.Drawing.Point(-1, 295);
             this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Size = new System.Drawing.Size(75, 75);
+            this.ReportBtn.Size = new System.Drawing.Size(72, 75);
             this.ReportBtn.TabIndex = 4;
-            this.ReportBtn.UseVisualStyleBackColor = true;
+            this.ReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReportBtn.UseVisualStyleBackColor = false;
             this.ReportBtn.Click += new System.EventHandler(this.ReportBtn_Click);
+            this.ReportBtn.MouseLeave += new System.EventHandler(this.ReportBtn_MouseLeave);
+            this.ReportBtn.MouseHover += new System.EventHandler(this.ReportBtn_MouseHover);
             // 
             // ScoreBtn
             // 
-            this.ScoreBtn.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.ScoreButton_1_;
+            this.ScoreBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ScoreBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ScoreBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScoreBtn.Location = new System.Drawing.Point(14, 255);
+            this.ScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreBtn.Image = global::QuanLyHocSinh.Properties.Resources.ScoreButton_1_1;
+            this.ScoreBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ScoreBtn.Location = new System.Drawing.Point(-1, 221);
             this.ScoreBtn.Name = "ScoreBtn";
-            this.ScoreBtn.Size = new System.Drawing.Size(75, 75);
+            this.ScoreBtn.Size = new System.Drawing.Size(72, 75);
             this.ScoreBtn.TabIndex = 3;
-            this.ScoreBtn.UseVisualStyleBackColor = true;
+            this.ScoreBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ScoreBtn.UseVisualStyleBackColor = false;
             this.ScoreBtn.Click += new System.EventHandler(this.ScoreBtn_Click);
+            this.ScoreBtn.MouseLeave += new System.EventHandler(this.ScoreBtn_MouseLeave);
+            this.ScoreBtn.MouseHover += new System.EventHandler(this.ScoreBtn_MouseHover);
             // 
             // ClassBtn
             // 
-            this.ClassBtn.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.ClassroomButton;
+            this.ClassBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClassBtn.Location = new System.Drawing.Point(14, 174);
+            this.ClassBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClassBtn.Image = global::QuanLyHocSinh.Properties.Resources.ClassroomButton1;
+            this.ClassBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClassBtn.Location = new System.Drawing.Point(-1, 147);
             this.ClassBtn.Name = "ClassBtn";
-            this.ClassBtn.Size = new System.Drawing.Size(75, 75);
+            this.ClassBtn.Size = new System.Drawing.Size(72, 75);
             this.ClassBtn.TabIndex = 2;
-            this.ClassBtn.UseVisualStyleBackColor = true;
+            this.ClassBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ClassBtn.UseVisualStyleBackColor = false;
             this.ClassBtn.Click += new System.EventHandler(this.ClassBtn_Click);
+            this.ClassBtn.MouseLeave += new System.EventHandler(this.ClassBtn_MouseLeave);
+            this.ClassBtn.MouseHover += new System.EventHandler(this.ClassBtn_MouseHover);
             // 
             // AddStudentBtn
             // 
-            this.AddStudentBtn.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddStudentButton;
+            this.AddStudentBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.AddStudentBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddStudentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStudentBtn.Location = new System.Drawing.Point(14, 12);
+            this.AddStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddStudentBtn.Image = global::QuanLyHocSinh.Properties.Resources.AddStudentButton1;
+            this.AddStudentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddStudentBtn.Location = new System.Drawing.Point(-1, -1);
             this.AddStudentBtn.Name = "AddStudentBtn";
-            this.AddStudentBtn.Size = new System.Drawing.Size(75, 75);
+            this.AddStudentBtn.Size = new System.Drawing.Size(72, 75);
             this.AddStudentBtn.TabIndex = 1;
-            this.AddStudentBtn.UseVisualStyleBackColor = true;
+            this.AddStudentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AddStudentBtn.UseVisualStyleBackColor = false;
             this.AddStudentBtn.Click += new System.EventHandler(this.AddStudentBtn_Click);
+            this.AddStudentBtn.MouseLeave += new System.EventHandler(this.AddStudentBtn_MouseLeave);
+            this.AddStudentBtn.MouseHover += new System.EventHandler(this.AddStudentBtn_MouseHover);
             // 
             // SearchBtn
             // 
-            this.SearchBtn.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.SearchButton_1_;
+            this.SearchBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.Location = new System.Drawing.Point(14, 93);
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBtn.Image = global::QuanLyHocSinh.Properties.Resources.SearchButton_1_1;
+            this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchBtn.Location = new System.Drawing.Point(-1, 73);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(75, 75);
+            this.SearchBtn.Size = new System.Drawing.Size(72, 75);
             this.SearchBtn.TabIndex = 0;
-            this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SearchBtn.UseVisualStyleBackColor = false;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            this.SearchBtn.MouseLeave += new System.EventHandler(this.SearchBtn_MouseLeave);
+            this.SearchBtn.MouseHover += new System.EventHandler(this.SearchBtn_MouseHover);
             // 
             // Main_Panel
             // 
             this.Main_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Main_Panel.Location = new System.Drawing.Point(117, 12);
+            this.Main_Panel.Location = new System.Drawing.Point(76, -1);
             this.Main_Panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Main_Panel.Name = "Main_Panel";
-            this.Main_Panel.Size = new System.Drawing.Size(886, 517);
+            this.Main_Panel.Size = new System.Drawing.Size(1122, 644);
             this.Main_Panel.TabIndex = 1;
             // 
             // Form_Dashboard
@@ -141,13 +173,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1011, 536);
+            this.ClientSize = new System.Drawing.Size(1199, 642);
+            this.Controls.Add(this.SettingsBtn);
+            this.Controls.Add(this.ReportBtn);
+            this.Controls.Add(this.ScoreBtn);
+            this.Controls.Add(this.ClassBtn);
+            this.Controls.Add(this.AddStudentBtn);
+            this.Controls.Add(this.SearchBtn);
             this.Controls.Add(this.Main_Panel);
             this.Controls.Add(this.OptionsPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Form_Dashboard";
             this.Text = "Quản Lý Học Sinh";
-            this.OptionsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

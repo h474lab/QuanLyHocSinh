@@ -192,5 +192,35 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddStudentButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassroomButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReportButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScoreButton%281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScoreButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchButton%281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SettingsButton1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

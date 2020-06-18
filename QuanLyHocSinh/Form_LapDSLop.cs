@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,9 @@ namespace QuanLyHocSinh
         BUS_HocSinh hocsinh = new BUS_HocSinh();
         BUS_HocKy hocky = new BUS_HocKy();
         BUS_NamHoc namhoc = new BUS_NamHoc();
+        BUS_ThamSo thamso = new BUS_ThamSo();
+
+        ThamSo listThamSo = new ThamSo();
 
         string currentLop = "";
         string currentHocKy = "";
@@ -27,6 +31,8 @@ namespace QuanLyHocSinh
         public Form_LapDSLop()
         {
             InitializeComponent();
+
+            listThamSo = thamso.GetThamSo();
 
             LoadDanhSachLop();
             LoadDanhSachHocKy();
@@ -43,8 +49,6 @@ namespace QuanLyHocSinh
             ComboBox_Lop.ValueMember = "MaLop";
 
             currentLop = ComboBox_Lop.SelectedValue.ToString();
-
-            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop).ToString();
 
             ComboBox_Lop.SelectedValueChanged += ComboBox_Lop_SelectedValueChanged;
         }
@@ -103,6 +107,9 @@ namespace QuanLyHocSinh
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+
+            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop).ToString();
+
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
 
 
@@ -174,15 +181,22 @@ namespace QuanLyHocSinh
         
         private void Button_Them_Click(object sender, EventArgs e)
         {
-            hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
-            LoadDanhSachLop();
+            if (int.Parse(TextBox_SiSo.Text) < listThamSo.SiSoToiDa)
+                hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
+            else
+            {
+                MessageBox.Show("Lớp đã đạt sĩ số tối đa", "Không thể thêm học sinh vào lớp!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
+                
+            LoadDanhSachHocSinh();
             LoadHocSinhCho();
         }
 
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
             hocsinh.Delete_HSTrongLop(currentHSLop, currentLop, currentHocKy, currentNamHoc);
-            LoadDanhSachLop();
+            LoadDanhSachHocSinh();
             LoadHocSinhCho();
         }
     }

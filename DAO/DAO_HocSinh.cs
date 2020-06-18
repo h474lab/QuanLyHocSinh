@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace DAO
 {
@@ -201,8 +202,9 @@ namespace DAO
                     result = 1;
                     command.Connection.Close();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                     command.Connection.Close();
                 }
             }

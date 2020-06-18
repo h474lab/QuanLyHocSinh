@@ -48,8 +48,14 @@
             this.Label_Tuoi = new System.Windows.Forms.Label();
             this.GroupBox_DSMonHoc = new System.Windows.Forms.GroupBox();
             this.GridView_DSMonHoc = new System.Windows.Forms.DataGridView();
+            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_DSLop = new System.Windows.Forms.GroupBox();
             this.GridView_DSLop = new System.Windows.Forms.DataGridView();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKhoiLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_ThaoTacLop = new System.Windows.Forms.GroupBox();
             this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
             this.Button_XoaLop = new System.Windows.Forms.Button();
@@ -257,11 +263,28 @@
             this.GridView_DSMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaMonHoc,
+            this.TenMonHoc});
             this.GridView_DSMonHoc.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSMonHoc.Name = "GridView_DSMonHoc";
             this.GridView_DSMonHoc.RowHeadersWidth = 62;
-            this.GridView_DSMonHoc.Size = new System.Drawing.Size(524, 113);
+            this.GridView_DSMonHoc.Size = new System.Drawing.Size(524, 116);
             this.GridView_DSMonHoc.TabIndex = 6;
+            // 
+            // MaMonHoc
+            // 
+            this.MaMonHoc.DataPropertyName = "MaMonHoc";
+            this.MaMonHoc.HeaderText = "Mã Môn Học";
+            this.MaMonHoc.Name = "MaMonHoc";
+            this.MaMonHoc.ReadOnly = true;
+            // 
+            // TenMonHoc
+            // 
+            this.TenMonHoc.DataPropertyName = "TenMonHoc";
+            this.TenMonHoc.HeaderText = "Tên Môn Học";
+            this.TenMonHoc.Name = "TenMonHoc";
+            this.TenMonHoc.ReadOnly = true;
             // 
             // GroupBox_DSLop
             // 
@@ -282,11 +305,45 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLop,
+            this.TenLop,
+            this.SiSo,
+            this.MaKhoiLop});
             this.GridView_DSLop.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSLop.Name = "GridView_DSLop";
             this.GridView_DSLop.RowHeadersWidth = 62;
             this.GridView_DSLop.Size = new System.Drawing.Size(524, 192);
             this.GridView_DSLop.TabIndex = 6;
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.Name = "MaLop";
+            this.MaLop.ReadOnly = true;
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Tên Lớp";
+            this.TenLop.Name = "TenLop";
+            this.TenLop.ReadOnly = true;
+            // 
+            // SiSo
+            // 
+            this.SiSo.DataPropertyName = "SiSo";
+            this.SiSo.HeaderText = "Sĩ Số";
+            this.SiSo.Name = "SiSo";
+            this.SiSo.ReadOnly = true;
+            // 
+            // MaKhoiLop
+            // 
+            this.MaKhoiLop.DataPropertyName = "MaKhoiLop";
+            this.MaKhoiLop.HeaderText = "Mã Khối Lớp";
+            this.MaKhoiLop.Name = "MaKhoiLop";
+            this.MaKhoiLop.ReadOnly = true;
+            this.MaKhoiLop.Visible = false;
             // 
             // GroupBox_ThaoTacLop
             // 
@@ -497,5 +554,11 @@
         private System.Windows.Forms.ComboBox ComboBox_KhoiLop;
         private System.Windows.Forms.TextBox TextBox_DiemDatMon;
         private System.Windows.Forms.Label Label_DiemDatMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SiSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoiLop;
     }
 }
