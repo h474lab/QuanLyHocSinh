@@ -32,7 +32,7 @@ namespace BUS
             foreach (DataRow row in result.Rows)
             {
                 string malop = row["MaLop"].ToString();
-                row["SiSo"] = (object) danhsachlop.GetSiSo(malop, mahk, manh) ?? DBNull.Value;
+                row["SiSo"] = (object)danhsachlop.GetSiSo(malop, mahk, manh) ?? DBNull.Value;
                 row["SoLuongDat"] = (object)this.GetSLDat(malop, mahk, manh, mamh) ?? DBNull.Value;
                 row["TiLe"] = (object)this.GetTLDat(malop, mahk, manh, mamh).ToString() ?? DBNull.Value;
                 row["TiLe"] = row["TiLe"] + "%";

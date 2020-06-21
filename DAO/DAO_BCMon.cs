@@ -16,7 +16,7 @@ namespace DAO
             int result = 0;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
-                SqlCommand command = new SqlCommand("SELECT_SOLUONGDAT", conn);
+                SqlCommand command = new SqlCommand("SELECT_SLDATMON", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
                 command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);

@@ -58,7 +58,7 @@
             this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingsBtn.Image = global::QuanLyHocSinh.Properties.Resources.SettingsButton1;
             this.SettingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingsBtn.Location = new System.Drawing.Point(-1, 369);
+            this.SettingsBtn.Location = new System.Drawing.Point(-1, 370);
             this.SettingsBtn.Name = "SettingsBtn";
             this.SettingsBtn.Size = new System.Drawing.Size(72, 75);
             this.SettingsBtn.TabIndex = 5;
@@ -76,7 +76,7 @@
             this.ReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.Image = global::QuanLyHocSinh.Properties.Resources.ReportButton1;
             this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReportBtn.Location = new System.Drawing.Point(-1, 295);
+            this.ReportBtn.Location = new System.Drawing.Point(-1, 296);
             this.ReportBtn.Name = "ReportBtn";
             this.ReportBtn.Size = new System.Drawing.Size(72, 75);
             this.ReportBtn.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.ScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreBtn.Image = global::QuanLyHocSinh.Properties.Resources.ScoreButton_1_1;
             this.ScoreBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ScoreBtn.Location = new System.Drawing.Point(-1, 221);
+            this.ScoreBtn.Location = new System.Drawing.Point(-1, 222);
             this.ScoreBtn.Name = "ScoreBtn";
             this.ScoreBtn.Size = new System.Drawing.Size(72, 75);
             this.ScoreBtn.TabIndex = 3;
@@ -112,7 +112,7 @@
             this.ClassBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassBtn.Image = global::QuanLyHocSinh.Properties.Resources.ClassroomButton1;
             this.ClassBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClassBtn.Location = new System.Drawing.Point(-1, 147);
+            this.ClassBtn.Location = new System.Drawing.Point(-1, 148);
             this.ClassBtn.Name = "ClassBtn";
             this.ClassBtn.Size = new System.Drawing.Size(72, 75);
             this.ClassBtn.TabIndex = 2;
@@ -130,7 +130,7 @@
             this.AddStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddStudentBtn.Image = global::QuanLyHocSinh.Properties.Resources.AddStudentButton1;
             this.AddStudentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddStudentBtn.Location = new System.Drawing.Point(-1, -1);
+            this.AddStudentBtn.Location = new System.Drawing.Point(-1, 0);
             this.AddStudentBtn.Name = "AddStudentBtn";
             this.AddStudentBtn.Size = new System.Drawing.Size(72, 75);
             this.AddStudentBtn.TabIndex = 1;
@@ -148,7 +148,7 @@
             this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.Image = global::QuanLyHocSinh.Properties.Resources.SearchButton_1_1;
             this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SearchBtn.Location = new System.Drawing.Point(-1, 73);
+            this.SearchBtn.Location = new System.Drawing.Point(-1, 74);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(72, 75);
             this.SearchBtn.TabIndex = 0;

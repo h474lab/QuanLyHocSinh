@@ -112,7 +112,7 @@ namespace QuanLyHocSinh
 
         private void ComboBox_HocKy_MH_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentHocKy_MH = ComboBox_HocKy_HK.SelectedValue.ToString();
+            currentHocKy_MH = ComboBox_HocKy_MH.SelectedValue.ToString();
             LoadBCMon();
         }
 
@@ -145,7 +145,7 @@ namespace QuanLyHocSinh
 
         private void ComboBox_NamHoc_MH_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentNamHoc_MH = ComboBox_NamHoc_HK.SelectedValue.ToString();
+            currentNamHoc_MH = ComboBox_NamHoc_MH.SelectedValue.ToString();
             LoadBCMon();
         }
 
