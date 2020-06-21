@@ -46,12 +46,6 @@
             this.Label_HoTen = new System.Windows.Forms.Label();
             this.GroupBox_DSHocSinh = new System.Windows.Forms.GroupBox();
             this.GridView_DSHocSinh = new System.Windows.Forms.DataGridView();
-            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_ThaoTac = new System.Windows.Forms.GroupBox();
             this.Button_Sua = new System.Windows.Forms.Button();
             this.Button_Xoa = new System.Windows.Forms.Button();
@@ -64,6 +58,13 @@
             this.checkedProvider_DiaChi = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
             this.checkedProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThongTin.SuspendLayout();
             this.GroupBox_DSHocSinh.SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             this.TextBox_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_Email.Location = new System.Drawing.Point(84, 105);
             this.TextBox_Email.Name = "TextBox_Email";
             this.TextBox_Email.Size = new System.Drawing.Size(392, 20);
@@ -143,6 +145,7 @@
             // 
             this.TextBox_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_DiaChi.Location = new System.Drawing.Point(84, 75);
             this.TextBox_DiaChi.Name = "TextBox_DiaChi";
             this.TextBox_DiaChi.Size = new System.Drawing.Size(392, 20);
@@ -212,6 +215,7 @@
             // 
             this.TextBox_HoTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_HoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_HoTen.Location = new System.Drawing.Point(84, 17);
             this.TextBox_HoTen.Name = "TextBox_HoTen";
             this.TextBox_HoTen.Size = new System.Drawing.Size(392, 20);
@@ -252,64 +256,13 @@
             this.GioiTinh,
             this.NgaySinh,
             this.DiaChi,
-            this.Email});
+            this.Email,
+            this.GioiTinh_1});
             this.GridView_DSHocSinh.Location = new System.Drawing.Point(8, 19);
             this.GridView_DSHocSinh.Name = "GridView_DSHocSinh";
             this.GridView_DSHocSinh.RowHeadersWidth = 62;
             this.GridView_DSHocSinh.Size = new System.Drawing.Size(588, 305);
             this.GridView_DSHocSinh.TabIndex = 0;
-            // 
-            // MaHocSinh
-            // 
-            this.MaHocSinh.DataPropertyName = "MaHocSinh";
-            this.MaHocSinh.HeaderText = "Mã Học Sinh";
-            this.MaHocSinh.MinimumWidth = 8;
-            this.MaHocSinh.Name = "MaHocSinh";
-            this.MaHocSinh.Width = 150;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ và Tên";
-            this.HoTen.MinimumWidth = 8;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 150;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.MinimumWidth = 8;
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
-            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GioiTinh.Width = 150;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.MinimumWidth = 8;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            this.NgaySinh.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.MinimumWidth = 8;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 150;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 8;
-            this.Email.Name = "Email";
-            this.Email.Width = 150;
             // 
             // GroupBox_ThaoTac
             // 
@@ -326,35 +279,44 @@
             // 
             // Button_Sua
             // 
+            this.Button_Sua.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Sua.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
+            this.Button_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Sua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button_Sua.Location = new System.Drawing.Point(8, 58);
             this.Button_Sua.Name = "Button_Sua";
             this.Button_Sua.Size = new System.Drawing.Size(75, 30);
             this.Button_Sua.TabIndex = 2;
             this.Button_Sua.Text = "Chỉnh sửa";
-            this.Button_Sua.UseVisualStyleBackColor = true;
+            this.Button_Sua.UseVisualStyleBackColor = false;
             this.Button_Sua.Click += new System.EventHandler(this.Button_Sua_Click);
             // 
             // Button_Xoa
             // 
+            this.Button_Xoa.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Xoa.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
+            this.Button_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Xoa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button_Xoa.Location = new System.Drawing.Point(8, 97);
             this.Button_Xoa.Name = "Button_Xoa";
             this.Button_Xoa.Size = new System.Drawing.Size(75, 30);
             this.Button_Xoa.TabIndex = 1;
             this.Button_Xoa.Text = "Xóa";
-            this.Button_Xoa.UseVisualStyleBackColor = true;
+            this.Button_Xoa.UseVisualStyleBackColor = false;
             this.Button_Xoa.Click += new System.EventHandler(this.Button_Xoa_Click);
             // 
             // Button_Them
             // 
+            this.Button_Them.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Them.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
+            this.Button_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Them.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button_Them.Location = new System.Drawing.Point(8, 20);
             this.Button_Them.Name = "Button_Them";
             this.Button_Them.Size = new System.Drawing.Size(75, 30);
             this.Button_Them.TabIndex = 0;
             this.Button_Them.Text = "Thêm";
-            this.Button_Them.UseVisualStyleBackColor = true;
+            this.Button_Them.UseVisualStyleBackColor = false;
             this.Button_Them.Click += new System.EventHandler(this.Button_Them_Click);
             // 
             // errorProvider_HoTen
@@ -392,6 +354,64 @@
             // 
             this.checkedProvider_Email.ContainerControl = this;
             this.checkedProvider_Email.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_Email.Icon")));
+            // 
+            // MaHocSinh
+            // 
+            this.MaHocSinh.DataPropertyName = "MaHocSinh";
+            this.MaHocSinh.HeaderText = "Mã Học Sinh";
+            this.MaHocSinh.MinimumWidth = 8;
+            this.MaHocSinh.Name = "MaHocSinh";
+            this.MaHocSinh.Width = 150;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và Tên";
+            this.HoTen.MinimumWidth = 8;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 150;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GT";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.MinimumWidth = 8;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GioiTinh.Width = 150;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 8;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 150;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.MinimumWidth = 8;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 150;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 8;
+            this.Email.Name = "Email";
+            this.Email.Width = 150;
+            // 
+            // GioiTinh_1
+            // 
+            this.GioiTinh_1.DataPropertyName = "GioiTinh";
+            this.GioiTinh_1.HeaderText = "Giới Tính";
+            this.GioiTinh_1.Name = "GioiTinh_1";
+            this.GioiTinh_1.Visible = false;
             // 
             // Form_TiepNhanHS
             // 
@@ -456,9 +476,10 @@
         private System.Windows.Forms.ErrorProvider checkedProvider_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHocSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh_1;
     }
 }

@@ -26,7 +26,20 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
+            Init();
             SetButtonColor(6);
+        }
+
+        private void Init()
+        {
+            Main_Panel.Controls.Clear();
+            Form_GioiThieu form = new Form_GioiThieu();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            Main_Panel.Controls.Add(form);
+            form.Show();
         }
 
         private void SetButtonColor(int pos)
@@ -81,6 +94,13 @@ namespace QuanLyHocSinh
             SetButtonColor(1);
 
             Main_Panel.Controls.Clear();
+            Form_TraCuuHocSinh form = new Form_TraCuuHocSinh();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            Main_Panel.Controls.Add(form);
+            form.Show();
         }
 
         private void ClassBtn_Click(object sender, EventArgs e)

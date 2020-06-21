@@ -42,7 +42,6 @@ namespace DAO
                 SqlCommand command = new SqlCommand("INSERT_LOP", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@TENLOP", SqlDbType.NVarChar).Value = lop.TenLop;
-                command.Parameters.Add("@SISO", SqlDbType.TinyInt).Value = lop.SiSo;
                 command.Parameters.Add("@MAKHOILOP", SqlDbType.Decimal).Value = lop.MaKhoiLop;
                 try
                 {
@@ -67,7 +66,6 @@ namespace DAO
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = lop.MaLop;
                 command.Parameters.Add("@TENLOP", SqlDbType.NVarChar).Value = lop.TenLop;
-                command.Parameters.Add("@SISO", SqlDbType.TinyInt).Value = lop.SiSo;
                 command.Parameters.Add("@MAKHOILOP", SqlDbType.Decimal).Value = lop.MaKhoiLop;
                 try
                 {
@@ -105,14 +103,16 @@ namespace DAO
             }
             return result;
         }
-        public int GetSiSo(string malop)
+        public int GetSiSo(string malop, string mahk, string manh)
         {
-            int result = -1;
+            int result = 0;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("SELECT_SISO", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
                 try
                 {
                     command.Connection.Open();

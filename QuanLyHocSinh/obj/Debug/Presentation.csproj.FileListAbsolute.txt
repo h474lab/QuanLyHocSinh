@@ -23,3 +23,5 @@ C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\D
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\DT.exe.config
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\DA.pdb
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\DA.exe.config
+C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Form_TraCuuHocSinh.resources
+C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Form_GioiThieu.resources

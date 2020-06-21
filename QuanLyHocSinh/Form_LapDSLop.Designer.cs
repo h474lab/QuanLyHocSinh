@@ -57,6 +57,20 @@
             this.Label_NgaySinh = new System.Windows.Forms.Label();
             this.Label_MaHS = new System.Windows.Forms.Label();
             this.Label_HoTen = new System.Windows.Forms.Label();
+            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GTinh_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_Tittle.SuspendLayout();
             this.GroupBox_DSLop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).BeginInit();
@@ -102,12 +116,15 @@
             // Button_Xoa
             // 
             this.Button_Xoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Button_Xoa.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Xoa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button_Xoa.Location = new System.Drawing.Point(290, 166);
             this.Button_Xoa.Name = "Button_Xoa";
             this.Button_Xoa.Size = new System.Drawing.Size(149, 29);
             this.Button_Xoa.TabIndex = 1;
             this.Button_Xoa.Text = "Xóa khỏi danh sách lớp";
-            this.Button_Xoa.UseVisualStyleBackColor = true;
+            this.Button_Xoa.UseVisualStyleBackColor = false;
             this.Button_Xoa.Click += new System.EventHandler(this.Button_Xoa_Click);
             // 
             // GridView_DSLop
@@ -116,6 +133,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHocSinh,
+            this.HoTen,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.DiaChi,
+            this.Email,
+            this.GioiTinh_1});
             this.GridView_DSLop.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSLop.Name = "GridView_DSLop";
             this.GridView_DSLop.RowHeadersWidth = 62;
@@ -144,6 +169,9 @@
             // ComboBox_NamHoc
             // 
             this.ComboBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_NamHoc.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_NamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_NamHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_NamHoc.FormattingEnabled = true;
             this.ComboBox_NamHoc.Location = new System.Drawing.Point(404, 21);
             this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
@@ -163,6 +191,7 @@
             // TextBox_SiSo
             // 
             this.TextBox_SiSo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_SiSo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_SiSo.Location = new System.Drawing.Point(605, 22);
             this.TextBox_SiSo.Name = "TextBox_SiSo";
             this.TextBox_SiSo.ReadOnly = true;
@@ -183,6 +212,9 @@
             // ComboBox_HocKy
             // 
             this.ComboBox_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_HocKy.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_HocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_HocKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_HocKy.FormattingEnabled = true;
             this.ComboBox_HocKy.Location = new System.Drawing.Point(230, 22);
             this.ComboBox_HocKy.Name = "ComboBox_HocKy";
@@ -203,6 +235,9 @@
             // 
             this.ComboBox_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_Lop.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_Lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_Lop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_Lop.FormattingEnabled = true;
             this.ComboBox_Lop.Location = new System.Drawing.Point(43, 22);
             this.ComboBox_Lop.Name = "ComboBox_Lop";
@@ -234,12 +269,15 @@
             // Button_Them
             // 
             this.Button_Them.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Button_Them.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Them.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button_Them.Location = new System.Drawing.Point(167, 145);
             this.Button_Them.Name = "Button_Them";
             this.Button_Them.Size = new System.Drawing.Size(88, 29);
             this.Button_Them.TabIndex = 2;
             this.Button_Them.Text = "Thêm vào lớp";
-            this.Button_Them.UseVisualStyleBackColor = true;
+            this.Button_Them.UseVisualStyleBackColor = false;
             this.Button_Them.Click += new System.EventHandler(this.Button_Them_Click);
             // 
             // GridView_DSCho
@@ -247,6 +285,14 @@
             this.GridView_DSCho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSCho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSCho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHS,
+            this.HTen,
+            this.GTinh,
+            this.NSinh,
+            this.DChi,
+            this.Em,
+            this.GTinh_1});
             this.GridView_DSCho.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSCho.Name = "GridView_DSCho";
             this.GridView_DSCho.RowHeadersWidth = 62;
@@ -279,8 +325,10 @@
             this.DateTimePicker_NgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DateTimePicker_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePicker_NgaySinh.Location = new System.Drawing.Point(82, 79);
             this.DateTimePicker_NgaySinh.Name = "DateTimePicker_NgaySinh";
+            this.DateTimePicker_NgaySinh.RightToLeftLayout = true;
             this.DateTimePicker_NgaySinh.Size = new System.Drawing.Size(194, 20);
             this.DateTimePicker_NgaySinh.TabIndex = 14;
             // 
@@ -290,9 +338,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RadioButton_Nu.AutoSize = true;
+            this.RadioButton_Nu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RadioButton_Nu.Location = new System.Drawing.Point(161, 112);
             this.RadioButton_Nu.Name = "RadioButton_Nu";
-            this.RadioButton_Nu.Size = new System.Drawing.Size(39, 17);
+            this.RadioButton_Nu.Size = new System.Drawing.Size(38, 17);
             this.RadioButton_Nu.TabIndex = 13;
             this.RadioButton_Nu.TabStop = true;
             this.RadioButton_Nu.Text = "Nữ";
@@ -304,9 +353,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RadioButton_CaHai.AutoSize = true;
+            this.RadioButton_CaHai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RadioButton_CaHai.Location = new System.Drawing.Point(221, 111);
             this.RadioButton_CaHai.Name = "RadioButton_CaHai";
-            this.RadioButton_CaHai.Size = new System.Drawing.Size(55, 17);
+            this.RadioButton_CaHai.Size = new System.Drawing.Size(54, 17);
             this.RadioButton_CaHai.TabIndex = 12;
             this.RadioButton_CaHai.TabStop = true;
             this.RadioButton_CaHai.Text = "Cả hai";
@@ -318,9 +368,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RadioButton_Nam.AutoSize = true;
+            this.RadioButton_Nam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RadioButton_Nam.Location = new System.Drawing.Point(82, 112);
             this.RadioButton_Nam.Name = "RadioButton_Nam";
-            this.RadioButton_Nam.Size = new System.Drawing.Size(47, 17);
+            this.RadioButton_Nam.Size = new System.Drawing.Size(46, 17);
             this.RadioButton_Nam.TabIndex = 11;
             this.RadioButton_Nam.TabStop = true;
             this.RadioButton_Nam.Text = "Nam";
@@ -331,18 +382,22 @@
             this.Button_TimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Button_TimKiem.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_TimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Button_TimKiem.Location = new System.Drawing.Point(110, 143);
             this.Button_TimKiem.Name = "Button_TimKiem";
             this.Button_TimKiem.Size = new System.Drawing.Size(75, 32);
             this.Button_TimKiem.TabIndex = 10;
             this.Button_TimKiem.Text = "Tìm kiếm";
-            this.Button_TimKiem.UseVisualStyleBackColor = true;
+            this.Button_TimKiem.UseVisualStyleBackColor = false;
             // 
             // TextBox_HoTen
             // 
             this.TextBox_HoTen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_HoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_HoTen.Location = new System.Drawing.Point(82, 52);
             this.TextBox_HoTen.Name = "TextBox_HoTen";
             this.TextBox_HoTen.Size = new System.Drawing.Size(194, 20);
@@ -353,6 +408,7 @@
             this.TextBox_MaHS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_MaHS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_MaHS.Location = new System.Drawing.Point(82, 23);
             this.TextBox_MaHS.Name = "TextBox_MaHS";
             this.TextBox_MaHS.Size = new System.Drawing.Size(194, 20);
@@ -405,6 +461,108 @@
             this.Label_HoTen.Size = new System.Drawing.Size(61, 13);
             this.Label_HoTen.TabIndex = 0;
             this.Label_HoTen.Text = "Họ và Tên:";
+            // 
+            // MaHocSinh
+            // 
+            this.MaHocSinh.DataPropertyName = "MaHocSinh";
+            this.MaHocSinh.HeaderText = "Mã Học Sinh";
+            this.MaHocSinh.Name = "MaHocSinh";
+            this.MaHocSinh.ReadOnly = true;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và Tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GT";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // GioiTinh_1
+            // 
+            this.GioiTinh_1.DataPropertyName = "GioiTinh";
+            this.GioiTinh_1.HeaderText = "Giới Tính";
+            this.GioiTinh_1.Name = "GioiTinh_1";
+            this.GioiTinh_1.Visible = false;
+            // 
+            // MaHS
+            // 
+            this.MaHS.DataPropertyName = "MaHocSinh";
+            this.MaHS.HeaderText = "Mã Học Sinh";
+            this.MaHS.Name = "MaHS";
+            this.MaHS.ReadOnly = true;
+            // 
+            // HTen
+            // 
+            this.HTen.DataPropertyName = "HoTen";
+            this.HTen.HeaderText = "Họ và Tên";
+            this.HTen.Name = "HTen";
+            this.HTen.ReadOnly = true;
+            // 
+            // GTinh
+            // 
+            this.GTinh.DataPropertyName = "GT";
+            this.GTinh.HeaderText = "Giới Tính";
+            this.GTinh.Name = "GTinh";
+            this.GTinh.ReadOnly = true;
+            this.GTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NSinh
+            // 
+            this.NSinh.DataPropertyName = "NgaySinh";
+            this.NSinh.HeaderText = "Ngày Sinh";
+            this.NSinh.Name = "NSinh";
+            this.NSinh.ReadOnly = true;
+            // 
+            // DChi
+            // 
+            this.DChi.DataPropertyName = "DiaChi";
+            this.DChi.HeaderText = "Địa Chỉ";
+            this.DChi.Name = "DChi";
+            this.DChi.ReadOnly = true;
+            // 
+            // Em
+            // 
+            this.Em.DataPropertyName = "Email";
+            this.Em.HeaderText = "Email";
+            this.Em.Name = "Em";
+            this.Em.ReadOnly = true;
+            // 
+            // GTinh_1
+            // 
+            this.GTinh_1.DataPropertyName = "GioiTinh";
+            this.GTinh_1.HeaderText = "Giới Tính";
+            this.GTinh_1.Name = "GTinh_1";
+            this.GTinh_1.Visible = false;
             // 
             // Form_LapDSLop
             // 
@@ -464,5 +622,19 @@
         private System.Windows.Forms.RadioButton RadioButton_Nam;
         private System.Windows.Forms.ComboBox ComboBox_NamHoc;
         private System.Windows.Forms.Label Label_NamHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHocSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Em;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GTinh_1;
     }
 }

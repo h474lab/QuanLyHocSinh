@@ -16,11 +16,18 @@ namespace QuanLyHocSinh
         BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
         BUS_HocKy hocky = new BUS_HocKy();
         BUS_NamHoc namhoc = new BUS_NamHoc();
+        BUS_MonHoc monhoc = new BUS_MonHoc();
         BUS_BCHocKy bchocky = new BUS_BCHocKy();
+        BUS_BCMon bcmon = new BUS_BCMon();
 
-        string currentLop = "";
-        string currentHocKy = "";
-        string currentNamHoc = "";
+        string currentLop_HK = "";
+        string currentHocKy_HK = "";
+        string currentNamHoc_HK = "";
+
+        string currentLop_MH = "";
+        string currentHocKy_MH = "";
+        string currentNamHoc_MH = "";
+        string currentMonHoc_MH = "";
 
         public Form_BaoCaoTongKet()
         {
@@ -28,20 +35,20 @@ namespace QuanLyHocSinh
 
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
-            LoadDanhSachCacLop();
+            LoadDanhSachMonHoc();
+            LoadBCHocKy();
+            LoadBCMon();
         }
 
-        void LoadDanhSachCacLop()
+        void LoadBCHocKy()
         {
-            if (currentHocKy == "" | currentNamHoc == "") return;
-            GridView_BCHocKy.DataSource = bchocky.GetBCHocKy(currentHocKy, currentNamHoc);
+            if (currentHocKy_HK == "" | currentNamHoc_HK == "") return;
+            GridView_BCHocKy.DataSource = bchocky.GetBCHocKy(currentHocKy_HK, currentNamHoc_HK);
             GridView_BCHocKy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BCHocKy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_BCHocKy.ReadOnly = true;
             GridView_BCHocKy.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
 
-
-            // Edit theme
             GridView_BCHocKy.BorderStyle = BorderStyle.None;
             GridView_BCHocKy.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_BCHocKy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -54,6 +61,27 @@ namespace QuanLyHocSinh
             GridView_BCHocKy.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_BCHocKy.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+        void LoadBCMon()
+        {
+            if (currentHocKy_MH == "" | currentNamHoc_MH == "") return;
+            GridView_BCMonHoc.DataSource = bcmon.GetBCMon(currentHocKy_MH, currentNamHoc_MH, currentMonHoc_MH);
+            GridView_BCMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_BCMonHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_BCMonHoc.ReadOnly = true;
+            GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+
+            GridView_BCMonHoc.BorderStyle = BorderStyle.None;
+            GridView_BCMonHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_BCMonHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_BCMonHoc.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_BCMonHoc.BackgroundColor = Color.White;
+
+            GridView_BCMonHoc.EnableHeadersVisualStyles = false;
+            GridView_BCMonHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_BCMonHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_BCMonHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
 
         void LoadDanhSachHocKy()
         {
@@ -63,7 +91,7 @@ namespace QuanLyHocSinh
             ComboBox_HocKy_HK.DisplayMember = "TenHocKy";
             ComboBox_HocKy_HK.ValueMember = "MaHocKy";
 
-            currentHocKy = ComboBox_HocKy_HK.SelectedValue.ToString();
+            currentHocKy_HK = ComboBox_HocKy_HK.SelectedValue.ToString();
 
             ComboBox_HocKy_HK.SelectedValueChanged += ComboBox_HocKy_HK_SelectedValueChanged;
 
@@ -71,19 +99,21 @@ namespace QuanLyHocSinh
             ComboBox_HocKy_MH.DisplayMember = "TenHocKy";
             ComboBox_HocKy_MH.ValueMember = "MaHocKy";
 
-            currentHocKy = ComboBox_HocKy_MH.SelectedValue.ToString();
+            currentHocKy_MH = ComboBox_HocKy_MH.SelectedValue.ToString();
 
             ComboBox_HocKy_MH.SelectedValueChanged += ComboBox_HocKy_MH_SelectedValueChanged;
         }
 
         private void ComboBox_HocKy_HK_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentHocKy = ComboBox_HocKy_HK.SelectedValue.ToString();
+            currentHocKy_HK = ComboBox_HocKy_HK.SelectedValue.ToString();
+            LoadBCHocKy();
         }
 
         private void ComboBox_HocKy_MH_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentHocKy = ComboBox_HocKy_HK.SelectedValue.ToString();
+            currentHocKy_MH = ComboBox_HocKy_HK.SelectedValue.ToString();
+            LoadBCMon();
         }
 
         void LoadDanhSachNamHoc()
@@ -94,7 +124,7 @@ namespace QuanLyHocSinh
             ComboBox_NamHoc_HK.DisplayMember = "Full_NamHoc";
             ComboBox_NamHoc_HK.ValueMember = "MaNamHoc";
 
-            currentNamHoc = ComboBox_NamHoc_HK.SelectedValue.ToString();
+            currentNamHoc_HK = ComboBox_NamHoc_HK.SelectedValue.ToString();
 
             ComboBox_NamHoc_HK.SelectedValueChanged += ComboBox_NamHoc_HK_SelectedValueChanged;
 
@@ -102,20 +132,38 @@ namespace QuanLyHocSinh
             ComboBox_NamHoc_MH.DisplayMember = "Full_NamHoc";
             ComboBox_NamHoc_MH.ValueMember = "MaNamHoc";
 
-            currentNamHoc = ComboBox_NamHoc_MH.SelectedValue.ToString();
+            currentNamHoc_MH = ComboBox_NamHoc_MH.SelectedValue.ToString();
 
             ComboBox_NamHoc_MH.SelectedValueChanged += ComboBox_NamHoc_MH_SelectedValueChanged;
         }
 
         private void ComboBox_NamHoc_HK_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentNamHoc = ComboBox_NamHoc_HK.SelectedValue.ToString();
+            currentNamHoc_HK = ComboBox_NamHoc_HK.SelectedValue.ToString();
+            LoadBCHocKy();
         }
 
         private void ComboBox_NamHoc_MH_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentNamHoc = ComboBox_NamHoc_HK.SelectedValue.ToString();
+            currentNamHoc_MH = ComboBox_NamHoc_HK.SelectedValue.ToString();
+            LoadBCMon();
         }
 
+        void LoadDanhSachMonHoc()
+        {
+            ComboBox_MonHoc_MH.DataSource = monhoc.GetTatCaMonHoc();
+            ComboBox_MonHoc_MH.DisplayMember = "TenMonHoc";
+            ComboBox_MonHoc_MH.ValueMember = "MaMonHoc";
+
+            currentMonHoc_MH = ComboBox_NamHoc_MH.SelectedValue.ToString();
+
+            ComboBox_MonHoc_MH.SelectedValueChanged += ComboBox_MonHoc_MH_SelectedValueChanged;
+        }
+
+        private void ComboBox_MonHoc_MH_SelectedValueChanged(object sender, EventArgs e)
+        {
+            currentMonHoc_MH = ComboBox_MonHoc_MH.SelectedValue.ToString();
+            LoadBCMon();
+        }
     }
 }

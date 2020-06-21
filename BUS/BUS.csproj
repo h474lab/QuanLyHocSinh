@@ -46,12 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_BCMon.cs" />
     <Compile Include="BUS_BangDiemMon.cs" />
     <Compile Include="BUS_BCHocKy.cs" />
     <Compile Include="BUS_DanhSachLop.cs" />
     <Compile Include="BUS_Diem.cs" />
     <Compile Include="BUS_HocKy.cs" />
     <Compile Include="BUS_KhoiLop.cs" />
+    <Compile Include="BUS_LoaiKT.cs" />
     <Compile Include="BUS_MonHoc.cs" />
     <Compile Include="BUS_NamHoc.cs" />
     <Compile Include="BUS_ThamSo.cs" />

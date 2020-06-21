@@ -124,8 +124,8 @@ namespace QuanLyHocSinh
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row = GridView_DSLop.Rows[e.RowIndex];
-                currentMaLop = row.Cells[0].Value.ToString();
-                TextBox_TenLop.Text = row.Cells[1].Value.ToString();
+                currentMaLop = row.Cells[1].Value.ToString();
+                TextBox_TenLop.Text = row.Cells[2].Value.ToString();
                 ComboBox_KhoiLop.SelectedValue = int.Parse(row.Cells[3].Value.ToString());
             }
             catch (Exception ex)

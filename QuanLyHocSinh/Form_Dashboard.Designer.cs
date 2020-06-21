@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dashboard));
             this.OptionsPanel = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SettingsBtn = new System.Windows.Forms.Button();
             this.ReportBtn = new System.Windows.Forms.Button();
             this.ScoreBtn = new System.Windows.Forms.Button();
             this.ClassBtn = new System.Windows.Forms.Button();
             this.AddStudentBtn = new System.Windows.Forms.Button();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Main_Panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -162,8 +163,9 @@
             this.Main_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Main_Panel.Location = new System.Drawing.Point(76, -1);
-            this.Main_Panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Main_Panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Main_Panel.Location = new System.Drawing.Point(77, -1);
+            this.Main_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.Main_Panel.Name = "Main_Panel";
             this.Main_Panel.Size = new System.Drawing.Size(1122, 644);
             this.Main_Panel.TabIndex = 1;
@@ -183,7 +185,10 @@
             this.Controls.Add(this.Main_Panel);
             this.Controls.Add(this.OptionsPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Học Sinh";
             this.ResumeLayout(false);
 

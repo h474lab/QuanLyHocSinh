@@ -17,18 +17,26 @@ namespace BUS
         {
             return bchocky.GetSLDat(malop, mahk, manh);
         }
+        public double? GetTLDat(string malop, string mahk, string manh)
+        {
+            return bchocky.GetTLDat(malop, mahk, manh);
+        }
         public DataTable GetBCHocKy(string mahk, string manh)
         {
             DataTable result = danhsachlop.GetTatCaLop();
 
             result.Columns.Remove("MaKhoiLop");
+            result.Columns.Add("SiSo", typeof(int));
             result.Columns.Add("SoLuongDat", typeof(int));
-            result.Columns.Add("TiLe", typeof(float));
+            result.Columns.Add("TiLe", typeof(string));
 
             foreach(DataRow row in result.Rows)
             {
                 string malop = row["MaLop"].ToString();
+                row["SiSo"] = (object)danhsachlop.GetSiSo(malop, mahk, manh) ?? DBNull.Value;
                 row["SoLuongDat"] = (object)this.GetSLDat(malop, mahk, manh) ?? DBNull.Value;
+                row["TiLe"] = (object)this.GetTLDat(malop, mahk, manh).ToString() ?? DBNull.Value;
+                row["TiLe"] = row["TiLe"] + "%";
             }
 
             return result;

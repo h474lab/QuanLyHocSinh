@@ -102,13 +102,22 @@ namespace QuanLyHocSinh
         void LoadDanhSachHocSinh()
         {
             if (currentLop == "" | currentHocKy == "" | currentNamHoc == "") return;
-            GridView_DSLop.DataSource = hocsinh.GetHocSinh(currentLop, currentHocKy, currentNamHoc);
+            DataTable temp = hocsinh.GetHocSinh(currentLop, currentHocKy, currentNamHoc);
+            temp.Columns.Add("GT", typeof(string));
+            foreach(DataRow row in temp.Rows)
+            {
+                if (row["GioiTinh"].ToString() == "True")
+                    row["GT"] = "Nam";
+                else
+                    row["GT"] = "Nữ";
+            }
+            GridView_DSLop.DataSource = temp;
             GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
 
-            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop).ToString();
+            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop, currentHocKy, currentNamHoc).ToString();
 
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
 
@@ -143,7 +152,16 @@ namespace QuanLyHocSinh
 
         void LoadHocSinhCho()
         {
-            GridView_DSCho.DataSource = hocsinh.GetHocSinhCho(currentHocKy, currentNamHoc);
+            DataTable temp = hocsinh.GetHocSinhCho(currentHocKy, currentNamHoc);
+            temp.Columns.Add("GT", typeof(string));
+            foreach (DataRow row in temp.Rows)
+            {
+                if (row["GioiTinh"].ToString() == "True")
+                    row["GT"] = "Nam";
+                else
+                    row["GT"] = "Nữ";
+            }
+            GridView_DSCho.DataSource = temp;
             GridView_DSCho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSCho.ReadOnly = true;

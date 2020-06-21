@@ -31,31 +31,31 @@
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.TabPage_MonHoc = new System.Windows.Forms.TabPage();
-            this.GridView_BCMonHoc = new System.Windows.Forms.DataGridView();
-            this.Button_PrintBCMonHoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Label_HocKy_MH = new System.Windows.Forms.Label();
-            this.ComboBox_HocKy_MH = new System.Windows.Forms.ComboBox();
-            this.Label_MonHoc_MH = new System.Windows.Forms.Label();
-            this.ComboBox_MonHoc_MH = new System.Windows.Forms.ComboBox();
-            this.Label_NamHoc_MH = new System.Windows.Forms.Label();
             this.ComboBox_NamHoc_MH = new System.Windows.Forms.ComboBox();
+            this.Label_NamHoc_MH = new System.Windows.Forms.Label();
+            this.ComboBox_MonHoc_MH = new System.Windows.Forms.ComboBox();
+            this.Label_MonHoc_MH = new System.Windows.Forms.Label();
+            this.ComboBox_HocKy_MH = new System.Windows.Forms.ComboBox();
+            this.Label_HocKy_MH = new System.Windows.Forms.Label();
+            this.Button_PrintBCMonHoc = new System.Windows.Forms.Button();
+            this.GridView_BCMonHoc = new System.Windows.Forms.DataGridView();
             this.TabPage_HocKy = new System.Windows.Forms.TabPage();
-            this.GridView_BCHocKy = new System.Windows.Forms.DataGridView();
-            this.Button_PrintBCHocKy = new System.Windows.Forms.Button();
             this.GroupBox_BoLoc = new System.Windows.Forms.GroupBox();
-            this.Label_HocKy_HK = new System.Windows.Forms.Label();
-            this.ComboBox_HocKy_HK = new System.Windows.Forms.ComboBox();
-            this.Label_NamHoc_HK = new System.Windows.Forms.Label();
             this.ComboBox_NamHoc_HK = new System.Windows.Forms.ComboBox();
+            this.Label_NamHoc_HK = new System.Windows.Forms.Label();
+            this.ComboBox_HocKy_HK = new System.Windows.Forms.ComboBox();
+            this.Label_HocKy_HK = new System.Windows.Forms.Label();
+            this.Button_PrintBCHocKy = new System.Windows.Forms.Button();
+            this.GridView_BCHocKy = new System.Windows.Forms.DataGridView();
             this.TabControl_BaoCao = new System.Windows.Forms.TabControl();
             this.Panel_Title.SuspendLayout();
             this.TabPage_MonHoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCMonHoc)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCMonHoc)).BeginInit();
             this.TabPage_HocKy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCHocKy)).BeginInit();
             this.GroupBox_BoLoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCHocKy)).BeginInit();
             this.TabControl_BaoCao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,28 +91,6 @@
             this.TabPage_MonHoc.TabIndex = 1;
             this.TabPage_MonHoc.Text = "Báo Cáo Tổng Kết Môn Học";
             // 
-            // GridView_BCMonHoc
-            // 
-            this.GridView_BCMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridView_BCMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView_BCMonHoc.Location = new System.Drawing.Point(6, 62);
-            this.GridView_BCMonHoc.Name = "GridView_BCMonHoc";
-            this.GridView_BCMonHoc.RowHeadersWidth = 62;
-            this.GridView_BCMonHoc.Size = new System.Drawing.Size(779, 236);
-            this.GridView_BCMonHoc.TabIndex = 2;
-            // 
-            // Button_PrintBCMonHoc
-            // 
-            this.Button_PrintBCMonHoc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Button_PrintBCMonHoc.Location = new System.Drawing.Point(362, 304);
-            this.Button_PrintBCMonHoc.Name = "Button_PrintBCMonHoc";
-            this.Button_PrintBCMonHoc.Size = new System.Drawing.Size(75, 28);
-            this.Button_PrintBCMonHoc.TabIndex = 3;
-            this.Button_PrintBCMonHoc.Text = "In";
-            this.Button_PrintBCMonHoc.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -130,39 +108,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bộ lọc";
             // 
-            // Label_HocKy_MH
+            // ComboBox_NamHoc_MH
             // 
-            this.Label_HocKy_MH.AutoSize = true;
-            this.Label_HocKy_MH.Location = new System.Drawing.Point(7, 22);
-            this.Label_HocKy_MH.Name = "Label_HocKy_MH";
-            this.Label_HocKy_MH.Size = new System.Drawing.Size(44, 13);
-            this.Label_HocKy_MH.TabIndex = 1;
-            this.Label_HocKy_MH.Text = "Học kỳ:";
-            // 
-            // ComboBox_HocKy_MH
-            // 
-            this.ComboBox_HocKy_MH.FormattingEnabled = true;
-            this.ComboBox_HocKy_MH.Location = new System.Drawing.Point(58, 19);
-            this.ComboBox_HocKy_MH.Name = "ComboBox_HocKy_MH";
-            this.ComboBox_HocKy_MH.Size = new System.Drawing.Size(142, 21);
-            this.ComboBox_HocKy_MH.TabIndex = 3;
-            // 
-            // Label_MonHoc_MH
-            // 
-            this.Label_MonHoc_MH.AutoSize = true;
-            this.Label_MonHoc_MH.Location = new System.Drawing.Point(408, 22);
-            this.Label_MonHoc_MH.Name = "Label_MonHoc_MH";
-            this.Label_MonHoc_MH.Size = new System.Drawing.Size(52, 13);
-            this.Label_MonHoc_MH.TabIndex = 2;
-            this.Label_MonHoc_MH.Text = "Môn học:";
-            // 
-            // ComboBox_MonHoc_MH
-            // 
-            this.ComboBox_MonHoc_MH.FormattingEnabled = true;
-            this.ComboBox_MonHoc_MH.Location = new System.Drawing.Point(466, 19);
-            this.ComboBox_MonHoc_MH.Name = "ComboBox_MonHoc_MH";
-            this.ComboBox_MonHoc_MH.Size = new System.Drawing.Size(145, 21);
-            this.ComboBox_MonHoc_MH.TabIndex = 5;
+            this.ComboBox_NamHoc_MH.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_NamHoc_MH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_NamHoc_MH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_NamHoc_MH.FormattingEnabled = true;
+            this.ComboBox_NamHoc_MH.Location = new System.Drawing.Point(262, 19);
+            this.ComboBox_NamHoc_MH.Name = "ComboBox_NamHoc_MH";
+            this.ComboBox_NamHoc_MH.Size = new System.Drawing.Size(141, 21);
+            this.ComboBox_NamHoc_MH.TabIndex = 7;
             // 
             // Label_NamHoc_MH
             // 
@@ -173,13 +128,67 @@
             this.Label_NamHoc_MH.TabIndex = 6;
             this.Label_NamHoc_MH.Text = "Năm học:";
             // 
-            // ComboBox_NamHoc_MH
+            // ComboBox_MonHoc_MH
             // 
-            this.ComboBox_NamHoc_MH.FormattingEnabled = true;
-            this.ComboBox_NamHoc_MH.Location = new System.Drawing.Point(262, 19);
-            this.ComboBox_NamHoc_MH.Name = "ComboBox_NamHoc_MH";
-            this.ComboBox_NamHoc_MH.Size = new System.Drawing.Size(141, 21);
-            this.ComboBox_NamHoc_MH.TabIndex = 7;
+            this.ComboBox_MonHoc_MH.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_MonHoc_MH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_MonHoc_MH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_MonHoc_MH.FormattingEnabled = true;
+            this.ComboBox_MonHoc_MH.Location = new System.Drawing.Point(466, 19);
+            this.ComboBox_MonHoc_MH.Name = "ComboBox_MonHoc_MH";
+            this.ComboBox_MonHoc_MH.Size = new System.Drawing.Size(145, 21);
+            this.ComboBox_MonHoc_MH.TabIndex = 5;
+            // 
+            // Label_MonHoc_MH
+            // 
+            this.Label_MonHoc_MH.AutoSize = true;
+            this.Label_MonHoc_MH.Location = new System.Drawing.Point(408, 22);
+            this.Label_MonHoc_MH.Name = "Label_MonHoc_MH";
+            this.Label_MonHoc_MH.Size = new System.Drawing.Size(52, 13);
+            this.Label_MonHoc_MH.TabIndex = 2;
+            this.Label_MonHoc_MH.Text = "Môn học:";
+            // 
+            // ComboBox_HocKy_MH
+            // 
+            this.ComboBox_HocKy_MH.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_HocKy_MH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_HocKy_MH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_HocKy_MH.FormattingEnabled = true;
+            this.ComboBox_HocKy_MH.Location = new System.Drawing.Point(58, 19);
+            this.ComboBox_HocKy_MH.Name = "ComboBox_HocKy_MH";
+            this.ComboBox_HocKy_MH.Size = new System.Drawing.Size(142, 21);
+            this.ComboBox_HocKy_MH.TabIndex = 3;
+            // 
+            // Label_HocKy_MH
+            // 
+            this.Label_HocKy_MH.AutoSize = true;
+            this.Label_HocKy_MH.Location = new System.Drawing.Point(7, 22);
+            this.Label_HocKy_MH.Name = "Label_HocKy_MH";
+            this.Label_HocKy_MH.Size = new System.Drawing.Size(44, 13);
+            this.Label_HocKy_MH.TabIndex = 1;
+            this.Label_HocKy_MH.Text = "Học kỳ:";
+            // 
+            // Button_PrintBCMonHoc
+            // 
+            this.Button_PrintBCMonHoc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Button_PrintBCMonHoc.Location = new System.Drawing.Point(362, 304);
+            this.Button_PrintBCMonHoc.Name = "Button_PrintBCMonHoc";
+            this.Button_PrintBCMonHoc.Size = new System.Drawing.Size(75, 28);
+            this.Button_PrintBCMonHoc.TabIndex = 3;
+            this.Button_PrintBCMonHoc.Text = "In";
+            this.Button_PrintBCMonHoc.UseVisualStyleBackColor = true;
+            // 
+            // GridView_BCMonHoc
+            // 
+            this.GridView_BCMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView_BCMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_BCMonHoc.Location = new System.Drawing.Point(6, 62);
+            this.GridView_BCMonHoc.Name = "GridView_BCMonHoc";
+            this.GridView_BCMonHoc.RowHeadersWidth = 62;
+            this.GridView_BCMonHoc.Size = new System.Drawing.Size(779, 236);
+            this.GridView_BCMonHoc.TabIndex = 2;
             // 
             // TabPage_HocKy
             // 
@@ -193,28 +202,6 @@
             this.TabPage_HocKy.Size = new System.Drawing.Size(791, 343);
             this.TabPage_HocKy.TabIndex = 0;
             this.TabPage_HocKy.Text = "Báo Cáo Tổng Kết Học Kỳ";
-            // 
-            // GridView_BCHocKy
-            // 
-            this.GridView_BCHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridView_BCHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView_BCHocKy.Location = new System.Drawing.Point(6, 62);
-            this.GridView_BCHocKy.Name = "GridView_BCHocKy";
-            this.GridView_BCHocKy.RowHeadersWidth = 62;
-            this.GridView_BCHocKy.Size = new System.Drawing.Size(779, 236);
-            this.GridView_BCHocKy.TabIndex = 0;
-            // 
-            // Button_PrintBCHocKy
-            // 
-            this.Button_PrintBCHocKy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Button_PrintBCHocKy.Location = new System.Drawing.Point(362, 304);
-            this.Button_PrintBCHocKy.Name = "Button_PrintBCHocKy";
-            this.Button_PrintBCHocKy.Size = new System.Drawing.Size(75, 28);
-            this.Button_PrintBCHocKy.TabIndex = 1;
-            this.Button_PrintBCHocKy.Text = "In";
-            this.Button_PrintBCHocKy.UseVisualStyleBackColor = true;
             // 
             // GroupBox_BoLoc
             // 
@@ -231,22 +218,15 @@
             this.GroupBox_BoLoc.TabStop = false;
             this.GroupBox_BoLoc.Text = "Bộ lọc";
             // 
-            // Label_HocKy_HK
+            // ComboBox_NamHoc_HK
             // 
-            this.Label_HocKy_HK.AutoSize = true;
-            this.Label_HocKy_HK.Location = new System.Drawing.Point(6, 20);
-            this.Label_HocKy_HK.Name = "Label_HocKy_HK";
-            this.Label_HocKy_HK.Size = new System.Drawing.Size(44, 13);
-            this.Label_HocKy_HK.TabIndex = 1;
-            this.Label_HocKy_HK.Text = "Học kỳ:";
-            // 
-            // ComboBox_HocKy_HK
-            // 
-            this.ComboBox_HocKy_HK.FormattingEnabled = true;
-            this.ComboBox_HocKy_HK.Location = new System.Drawing.Point(57, 17);
-            this.ComboBox_HocKy_HK.Name = "ComboBox_HocKy_HK";
-            this.ComboBox_HocKy_HK.Size = new System.Drawing.Size(163, 21);
-            this.ComboBox_HocKy_HK.TabIndex = 3;
+            this.ComboBox_NamHoc_HK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_NamHoc_HK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_NamHoc_HK.FormattingEnabled = true;
+            this.ComboBox_NamHoc_HK.Location = new System.Drawing.Point(285, 17);
+            this.ComboBox_NamHoc_HK.Name = "ComboBox_NamHoc_HK";
+            this.ComboBox_NamHoc_HK.Size = new System.Drawing.Size(166, 21);
+            this.ComboBox_NamHoc_HK.TabIndex = 7;
             // 
             // Label_NamHoc_HK
             // 
@@ -257,13 +237,46 @@
             this.Label_NamHoc_HK.TabIndex = 6;
             this.Label_NamHoc_HK.Text = "Năm học:";
             // 
-            // ComboBox_NamHoc_HK
+            // ComboBox_HocKy_HK
             // 
-            this.ComboBox_NamHoc_HK.FormattingEnabled = true;
-            this.ComboBox_NamHoc_HK.Location = new System.Drawing.Point(285, 17);
-            this.ComboBox_NamHoc_HK.Name = "ComboBox_NamHoc_HK";
-            this.ComboBox_NamHoc_HK.Size = new System.Drawing.Size(166, 21);
-            this.ComboBox_NamHoc_HK.TabIndex = 7;
+            this.ComboBox_HocKy_HK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_HocKy_HK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_HocKy_HK.FormattingEnabled = true;
+            this.ComboBox_HocKy_HK.Location = new System.Drawing.Point(57, 17);
+            this.ComboBox_HocKy_HK.Name = "ComboBox_HocKy_HK";
+            this.ComboBox_HocKy_HK.Size = new System.Drawing.Size(163, 21);
+            this.ComboBox_HocKy_HK.TabIndex = 3;
+            // 
+            // Label_HocKy_HK
+            // 
+            this.Label_HocKy_HK.AutoSize = true;
+            this.Label_HocKy_HK.Location = new System.Drawing.Point(6, 20);
+            this.Label_HocKy_HK.Name = "Label_HocKy_HK";
+            this.Label_HocKy_HK.Size = new System.Drawing.Size(44, 13);
+            this.Label_HocKy_HK.TabIndex = 1;
+            this.Label_HocKy_HK.Text = "Học kỳ:";
+            // 
+            // Button_PrintBCHocKy
+            // 
+            this.Button_PrintBCHocKy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Button_PrintBCHocKy.Location = new System.Drawing.Point(362, 304);
+            this.Button_PrintBCHocKy.Name = "Button_PrintBCHocKy";
+            this.Button_PrintBCHocKy.Size = new System.Drawing.Size(75, 28);
+            this.Button_PrintBCHocKy.TabIndex = 1;
+            this.Button_PrintBCHocKy.Text = "In";
+            this.Button_PrintBCHocKy.UseVisualStyleBackColor = true;
+            // 
+            // GridView_BCHocKy
+            // 
+            this.GridView_BCHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView_BCHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_BCHocKy.Location = new System.Drawing.Point(6, 62);
+            this.GridView_BCHocKy.Name = "GridView_BCHocKy";
+            this.GridView_BCHocKy.RowHeadersWidth = 62;
+            this.GridView_BCHocKy.Size = new System.Drawing.Size(779, 236);
+            this.GridView_BCHocKy.TabIndex = 0;
             // 
             // TabControl_BaoCao
             // 
@@ -291,13 +304,13 @@
             this.Panel_Title.ResumeLayout(false);
             this.Panel_Title.PerformLayout();
             this.TabPage_MonHoc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCMonHoc)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCMonHoc)).EndInit();
             this.TabPage_HocKy.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCHocKy)).EndInit();
             this.GroupBox_BoLoc.ResumeLayout(false);
             this.GroupBox_BoLoc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_BCHocKy)).EndInit();
             this.TabControl_BaoCao.ResumeLayout(false);
             this.ResumeLayout(false);
 

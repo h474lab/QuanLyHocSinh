@@ -198,5 +198,20 @@ namespace QuanLyHocSinh
             }
             LoadBangDiem();
         }
+
+        private void ComboBox_Lop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox_MonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox_HocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

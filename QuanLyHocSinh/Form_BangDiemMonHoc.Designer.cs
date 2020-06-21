@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.GroupBox_BoLoc = new System.Windows.Forms.GroupBox();
@@ -99,6 +99,8 @@
             // ComboBox_NamHoc
             // 
             this.ComboBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_NamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_NamHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_NamHoc.FormattingEnabled = true;
             this.ComboBox_NamHoc.Location = new System.Drawing.Point(381, 17);
             this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
@@ -118,21 +120,27 @@
             // ComboBox_MonHoc
             // 
             this.ComboBox_MonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_MonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_MonHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_MonHoc.FormattingEnabled = true;
             this.ComboBox_MonHoc.Location = new System.Drawing.Point(585, 17);
             this.ComboBox_MonHoc.Name = "ComboBox_MonHoc";
             this.ComboBox_MonHoc.Size = new System.Drawing.Size(145, 21);
             this.ComboBox_MonHoc.TabIndex = 5;
+            this.ComboBox_MonHoc.SelectedIndexChanged += new System.EventHandler(this.ComboBox_MonHoc_SelectedIndexChanged);
             // 
             // ComboBox_Lop
             // 
             this.ComboBox_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_Lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_Lop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_Lop.FormattingEnabled = true;
             this.ComboBox_Lop.Location = new System.Drawing.Point(39, 17);
             this.ComboBox_Lop.Name = "ComboBox_Lop";
             this.ComboBox_Lop.Size = new System.Drawing.Size(110, 21);
             this.ComboBox_Lop.TabIndex = 4;
+            this.ComboBox_Lop.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Lop_SelectedIndexChanged);
             // 
             // Label_MonHoc
             // 
@@ -156,11 +164,14 @@
             // ComboBox_HocKy
             // 
             this.ComboBox_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_HocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_HocKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_HocKy.FormattingEnabled = true;
             this.ComboBox_HocKy.Location = new System.Drawing.Point(209, 17);
             this.ComboBox_HocKy.Name = "ComboBox_HocKy";
             this.ComboBox_HocKy.Size = new System.Drawing.Size(111, 21);
             this.ComboBox_HocKy.TabIndex = 3;
+            this.ComboBox_HocKy.SelectedIndexChanged += new System.EventHandler(this.ComboBox_HocKy_SelectedIndexChanged);
             // 
             // Label_HocKy
             // 
@@ -207,9 +218,9 @@
             // MaHocSinh
             // 
             this.MaHocSinh.DataPropertyName = "MaHocSinh";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaHocSinh.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaHocSinh.DefaultCellStyle = dataGridViewCellStyle1;
             this.MaHocSinh.HeaderText = "Mã Học Sinh";
             this.MaHocSinh.MinimumWidth = 8;
             this.MaHocSinh.Name = "MaHocSinh";
@@ -228,8 +239,8 @@
             // D15
             // 
             this.D15.DataPropertyName = "1";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.D15.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.D15.DefaultCellStyle = dataGridViewCellStyle2;
             this.D15.HeaderText = "Điểm 15 Phút";
             this.D15.MinimumWidth = 8;
             this.D15.Name = "D15";
@@ -238,8 +249,8 @@
             // D1T
             // 
             this.D1T.DataPropertyName = "2";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.D1T.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.D1T.DefaultCellStyle = dataGridViewCellStyle3;
             this.D1T.HeaderText = "Điểm 1 Tiết";
             this.D1T.MinimumWidth = 8;
             this.D1T.Name = "D1T";
@@ -248,8 +259,8 @@
             // DHK
             // 
             this.DHK.DataPropertyName = "3";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DHK.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DHK.DefaultCellStyle = dataGridViewCellStyle4;
             this.DHK.HeaderText = "Điểm Học Kỳ";
             this.DHK.MinimumWidth = 8;
             this.DHK.Name = "DHK";
@@ -258,8 +269,8 @@
             // DiemTB
             // 
             this.DiemTB.DataPropertyName = "DiemTB";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DiemTB.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DiemTB.DefaultCellStyle = dataGridViewCellStyle5;
             this.DiemTB.HeaderText = "Điểm Trung Bình";
             this.DiemTB.MinimumWidth = 8;
             this.DiemTB.Name = "DiemTB";

@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -25,12 +26,32 @@ namespace QuanLyHocSinh
         private void Initialize()
         {
             RadioButton_Nam.Checked = true;
+
+            ThamSo ts = thamso.GetThamSo();
+
+            DateTime min = DateTime.Today.AddYears(-ts.TuoiToiDa);
+            DateTime max = DateTime.Today.AddYears(-ts.TuoiToiThieu);
+            DateTimePicker_NgaySinh.MinDate = min;
+            DateTimePicker_NgaySinh.MaxDate = max;
         }
 
         private void LoadThongTin()
         {
+            DataTable temp = hocsinh.GetTatCaHS();
+            temp.Columns.Add("GT", typeof(string));
+            foreach(DataRow row in temp.Rows)
+            {
+                if (row["GioiTinh"].ToString() == "True")
+                {
+                    row["GT"] = "Nam";
+                }
+                else
+                {
+                    row["GT"] = "Nữ";
+                }
+            }
             // Load Danh sach Hoc sinh
-            GridView_DSHocSinh.DataSource = hocsinh.GetTatCaHS();
+            GridView_DSHocSinh.DataSource = temp;
             GridView_DSHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocSinh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSHocSinh.ReadOnly = true;
@@ -58,6 +79,7 @@ namespace QuanLyHocSinh
                 row = GridView_DSHocSinh.Rows[e.RowIndex];
                 currentMaHS = row.Cells[0].Value.ToString();
                 TextBox_HoTen.Text = row.Cells[1].Value.ToString();
+                Console.WriteLine(row.Cells[2].Value.ToString());
                 if (row.Cells[2].Value.ToString() == "True")
                     RadioButton_Nam.Checked = true;
                 else

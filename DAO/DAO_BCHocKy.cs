@@ -41,5 +41,35 @@ namespace DAO
             }
             return result;
         }
+        public double? GetTLDat(string malop, string mahk, string manh)
+        {
+            double result = 0;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_TILEDAT", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MALOP", SqlDbType.Decimal).Value = long.Parse(malop);
+                command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataReader rd = command.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        if (rd["TLDat"] != DBNull.Value)
+                            result = int.Parse(rd["TLDat"].ToString());
+                        rd.Close();
+                    }
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
     }
 }

@@ -61,10 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS_LoaiKT.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DAO_BangDiemMon.cs" />
     <Compile Include="DAO_BCHocKy.cs" />
+    <Compile Include="DAO_BCMon.cs" />
     <Compile Include="DAO_DanhSachLop.cs" />
     <Compile Include="DAO_Diem.cs" />
     <Compile Include="DAO_HocKy.cs" />
