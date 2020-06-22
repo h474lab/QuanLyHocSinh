@@ -18,10 +18,14 @@ namespace QuanLyHocSinh
         BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
         BUS_KhoiLop khoilop = new BUS_KhoiLop();
         BUS_MonHoc monhoc = new BUS_MonHoc();
+        BUS_HocKy hocky = new BUS_HocKy();
+        BUS_NamHoc namhoc = new BUS_NamHoc();
 
         string currentMaLop = "";
         string currentKhoiLop = "";
         string currentMaMH = "";
+        string currentHocKy = "";
+        string currentNamHoc = "";
         public Form_ThietLap()
         {
             InitializeComponent();
@@ -31,6 +35,8 @@ namespace QuanLyHocSinh
             LoadDSLop();
             LoadDSMonHoc();
             LoadDSKhoi();
+            LoadDSHocKy();
+            LoadDSNamHoc();
         }
         void SetQuyDinh()
         {
@@ -100,7 +106,7 @@ namespace QuanLyHocSinh
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -130,7 +136,84 @@ namespace QuanLyHocSinh
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoadDSHocKy()
+        {
+            GridView_DSHocKy.DataSource = hocky.GetTatCaHK();
+            GridView_DSHocKy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSHocKy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSHocKy.ReadOnly = true;
+            GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSHocKy.CellClick += GridView_DSHocKy_CellClick;
+
+            // Edit theme
+            GridView_DSHocKy.BorderStyle = BorderStyle.None;
+            GridView_DSHocKy.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_DSHocKy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSHocKy.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_DSHocKy.BackgroundColor = Color.White;
+
+            GridView_DSHocKy.EnableHeadersVisualStyles = false;
+            GridView_DSHocKy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSHocKy.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_DSHocKy.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void GridView_DSHocKy_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = GridView_DSHocKy.Rows[e.RowIndex];
+                currentHocKy = row.Cells[0].Value.ToString();
+                TextBox_TenHocKy.Text = row.Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoadDSNamHoc()
+        {
+            GridView_DSNamHoc.DataSource = namhoc.GetTatCaNH();
+            GridView_DSNamHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSNamHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSNamHoc.ReadOnly = true;
+            GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSNamHoc.CellClick += GridView_DSNamHoc_CellClick;
+
+            // Edit theme
+            GridView_DSNamHoc.BorderStyle = BorderStyle.None;
+            GridView_DSNamHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            GridView_DSNamHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSNamHoc.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            GridView_DSNamHoc.BackgroundColor = Color.White;
+
+            GridView_DSNamHoc.EnableHeadersVisualStyles = false;
+            GridView_DSNamHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSNamHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            GridView_DSNamHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void GridView_DSNamHoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = GridView_DSNamHoc.Rows[e.RowIndex];
+                currentNamHoc = row.Cells[0].Value.ToString();
+                TextBox_NamBD.Text = row.Cells[1].Value.ToString();
+                TextBox_NamKT.Text = row.Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -224,6 +307,53 @@ namespace QuanLyHocSinh
             if (currentMaMH == "") return;
             monhoc.Delete_MonHoc(currentMaMH);
             LoadDSMonHoc();
+        }
+
+        private void Button_ThemHK_Click(object sender, EventArgs e)
+        {
+            hocky.Insert_HocKy(TextBox_TenHocKy.Text);
+            LoadDSHocKy();
+        }
+
+        private void Button_SuaHK_Click(object sender, EventArgs e)
+        {
+            if (currentHocKy == "") return;
+            HocKy hk = new HocKy();
+            hk.MaHocKy = long.Parse(currentHocKy);
+            hk.TenHocKy = TextBox_TenHocKy.Text;
+            hocky.Update_HocKy(hk);
+            LoadDSHocKy();
+        }
+
+        private void Button_XoaHK_Click(object sender, EventArgs e)
+        {
+            if (currentHocKy == "") return;
+            hocky.Delete_HocKy(currentHocKy);
+            LoadDSHocKy();
+        }
+
+        private void Button_ThemNH_Click(object sender, EventArgs e)
+        {
+            namhoc.Insert_NamHoc(TextBox_NamBD.Text, TextBox_NamKT.Text);
+            LoadDSNamHoc();
+        }
+
+        private void Button_SuaNH_Click(object sender, EventArgs e)
+        {
+            if (currentNamHoc == "") return;
+            NamHoc nh = new NamHoc();
+            nh.MaNamHoc = long.Parse(currentNamHoc);
+            nh.NamBD = int.Parse(TextBox_NamBD.Text);
+            nh.NamKT = int.Parse(TextBox_NamKT.Text);
+            namhoc.Update_NamHoc(nh);
+            LoadDSNamHoc();
+        }
+
+        private void Button_XoaNH_Click(object sender, EventArgs e)
+        {
+            if (currentNamHoc == "") return;
+            namhoc.Delete_NamHoc(currentNamHoc);
+            LoadDSNamHoc();
         }
     }
 }

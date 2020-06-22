@@ -32,15 +32,11 @@
             this.Title = new System.Windows.Forms.Label();
             this.GroupBox_DSHocSinh = new System.Windows.Forms.GroupBox();
             this.GridView_DSHocSinh = new System.Windows.Forms.DataGridView();
-            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TextBox_HoTen = new System.Windows.Forms.TextBox();
+            this.Label_HoTen = new System.Windows.Forms.Label();
+            this.ComboBox_NamHoc = new System.Windows.Forms.ComboBox();
             this.Panel_Tittle.SuspendLayout();
             this.GroupBox_DSHocSinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSHocSinh)).BeginInit();
@@ -85,77 +81,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView_DSHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHocSinh,
-            this.HoTen,
-            this.GioiTinh,
-            this.NgaySinh,
-            this.DiaChi,
-            this.Email});
             this.GridView_DSHocSinh.Location = new System.Drawing.Point(8, 19);
             this.GridView_DSHocSinh.Name = "GridView_DSHocSinh";
             this.GridView_DSHocSinh.RowHeadersWidth = 62;
             this.GridView_DSHocSinh.Size = new System.Drawing.Size(871, 353);
             this.GridView_DSHocSinh.TabIndex = 0;
             // 
-            // MaHocSinh
-            // 
-            this.MaHocSinh.DataPropertyName = "MaHocSinh";
-            this.MaHocSinh.HeaderText = "Mã Học Sinh";
-            this.MaHocSinh.MinimumWidth = 8;
-            this.MaHocSinh.Name = "MaHocSinh";
-            this.MaHocSinh.Width = 150;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ và Tên";
-            this.HoTen.MinimumWidth = 8;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 150;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.MinimumWidth = 8;
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
-            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GioiTinh.Width = 150;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.MinimumWidth = 8;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            this.NgaySinh.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.MinimumWidth = 8;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 150;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 8;
-            this.Email.Name = "Email";
-            this.Email.Width = 150;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.ComboBox_NamHoc);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.TextBox_HoTen);
+            this.groupBox1.Controls.Add(this.Label_HoTen);
             this.groupBox1.Location = new System.Drawing.Point(12, 77);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(887, 52);
@@ -166,18 +105,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 22);
+            this.label1.Location = new System.Drawing.Point(284, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Họ và Tên:";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Năm học:";
             // 
-            // textBox1
+            // TextBox_HoTen
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 1;
+            this.TextBox_HoTen.Location = new System.Drawing.Point(70, 19);
+            this.TextBox_HoTen.Name = "TextBox_HoTen";
+            this.TextBox_HoTen.Size = new System.Drawing.Size(199, 20);
+            this.TextBox_HoTen.TabIndex = 1;
+            // 
+            // Label_HoTen
+            // 
+            this.Label_HoTen.AutoSize = true;
+            this.Label_HoTen.Location = new System.Drawing.Point(3, 22);
+            this.Label_HoTen.Name = "Label_HoTen";
+            this.Label_HoTen.Size = new System.Drawing.Size(61, 13);
+            this.Label_HoTen.TabIndex = 0;
+            this.Label_HoTen.Text = "Họ và Tên:";
+            // 
+            // ComboBox_NamHoc
+            // 
+            this.ComboBox_NamHoc.FormattingEnabled = true;
+            this.ComboBox_NamHoc.Location = new System.Drawing.Point(343, 18);
+            this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
+            this.ComboBox_NamHoc.Size = new System.Drawing.Size(175, 21);
+            this.ComboBox_NamHoc.TabIndex = 3;
             // 
             // Form_TraCuuHocSinh
             // 
@@ -206,14 +162,10 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.GroupBox GroupBox_DSHocSinh;
         private System.Windows.Forms.DataGridView GridView_DSHocSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHocSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TextBox_HoTen;
+        private System.Windows.Forms.Label Label_HoTen;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox ComboBox_NamHoc;
     }
 }

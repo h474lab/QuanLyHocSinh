@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +15,18 @@ namespace BUS
         public DataTable GetTatCaNH()
         {
             return namhoc.GetTatCaNamHoc();
+        }
+        public void Insert_NamHoc(string nambd, string namkt)
+        {
+            namhoc.Insert_NamHoc(nambd, namkt);
+        }
+        public void Update_NamHoc(NamHoc nh)
+        {
+            namhoc.Update_HocKy(nh);
+        }
+        public void Delete_NamHoc(string manh)
+        {
+            namhoc.Delete_NamHoc(manh);
         }
     }
 }

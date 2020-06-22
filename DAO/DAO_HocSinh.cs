@@ -81,8 +81,9 @@ namespace DAO
                     result = 1;
                     command.Connection.Close();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                     command.Connection.Close();
                 }
             }

@@ -58,10 +58,12 @@
             this.checkedProvider_DiaChi = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
             this.checkedProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SoThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -251,10 +253,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_DSHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SoThuTu,
             this.MaHocSinh,
             this.HoTen,
             this.GioiTinh,
             this.NgaySinh,
+            this.NgaySinh_1,
             this.DiaChi,
             this.Email,
             this.GioiTinh_1});
@@ -355,12 +359,20 @@
             this.checkedProvider_Email.ContainerControl = this;
             this.checkedProvider_Email.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_Email.Icon")));
             // 
+            // SoThuTu
+            // 
+            this.SoThuTu.DataPropertyName = "SoThuTu";
+            this.SoThuTu.HeaderText = "Số Thứ Tự";
+            this.SoThuTu.Name = "SoThuTu";
+            this.SoThuTu.ReadOnly = true;
+            // 
             // MaHocSinh
             // 
             this.MaHocSinh.DataPropertyName = "MaHocSinh";
             this.MaHocSinh.HeaderText = "Mã Học Sinh";
             this.MaHocSinh.MinimumWidth = 8;
             this.MaHocSinh.Name = "MaHocSinh";
+            this.MaHocSinh.Visible = false;
             this.MaHocSinh.Width = 150;
             // 
             // HoTen
@@ -388,7 +400,15 @@
             this.NgaySinh.MinimumWidth = 8;
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Visible = false;
             this.NgaySinh.Width = 150;
+            // 
+            // NgaySinh_1
+            // 
+            this.NgaySinh_1.DataPropertyName = "NS";
+            this.NgaySinh_1.HeaderText = "Ngày Sinh";
+            this.NgaySinh_1.Name = "NgaySinh_1";
+            this.NgaySinh_1.ReadOnly = true;
             // 
             // DiaChi
             // 
@@ -474,10 +494,12 @@
         private System.Windows.Forms.ErrorProvider checkedProvider_DiaChi;
         private System.Windows.Forms.ErrorProvider errorProvider_Email;
         private System.Windows.Forms.ErrorProvider checkedProvider_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHocSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh_1;

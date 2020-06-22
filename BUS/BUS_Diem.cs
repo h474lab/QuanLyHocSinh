@@ -27,5 +27,9 @@ namespace BUS
         {
             diem.Delete_Diem(mahs, malop, mahk, manh, mamh, makt);
         }
+        public double? GetDiemTBHK(string mahs, string manh, string tenhk)
+        {
+            return diem.GetDiemTBHK(mahs, manh, tenhk);
+        }
     }
 }

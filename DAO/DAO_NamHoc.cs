@@ -34,5 +34,74 @@ namespace DAO
             }
             return result;
         }
+        public int? Insert_NamHoc(string nambd, string namkt)
+        {
+            int? result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("INSERT_NAMHOC", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@NAMBD", SqlDbType.Int).Value = int.Parse(nambd);
+                command.Parameters.Add("@NAMKT", SqlDbType.Int).Value = int.Parse(namkt);
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    result = 1;
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
+        public int? Update_HocKy(NamHoc namhoc)
+        {
+            int? result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("UPDATE_NAMHOC", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = namhoc.MaNamHoc;
+                command.Parameters.Add("@NAMBD", SqlDbType.Int).Value = namhoc.NamBD;
+                command.Parameters.Add("@NAMKT", SqlDbType.Int).Value = namhoc.NamKT;
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    result = 1;
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
+        public int? Delete_NamHoc(string manh)
+        {
+            int? result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("DELETE_NAMHOC", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    result = 1;
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
     }
 }

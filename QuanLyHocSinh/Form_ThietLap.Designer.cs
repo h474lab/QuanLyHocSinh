@@ -48,8 +48,9 @@
             this.Label_Tuoi = new System.Windows.Forms.Label();
             this.GroupBox_DSMonHoc = new System.Windows.Forms.GroupBox();
             this.GridView_DSMonHoc = new System.Windows.Forms.DataGridView();
+            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_DSLop = new System.Windows.Forms.GroupBox();
-            this.GridView_DSLop = new System.Windows.Forms.DataGridView();
             this.GroupBox_ThaoTacLop = new System.Windows.Forms.GroupBox();
             this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
             this.Button_XoaLop = new System.Windows.Forms.Button();
@@ -64,20 +65,48 @@
             this.Label_TenMonHoc = new System.Windows.Forms.Label();
             this.Button_ThemMon = new System.Windows.Forms.Button();
             this.Button_SuaMon = new System.Windows.Forms.Button();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupBox_HocKy = new System.Windows.Forms.GroupBox();
+            this.GridView_DSHocKy = new System.Windows.Forms.DataGridView();
             this.MaKhoiLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridView_DSLop = new System.Windows.Forms.DataGridView();
+            this.GroupBox_NamHoc = new System.Windows.Forms.GroupBox();
+            this.GridView_DSNamHoc = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupBox_ThaoTacHocKy = new System.Windows.Forms.GroupBox();
+            this.TextBox_TenHocKy = new System.Windows.Forms.TextBox();
+            this.Button_XoaHK = new System.Windows.Forms.Button();
+            this.Label_TenHocKy = new System.Windows.Forms.Label();
+            this.Button_ThemHK = new System.Windows.Forms.Button();
+            this.Button_SuaHK = new System.Windows.Forms.Button();
+            this.GroupBox_ThaoTacNamHoc = new System.Windows.Forms.GroupBox();
+            this.TextBox_NamBD = new System.Windows.Forms.TextBox();
+            this.Button_XoaNH = new System.Windows.Forms.Button();
+            this.Label_NamHoc = new System.Windows.Forms.Label();
+            this.Button_ThemNH = new System.Windows.Forms.Button();
+            this.Button_SuaNH = new System.Windows.Forms.Button();
+            this.TextBox_NamKT = new System.Windows.Forms.TextBox();
+            this.Label_3 = new System.Windows.Forms.Label();
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThayDoiQD.SuspendLayout();
             this.GroupBox_DSMonHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSMonHoc)).BeginInit();
             this.GroupBox_DSLop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).BeginInit();
             this.GroupBox_ThaoTacLop.SuspendLayout();
             this.GroupBox_ThaoTacMonHoc.SuspendLayout();
+            this.GroupBox_HocKy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSHocKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).BeginInit();
+            this.GroupBox_NamHoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSNamHoc)).BeginInit();
+            this.GroupBox_ThaoTacHocKy.SuspendLayout();
+            this.GroupBox_ThaoTacNamHoc.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -258,12 +287,12 @@
             // 
             // GroupBox_DSMonHoc
             // 
-            this.GroupBox_DSMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.GroupBox_DSMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox_DSMonHoc.Controls.Add(this.GridView_DSMonHoc);
-            this.GroupBox_DSMonHoc.Location = new System.Drawing.Point(6, 292);
+            this.GroupBox_DSMonHoc.Location = new System.Drawing.Point(276, 69);
             this.GroupBox_DSMonHoc.Name = "GroupBox_DSMonHoc";
-            this.GroupBox_DSMonHoc.Size = new System.Drawing.Size(536, 141);
+            this.GroupBox_DSMonHoc.Size = new System.Drawing.Size(266, 265);
             this.GroupBox_DSMonHoc.TabIndex = 5;
             this.GroupBox_DSMonHoc.TabStop = false;
             this.GroupBox_DSMonHoc.Text = "Danh sách môn học";
@@ -280,8 +309,27 @@
             this.GridView_DSMonHoc.Location = new System.Drawing.Point(6, 19);
             this.GridView_DSMonHoc.Name = "GridView_DSMonHoc";
             this.GridView_DSMonHoc.RowHeadersWidth = 62;
-            this.GridView_DSMonHoc.Size = new System.Drawing.Size(524, 116);
+            this.GridView_DSMonHoc.Size = new System.Drawing.Size(254, 240);
             this.GridView_DSMonHoc.TabIndex = 6;
+            // 
+            // MaMonHoc
+            // 
+            this.MaMonHoc.DataPropertyName = "MaMonHoc";
+            this.MaMonHoc.HeaderText = "Mã Môn Học";
+            this.MaMonHoc.MinimumWidth = 8;
+            this.MaMonHoc.Name = "MaMonHoc";
+            this.MaMonHoc.ReadOnly = true;
+            this.MaMonHoc.Visible = false;
+            this.MaMonHoc.Width = 150;
+            // 
+            // TenMonHoc
+            // 
+            this.TenMonHoc.DataPropertyName = "TenMonHoc";
+            this.TenMonHoc.HeaderText = "Tên Môn Học";
+            this.TenMonHoc.MinimumWidth = 8;
+            this.TenMonHoc.Name = "TenMonHoc";
+            this.TenMonHoc.ReadOnly = true;
+            this.TenMonHoc.Width = 150;
             // 
             // GroupBox_DSLop
             // 
@@ -291,27 +339,10 @@
             this.GroupBox_DSLop.Controls.Add(this.GridView_DSLop);
             this.GroupBox_DSLop.Location = new System.Drawing.Point(6, 69);
             this.GroupBox_DSLop.Name = "GroupBox_DSLop";
-            this.GroupBox_DSLop.Size = new System.Drawing.Size(536, 217);
+            this.GroupBox_DSLop.Size = new System.Drawing.Size(266, 265);
             this.GroupBox_DSLop.TabIndex = 7;
             this.GroupBox_DSLop.TabStop = false;
             this.GroupBox_DSLop.Text = "Danh sách lớp";
-            // 
-            // GridView_DSLop
-            // 
-            this.GridView_DSLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridView_DSLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView_DSLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLop,
-            this.TenLop,
-            this.SiSo,
-            this.MaKhoiLop});
-            this.GridView_DSLop.Location = new System.Drawing.Point(6, 19);
-            this.GridView_DSLop.Name = "GridView_DSLop";
-            this.GridView_DSLop.RowHeadersWidth = 62;
-            this.GridView_DSLop.Size = new System.Drawing.Size(524, 192);
-            this.GridView_DSLop.TabIndex = 6;
             // 
             // GroupBox_ThaoTacLop
             // 
@@ -476,34 +507,31 @@
             this.Button_SuaMon.UseVisualStyleBackColor = false;
             this.Button_SuaMon.Click += new System.EventHandler(this.Button_SuaMon_Click);
             // 
-            // MaLop
+            // GroupBox_HocKy
             // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.MinimumWidth = 8;
-            this.MaLop.Name = "MaLop";
-            this.MaLop.ReadOnly = true;
-            this.MaLop.Visible = false;
-            this.MaLop.Width = 150;
+            this.GroupBox_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GroupBox_HocKy.Controls.Add(this.GridView_DSHocKy);
+            this.GroupBox_HocKy.Location = new System.Drawing.Point(6, 340);
+            this.GroupBox_HocKy.Name = "GroupBox_HocKy";
+            this.GroupBox_HocKy.Size = new System.Drawing.Size(266, 265);
+            this.GroupBox_HocKy.TabIndex = 8;
+            this.GroupBox_HocKy.TabStop = false;
+            this.GroupBox_HocKy.Text = "Danh sách học kỳ";
             // 
-            // TenLop
+            // GridView_DSHocKy
             // 
-            this.TenLop.DataPropertyName = "TenLop";
-            this.TenLop.HeaderText = "Tên Lớp";
-            this.TenLop.MinimumWidth = 8;
-            this.TenLop.Name = "TenLop";
-            this.TenLop.ReadOnly = true;
-            this.TenLop.Width = 150;
-            // 
-            // SiSo
-            // 
-            this.SiSo.DataPropertyName = "SiSo";
-            this.SiSo.HeaderText = "Sĩ Số";
-            this.SiSo.MinimumWidth = 8;
-            this.SiSo.Name = "SiSo";
-            this.SiSo.ReadOnly = true;
-            this.SiSo.Visible = false;
-            this.SiSo.Width = 150;
+            this.GridView_DSHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView_DSHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSHocKy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.GridView_DSHocKy.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSHocKy.Name = "GridView_DSHocKy";
+            this.GridView_DSHocKy.RowHeadersWidth = 62;
+            this.GridView_DSHocKy.Size = new System.Drawing.Size(254, 240);
+            this.GridView_DSHocKy.TabIndex = 6;
             // 
             // MaKhoiLop
             // 
@@ -515,31 +543,296 @@
             this.MaKhoiLop.Visible = false;
             this.MaKhoiLop.Width = 150;
             // 
-            // MaMonHoc
+            // SiSo
             // 
-            this.MaMonHoc.DataPropertyName = "MaMonHoc";
-            this.MaMonHoc.HeaderText = "Mã Môn Học";
-            this.MaMonHoc.MinimumWidth = 8;
-            this.MaMonHoc.Name = "MaMonHoc";
-            this.MaMonHoc.ReadOnly = true;
-            this.MaMonHoc.Visible = false;
-            this.MaMonHoc.Width = 150;
+            this.SiSo.DataPropertyName = "SiSo";
+            this.SiSo.HeaderText = "Sĩ Số";
+            this.SiSo.MinimumWidth = 8;
+            this.SiSo.Name = "SiSo";
+            this.SiSo.ReadOnly = true;
+            this.SiSo.Visible = false;
+            this.SiSo.Width = 150;
             // 
-            // TenMonHoc
+            // TenLop
             // 
-            this.TenMonHoc.DataPropertyName = "TenMonHoc";
-            this.TenMonHoc.HeaderText = "Tên Môn Học";
-            this.TenMonHoc.MinimumWidth = 8;
-            this.TenMonHoc.Name = "TenMonHoc";
-            this.TenMonHoc.ReadOnly = true;
-            this.TenMonHoc.Width = 150;
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Tên Lớp";
+            this.TenLop.MinimumWidth = 8;
+            this.TenLop.Name = "TenLop";
+            this.TenLop.ReadOnly = true;
+            this.TenLop.Width = 150;
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.MinimumWidth = 8;
+            this.MaLop.Name = "MaLop";
+            this.MaLop.ReadOnly = true;
+            this.MaLop.Visible = false;
+            this.MaLop.Width = 150;
+            // 
+            // GridView_DSLop
+            // 
+            this.GridView_DSLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView_DSLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLop,
+            this.TenLop,
+            this.SiSo,
+            this.MaKhoiLop});
+            this.GridView_DSLop.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSLop.Name = "GridView_DSLop";
+            this.GridView_DSLop.RowHeadersWidth = 62;
+            this.GridView_DSLop.Size = new System.Drawing.Size(254, 240);
+            this.GridView_DSLop.TabIndex = 6;
+            // 
+            // GroupBox_NamHoc
+            // 
+            this.GroupBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_NamHoc.Controls.Add(this.GridView_DSNamHoc);
+            this.GroupBox_NamHoc.Location = new System.Drawing.Point(276, 340);
+            this.GroupBox_NamHoc.Name = "GroupBox_NamHoc";
+            this.GroupBox_NamHoc.Size = new System.Drawing.Size(266, 265);
+            this.GroupBox_NamHoc.TabIndex = 9;
+            this.GroupBox_NamHoc.TabStop = false;
+            this.GroupBox_NamHoc.Text = "Danh sách năm học";
+            // 
+            // GridView_DSNamHoc
+            // 
+            this.GridView_DSNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView_DSNamHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_DSNamHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.NamKT});
+            this.GridView_DSNamHoc.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSNamHoc.Name = "GridView_DSNamHoc";
+            this.GridView_DSNamHoc.RowHeadersWidth = 62;
+            this.GridView_DSNamHoc.Size = new System.Drawing.Size(254, 240);
+            this.GridView_DSNamHoc.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaHocKy";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Học Kỳ";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenHocKy";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Học Kỳ";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "MaNamHoc";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mã Năm Học";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NamBD";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Năm Bắt Đầu";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // NamKT
+            // 
+            this.NamKT.DataPropertyName = "NamKT";
+            this.NamKT.HeaderText = "Năm Kết Thúc";
+            this.NamKT.Name = "NamKT";
+            this.NamKT.ReadOnly = true;
+            // 
+            // GroupBox_ThaoTacHocKy
+            // 
+            this.GroupBox_ThaoTacHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_ThaoTacHocKy.Controls.Add(this.TextBox_TenHocKy);
+            this.GroupBox_ThaoTacHocKy.Controls.Add(this.Button_XoaHK);
+            this.GroupBox_ThaoTacHocKy.Controls.Add(this.Label_TenHocKy);
+            this.GroupBox_ThaoTacHocKy.Controls.Add(this.Button_ThemHK);
+            this.GroupBox_ThaoTacHocKy.Controls.Add(this.Button_SuaHK);
+            this.GroupBox_ThaoTacHocKy.Location = new System.Drawing.Point(548, 439);
+            this.GroupBox_ThaoTacHocKy.Name = "GroupBox_ThaoTacHocKy";
+            this.GroupBox_ThaoTacHocKy.Size = new System.Drawing.Size(240, 80);
+            this.GroupBox_ThaoTacHocKy.TabIndex = 21;
+            this.GroupBox_ThaoTacHocKy.TabStop = false;
+            this.GroupBox_ThaoTacHocKy.Text = "Thao tác học kỳ";
+            // 
+            // TextBox_TenHocKy
+            // 
+            this.TextBox_TenHocKy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_TenHocKy.Location = new System.Drawing.Point(86, 22);
+            this.TextBox_TenHocKy.Name = "TextBox_TenHocKy";
+            this.TextBox_TenHocKy.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_TenHocKy.TabIndex = 19;
+            // 
+            // Button_XoaHK
+            // 
+            this.Button_XoaHK.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_XoaHK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_XoaHK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Button_XoaHK.Location = new System.Drawing.Point(161, 48);
+            this.Button_XoaHK.Name = "Button_XoaHK";
+            this.Button_XoaHK.Size = new System.Drawing.Size(75, 23);
+            this.Button_XoaHK.TabIndex = 20;
+            this.Button_XoaHK.Text = "Xóa";
+            this.Button_XoaHK.UseVisualStyleBackColor = false;
+            this.Button_XoaHK.Click += new System.EventHandler(this.Button_XoaHK_Click);
+            // 
+            // Label_TenHocKy
+            // 
+            this.Label_TenHocKy.AutoSize = true;
+            this.Label_TenHocKy.Location = new System.Drawing.Point(6, 25);
+            this.Label_TenHocKy.Name = "Label_TenHocKy";
+            this.Label_TenHocKy.Size = new System.Drawing.Size(64, 13);
+            this.Label_TenHocKy.TabIndex = 18;
+            this.Label_TenHocKy.Text = "Tên học kỳ:";
+            // 
+            // Button_ThemHK
+            // 
+            this.Button_ThemHK.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_ThemHK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ThemHK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Button_ThemHK.Location = new System.Drawing.Point(7, 48);
+            this.Button_ThemHK.Name = "Button_ThemHK";
+            this.Button_ThemHK.Size = new System.Drawing.Size(75, 23);
+            this.Button_ThemHK.TabIndex = 18;
+            this.Button_ThemHK.Text = "Thêm";
+            this.Button_ThemHK.UseVisualStyleBackColor = false;
+            this.Button_ThemHK.Click += new System.EventHandler(this.Button_ThemHK_Click);
+            // 
+            // Button_SuaHK
+            // 
+            this.Button_SuaHK.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_SuaHK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_SuaHK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Button_SuaHK.Location = new System.Drawing.Point(84, 48);
+            this.Button_SuaHK.Name = "Button_SuaHK";
+            this.Button_SuaHK.Size = new System.Drawing.Size(75, 23);
+            this.Button_SuaHK.TabIndex = 19;
+            this.Button_SuaHK.Text = "Chỉnh sửa";
+            this.Button_SuaHK.UseVisualStyleBackColor = false;
+            this.Button_SuaHK.Click += new System.EventHandler(this.Button_SuaHK_Click);
+            // 
+            // GroupBox_ThaoTacNamHoc
+            // 
+            this.GroupBox_ThaoTacNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Label_3);
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.TextBox_NamKT);
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.TextBox_NamBD);
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Button_XoaNH);
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Label_NamHoc);
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Button_ThemNH);
+            this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Button_SuaNH);
+            this.GroupBox_ThaoTacNamHoc.Location = new System.Drawing.Point(548, 525);
+            this.GroupBox_ThaoTacNamHoc.Name = "GroupBox_ThaoTacNamHoc";
+            this.GroupBox_ThaoTacNamHoc.Size = new System.Drawing.Size(240, 80);
+            this.GroupBox_ThaoTacNamHoc.TabIndex = 22;
+            this.GroupBox_ThaoTacNamHoc.TabStop = false;
+            this.GroupBox_ThaoTacNamHoc.Text = "Thao tác năm học";
+            // 
+            // TextBox_NamBD
+            // 
+            this.TextBox_NamBD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_NamBD.Location = new System.Drawing.Point(86, 22);
+            this.TextBox_NamBD.Name = "TextBox_NamBD";
+            this.TextBox_NamBD.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_NamBD.TabIndex = 19;
+            // 
+            // Button_XoaNH
+            // 
+            this.Button_XoaNH.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_XoaNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_XoaNH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Button_XoaNH.Location = new System.Drawing.Point(161, 48);
+            this.Button_XoaNH.Name = "Button_XoaNH";
+            this.Button_XoaNH.Size = new System.Drawing.Size(75, 23);
+            this.Button_XoaNH.TabIndex = 20;
+            this.Button_XoaNH.Text = "Xóa";
+            this.Button_XoaNH.UseVisualStyleBackColor = false;
+            this.Button_XoaNH.Click += new System.EventHandler(this.Button_XoaNH_Click);
+            // 
+            // Label_NamHoc
+            // 
+            this.Label_NamHoc.AutoSize = true;
+            this.Label_NamHoc.Location = new System.Drawing.Point(6, 25);
+            this.Label_NamHoc.Name = "Label_NamHoc";
+            this.Label_NamHoc.Size = new System.Drawing.Size(53, 13);
+            this.Label_NamHoc.TabIndex = 18;
+            this.Label_NamHoc.Text = "Năm học:";
+            // 
+            // Button_ThemNH
+            // 
+            this.Button_ThemNH.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_ThemNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ThemNH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Button_ThemNH.Location = new System.Drawing.Point(7, 48);
+            this.Button_ThemNH.Name = "Button_ThemNH";
+            this.Button_ThemNH.Size = new System.Drawing.Size(75, 23);
+            this.Button_ThemNH.TabIndex = 18;
+            this.Button_ThemNH.Text = "Thêm";
+            this.Button_ThemNH.UseVisualStyleBackColor = false;
+            this.Button_ThemNH.Click += new System.EventHandler(this.Button_ThemNH_Click);
+            // 
+            // Button_SuaNH
+            // 
+            this.Button_SuaNH.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Button_SuaNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_SuaNH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Button_SuaNH.Location = new System.Drawing.Point(84, 48);
+            this.Button_SuaNH.Name = "Button_SuaNH";
+            this.Button_SuaNH.Size = new System.Drawing.Size(75, 23);
+            this.Button_SuaNH.TabIndex = 19;
+            this.Button_SuaNH.Text = "Chỉnh sửa";
+            this.Button_SuaNH.UseVisualStyleBackColor = false;
+            this.Button_SuaNH.Click += new System.EventHandler(this.Button_SuaNH_Click);
+            // 
+            // TextBox_NamKT
+            // 
+            this.TextBox_NamKT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_NamKT.Location = new System.Drawing.Point(179, 23);
+            this.TextBox_NamKT.Name = "TextBox_NamKT";
+            this.TextBox_NamKT.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_NamKT.TabIndex = 21;
+            // 
+            // Label_3
+            // 
+            this.Label_3.AutoSize = true;
+            this.Label_3.Location = new System.Drawing.Point(152, 29);
+            this.Label_3.Name = "Label_3";
+            this.Label_3.Size = new System.Drawing.Size(10, 13);
+            this.Label_3.TabIndex = 22;
+            this.Label_3.Text = "-";
             // 
             // Form_ThietLap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(796, 440);
+            this.ClientSize = new System.Drawing.Size(796, 617);
+            this.Controls.Add(this.GroupBox_ThaoTacNamHoc);
+            this.Controls.Add(this.GroupBox_ThaoTacHocKy);
+            this.Controls.Add(this.GroupBox_NamHoc);
+            this.Controls.Add(this.GroupBox_HocKy);
             this.Controls.Add(this.GroupBox_ThaoTacMonHoc);
             this.Controls.Add(this.GroupBox_ThaoTacLop);
             this.Controls.Add(this.GroupBox_DSLop);
@@ -555,11 +848,19 @@
             this.GroupBox_DSMonHoc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSMonHoc)).EndInit();
             this.GroupBox_DSLop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).EndInit();
             this.GroupBox_ThaoTacLop.ResumeLayout(false);
             this.GroupBox_ThaoTacLop.PerformLayout();
             this.GroupBox_ThaoTacMonHoc.ResumeLayout(false);
             this.GroupBox_ThaoTacMonHoc.PerformLayout();
+            this.GroupBox_HocKy.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSHocKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).EndInit();
+            this.GroupBox_NamHoc.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSNamHoc)).EndInit();
+            this.GroupBox_ThaoTacHocKy.ResumeLayout(false);
+            this.GroupBox_ThaoTacHocKy.PerformLayout();
+            this.GroupBox_ThaoTacNamHoc.ResumeLayout(false);
+            this.GroupBox_ThaoTacNamHoc.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -579,7 +880,6 @@
         private System.Windows.Forms.GroupBox GroupBox_DSMonHoc;
         private System.Windows.Forms.DataGridView GridView_DSMonHoc;
         private System.Windows.Forms.GroupBox GroupBox_DSLop;
-        private System.Windows.Forms.DataGridView GridView_DSLop;
         private System.Windows.Forms.GroupBox GroupBox_ThaoTacLop;
         private System.Windows.Forms.Button Button_ThemLop;
         private System.Windows.Forms.Button Button_XoaLop;
@@ -602,11 +902,35 @@
         private System.Windows.Forms.ComboBox ComboBox_KhoiLop;
         private System.Windows.Forms.TextBox TextBox_DiemDatMon;
         private System.Windows.Forms.Label Label_DiemDatMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
+        private System.Windows.Forms.DataGridView GridView_DSLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn SiSo;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoiLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
+        private System.Windows.Forms.GroupBox GroupBox_HocKy;
+        private System.Windows.Forms.DataGridView GridView_DSHocKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.GroupBox GroupBox_NamHoc;
+        private System.Windows.Forms.DataGridView GridView_DSNamHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamKT;
+        private System.Windows.Forms.GroupBox GroupBox_ThaoTacHocKy;
+        private System.Windows.Forms.TextBox TextBox_TenHocKy;
+        private System.Windows.Forms.Button Button_XoaHK;
+        private System.Windows.Forms.Label Label_TenHocKy;
+        private System.Windows.Forms.Button Button_ThemHK;
+        private System.Windows.Forms.Button Button_SuaHK;
+        private System.Windows.Forms.GroupBox GroupBox_ThaoTacNamHoc;
+        private System.Windows.Forms.Label Label_3;
+        private System.Windows.Forms.TextBox TextBox_NamKT;
+        private System.Windows.Forms.TextBox TextBox_NamBD;
+        private System.Windows.Forms.Button Button_XoaNH;
+        private System.Windows.Forms.Label Label_NamHoc;
+        private System.Windows.Forms.Button Button_ThemNH;
+        private System.Windows.Forms.Button Button_SuaNH;
     }
 }

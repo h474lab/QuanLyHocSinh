@@ -132,5 +132,36 @@ namespace DAO
             }
             return result;
         }
+        public double? GetDiemTBHK(string mahs, string manh, string tenhk)
+        {
+            double? result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_DIEMTBHK", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                command.Parameters.Add("@TENHOCKY", SqlDbType.NVarChar).Value = tenhk;
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataReader rd = command.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        if (rd["DiemTBHocKy"] != DBNull.Value)
+                            result = double.Parse(rd["DiemTBHocKy"].ToString());
+                        rd.Close();
+                    }
+                    command.Connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    command.Connection.Close();
+                }
+            }
+            Console.WriteLine("Result: " + result.ToString());
+            return result;
+        }
     }
 }

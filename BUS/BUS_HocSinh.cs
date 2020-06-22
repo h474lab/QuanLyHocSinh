@@ -13,6 +13,7 @@ namespace BUS
     public class BUS_HocSinh
     {
         DAO_HocSinh hocsinh = new DAO_HocSinh();
+        BUS_Diem diem = new BUS_Diem();
         public DataTable GetTatCaHS()
         {
             return hocsinh.GetTatCaHocSinh();
@@ -44,6 +45,38 @@ namespace BUS
         public void Delete_HSTrongLop(string mahs, string malop, string mahk, string manh)
         {
             hocsinh.Delete_HSTrongLop(mahs, malop, mahk, manh);
+        }
+        public DataTable GetThongTinTraCuu(string hoten, string manh)
+        {
+            DataTable result = this.GetTatCaHS();
+
+            result.Columns.Remove("GioiTinh");
+            result.Columns.Remove("NgaySinh");
+            result.Columns.Remove("DiaChi");
+            result.Columns.Remove("Email");
+
+            result.Columns.Add("TBHKI", typeof(float));
+            result.Columns.Add("TBHKII", typeof(float));
+
+            result.Columns.Add("SoThuTu", typeof(int));
+            int stt = 1;
+            foreach (DataRow row in result.Rows)
+            {
+                if (row["HoTen"].ToString().Substring(0, hoten.Length) != hoten)
+                {
+                    row.Delete();
+                    continue;
+                }
+
+                string mahs = row["MaHocSinh"].ToString();
+                row["SoThuTu"] = stt;
+                stt++;
+
+                row["TBHKI"] = (object)diem.GetDiemTBHK(mahs, manh, "Học kỳ 1") ?? DBNull.Value;
+                row["TBHKII"] = (object)diem.GetDiemTBHK(mahs, manh, "Học kỳ 2") ?? DBNull.Value;
+            }
+
+            return result;
         }
     }
 }

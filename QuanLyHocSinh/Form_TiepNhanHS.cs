@@ -27,20 +27,22 @@ namespace QuanLyHocSinh
         {
             RadioButton_Nam.Checked = true;
 
-            ThamSo ts = thamso.GetThamSo();
-
-            DateTime min = DateTime.Today.AddYears(-ts.TuoiToiDa);
-            DateTime max = DateTime.Today.AddYears(-ts.TuoiToiThieu);
-            DateTimePicker_NgaySinh.MinDate = min;
-            DateTimePicker_NgaySinh.MaxDate = max;
+            DateTimePicker_NgaySinh.Format = DateTimePickerFormat.Custom;
+            DateTimePicker_NgaySinh.CustomFormat = "dd/MM/yyyy";
         }
 
         private void LoadThongTin()
         {
             DataTable temp = hocsinh.GetTatCaHS();
             temp.Columns.Add("GT", typeof(string));
+            temp.Columns.Add("SoThuTu", typeof(int));
+            temp.Columns.Add("NS", typeof(string));
+
+            int stt = 1;
             foreach(DataRow row in temp.Rows)
             {
+                row["SoThuTu"] = stt;
+                stt++;
                 if (row["GioiTinh"].ToString() == "True")
                 {
                     row["GT"] = "Nam";
@@ -49,6 +51,7 @@ namespace QuanLyHocSinh
                 {
                     row["GT"] = "Nữ";
                 }
+                row["NS"] = DateTime.Parse(row["NgaySinh"].ToString()).ToString("dd/MM/yyyy");
             }
             // Load Danh sach Hoc sinh
             GridView_DSHocSinh.DataSource = temp;
@@ -78,13 +81,15 @@ namespace QuanLyHocSinh
                 DataGridViewRow row = new DataGridViewRow();
                 row = GridView_DSHocSinh.Rows[e.RowIndex];
                 currentMaHS = row.Cells[0].Value.ToString();
+                //Console.WriteLine(row.Cells[0].Value.ToString());
                 TextBox_HoTen.Text = row.Cells[1].Value.ToString();
-                Console.WriteLine(row.Cells[2].Value.ToString());
+                //Console.WriteLine(row.Cells[2].Value.ToString());
                 if (row.Cells[2].Value.ToString() == "True")
                     RadioButton_Nam.Checked = true;
                 else
                     RadioButton_Nu.Checked = true;
                 DateTimePicker_NgaySinh.Value = DateTime.Parse(row.Cells[3].Value.ToString());
+                //Console.WriteLine(row.Cells[5].Value.ToString());
                 TextBox_DiaChi.Text = row.Cells[4].Value.ToString();
                 TextBox_Email.Text = row.Cells[5].Value.ToString();
             } catch (Exception ex)
@@ -136,7 +141,8 @@ namespace QuanLyHocSinh
 
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
-            if (!checkThongTin()) return;
+            //if (!checkThongTin()) return;
+            Console.WriteLine(currentMaHS);
             if (currentMaHS == "") return;
             hocsinh.Delete_HocSinh(currentMaHS);
             currentMaHS = "";

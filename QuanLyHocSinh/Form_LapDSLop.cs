@@ -104,8 +104,13 @@ namespace QuanLyHocSinh
             if (currentLop == "" | currentHocKy == "" | currentNamHoc == "") return;
             DataTable temp = hocsinh.GetHocSinh(currentLop, currentHocKy, currentNamHoc);
             temp.Columns.Add("GT", typeof(string));
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
             foreach(DataRow row in temp.Rows)
             {
+                row["SoThuTu"] = stt;
+                stt++;
                 if (row["GioiTinh"].ToString() == "True")
                     row["GT"] = "Nam";
                 else
@@ -154,8 +159,13 @@ namespace QuanLyHocSinh
         {
             DataTable temp = hocsinh.GetHocSinhCho(currentHocKy, currentNamHoc);
             temp.Columns.Add("GT", typeof(string));
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
             foreach (DataRow row in temp.Rows)
             {
+                row["SoThuTu"] = stt;
+                stt++;
                 if (row["GioiTinh"].ToString() == "True")
                     row["GT"] = "Nam";
                 else
