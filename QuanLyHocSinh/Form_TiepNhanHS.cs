@@ -61,7 +61,7 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.CellClick += GridView_DSHocSinh_CellClick;
 
             // Edit theme
-            GridView_DSHocSinh.BorderStyle = BorderStyle.None;
+            GridView_DSHocSinh.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSHocSinh.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSHocSinh.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;

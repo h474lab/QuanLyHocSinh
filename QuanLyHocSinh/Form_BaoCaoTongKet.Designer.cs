@@ -180,6 +180,8 @@
             // 
             // GridView_BCMonHoc
             // 
+            this.GridView_BCMonHoc.AllowUserToAddRows = false;
+            this.GridView_BCMonHoc.AllowUserToDeleteRows = false;
             this.GridView_BCMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -268,12 +270,15 @@
             // 
             // GridView_BCHocKy
             // 
+            this.GridView_BCHocKy.AllowUserToAddRows = false;
+            this.GridView_BCHocKy.AllowUserToDeleteRows = false;
             this.GridView_BCHocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_BCHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_BCHocKy.Location = new System.Drawing.Point(6, 62);
             this.GridView_BCHocKy.Name = "GridView_BCHocKy";
+            this.GridView_BCHocKy.ReadOnly = true;
             this.GridView_BCHocKy.RowHeadersWidth = 62;
             this.GridView_BCHocKy.Size = new System.Drawing.Size(779, 236);
             this.GridView_BCHocKy.TabIndex = 0;

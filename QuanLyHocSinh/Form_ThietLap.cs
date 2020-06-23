@@ -51,7 +51,17 @@ namespace QuanLyHocSinh
         }
         void LoadDSLop()
         {
-            GridView_DSLop.DataSource = danhsachlop.GetTatCaLop();
+            DataTable temp = danhsachlop.GetTatCaLop();
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
+            foreach (DataRow row in temp.Rows)
+            {
+                row["SoThuTu"] = stt;
+                stt++;
+            }
+
+            GridView_DSLop.DataSource = temp;
             GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSLop.ReadOnly = true;
@@ -74,7 +84,17 @@ namespace QuanLyHocSinh
 
         void LoadDSMonHoc()
         {
-            GridView_DSMonHoc.DataSource = monhoc.GetTatCaMonHoc();
+            DataTable temp = monhoc.GetTatCaMonHoc();
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
+            foreach (DataRow row in temp.Rows)
+            {
+                row["SoThuTu"] = stt;
+                stt++;
+            }
+
+            GridView_DSMonHoc.DataSource = temp;
             GridView_DSMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSMonHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSMonHoc.ReadOnly = true;
@@ -142,7 +162,18 @@ namespace QuanLyHocSinh
 
         private void LoadDSHocKy()
         {
-            GridView_DSHocKy.DataSource = hocky.GetTatCaHK();
+            DataTable temp = hocky.GetTatCaHK();
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
+            foreach (DataRow row in temp.Rows)
+            {
+                row["SoThuTu"] = stt;
+                stt++;
+            }
+
+            GridView_DSHocKy.DataSource = temp;
+            GridView_DSHocKy.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GridView_DSHocKy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocKy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSHocKy.ReadOnly = true;
@@ -180,7 +211,17 @@ namespace QuanLyHocSinh
 
         private void LoadDSNamHoc()
         {
-            GridView_DSNamHoc.DataSource = namhoc.GetTatCaNH();
+            DataTable temp = namhoc.GetTatCaNH();
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
+            foreach (DataRow row in temp.Rows)
+            {
+                row["SoThuTu"] = stt;
+                stt++;
+            }
+
+            GridView_DSNamHoc.DataSource = temp;
             GridView_DSNamHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSNamHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSNamHoc.ReadOnly = true;

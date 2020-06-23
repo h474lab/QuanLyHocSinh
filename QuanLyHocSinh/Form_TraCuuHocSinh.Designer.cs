@@ -33,10 +33,12 @@
             this.GroupBox_DSHocSinh = new System.Windows.Forms.GroupBox();
             this.GridView_DSHocSinh = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ComboBox_Lop = new System.Windows.Forms.ComboBox();
+            this.Label_Lop = new System.Windows.Forms.Label();
+            this.ComboBox_NamHoc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TextBox_HoTen = new System.Windows.Forms.TextBox();
             this.Label_HoTen = new System.Windows.Forms.Label();
-            this.ComboBox_NamHoc = new System.Windows.Forms.ComboBox();
             this.Panel_Tittle.SuspendLayout();
             this.GroupBox_DSHocSinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSHocSinh)).BeginInit();
@@ -77,12 +79,15 @@
             // 
             // GridView_DSHocSinh
             // 
+            this.GridView_DSHocSinh.AllowUserToAddRows = false;
+            this.GridView_DSHocSinh.AllowUserToDeleteRows = false;
             this.GridView_DSHocSinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView_DSHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_DSHocSinh.Location = new System.Drawing.Point(8, 19);
             this.GridView_DSHocSinh.Name = "GridView_DSHocSinh";
+            this.GridView_DSHocSinh.ReadOnly = true;
             this.GridView_DSHocSinh.RowHeadersWidth = 62;
             this.GridView_DSHocSinh.Size = new System.Drawing.Size(871, 353);
             this.GridView_DSHocSinh.TabIndex = 0;
@@ -91,6 +96,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.ComboBox_Lop);
+            this.groupBox1.Controls.Add(this.Label_Lop);
             this.groupBox1.Controls.Add(this.ComboBox_NamHoc);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TextBox_HoTen);
@@ -102,10 +109,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tra cứu";
             // 
+            // ComboBox_Lop
+            // 
+            this.ComboBox_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_Lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_Lop.FormattingEnabled = true;
+            this.ComboBox_Lop.Location = new System.Drawing.Point(309, 19);
+            this.ComboBox_Lop.Name = "ComboBox_Lop";
+            this.ComboBox_Lop.Size = new System.Drawing.Size(213, 21);
+            this.ComboBox_Lop.TabIndex = 5;
+            // 
+            // Label_Lop
+            // 
+            this.Label_Lop.AutoSize = true;
+            this.Label_Lop.Location = new System.Drawing.Point(275, 23);
+            this.Label_Lop.Name = "Label_Lop";
+            this.Label_Lop.Size = new System.Drawing.Size(28, 13);
+            this.Label_Lop.TabIndex = 4;
+            this.Label_Lop.Text = "Lớp:";
+            // 
+            // ComboBox_NamHoc
+            // 
+            this.ComboBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBox_NamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_NamHoc.FormattingEnabled = true;
+            this.ComboBox_NamHoc.Location = new System.Drawing.Point(587, 19);
+            this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
+            this.ComboBox_NamHoc.Size = new System.Drawing.Size(292, 21);
+            this.ComboBox_NamHoc.TabIndex = 3;
+            // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 22);
+            this.label1.Location = new System.Drawing.Point(528, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 2;
@@ -126,14 +164,6 @@
             this.Label_HoTen.Size = new System.Drawing.Size(61, 13);
             this.Label_HoTen.TabIndex = 0;
             this.Label_HoTen.Text = "Họ và Tên:";
-            // 
-            // ComboBox_NamHoc
-            // 
-            this.ComboBox_NamHoc.FormattingEnabled = true;
-            this.ComboBox_NamHoc.Location = new System.Drawing.Point(343, 18);
-            this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
-            this.ComboBox_NamHoc.Size = new System.Drawing.Size(175, 21);
-            this.ComboBox_NamHoc.TabIndex = 3;
             // 
             // Form_TraCuuHocSinh
             // 
@@ -167,5 +197,7 @@
         private System.Windows.Forms.Label Label_HoTen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ComboBox_NamHoc;
+        private System.Windows.Forms.ComboBox ComboBox_Lop;
+        private System.Windows.Forms.Label Label_Lop;
     }
 }

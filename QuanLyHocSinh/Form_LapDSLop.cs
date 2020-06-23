@@ -120,15 +120,14 @@ namespace QuanLyHocSinh
             GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSLop.ReadOnly = true;
-            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
+            GridView_DSLop.ClearSelection();
 
             TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop, currentHocKy, currentNamHoc).ToString();
 
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
 
-
             // Edit theme
-            GridView_DSLop.BorderStyle = BorderStyle.None;
+            GridView_DSLop.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSLop.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSLop.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
@@ -178,9 +177,8 @@ namespace QuanLyHocSinh
             GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSCho.CellClick += GridView_DSCho_CellClick;
 
-
             // Edit theme
-            GridView_DSCho.BorderStyle = BorderStyle.None;
+            GridView_DSCho.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSCho.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSCho.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
@@ -209,6 +207,11 @@ namespace QuanLyHocSinh
         
         private void Button_Them_Click(object sender, EventArgs e)
         {
+            if (currentHSCho == "")
+            {
+                MessageBox.Show("Vui lòng chọn học sinh để tiếp tục!", "Chưa chọn học sinh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (int.Parse(TextBox_SiSo.Text) < listThamSo.SiSoToiDa)
                 hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
             else
@@ -223,6 +226,11 @@ namespace QuanLyHocSinh
 
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
+            if (currentHSLop == "")
+            {
+                MessageBox.Show("Vui lòng chọn học sinh để tiếp tục!", "Chưa chọn học sinh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             hocsinh.Delete_HSTrongLop(currentHSLop, currentLop, currentHocKy, currentNamHoc);
             LoadDanhSachHocSinh();
             LoadHocSinhCho();

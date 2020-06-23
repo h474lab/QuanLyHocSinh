@@ -198,6 +198,8 @@
             // 
             // GridView_BangDiem
             // 
+            this.GridView_BangDiem.AllowUserToAddRows = false;
+            this.GridView_BangDiem.AllowUserToDeleteRows = false;
             this.GridView_BangDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
