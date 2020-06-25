@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_TiepNhanHS));
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
@@ -67,6 +73,8 @@
             this.checkedProvider_DiaChi = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
             this.checkedProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Panel_CoChu = new System.Windows.Forms.Panel();
+            this.TrackBar_CoChu = new System.Windows.Forms.TrackBar();
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThongTin.SuspendLayout();
             this.GroupBox_DSHocSinh.SuspendLayout();
@@ -80,13 +88,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_DiaChi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_Email)).BeginInit();
+            this.Panel_CoChu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_Title
             // 
             this.Panel_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Panel_Title.Controls.Add(this.Label_Title);
-            this.Panel_Title.Location = new System.Drawing.Point(46, 12);
+            this.Panel_Title.Location = new System.Drawing.Point(248, 12);
             this.Panel_Title.Name = "Panel_Title";
             this.Panel_Title.Size = new System.Drawing.Size(497, 50);
             this.Panel_Title.TabIndex = 0;
@@ -116,9 +126,10 @@
             this.GroupBox_ThongTin.Controls.Add(this.Label_GioiTinh);
             this.GroupBox_ThongTin.Controls.Add(this.TextBox_HoTen);
             this.GroupBox_ThongTin.Controls.Add(this.Label_HoTen);
-            this.GroupBox_ThongTin.Location = new System.Drawing.Point(12, 68);
+            this.GroupBox_ThongTin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThongTin.Location = new System.Drawing.Point(3, 68);
             this.GroupBox_ThongTin.Name = "GroupBox_ThongTin";
-            this.GroupBox_ThongTin.Size = new System.Drawing.Size(507, 136);
+            this.GroupBox_ThongTin.Size = new System.Drawing.Size(891, 151);
             this.GroupBox_ThongTin.TabIndex = 1;
             this.GroupBox_ThongTin.TabStop = false;
             this.GroupBox_ThongTin.Text = "Thông tin cá nhân";
@@ -128,18 +139,18 @@
             this.TextBox_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_Email.Location = new System.Drawing.Point(84, 105);
+            this.TextBox_Email.Location = new System.Drawing.Point(84, 119);
             this.TextBox_Email.Name = "TextBox_Email";
-            this.TextBox_Email.Size = new System.Drawing.Size(392, 20);
+            this.TextBox_Email.Size = new System.Drawing.Size(776, 26);
             this.TextBox_Email.TabIndex = 10;
             this.TextBox_Email.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Email_Validating);
             // 
             // Label_Email
             // 
             this.Label_Email.AutoSize = true;
-            this.Label_Email.Location = new System.Drawing.Point(6, 108);
+            this.Label_Email.Location = new System.Drawing.Point(6, 122);
             this.Label_Email.Name = "Label_Email";
-            this.Label_Email.Size = new System.Drawing.Size(35, 13);
+            this.Label_Email.Size = new System.Drawing.Size(52, 18);
             this.Label_Email.TabIndex = 9;
             this.Label_Email.Text = "Email:";
             // 
@@ -148,18 +159,18 @@
             this.TextBox_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_DiaChi.Location = new System.Drawing.Point(84, 75);
+            this.TextBox_DiaChi.Location = new System.Drawing.Point(84, 87);
             this.TextBox_DiaChi.Name = "TextBox_DiaChi";
-            this.TextBox_DiaChi.Size = new System.Drawing.Size(392, 20);
+            this.TextBox_DiaChi.Size = new System.Drawing.Size(776, 26);
             this.TextBox_DiaChi.TabIndex = 8;
             this.TextBox_DiaChi.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_DiaChi_Validating);
             // 
             // Label_DiaChi
             // 
             this.Label_DiaChi.AutoSize = true;
-            this.Label_DiaChi.Location = new System.Drawing.Point(6, 78);
+            this.Label_DiaChi.Location = new System.Drawing.Point(6, 90);
             this.Label_DiaChi.Name = "Label_DiaChi";
-            this.Label_DiaChi.Size = new System.Drawing.Size(43, 13);
+            this.Label_DiaChi.Size = new System.Drawing.Size(61, 18);
             this.Label_DiaChi.TabIndex = 7;
             this.Label_DiaChi.Text = "Địa chỉ:";
             // 
@@ -167,27 +178,28 @@
             // 
             this.DateTimePicker_NgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DateTimePicker_NgaySinh.Location = new System.Drawing.Point(276, 46);
+            this.DateTimePicker_NgaySinh.Location = new System.Drawing.Point(299, 57);
             this.DateTimePicker_NgaySinh.Name = "DateTimePicker_NgaySinh";
-            this.DateTimePicker_NgaySinh.Size = new System.Drawing.Size(200, 20);
+            this.DateTimePicker_NgaySinh.Size = new System.Drawing.Size(561, 26);
             this.DateTimePicker_NgaySinh.TabIndex = 6;
+            this.DateTimePicker_NgaySinh.Value = new System.DateTime(2020, 6, 25, 0, 0, 0, 0);
             this.DateTimePicker_NgaySinh.Validating += new System.ComponentModel.CancelEventHandler(this.DateTimePicker_NgaySinh_Validating);
             // 
             // Label_NgaySinh
             // 
             this.Label_NgaySinh.AutoSize = true;
-            this.Label_NgaySinh.Location = new System.Drawing.Point(213, 48);
+            this.Label_NgaySinh.Location = new System.Drawing.Point(213, 59);
             this.Label_NgaySinh.Name = "Label_NgaySinh";
-            this.Label_NgaySinh.Size = new System.Drawing.Size(57, 13);
+            this.Label_NgaySinh.Size = new System.Drawing.Size(80, 18);
             this.Label_NgaySinh.TabIndex = 5;
             this.Label_NgaySinh.Text = "Ngày sinh:";
             // 
             // RadioButton_Nu
             // 
             this.RadioButton_Nu.AutoSize = true;
-            this.RadioButton_Nu.Location = new System.Drawing.Point(150, 46);
+            this.RadioButton_Nu.Location = new System.Drawing.Point(150, 57);
             this.RadioButton_Nu.Name = "RadioButton_Nu";
-            this.RadioButton_Nu.Size = new System.Drawing.Size(39, 17);
+            this.RadioButton_Nu.Size = new System.Drawing.Size(48, 22);
             this.RadioButton_Nu.TabIndex = 4;
             this.RadioButton_Nu.TabStop = true;
             this.RadioButton_Nu.Text = "Nữ";
@@ -196,9 +208,9 @@
             // RadioButton_Nam
             // 
             this.RadioButton_Nam.AutoSize = true;
-            this.RadioButton_Nam.Location = new System.Drawing.Point(84, 46);
+            this.RadioButton_Nam.Location = new System.Drawing.Point(84, 57);
             this.RadioButton_Nam.Name = "RadioButton_Nam";
-            this.RadioButton_Nam.Size = new System.Drawing.Size(47, 17);
+            this.RadioButton_Nam.Size = new System.Drawing.Size(59, 22);
             this.RadioButton_Nam.TabIndex = 3;
             this.RadioButton_Nam.TabStop = true;
             this.RadioButton_Nam.Text = "Nam";
@@ -207,9 +219,9 @@
             // Label_GioiTinh
             // 
             this.Label_GioiTinh.AutoSize = true;
-            this.Label_GioiTinh.Location = new System.Drawing.Point(6, 48);
+            this.Label_GioiTinh.Location = new System.Drawing.Point(6, 59);
             this.Label_GioiTinh.Name = "Label_GioiTinh";
-            this.Label_GioiTinh.Size = new System.Drawing.Size(50, 13);
+            this.Label_GioiTinh.Size = new System.Drawing.Size(70, 18);
             this.Label_GioiTinh.TabIndex = 2;
             this.Label_GioiTinh.Text = "Giới tính:";
             // 
@@ -218,18 +230,18 @@
             this.TextBox_HoTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_HoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_HoTen.Location = new System.Drawing.Point(84, 17);
+            this.TextBox_HoTen.Location = new System.Drawing.Point(84, 25);
             this.TextBox_HoTen.Name = "TextBox_HoTen";
-            this.TextBox_HoTen.Size = new System.Drawing.Size(392, 20);
+            this.TextBox_HoTen.Size = new System.Drawing.Size(776, 26);
             this.TextBox_HoTen.TabIndex = 1;
             this.TextBox_HoTen.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_HoTen_Validating);
             // 
             // Label_HoTen
             // 
             this.Label_HoTen.AutoSize = true;
-            this.Label_HoTen.Location = new System.Drawing.Point(6, 20);
+            this.Label_HoTen.Location = new System.Drawing.Point(6, 28);
             this.Label_HoTen.Name = "Label_HoTen";
-            this.Label_HoTen.Size = new System.Drawing.Size(57, 13);
+            this.Label_HoTen.Size = new System.Drawing.Size(77, 18);
             this.Label_HoTen.TabIndex = 0;
             this.Label_HoTen.Text = "Họ và tên:";
             // 
@@ -238,10 +250,12 @@
             this.GroupBox_DSHocSinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_DSHocSinh.Controls.Add(this.Panel_CoChu);
             this.GroupBox_DSHocSinh.Controls.Add(this.GridView_DSHocSinh);
-            this.GroupBox_DSHocSinh.Location = new System.Drawing.Point(12, 210);
+            this.GroupBox_DSHocSinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_DSHocSinh.Location = new System.Drawing.Point(3, 225);
             this.GroupBox_DSHocSinh.Name = "GroupBox_DSHocSinh";
-            this.GroupBox_DSHocSinh.Size = new System.Drawing.Size(604, 330);
+            this.GroupBox_DSHocSinh.Size = new System.Drawing.Size(1025, 419);
             this.GroupBox_DSHocSinh.TabIndex = 2;
             this.GroupBox_DSHocSinh.TabStop = false;
             this.GroupBox_DSHocSinh.Text = "Danh sách học sinh";
@@ -264,16 +278,19 @@
             this.DiaChi,
             this.Email,
             this.GioiTinh_1});
-            this.GridView_DSHocSinh.Location = new System.Drawing.Point(8, 19);
+            this.GridView_DSHocSinh.Location = new System.Drawing.Point(8, 25);
             this.GridView_DSHocSinh.Name = "GridView_DSHocSinh";
             this.GridView_DSHocSinh.ReadOnly = true;
             this.GridView_DSHocSinh.RowHeadersWidth = 62;
-            this.GridView_DSHocSinh.Size = new System.Drawing.Size(588, 305);
+            this.GridView_DSHocSinh.Size = new System.Drawing.Size(982, 388);
             this.GridView_DSHocSinh.TabIndex = 0;
             // 
             // SoThuTu
             // 
             this.SoThuTu.DataPropertyName = "SoThuTu";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SoThuTu.DefaultCellStyle = dataGridViewCellStyle1;
             this.SoThuTu.HeaderText = "Số Thứ Tự";
             this.SoThuTu.Name = "SoThuTu";
             this.SoThuTu.ReadOnly = true;
@@ -291,6 +308,8 @@
             // HoTen
             // 
             this.HoTen.DataPropertyName = "HoTen";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.HoTen.DefaultCellStyle = dataGridViewCellStyle2;
             this.HoTen.HeaderText = "Họ và Tên";
             this.HoTen.MinimumWidth = 8;
             this.HoTen.Name = "HoTen";
@@ -300,6 +319,8 @@
             // GioiTinh
             // 
             this.GioiTinh.DataPropertyName = "GT";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GioiTinh.DefaultCellStyle = dataGridViewCellStyle3;
             this.GioiTinh.HeaderText = "Giới Tính";
             this.GioiTinh.MinimumWidth = 8;
             this.GioiTinh.Name = "GioiTinh";
@@ -320,6 +341,8 @@
             // NgaySinh_1
             // 
             this.NgaySinh_1.DataPropertyName = "NS";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NgaySinh_1.DefaultCellStyle = dataGridViewCellStyle4;
             this.NgaySinh_1.HeaderText = "Ngày Sinh";
             this.NgaySinh_1.Name = "NgaySinh_1";
             this.NgaySinh_1.ReadOnly = true;
@@ -327,6 +350,8 @@
             // DiaChi
             // 
             this.DiaChi.DataPropertyName = "DiaChi";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle5;
             this.DiaChi.HeaderText = "Địa Chỉ";
             this.DiaChi.MinimumWidth = 8;
             this.DiaChi.Name = "DiaChi";
@@ -336,6 +361,8 @@
             // Email
             // 
             this.Email.DataPropertyName = "Email";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Email.DefaultCellStyle = dataGridViewCellStyle6;
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 8;
             this.Email.Name = "Email";
@@ -356,22 +383,25 @@
             this.GroupBox_ThaoTac.Controls.Add(this.Button_Sua);
             this.GroupBox_ThaoTac.Controls.Add(this.Button_Xoa);
             this.GroupBox_ThaoTac.Controls.Add(this.Button_Them);
-            this.GroupBox_ThaoTac.Location = new System.Drawing.Point(525, 68);
+            this.GroupBox_ThaoTac.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThaoTac.Location = new System.Drawing.Point(900, 68);
             this.GroupBox_ThaoTac.Name = "GroupBox_ThaoTac";
-            this.GroupBox_ThaoTac.Size = new System.Drawing.Size(91, 136);
+            this.GroupBox_ThaoTac.Size = new System.Drawing.Size(128, 151);
             this.GroupBox_ThaoTac.TabIndex = 3;
             this.GroupBox_ThaoTac.TabStop = false;
             this.GroupBox_ThaoTac.Text = "Thao tác";
             // 
             // Button_Sua
             // 
+            this.Button_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Sua.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Sua.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
             this.Button_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Sua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_Sua.Location = new System.Drawing.Point(8, 58);
+            this.Button_Sua.Location = new System.Drawing.Point(10, 69);
             this.Button_Sua.Name = "Button_Sua";
-            this.Button_Sua.Size = new System.Drawing.Size(75, 30);
+            this.Button_Sua.Size = new System.Drawing.Size(110, 30);
             this.Button_Sua.TabIndex = 2;
             this.Button_Sua.Text = "Chỉnh sửa";
             this.Button_Sua.UseVisualStyleBackColor = false;
@@ -379,13 +409,15 @@
             // 
             // Button_Xoa
             // 
+            this.Button_Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Xoa.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Xoa.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
             this.Button_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Xoa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_Xoa.Location = new System.Drawing.Point(8, 97);
+            this.Button_Xoa.Location = new System.Drawing.Point(10, 110);
             this.Button_Xoa.Name = "Button_Xoa";
-            this.Button_Xoa.Size = new System.Drawing.Size(75, 30);
+            this.Button_Xoa.Size = new System.Drawing.Size(110, 30);
             this.Button_Xoa.TabIndex = 1;
             this.Button_Xoa.Text = "Xóa";
             this.Button_Xoa.UseVisualStyleBackColor = false;
@@ -393,13 +425,15 @@
             // 
             // Button_Them
             // 
+            this.Button_Them.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Them.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Them.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.AddButton;
             this.Button_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Them.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_Them.Location = new System.Drawing.Point(8, 20);
+            this.Button_Them.Location = new System.Drawing.Point(10, 28);
             this.Button_Them.Name = "Button_Them";
-            this.Button_Them.Size = new System.Drawing.Size(75, 30);
+            this.Button_Them.Size = new System.Drawing.Size(110, 30);
             this.Button_Them.TabIndex = 0;
             this.Button_Them.Text = "Thêm";
             this.Button_Them.UseVisualStyleBackColor = false;
@@ -441,12 +475,36 @@
             this.checkedProvider_Email.ContainerControl = this;
             this.checkedProvider_Email.Icon = ((System.Drawing.Icon)(resources.GetObject("checkedProvider_Email.Icon")));
             // 
+            // Panel_CoChu
+            // 
+            this.Panel_CoChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CoChu.Controls.Add(this.TrackBar_CoChu);
+            this.Panel_CoChu.Location = new System.Drawing.Point(996, 25);
+            this.Panel_CoChu.Name = "Panel_CoChu";
+            this.Panel_CoChu.Size = new System.Drawing.Size(23, 388);
+            this.Panel_CoChu.TabIndex = 4;
+            // 
+            // TrackBar_CoChu
+            // 
+            this.TrackBar_CoChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrackBar_CoChu.Location = new System.Drawing.Point(0, 0);
+            this.TrackBar_CoChu.Maximum = 100;
+            this.TrackBar_CoChu.Minimum = 1;
+            this.TrackBar_CoChu.Name = "TrackBar_CoChu";
+            this.TrackBar_CoChu.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TrackBar_CoChu.Size = new System.Drawing.Size(45, 385);
+            this.TrackBar_CoChu.TabIndex = 3;
+            this.TrackBar_CoChu.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBar_CoChu.Value = 1;
+            // 
             // Form_TiepNhanHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(627, 550);
+            this.ClientSize = new System.Drawing.Size(1031, 654);
             this.Controls.Add(this.GroupBox_ThaoTac);
             this.Controls.Add(this.GroupBox_DSHocSinh);
             this.Controls.Add(this.GroupBox_ThongTin);
@@ -468,6 +526,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_DiaChi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedProvider_Email)).EndInit();
+            this.Panel_CoChu.ResumeLayout(false);
+            this.Panel_CoChu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,5 +572,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh_1;
+        private System.Windows.Forms.Panel Panel_CoChu;
+        private System.Windows.Forms.TrackBar TrackBar_CoChu;
     }
 }

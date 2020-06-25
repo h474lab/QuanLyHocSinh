@@ -14,6 +14,8 @@ namespace QuanLyHocSinh
         BUS_ThamSo thamso = new BUS_ThamSo();
         string currentMaHS = "";
 
+        ThamSo listThamSo = new ThamSo();
+
         private bool[] val = { false, false, false, false, false };
 
         public Form_TiepNhanHS()
@@ -27,8 +29,19 @@ namespace QuanLyHocSinh
         {
             RadioButton_Nam.Checked = true;
 
+            listThamSo = thamso.GetThamSo();
+
             DateTimePicker_NgaySinh.Format = DateTimePickerFormat.Custom;
             DateTimePicker_NgaySinh.CustomFormat = "dd/MM/yyyy";
+            DateTimePicker_NgaySinh.MaxDate = DateTime.Today.AddYears(-listThamSo.TuoiToiThieu);
+
+            TrackBar_CoChu.Value = int.Parse(GridView_DSHocSinh.Font.Size.ToString());
+            TrackBar_CoChu.ValueChanged += TrackBar_CoChu_ValueChanged;
+        }
+
+        private void TrackBar_CoChu_ValueChanged(object sender, EventArgs e)
+        {
+            GridView_DSHocSinh.Font = new Font(GridView_DSHocSinh.Font.FontFamily.ToString(), TrackBar_CoChu.Value);
         }
 
         private void LoadThongTin()
@@ -43,6 +56,7 @@ namespace QuanLyHocSinh
             {
                 row["SoThuTu"] = stt;
                 stt++;
+
                 if (row["GioiTinh"].ToString() == "True")
                 {
                     row["GT"] = "Nam";
@@ -53,10 +67,18 @@ namespace QuanLyHocSinh
                 }
                 row["NS"] = DateTime.Parse(row["NgaySinh"].ToString()).ToString("dd/MM/yyyy");
             }
+
+
+            foreach (DataGridViewColumn column in GridView_DSHocSinh.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             // Load Danh sach Hoc sinh
             GridView_DSHocSinh.DataSource = temp;
             GridView_DSHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocSinh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSHocSinh.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             GridView_DSHocSinh.ReadOnly = true;
             GridView_DSHocSinh.CellClick += GridView_DSHocSinh_CellClick;
 
@@ -69,7 +91,7 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.BackgroundColor = Color.White;
 
             GridView_DSHocSinh.EnableHeadersVisualStyles = false;
-            GridView_DSHocSinh.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSHocSinh.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSHocSinh.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSHocSinh.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -119,7 +141,7 @@ namespace QuanLyHocSinh
 
         private void Button_Sua_Click(object sender, EventArgs e)
         {
-            if (!checkThongTin()) return;
+            //if (!checkThongTin()) return;
             if (currentMaHS == "") return;
             HocSinh temp = new HocSinh();
             temp.MaHocSinh = long.Parse(currentMaHS);

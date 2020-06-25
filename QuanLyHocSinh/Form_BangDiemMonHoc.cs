@@ -35,14 +35,43 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
-            listThamSo = thamso.GetThamSo();
-
+            init();
             LoadDanhSachLop();
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
             LoadDanhSachMonHoc();
             LoadBangDiem();
         }
+
+        private void init()
+        {
+            listThamSo = thamso.GetThamSo();
+
+            TrackBar_CoChu.Value = int.Parse(GridView_BangDiem.Font.Size.ToString());
+            TrackBar_CoChu.ValueChanged += TrackBar_CoChu_ValueChanged;
+
+
+            //ComboBox_CoChu.Text = GridView_BangDiem.Font.Size.ToString();
+            //ComboBox_CoChu.TextChanged += ComboBox_CoChu_TextChanged;
+        }
+
+        private void TrackBar_CoChu_ValueChanged(object sender, EventArgs e)
+        {
+            GridView_BangDiem.Font = new Font(GridView_BangDiem.Font.FontFamily.ToString(), TrackBar_CoChu.Value);
+        }
+
+        /*
+        private void ComboBox_CoChu_TextChanged(object sender, EventArgs e)
+        {
+           if (ComboBox_CoChu.Text == "") return;
+           float cochu = float.Parse(ComboBox_CoChu.Text);
+           if (cochu <= 0 || cochu > 100)
+           {
+               ComboBox_CoChu.Text = GridView_BangDiem.Font.Size.ToString();
+               return;
+           }
+           GridView_BangDiem.Font = new Font(GridView_BangDiem.Font.FontFamily, cochu);
+        }*/
 
         void LoadDanhSachLop()
         {
@@ -122,6 +151,8 @@ namespace QuanLyHocSinh
             GridView_BangDiem.DataSource = bangdiemmon.GetBangDiem(currentLop, currentHocKy, currentNamHoc, currentMonHoc);
             GridView_BangDiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BangDiem.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            GridView_BangDiem.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             GridView_BangDiem.CellBeginEdit += GridView_BangDiem_CellBeginEdit;
             GridView_BangDiem.CellEndEdit += GridView_BangDiem_CellEndEdit;
 
@@ -131,15 +162,15 @@ namespace QuanLyHocSinh
             }
 
             // Edit theme
-            GridView_BangDiem.BorderStyle = BorderStyle.None;
+            GridView_BangDiem.BorderStyle = BorderStyle.FixedSingle;
             GridView_BangDiem.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_BangDiem.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_BangDiem.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_BangDiem.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_BangDiem.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_BangDiem.BackgroundColor = Color.White;
 
             GridView_BangDiem.EnableHeadersVisualStyles = false;
-            GridView_BangDiem.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_BangDiem.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_BangDiem.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_BangDiem.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }

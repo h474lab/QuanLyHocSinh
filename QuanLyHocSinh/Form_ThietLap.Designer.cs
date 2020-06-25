@@ -28,6 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.GroupBox_ThayDoiQD = new System.Windows.Forms.GroupBox();
@@ -97,6 +108,7 @@
             this.Label_NamHoc = new System.Windows.Forms.Label();
             this.Button_ThemNH = new System.Windows.Forms.Button();
             this.Button_SuaNH = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThayDoiQD.SuspendLayout();
             this.GroupBox_DSMonHoc.SuspendLayout();
@@ -111,13 +123,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSNamHoc)).BeginInit();
             this.GroupBox_ThaoTacHocKy.SuspendLayout();
             this.GroupBox_ThaoTacNamHoc.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
             // 
             this.Panel_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Panel_Title.Controls.Add(this.Label_Title);
-            this.Panel_Title.Location = new System.Drawing.Point(154, 12);
+            this.Panel_Title.Location = new System.Drawing.Point(236, 12);
             this.Panel_Title.Name = "Panel_Title";
             this.Panel_Title.Size = new System.Drawing.Size(497, 50);
             this.Panel_Title.TabIndex = 3;
@@ -150,9 +163,10 @@
             this.GroupBox_ThayDoiQD.Controls.Add(this.TextBox_TuoiMax);
             this.GroupBox_ThayDoiQD.Controls.Add(this.TextBox_TuoiMin);
             this.GroupBox_ThayDoiQD.Controls.Add(this.Label_Tuoi);
-            this.GroupBox_ThayDoiQD.Location = new System.Drawing.Point(548, 69);
+            this.GroupBox_ThayDoiQD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThayDoiQD.Location = new System.Drawing.Point(647, 79);
             this.GroupBox_ThayDoiQD.Name = "GroupBox_ThayDoiQD";
-            this.GroupBox_ThayDoiQD.Size = new System.Drawing.Size(240, 172);
+            this.GroupBox_ThayDoiQD.Size = new System.Drawing.Size(310, 218);
             this.GroupBox_ThayDoiQD.TabIndex = 4;
             this.GroupBox_ThayDoiQD.TabStop = false;
             this.GroupBox_ThayDoiQD.Text = "Thay đổi quy định";
@@ -160,17 +174,18 @@
             // TextBox_DiemDatMon
             // 
             this.TextBox_DiemDatMon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_DiemDatMon.Location = new System.Drawing.Point(87, 116);
+            this.TextBox_DiemDatMon.Location = new System.Drawing.Point(136, 140);
             this.TextBox_DiemDatMon.Name = "TextBox_DiemDatMon";
-            this.TextBox_DiemDatMon.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_DiemDatMon.Size = new System.Drawing.Size(166, 26);
             this.TextBox_DiemDatMon.TabIndex = 20;
+            this.TextBox_DiemDatMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label_DiemDatMon
             // 
             this.Label_DiemDatMon.AutoSize = true;
-            this.Label_DiemDatMon.Location = new System.Drawing.Point(7, 118);
+            this.Label_DiemDatMon.Location = new System.Drawing.Point(7, 142);
             this.Label_DiemDatMon.Name = "Label_DiemDatMon";
-            this.Label_DiemDatMon.Size = new System.Drawing.Size(76, 13);
+            this.Label_DiemDatMon.Size = new System.Drawing.Size(110, 18);
             this.Label_DiemDatMon.TabIndex = 19;
             this.Label_DiemDatMon.Text = "Điểm đạt môn:";
             // 
@@ -179,9 +194,9 @@
             this.Button_Luu.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Luu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_Luu.Location = new System.Drawing.Point(87, 142);
+            this.Button_Luu.Location = new System.Drawing.Point(118, 183);
             this.Button_Luu.Name = "Button_Luu";
-            this.Button_Luu.Size = new System.Drawing.Size(75, 23);
+            this.Button_Luu.Size = new System.Drawing.Size(75, 29);
             this.Button_Luu.TabIndex = 18;
             this.Button_Luu.Text = "Lưu";
             this.Button_Luu.UseVisualStyleBackColor = false;
@@ -190,102 +205,108 @@
             // Label_2
             // 
             this.Label_2.AutoSize = true;
-            this.Label_2.Location = new System.Drawing.Point(152, 70);
+            this.Label_2.Location = new System.Drawing.Point(211, 82);
             this.Label_2.Name = "Label_2";
-            this.Label_2.Size = new System.Drawing.Size(10, 13);
+            this.Label_2.Size = new System.Drawing.Size(13, 18);
             this.Label_2.TabIndex = 12;
             this.Label_2.Text = "-";
             // 
             // TextBox_DiemMax
             // 
             this.TextBox_DiemMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_DiemMax.Location = new System.Drawing.Point(179, 67);
+            this.TextBox_DiemMax.Location = new System.Drawing.Point(236, 80);
             this.TextBox_DiemMax.Name = "TextBox_DiemMax";
-            this.TextBox_DiemMax.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_DiemMax.Size = new System.Drawing.Size(66, 26);
             this.TextBox_DiemMax.TabIndex = 11;
+            this.TextBox_DiemMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_DiemMin
             // 
             this.TextBox_DiemMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_DiemMin.Location = new System.Drawing.Point(86, 67);
+            this.TextBox_DiemMin.Location = new System.Drawing.Point(136, 80);
             this.TextBox_DiemMin.Name = "TextBox_DiemMin";
-            this.TextBox_DiemMin.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_DiemMin.Size = new System.Drawing.Size(66, 26);
             this.TextBox_DiemMin.TabIndex = 10;
+            this.TextBox_DiemMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_DiemDat
             // 
             this.TextBox_DiemDat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_DiemDat.Location = new System.Drawing.Point(86, 92);
+            this.TextBox_DiemDat.Location = new System.Drawing.Point(136, 110);
             this.TextBox_DiemDat.Name = "TextBox_DiemDat";
-            this.TextBox_DiemDat.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_DiemDat.Size = new System.Drawing.Size(166, 26);
             this.TextBox_DiemDat.TabIndex = 9;
+            this.TextBox_DiemDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label_DiemDat
             // 
             this.Label_DiemDat.AutoSize = true;
-            this.Label_DiemDat.Location = new System.Drawing.Point(6, 94);
+            this.Label_DiemDat.Location = new System.Drawing.Point(6, 112);
             this.Label_DiemDat.Name = "Label_DiemDat";
-            this.Label_DiemDat.Size = new System.Drawing.Size(53, 13);
+            this.Label_DiemDat.Size = new System.Drawing.Size(76, 18);
             this.Label_DiemDat.TabIndex = 8;
             this.Label_DiemDat.Text = "Điểm đạt:";
             // 
             // Label_KhoangDiem
             // 
             this.Label_KhoangDiem.AutoSize = true;
-            this.Label_KhoangDiem.Location = new System.Drawing.Point(6, 70);
+            this.Label_KhoangDiem.Location = new System.Drawing.Point(6, 82);
             this.Label_KhoangDiem.Name = "Label_KhoangDiem";
-            this.Label_KhoangDiem.Size = new System.Drawing.Size(73, 13);
+            this.Label_KhoangDiem.Size = new System.Drawing.Size(105, 18);
             this.Label_KhoangDiem.TabIndex = 6;
             this.Label_KhoangDiem.Text = "Khoảng điểm:";
             // 
             // TextBox_SiSoMax
             // 
             this.TextBox_SiSoMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_SiSoMax.Location = new System.Drawing.Point(86, 44);
+            this.TextBox_SiSoMax.Location = new System.Drawing.Point(136, 50);
             this.TextBox_SiSoMax.Name = "TextBox_SiSoMax";
-            this.TextBox_SiSoMax.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_SiSoMax.Size = new System.Drawing.Size(166, 26);
             this.TextBox_SiSoMax.TabIndex = 5;
+            this.TextBox_SiSoMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label_SiSoMax
             // 
             this.Label_SiSoMax.AutoSize = true;
-            this.Label_SiSoMax.Location = new System.Drawing.Point(6, 47);
+            this.Label_SiSoMax.Location = new System.Drawing.Point(6, 52);
             this.Label_SiSoMax.Name = "Label_SiSoMax";
-            this.Label_SiSoMax.Size = new System.Drawing.Size(66, 13);
+            this.Label_SiSoMax.Size = new System.Drawing.Size(90, 18);
             this.Label_SiSoMax.TabIndex = 4;
             this.Label_SiSoMax.Text = "Sĩ số tối đa:";
             // 
             // Label_1
             // 
             this.Label_1.AutoSize = true;
-            this.Label_1.Location = new System.Drawing.Point(152, 22);
+            this.Label_1.Location = new System.Drawing.Point(211, 22);
             this.Label_1.Name = "Label_1";
-            this.Label_1.Size = new System.Drawing.Size(10, 13);
+            this.Label_1.Size = new System.Drawing.Size(13, 18);
             this.Label_1.TabIndex = 3;
             this.Label_1.Text = "-";
             // 
             // TextBox_TuoiMax
             // 
             this.TextBox_TuoiMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_TuoiMax.Location = new System.Drawing.Point(179, 19);
+            this.TextBox_TuoiMax.Location = new System.Drawing.Point(236, 20);
             this.TextBox_TuoiMax.Name = "TextBox_TuoiMax";
-            this.TextBox_TuoiMax.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_TuoiMax.Size = new System.Drawing.Size(66, 26);
             this.TextBox_TuoiMax.TabIndex = 2;
+            this.TextBox_TuoiMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_TuoiMin
             // 
             this.TextBox_TuoiMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_TuoiMin.Location = new System.Drawing.Point(86, 19);
+            this.TextBox_TuoiMin.Location = new System.Drawing.Point(136, 20);
             this.TextBox_TuoiMin.Name = "TextBox_TuoiMin";
-            this.TextBox_TuoiMin.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_TuoiMin.Size = new System.Drawing.Size(66, 26);
             this.TextBox_TuoiMin.TabIndex = 1;
+            this.TextBox_TuoiMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label_Tuoi
             // 
             this.Label_Tuoi.AutoSize = true;
             this.Label_Tuoi.Location = new System.Drawing.Point(6, 22);
             this.Label_Tuoi.Name = "Label_Tuoi";
-            this.Label_Tuoi.Size = new System.Drawing.Size(74, 13);
+            this.Label_Tuoi.Size = new System.Drawing.Size(102, 18);
             this.Label_Tuoi.TabIndex = 0;
             this.Label_Tuoi.Text = "Tuổi học sinh:";
             // 
@@ -295,9 +316,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox_DSMonHoc.Controls.Add(this.GridView_DSMonHoc);
-            this.GroupBox_DSMonHoc.Location = new System.Drawing.Point(276, 69);
+            this.GroupBox_DSMonHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_DSMonHoc.Location = new System.Drawing.Point(317, 3);
             this.GroupBox_DSMonHoc.Name = "GroupBox_DSMonHoc";
-            this.GroupBox_DSMonHoc.Size = new System.Drawing.Size(266, 265);
+            this.GroupBox_DSMonHoc.Size = new System.Drawing.Size(309, 321);
             this.GroupBox_DSMonHoc.TabIndex = 5;
             this.GroupBox_DSMonHoc.TabStop = false;
             this.GroupBox_DSMonHoc.Text = "Danh sách môn học";
@@ -314,11 +336,11 @@
             this.MaMonHoc,
             this.SoThuTu_MH,
             this.TenMonHoc});
-            this.GridView_DSMonHoc.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSMonHoc.Location = new System.Drawing.Point(6, 25);
             this.GridView_DSMonHoc.Name = "GridView_DSMonHoc";
             this.GridView_DSMonHoc.ReadOnly = true;
             this.GridView_DSMonHoc.RowHeadersWidth = 62;
-            this.GridView_DSMonHoc.Size = new System.Drawing.Size(254, 240);
+            this.GridView_DSMonHoc.Size = new System.Drawing.Size(297, 289);
             this.GridView_DSMonHoc.TabIndex = 6;
             // 
             // MaMonHoc
@@ -334,6 +356,8 @@
             // SoThuTu_MH
             // 
             this.SoThuTu_MH.DataPropertyName = "SoThuTu";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_MH.DefaultCellStyle = dataGridViewCellStyle12;
             this.SoThuTu_MH.HeaderText = "Số Thứ Tự";
             this.SoThuTu_MH.MinimumWidth = 8;
             this.SoThuTu_MH.Name = "SoThuTu_MH";
@@ -343,6 +367,8 @@
             // TenMonHoc
             // 
             this.TenMonHoc.DataPropertyName = "TenMonHoc";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenMonHoc.DefaultCellStyle = dataGridViewCellStyle13;
             this.TenMonHoc.HeaderText = "Tên Môn Học";
             this.TenMonHoc.MinimumWidth = 8;
             this.TenMonHoc.Name = "TenMonHoc";
@@ -351,12 +377,14 @@
             // 
             // GroupBox_DSLop
             // 
-            this.GroupBox_DSLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.GroupBox_DSLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox_DSLop.Controls.Add(this.GridView_DSLop);
-            this.GroupBox_DSLop.Location = new System.Drawing.Point(6, 69);
+            this.GroupBox_DSLop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_DSLop.Location = new System.Drawing.Point(3, 3);
             this.GroupBox_DSLop.Name = "GroupBox_DSLop";
-            this.GroupBox_DSLop.Size = new System.Drawing.Size(264, 265);
+            this.GroupBox_DSLop.Size = new System.Drawing.Size(308, 321);
             this.GroupBox_DSLop.TabIndex = 7;
             this.GroupBox_DSLop.TabStop = false;
             this.GroupBox_DSLop.Text = "Danh sách lớp";
@@ -375,11 +403,11 @@
             this.TenLop,
             this.SiSo,
             this.MaKhoiLop});
-            this.GridView_DSLop.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSLop.Location = new System.Drawing.Point(6, 25);
             this.GridView_DSLop.Name = "GridView_DSLop";
             this.GridView_DSLop.ReadOnly = true;
             this.GridView_DSLop.RowHeadersWidth = 62;
-            this.GridView_DSLop.Size = new System.Drawing.Size(252, 240);
+            this.GridView_DSLop.Size = new System.Drawing.Size(296, 289);
             this.GridView_DSLop.TabIndex = 6;
             // 
             // MaLop
@@ -395,6 +423,8 @@
             // SoThuTu_Lop
             // 
             this.SoThuTu_Lop.DataPropertyName = "SoThuTu";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_Lop.DefaultCellStyle = dataGridViewCellStyle14;
             this.SoThuTu_Lop.HeaderText = "Số Thứ Tự";
             this.SoThuTu_Lop.MinimumWidth = 8;
             this.SoThuTu_Lop.Name = "SoThuTu_Lop";
@@ -404,6 +434,8 @@
             // TenLop
             // 
             this.TenLop.DataPropertyName = "TenLop";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenLop.DefaultCellStyle = dataGridViewCellStyle15;
             this.TenLop.HeaderText = "Tên Lớp";
             this.TenLop.MinimumWidth = 8;
             this.TenLop.Name = "TenLop";
@@ -413,6 +445,8 @@
             // SiSo
             // 
             this.SiSo.DataPropertyName = "SiSo";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiSo.DefaultCellStyle = dataGridViewCellStyle16;
             this.SiSo.HeaderText = "Sĩ Số";
             this.SiSo.MinimumWidth = 8;
             this.SiSo.Name = "SiSo";
@@ -440,9 +474,10 @@
             this.GroupBox_ThaoTacLop.Controls.Add(this.Label_KhoiLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Label_TenLop);
             this.GroupBox_ThaoTacLop.Controls.Add(this.Button_ThemLop);
-            this.GroupBox_ThaoTacLop.Location = new System.Drawing.Point(548, 247);
+            this.GroupBox_ThaoTacLop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThaoTacLop.Location = new System.Drawing.Point(647, 303);
             this.GroupBox_ThaoTacLop.Name = "GroupBox_ThaoTacLop";
-            this.GroupBox_ThaoTacLop.Size = new System.Drawing.Size(240, 100);
+            this.GroupBox_ThaoTacLop.Size = new System.Drawing.Size(310, 119);
             this.GroupBox_ThaoTacLop.TabIndex = 8;
             this.GroupBox_ThaoTacLop.TabStop = false;
             this.GroupBox_ThaoTacLop.Text = "Thao tác lớp";
@@ -452,9 +487,9 @@
             this.ComboBox_KhoiLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_KhoiLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_KhoiLop.FormattingEnabled = true;
-            this.ComboBox_KhoiLop.Location = new System.Drawing.Point(86, 42);
+            this.ComboBox_KhoiLop.Location = new System.Drawing.Point(136, 53);
             this.ComboBox_KhoiLop.Name = "ComboBox_KhoiLop";
-            this.ComboBox_KhoiLop.Size = new System.Drawing.Size(142, 21);
+            this.ComboBox_KhoiLop.Size = new System.Drawing.Size(166, 26);
             this.ComboBox_KhoiLop.TabIndex = 18;
             // 
             // Button_XoaLop
@@ -462,9 +497,9 @@
             this.Button_XoaLop.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_XoaLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_XoaLop.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_XoaLop.Location = new System.Drawing.Point(160, 68);
+            this.Button_XoaLop.Location = new System.Drawing.Point(214, 84);
             this.Button_XoaLop.Name = "Button_XoaLop";
-            this.Button_XoaLop.Size = new System.Drawing.Size(75, 23);
+            this.Button_XoaLop.Size = new System.Drawing.Size(75, 29);
             this.Button_XoaLop.TabIndex = 17;
             this.Button_XoaLop.Text = "Xóa";
             this.Button_XoaLop.UseVisualStyleBackColor = false;
@@ -475,9 +510,9 @@
             this.Button_SuaLop.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_SuaLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_SuaLop.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_SuaLop.Location = new System.Drawing.Point(83, 68);
+            this.Button_SuaLop.Location = new System.Drawing.Point(105, 84);
             this.Button_SuaLop.Name = "Button_SuaLop";
-            this.Button_SuaLop.Size = new System.Drawing.Size(75, 23);
+            this.Button_SuaLop.Size = new System.Drawing.Size(102, 29);
             this.Button_SuaLop.TabIndex = 16;
             this.Button_SuaLop.Text = "Chỉnh sửa";
             this.Button_SuaLop.UseVisualStyleBackColor = false;
@@ -486,26 +521,26 @@
             // TextBox_TenLop
             // 
             this.TextBox_TenLop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_TenLop.Location = new System.Drawing.Point(86, 19);
+            this.TextBox_TenLop.Location = new System.Drawing.Point(136, 21);
             this.TextBox_TenLop.Name = "TextBox_TenLop";
-            this.TextBox_TenLop.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_TenLop.Size = new System.Drawing.Size(166, 26);
             this.TextBox_TenLop.TabIndex = 12;
             // 
             // Label_KhoiLop
             // 
             this.Label_KhoiLop.AutoSize = true;
-            this.Label_KhoiLop.Location = new System.Drawing.Point(6, 45);
+            this.Label_KhoiLop.Location = new System.Drawing.Point(6, 56);
             this.Label_KhoiLop.Name = "Label_KhoiLop";
-            this.Label_KhoiLop.Size = new System.Drawing.Size(48, 13);
+            this.Label_KhoiLop.Size = new System.Drawing.Size(71, 18);
             this.Label_KhoiLop.TabIndex = 9;
             this.Label_KhoiLop.Text = "Khối lớp:";
             // 
             // Label_TenLop
             // 
             this.Label_TenLop.AutoSize = true;
-            this.Label_TenLop.Location = new System.Drawing.Point(6, 22);
+            this.Label_TenLop.Location = new System.Drawing.Point(6, 24);
             this.Label_TenLop.Name = "Label_TenLop";
-            this.Label_TenLop.Size = new System.Drawing.Size(46, 13);
+            this.Label_TenLop.Size = new System.Drawing.Size(65, 18);
             this.Label_TenLop.TabIndex = 8;
             this.Label_TenLop.Text = "Tên lớp:";
             // 
@@ -514,9 +549,9 @@
             this.Button_ThemLop.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_ThemLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_ThemLop.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_ThemLop.Location = new System.Drawing.Point(6, 68);
+            this.Button_ThemLop.Location = new System.Drawing.Point(20, 84);
             this.Button_ThemLop.Name = "Button_ThemLop";
-            this.Button_ThemLop.Size = new System.Drawing.Size(75, 23);
+            this.Button_ThemLop.Size = new System.Drawing.Size(75, 29);
             this.Button_ThemLop.TabIndex = 0;
             this.Button_ThemLop.Text = "Thêm";
             this.Button_ThemLop.UseVisualStyleBackColor = false;
@@ -530,9 +565,10 @@
             this.GroupBox_ThaoTacMonHoc.Controls.Add(this.Label_TenMonHoc);
             this.GroupBox_ThaoTacMonHoc.Controls.Add(this.Button_ThemMon);
             this.GroupBox_ThaoTacMonHoc.Controls.Add(this.Button_SuaMon);
-            this.GroupBox_ThaoTacMonHoc.Location = new System.Drawing.Point(548, 353);
+            this.GroupBox_ThaoTacMonHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThaoTacMonHoc.Location = new System.Drawing.Point(647, 428);
             this.GroupBox_ThaoTacMonHoc.Name = "GroupBox_ThaoTacMonHoc";
-            this.GroupBox_ThaoTacMonHoc.Size = new System.Drawing.Size(240, 80);
+            this.GroupBox_ThaoTacMonHoc.Size = new System.Drawing.Size(310, 100);
             this.GroupBox_ThaoTacMonHoc.TabIndex = 9;
             this.GroupBox_ThaoTacMonHoc.TabStop = false;
             this.GroupBox_ThaoTacMonHoc.Text = "Thao tác môn học";
@@ -540,9 +576,9 @@
             // TextBox_TenMonHoc
             // 
             this.TextBox_TenMonHoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_TenMonHoc.Location = new System.Drawing.Point(86, 22);
+            this.TextBox_TenMonHoc.Location = new System.Drawing.Point(136, 27);
             this.TextBox_TenMonHoc.Name = "TextBox_TenMonHoc";
-            this.TextBox_TenMonHoc.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_TenMonHoc.Size = new System.Drawing.Size(166, 26);
             this.TextBox_TenMonHoc.TabIndex = 19;
             // 
             // Button_XoaMon
@@ -550,9 +586,9 @@
             this.Button_XoaMon.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_XoaMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_XoaMon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_XoaMon.Location = new System.Drawing.Point(161, 48);
+            this.Button_XoaMon.Location = new System.Drawing.Point(214, 65);
             this.Button_XoaMon.Name = "Button_XoaMon";
-            this.Button_XoaMon.Size = new System.Drawing.Size(75, 23);
+            this.Button_XoaMon.Size = new System.Drawing.Size(75, 29);
             this.Button_XoaMon.TabIndex = 20;
             this.Button_XoaMon.Text = "Xóa";
             this.Button_XoaMon.UseVisualStyleBackColor = false;
@@ -561,9 +597,9 @@
             // Label_TenMonHoc
             // 
             this.Label_TenMonHoc.AutoSize = true;
-            this.Label_TenMonHoc.Location = new System.Drawing.Point(6, 25);
+            this.Label_TenMonHoc.Location = new System.Drawing.Point(6, 29);
             this.Label_TenMonHoc.Name = "Label_TenMonHoc";
-            this.Label_TenMonHoc.Size = new System.Drawing.Size(73, 13);
+            this.Label_TenMonHoc.Size = new System.Drawing.Size(101, 18);
             this.Label_TenMonHoc.TabIndex = 18;
             this.Label_TenMonHoc.Text = "Tên môn học:";
             // 
@@ -572,9 +608,9 @@
             this.Button_ThemMon.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_ThemMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_ThemMon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_ThemMon.Location = new System.Drawing.Point(7, 48);
+            this.Button_ThemMon.Location = new System.Drawing.Point(21, 65);
             this.Button_ThemMon.Name = "Button_ThemMon";
-            this.Button_ThemMon.Size = new System.Drawing.Size(75, 23);
+            this.Button_ThemMon.Size = new System.Drawing.Size(75, 29);
             this.Button_ThemMon.TabIndex = 18;
             this.Button_ThemMon.Text = "Thêm";
             this.Button_ThemMon.UseVisualStyleBackColor = false;
@@ -585,9 +621,9 @@
             this.Button_SuaMon.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_SuaMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_SuaMon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_SuaMon.Location = new System.Drawing.Point(84, 48);
+            this.Button_SuaMon.Location = new System.Drawing.Point(105, 65);
             this.Button_SuaMon.Name = "Button_SuaMon";
-            this.Button_SuaMon.Size = new System.Drawing.Size(75, 23);
+            this.Button_SuaMon.Size = new System.Drawing.Size(102, 29);
             this.Button_SuaMon.TabIndex = 19;
             this.Button_SuaMon.Text = "Chỉnh sửa";
             this.Button_SuaMon.UseVisualStyleBackColor = false;
@@ -595,11 +631,14 @@
             // 
             // GroupBox_HocKy
             // 
-            this.GroupBox_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GroupBox_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox_HocKy.Controls.Add(this.GridView_DSHocKy);
-            this.GroupBox_HocKy.Location = new System.Drawing.Point(6, 340);
+            this.GroupBox_HocKy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_HocKy.Location = new System.Drawing.Point(3, 330);
             this.GroupBox_HocKy.Name = "GroupBox_HocKy";
-            this.GroupBox_HocKy.Size = new System.Drawing.Size(264, 265);
+            this.GroupBox_HocKy.Size = new System.Drawing.Size(308, 322);
             this.GroupBox_HocKy.TabIndex = 8;
             this.GroupBox_HocKy.TabStop = false;
             this.GroupBox_HocKy.Text = "Danh sách học kỳ";
@@ -616,11 +655,11 @@
             this.dataGridViewTextBoxColumn1,
             this.SoThuTu_HK,
             this.dataGridViewTextBoxColumn2});
-            this.GridView_DSHocKy.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSHocKy.Location = new System.Drawing.Point(6, 25);
             this.GridView_DSHocKy.Name = "GridView_DSHocKy";
             this.GridView_DSHocKy.ReadOnly = true;
             this.GridView_DSHocKy.RowHeadersWidth = 62;
-            this.GridView_DSHocKy.Size = new System.Drawing.Size(252, 240);
+            this.GridView_DSHocKy.Size = new System.Drawing.Size(296, 291);
             this.GridView_DSHocKy.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
@@ -636,6 +675,8 @@
             // SoThuTu_HK
             // 
             this.SoThuTu_HK.DataPropertyName = "SoThuTu";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_HK.DefaultCellStyle = dataGridViewCellStyle17;
             this.SoThuTu_HK.HeaderText = "Số Thứ Tự";
             this.SoThuTu_HK.MinimumWidth = 8;
             this.SoThuTu_HK.Name = "SoThuTu_HK";
@@ -645,6 +686,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TenHocKy";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên Học Kỳ";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -653,12 +696,14 @@
             // 
             // GroupBox_NamHoc
             // 
-            this.GroupBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.GroupBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBox_NamHoc.Controls.Add(this.GridView_DSNamHoc);
-            this.GroupBox_NamHoc.Location = new System.Drawing.Point(276, 343);
+            this.GroupBox_NamHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_NamHoc.Location = new System.Drawing.Point(317, 330);
             this.GroupBox_NamHoc.Name = "GroupBox_NamHoc";
-            this.GroupBox_NamHoc.Size = new System.Drawing.Size(266, 262);
+            this.GroupBox_NamHoc.Size = new System.Drawing.Size(309, 322);
             this.GroupBox_NamHoc.TabIndex = 9;
             this.GroupBox_NamHoc.TabStop = false;
             this.GroupBox_NamHoc.Text = "Danh sách năm học";
@@ -676,16 +721,18 @@
             this.SoThuTu_NH,
             this.dataGridViewTextBoxColumn6,
             this.NamKT});
-            this.GridView_DSNamHoc.Location = new System.Drawing.Point(6, 19);
+            this.GridView_DSNamHoc.Location = new System.Drawing.Point(6, 25);
             this.GridView_DSNamHoc.Name = "GridView_DSNamHoc";
             this.GridView_DSNamHoc.ReadOnly = true;
             this.GridView_DSNamHoc.RowHeadersWidth = 62;
-            this.GridView_DSNamHoc.Size = new System.Drawing.Size(254, 236);
+            this.GridView_DSNamHoc.Size = new System.Drawing.Size(297, 290);
             this.GridView_DSNamHoc.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "MaNamHoc";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewTextBoxColumn5.HeaderText = "Mã Năm Học";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -696,6 +743,8 @@
             // SoThuTu_NH
             // 
             this.SoThuTu_NH.DataPropertyName = "SoThuTu";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_NH.DefaultCellStyle = dataGridViewCellStyle20;
             this.SoThuTu_NH.HeaderText = "Số Thứ Tự";
             this.SoThuTu_NH.MinimumWidth = 8;
             this.SoThuTu_NH.Name = "SoThuTu_NH";
@@ -705,6 +754,8 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "NamBD";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn6.HeaderText = "Năm Bắt Đầu";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -714,6 +765,8 @@
             // NamKT
             // 
             this.NamKT.DataPropertyName = "NamKT";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NamKT.DefaultCellStyle = dataGridViewCellStyle22;
             this.NamKT.HeaderText = "Năm Kết Thúc";
             this.NamKT.MinimumWidth = 8;
             this.NamKT.Name = "NamKT";
@@ -728,9 +781,10 @@
             this.GroupBox_ThaoTacHocKy.Controls.Add(this.Label_TenHocKy);
             this.GroupBox_ThaoTacHocKy.Controls.Add(this.Button_ThemHK);
             this.GroupBox_ThaoTacHocKy.Controls.Add(this.Button_SuaHK);
-            this.GroupBox_ThaoTacHocKy.Location = new System.Drawing.Point(548, 439);
+            this.GroupBox_ThaoTacHocKy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThaoTacHocKy.Location = new System.Drawing.Point(647, 534);
             this.GroupBox_ThaoTacHocKy.Name = "GroupBox_ThaoTacHocKy";
-            this.GroupBox_ThaoTacHocKy.Size = new System.Drawing.Size(240, 80);
+            this.GroupBox_ThaoTacHocKy.Size = new System.Drawing.Size(310, 91);
             this.GroupBox_ThaoTacHocKy.TabIndex = 21;
             this.GroupBox_ThaoTacHocKy.TabStop = false;
             this.GroupBox_ThaoTacHocKy.Text = "Thao tác học kỳ";
@@ -738,9 +792,9 @@
             // TextBox_TenHocKy
             // 
             this.TextBox_TenHocKy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_TenHocKy.Location = new System.Drawing.Point(86, 22);
+            this.TextBox_TenHocKy.Location = new System.Drawing.Point(136, 23);
             this.TextBox_TenHocKy.Name = "TextBox_TenHocKy";
-            this.TextBox_TenHocKy.Size = new System.Drawing.Size(142, 20);
+            this.TextBox_TenHocKy.Size = new System.Drawing.Size(166, 26);
             this.TextBox_TenHocKy.TabIndex = 19;
             // 
             // Button_XoaHK
@@ -748,9 +802,9 @@
             this.Button_XoaHK.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_XoaHK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_XoaHK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_XoaHK.Location = new System.Drawing.Point(161, 48);
+            this.Button_XoaHK.Location = new System.Drawing.Point(214, 56);
             this.Button_XoaHK.Name = "Button_XoaHK";
-            this.Button_XoaHK.Size = new System.Drawing.Size(75, 23);
+            this.Button_XoaHK.Size = new System.Drawing.Size(75, 29);
             this.Button_XoaHK.TabIndex = 20;
             this.Button_XoaHK.Text = "Xóa";
             this.Button_XoaHK.UseVisualStyleBackColor = false;
@@ -761,7 +815,7 @@
             this.Label_TenHocKy.AutoSize = true;
             this.Label_TenHocKy.Location = new System.Drawing.Point(6, 25);
             this.Label_TenHocKy.Name = "Label_TenHocKy";
-            this.Label_TenHocKy.Size = new System.Drawing.Size(64, 13);
+            this.Label_TenHocKy.Size = new System.Drawing.Size(86, 18);
             this.Label_TenHocKy.TabIndex = 18;
             this.Label_TenHocKy.Text = "Tên học kỳ:";
             // 
@@ -770,9 +824,9 @@
             this.Button_ThemHK.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_ThemHK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_ThemHK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_ThemHK.Location = new System.Drawing.Point(7, 48);
+            this.Button_ThemHK.Location = new System.Drawing.Point(21, 56);
             this.Button_ThemHK.Name = "Button_ThemHK";
-            this.Button_ThemHK.Size = new System.Drawing.Size(75, 23);
+            this.Button_ThemHK.Size = new System.Drawing.Size(75, 29);
             this.Button_ThemHK.TabIndex = 18;
             this.Button_ThemHK.Text = "Thêm";
             this.Button_ThemHK.UseVisualStyleBackColor = false;
@@ -783,9 +837,9 @@
             this.Button_SuaHK.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_SuaHK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_SuaHK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_SuaHK.Location = new System.Drawing.Point(84, 48);
+            this.Button_SuaHK.Location = new System.Drawing.Point(105, 56);
             this.Button_SuaHK.Name = "Button_SuaHK";
-            this.Button_SuaHK.Size = new System.Drawing.Size(75, 23);
+            this.Button_SuaHK.Size = new System.Drawing.Size(102, 29);
             this.Button_SuaHK.TabIndex = 19;
             this.Button_SuaHK.Text = "Chỉnh sửa";
             this.Button_SuaHK.UseVisualStyleBackColor = false;
@@ -801,9 +855,10 @@
             this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Label_NamHoc);
             this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Button_ThemNH);
             this.GroupBox_ThaoTacNamHoc.Controls.Add(this.Button_SuaNH);
-            this.GroupBox_ThaoTacNamHoc.Location = new System.Drawing.Point(548, 525);
+            this.GroupBox_ThaoTacNamHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_ThaoTacNamHoc.Location = new System.Drawing.Point(647, 631);
             this.GroupBox_ThaoTacNamHoc.Name = "GroupBox_ThaoTacNamHoc";
-            this.GroupBox_ThaoTacNamHoc.Size = new System.Drawing.Size(240, 80);
+            this.GroupBox_ThaoTacNamHoc.Size = new System.Drawing.Size(310, 91);
             this.GroupBox_ThaoTacNamHoc.TabIndex = 22;
             this.GroupBox_ThaoTacNamHoc.TabStop = false;
             this.GroupBox_ThaoTacNamHoc.Text = "Thao tác năm học";
@@ -811,26 +866,26 @@
             // Label_3
             // 
             this.Label_3.AutoSize = true;
-            this.Label_3.Location = new System.Drawing.Point(152, 29);
+            this.Label_3.Location = new System.Drawing.Point(211, 24);
             this.Label_3.Name = "Label_3";
-            this.Label_3.Size = new System.Drawing.Size(10, 13);
+            this.Label_3.Size = new System.Drawing.Size(13, 18);
             this.Label_3.TabIndex = 22;
             this.Label_3.Text = "-";
             // 
             // TextBox_NamKT
             // 
             this.TextBox_NamKT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_NamKT.Location = new System.Drawing.Point(179, 23);
+            this.TextBox_NamKT.Location = new System.Drawing.Point(236, 22);
             this.TextBox_NamKT.Name = "TextBox_NamKT";
-            this.TextBox_NamKT.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_NamKT.Size = new System.Drawing.Size(66, 26);
             this.TextBox_NamKT.TabIndex = 21;
             // 
             // TextBox_NamBD
             // 
             this.TextBox_NamBD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_NamBD.Location = new System.Drawing.Point(86, 22);
+            this.TextBox_NamBD.Location = new System.Drawing.Point(136, 22);
             this.TextBox_NamBD.Name = "TextBox_NamBD";
-            this.TextBox_NamBD.Size = new System.Drawing.Size(49, 20);
+            this.TextBox_NamBD.Size = new System.Drawing.Size(66, 26);
             this.TextBox_NamBD.TabIndex = 19;
             // 
             // Button_XoaNH
@@ -838,9 +893,9 @@
             this.Button_XoaNH.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_XoaNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_XoaNH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_XoaNH.Location = new System.Drawing.Point(161, 48);
+            this.Button_XoaNH.Location = new System.Drawing.Point(214, 54);
             this.Button_XoaNH.Name = "Button_XoaNH";
-            this.Button_XoaNH.Size = new System.Drawing.Size(75, 23);
+            this.Button_XoaNH.Size = new System.Drawing.Size(75, 29);
             this.Button_XoaNH.TabIndex = 20;
             this.Button_XoaNH.Text = "Xóa";
             this.Button_XoaNH.UseVisualStyleBackColor = false;
@@ -851,7 +906,7 @@
             this.Label_NamHoc.AutoSize = true;
             this.Label_NamHoc.Location = new System.Drawing.Point(6, 25);
             this.Label_NamHoc.Name = "Label_NamHoc";
-            this.Label_NamHoc.Size = new System.Drawing.Size(53, 13);
+            this.Label_NamHoc.Size = new System.Drawing.Size(74, 18);
             this.Label_NamHoc.TabIndex = 18;
             this.Label_NamHoc.Text = "Năm học:";
             // 
@@ -860,9 +915,9 @@
             this.Button_ThemNH.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_ThemNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_ThemNH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_ThemNH.Location = new System.Drawing.Point(7, 48);
+            this.Button_ThemNH.Location = new System.Drawing.Point(21, 54);
             this.Button_ThemNH.Name = "Button_ThemNH";
-            this.Button_ThemNH.Size = new System.Drawing.Size(75, 23);
+            this.Button_ThemNH.Size = new System.Drawing.Size(75, 29);
             this.Button_ThemNH.TabIndex = 18;
             this.Button_ThemNH.Text = "Thêm";
             this.Button_ThemNH.UseVisualStyleBackColor = false;
@@ -873,28 +928,45 @@
             this.Button_SuaNH.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_SuaNH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_SuaNH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_SuaNH.Location = new System.Drawing.Point(84, 48);
+            this.Button_SuaNH.Location = new System.Drawing.Point(105, 54);
             this.Button_SuaNH.Name = "Button_SuaNH";
-            this.Button_SuaNH.Size = new System.Drawing.Size(75, 23);
+            this.Button_SuaNH.Size = new System.Drawing.Size(102, 29);
             this.Button_SuaNH.TabIndex = 19;
             this.Button_SuaNH.Text = "Chỉnh sửa";
             this.Button_SuaNH.UseVisualStyleBackColor = false;
             this.Button_SuaNH.Click += new System.EventHandler(this.Button_SuaNH_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.GroupBox_DSLop, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.GroupBox_DSMonHoc, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.GroupBox_HocKy, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.GroupBox_NamHoc, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 76);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(629, 655);
+            this.tableLayoutPanel1.TabIndex = 23;
             // 
             // Form_ThietLap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(796, 617);
+            this.ClientSize = new System.Drawing.Size(961, 743);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.GroupBox_ThaoTacNamHoc);
             this.Controls.Add(this.GroupBox_ThaoTacHocKy);
-            this.Controls.Add(this.GroupBox_NamHoc);
-            this.Controls.Add(this.GroupBox_HocKy);
             this.Controls.Add(this.GroupBox_ThaoTacMonHoc);
             this.Controls.Add(this.GroupBox_ThaoTacLop);
-            this.Controls.Add(this.GroupBox_DSLop);
-            this.Controls.Add(this.GroupBox_DSMonHoc);
             this.Controls.Add(this.GroupBox_ThayDoiQD);
             this.Controls.Add(this.Panel_Title);
             this.Name = "Form_ThietLap";
@@ -919,6 +991,7 @@
             this.GroupBox_ThaoTacHocKy.PerformLayout();
             this.GroupBox_ThaoTacNamHoc.ResumeLayout(false);
             this.GroupBox_ThaoTacNamHoc.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -979,6 +1052,7 @@
         private System.Windows.Forms.Label Label_NamHoc;
         private System.Windows.Forms.Button Button_ThemNH;
         private System.Windows.Forms.Button Button_SuaNH;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;

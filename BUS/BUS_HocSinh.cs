@@ -55,6 +55,7 @@ namespace BUS
             result.Columns.Remove("DiaChi");
             result.Columns.Remove("Email");
 
+            result.Columns.Add("TenLop", typeof(string));
             result.Columns.Add("TBHKI", typeof(float));
             result.Columns.Add("TBHKII", typeof(float));
 
@@ -62,7 +63,7 @@ namespace BUS
             int stt = 1;
             foreach (DataRow row in result.Rows)
             {
-                if (row["HoTen"].ToString().Substring(0, hoten.Length) != hoten)
+                if (!row["HoTen"].ToString().ToUpper().Contains(hoten.ToUpper()))
                 {
                     row.Delete();
                     continue;
@@ -72,11 +73,16 @@ namespace BUS
                 row["SoThuTu"] = stt;
                 stt++;
 
+                row["TenLop"] = (object)this.GetLop(mahs, manh) ?? DBNull.Value;
                 row["TBHKI"] = (object)diem.GetDiemTBHK(mahs, manh, "Học kỳ 1") ?? DBNull.Value;
                 row["TBHKII"] = (object)diem.GetDiemTBHK(mahs, manh, "Học kỳ 2") ?? DBNull.Value;
             }
 
             return result;
+        }
+        public string GetLop(string mahs, string manh)
+        {
+            return hocsinh.GetLop(mahs, manh);
         }
     }
 }

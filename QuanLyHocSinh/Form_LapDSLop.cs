@@ -32,13 +32,54 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
-            listThamSo = thamso.GetThamSo();
+            init();
 
             LoadDanhSachLop();
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
             LoadDanhSachHocSinh();
             LoadHocSinhCho();
+        }
+
+        void init()
+        {
+            listThamSo = thamso.GetThamSo();
+
+            DateTimePicker_NgaySinhKT.MaxDate = DateTime.Today.AddYears(-listThamSo.TuoiToiThieu);
+
+            DateTimePicker_NgaySinhBD.MaxDate = DateTimePicker_NgaySinhKT.Value;
+            DateTimePicker_NgaySinhKT.MinDate = DateTimePicker_NgaySinhBD.Value;
+
+            DateTimePicker_NgaySinhBD.ValueChanged += DateTimePicker_NgaySinhBD_ValueChanged;
+            DateTimePicker_NgaySinhKT.ValueChanged += DateTimePicker_NgaySinhKT_ValueChanged;
+
+            TrackBar_CoChu_Lop.Value = int.Parse(GridView_DSLop.Font.Size.ToString());
+            TrackBar_CoChu_Lop.ValueChanged += TrackBar_CoChu_Lop_ValueChanged;
+
+            TrackBar_CoChu_Cho.Value = int.Parse(GridView_DSCho.Font.Size.ToString());
+            TrackBar_CoChu_Cho.ValueChanged += TrackBar_CoChu_Cho_ValueChanged;
+        }
+
+        private void TrackBar_CoChu_Cho_ValueChanged(object sender, EventArgs e)
+        {
+            GridView_DSCho.Font = new Font(GridView_DSCho.Font.FontFamily.ToString(), TrackBar_CoChu_Cho.Value);
+        }
+
+        private void TrackBar_CoChu_Lop_ValueChanged(object sender, EventArgs e)
+        {
+            GridView_DSLop.Font = new Font(GridView_DSLop.Font.FontFamily.ToString(), TrackBar_CoChu_Lop.Value);
+        }
+
+        private void DateTimePicker_NgaySinhKT_ValueChanged(object sender, EventArgs e)
+        {
+            DateTimePicker_NgaySinhBD.MaxDate = DateTimePicker_NgaySinhKT.Value;
+            DateTimePicker_NgaySinhKT.MinDate = DateTimePicker_NgaySinhBD.Value;
+        }
+
+        private void DateTimePicker_NgaySinhBD_ValueChanged(object sender, EventArgs e)
+        {
+            DateTimePicker_NgaySinhBD.MaxDate = DateTimePicker_NgaySinhKT.Value;
+            DateTimePicker_NgaySinhKT.MinDate = DateTimePicker_NgaySinhBD.Value;
         }
 
         void LoadDanhSachLop()
@@ -105,20 +146,33 @@ namespace QuanLyHocSinh
             DataTable temp = hocsinh.GetHocSinh(currentLop, currentHocKy, currentNamHoc);
             temp.Columns.Add("GT", typeof(string));
             temp.Columns.Add("SoThuTu", typeof(int));
+            temp.Columns.Add("NS", typeof(string));
 
             int stt = 1;
             foreach(DataRow row in temp.Rows)
             {
                 row["SoThuTu"] = stt;
                 stt++;
+
+                DateTime ns = DateTime.Parse(row["NgaySinh"].ToString());
+                row["NS"] = ns.ToShortDateString();
+
                 if (row["GioiTinh"].ToString() == "True")
                     row["GT"] = "Nam";
                 else
                     row["GT"] = "Nữ";
             }
+
+            foreach (DataGridViewColumn column in GridView_DSLop.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             GridView_DSLop.DataSource = temp;
             GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSLop.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSLop.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.ClearSelection();
 
@@ -165,14 +219,23 @@ namespace QuanLyHocSinh
             {
                 row["SoThuTu"] = stt;
                 stt++;
+
                 if (row["GioiTinh"].ToString() == "True")
                     row["GT"] = "Nam";
                 else
                     row["GT"] = "Nữ";
             }
+
+            foreach (DataGridViewColumn column in GridView_DSCho.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             GridView_DSCho.DataSource = temp;
             GridView_DSCho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridView_DSCho.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GridView_DSCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSCho.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             GridView_DSCho.ReadOnly = true;
             GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSCho.CellClick += GridView_DSCho_CellClick;
@@ -233,6 +296,59 @@ namespace QuanLyHocSinh
             }
             hocsinh.Delete_HSTrongLop(currentHSLop, currentLop, currentHocKy, currentNamHoc);
             LoadDanhSachHocSinh();
+            LoadHocSinhCho();
+        }
+
+        private void Button_TimKiem_Click(object sender, EventArgs e)
+        {
+            DataTable temp = hocsinh.GetHocSinhCho(currentHocKy, currentNamHoc);
+            temp.Columns.Add("GT", typeof(string));
+            temp.Columns.Add("SoThuTu", typeof(int));
+
+            int stt = 1;
+            foreach (DataRow row in temp.Rows)
+            {
+                if (!row["HoTen"].ToString().ToUpper().Contains(TextBox_HoTen.Text.ToUpper())) 
+                {
+                    row.Delete();
+                    continue;
+                }
+                int comp_1 = DateTime.Compare(DateTime.Parse(row["NgaySinh"].ToString()), DateTimePicker_NgaySinhBD.Value);
+                int comp_2 = DateTime.Compare(DateTime.Parse(row["NgaySinh"].ToString()), DateTimePicker_NgaySinhKT.Value);
+                if (comp_1 < 0 || comp_2 > 0)
+                {
+                    row.Delete();
+                    continue;
+                }
+
+                if (RadioButton_Nam.Checked)
+                {
+                    if (row["GioiTinh"].ToString() == "False")
+                    {
+                        row.Delete();
+                        continue;
+                    }
+                } else if (RadioButton_Nu.Checked)
+                {
+                    if (row["GioiTinh"].ToString() == "True")
+                    {
+                        row.Delete();
+                        continue;
+                    }
+                }
+
+                row["SoThuTu"] = stt;
+                stt++;
+                if (row["GioiTinh"].ToString() == "True")
+                    row["GT"] = "Nam";
+                else
+                    row["GT"] = "Nữ";
+            }
+            GridView_DSCho.DataSource = temp;
+        }
+
+        private void Button_HienThiTatCa_Click(object sender, EventArgs e)
+        {
             LoadHocSinhCho();
         }
     }

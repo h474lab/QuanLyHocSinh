@@ -33,6 +33,8 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
+            init();
+
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
             LoadDanhSachMonHoc();
@@ -40,16 +42,57 @@ namespace QuanLyHocSinh
             LoadBCMon();
         }
 
+        void init()
+        {
+            TrackBar_CoChu_HK.Value = int.Parse(GridView_BCHocKy.Font.Size.ToString());
+            TrackBar_CoChu_HK.ValueChanged += TrackBar_CoChu_HK_ValueChanged;
+
+            TrackBar_CoChu_MH.Value = int.Parse(GridView_BCMonHoc.Font.Size.ToString());
+            TrackBar_CoChu_MH.ValueChanged += TrackBar_CoChu_MH_ValueChanged;
+
+            //ComboBox_CoChu_HK.Text = GridView_BCHocKy.Font.Size.ToString();
+            //ComboBox_CoChu_HK.TextChanged += ComboBox_CoChu_HK_TextChanged;
+        }
+
+        private void TrackBar_CoChu_MH_ValueChanged(object sender, EventArgs e)
+        {
+            GridView_BCMonHoc.Font = new Font(GridView_BCMonHoc.Font.FontFamily.ToString(), TrackBar_CoChu_MH.Value);
+        }
+
+        private void TrackBar_CoChu_HK_ValueChanged(object sender, EventArgs e)
+        {
+            GridView_BCHocKy.Font = new Font(GridView_BCHocKy.Font.FontFamily.ToString(), TrackBar_CoChu_HK.Value);
+        }
+
+        /*private void ComboBox_CoChu_HK_TextChanged(object sender, EventArgs e)
+        {
+            if (ComboBox_CoChu_HK.Text == "") return;
+            float cochu = float.Parse(ComboBox_CoChu_HK.Text);
+            if (cochu <= 0 || cochu > 100)
+            {
+                ComboBox_CoChu_HK.Text = GridView_BCHocKy.Font.Size.ToString();
+                return;
+            }
+            GridView_BCHocKy.Font = new Font(GridView_BCHocKy.Font.FontFamily, cochu);
+        }*/
+
         void LoadBCHocKy()
         {
             if (currentHocKy_HK == "" | currentNamHoc_HK == "") return;
+
             GridView_BCHocKy.DataSource = bchocky.GetBCHocKy(currentHocKy_HK, currentNamHoc_HK);
             GridView_BCHocKy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BCHocKy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_BCHocKy.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             GridView_BCHocKy.ReadOnly = true;
             GridView_BCHocKy.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
 
-            GridView_BCHocKy.BorderStyle = BorderStyle.None;
+            foreach (DataGridViewColumn column in GridView_BCHocKy.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            GridView_BCHocKy.BorderStyle = BorderStyle.FixedSingle;
             GridView_BCHocKy.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_BCHocKy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_BCHocKy.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
@@ -64,13 +107,20 @@ namespace QuanLyHocSinh
         void LoadBCMon()
         {
             if (currentHocKy_MH == "" | currentNamHoc_MH == "") return;
+
             GridView_BCMonHoc.DataSource = bcmon.GetBCMon(currentHocKy_MH, currentNamHoc_MH, currentMonHoc_MH);
             GridView_BCMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BCMonHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_BCMonHoc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             GridView_BCMonHoc.ReadOnly = true;
             GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
 
-            GridView_BCMonHoc.BorderStyle = BorderStyle.None;
+            foreach (DataGridViewColumn column in GridView_BCMonHoc.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            GridView_BCMonHoc.BorderStyle = BorderStyle.FixedSingle;
             GridView_BCMonHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_BCMonHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;

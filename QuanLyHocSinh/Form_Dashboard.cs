@@ -19,7 +19,7 @@ namespace QuanLyHocSinh
         // Default color
         Color defaultColor = Color.LightSkyBlue;
         // Color when focused
-        Color focusedColor = Color.DeepSkyBlue;
+        Color focusedColor = Color.RoyalBlue;
 
         private bool[] panelStatus = { false, false, false, false, false, false };
         public Form_Dashboard()

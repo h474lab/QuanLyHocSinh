@@ -47,7 +47,7 @@
             this.OptionsPanel.BackColor = System.Drawing.Color.Lavender;
             this.OptionsPanel.Location = new System.Drawing.Point(0, -1);
             this.OptionsPanel.Name = "OptionsPanel";
-            this.OptionsPanel.Size = new System.Drawing.Size(72, 644);
+            this.OptionsPanel.Size = new System.Drawing.Size(72, 732);
             this.OptionsPanel.TabIndex = 0;
             // 
             // SettingsBtn
@@ -164,10 +164,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Main_Panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Main_Panel.Location = new System.Drawing.Point(77, -1);
+            this.Main_Panel.Location = new System.Drawing.Point(74, -1);
             this.Main_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.Main_Panel.Name = "Main_Panel";
-            this.Main_Panel.Size = new System.Drawing.Size(1122, 644);
+            this.Main_Panel.Size = new System.Drawing.Size(1238, 732);
             this.Main_Panel.TabIndex = 1;
             // 
             // Form_Dashboard
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1199, 642);
+            this.ClientSize = new System.Drawing.Size(1314, 730);
             this.Controls.Add(this.SettingsBtn);
             this.Controls.Add(this.ReportBtn);
             this.Controls.Add(this.ScoreBtn);

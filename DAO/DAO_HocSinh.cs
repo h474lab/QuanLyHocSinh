@@ -211,5 +211,34 @@ namespace DAO
             }
             return result;
         }
+
+        public string GetLop(string mahs, string manh)
+        {
+            string result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_LOP", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
+                command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataReader rd = command.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        if (rd["TenLop"] != DBNull.Value)
+                            result = rd["TenLop"].ToString();
+                        rd.Close();
+                    }
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
     }
 }

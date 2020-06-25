@@ -45,6 +45,8 @@
             this.ComboBox_HocKy = new System.Windows.Forms.ComboBox();
             this.Label_HocKy = new System.Windows.Forms.Label();
             this.GroupBox_BangDiem = new System.Windows.Forms.GroupBox();
+            this.Panel_CoChu = new System.Windows.Forms.Panel();
+            this.TrackBar_CoChu = new System.Windows.Forms.TrackBar();
             this.GridView_BangDiem = new System.Windows.Forms.DataGridView();
             this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +57,8 @@
             this.Panel_Title.SuspendLayout();
             this.GroupBox_BoLoc.SuspendLayout();
             this.GroupBox_BangDiem.SuspendLayout();
+            this.Panel_CoChu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_BangDiem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +66,7 @@
             // 
             this.Panel_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Panel_Title.Controls.Add(this.Label_Title);
-            this.Panel_Title.Location = new System.Drawing.Point(139, 12);
+            this.Panel_Title.Location = new System.Drawing.Point(294, 12);
             this.Panel_Title.Name = "Panel_Title";
             this.Panel_Title.Size = new System.Drawing.Size(497, 50);
             this.Panel_Title.TabIndex = 2;
@@ -89,31 +93,32 @@
             this.GroupBox_BoLoc.Controls.Add(this.Label_Lop);
             this.GroupBox_BoLoc.Controls.Add(this.ComboBox_HocKy);
             this.GroupBox_BoLoc.Controls.Add(this.Label_HocKy);
-            this.GroupBox_BoLoc.Location = new System.Drawing.Point(12, 68);
+            this.GroupBox_BoLoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_BoLoc.Location = new System.Drawing.Point(2, 68);
             this.GroupBox_BoLoc.Name = "GroupBox_BoLoc";
-            this.GroupBox_BoLoc.Size = new System.Drawing.Size(739, 50);
+            this.GroupBox_BoLoc.Size = new System.Drawing.Size(1072, 61);
             this.GroupBox_BoLoc.TabIndex = 8;
             this.GroupBox_BoLoc.TabStop = false;
             this.GroupBox_BoLoc.Text = "Bộ lọc";
             // 
             // ComboBox_NamHoc
             // 
-            this.ComboBox_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBox_NamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_NamHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_NamHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_NamHoc.FormattingEnabled = true;
-            this.ComboBox_NamHoc.Location = new System.Drawing.Point(381, 17);
+            this.ComboBox_NamHoc.Location = new System.Drawing.Point(662, 24);
             this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
-            this.ComboBox_NamHoc.Size = new System.Drawing.Size(141, 21);
+            this.ComboBox_NamHoc.Size = new System.Drawing.Size(150, 26);
             this.ComboBox_NamHoc.TabIndex = 7;
             // 
             // Label_NamHoc
             // 
-            this.Label_NamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_NamHoc.AutoSize = true;
-            this.Label_NamHoc.Location = new System.Drawing.Point(325, 20);
+            this.Label_NamHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_NamHoc.Location = new System.Drawing.Point(582, 27);
             this.Label_NamHoc.Name = "Label_NamHoc";
-            this.Label_NamHoc.Size = new System.Drawing.Size(53, 13);
+            this.Label_NamHoc.Size = new System.Drawing.Size(74, 18);
             this.Label_NamHoc.TabIndex = 6;
             this.Label_NamHoc.Text = "Năm học:";
             // 
@@ -122,23 +127,23 @@
             this.ComboBox_MonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBox_MonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_MonHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_MonHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_MonHoc.FormattingEnabled = true;
-            this.ComboBox_MonHoc.Location = new System.Drawing.Point(585, 17);
+            this.ComboBox_MonHoc.Location = new System.Drawing.Point(918, 24);
             this.ComboBox_MonHoc.Name = "ComboBox_MonHoc";
-            this.ComboBox_MonHoc.Size = new System.Drawing.Size(145, 21);
+            this.ComboBox_MonHoc.Size = new System.Drawing.Size(145, 26);
             this.ComboBox_MonHoc.TabIndex = 5;
             this.ComboBox_MonHoc.SelectedIndexChanged += new System.EventHandler(this.ComboBox_MonHoc_SelectedIndexChanged);
             // 
             // ComboBox_Lop
             // 
-            this.ComboBox_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBox_Lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Lop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_Lop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Lop.FormattingEnabled = true;
-            this.ComboBox_Lop.Location = new System.Drawing.Point(39, 17);
+            this.ComboBox_Lop.Location = new System.Drawing.Point(52, 24);
             this.ComboBox_Lop.Name = "ComboBox_Lop";
-            this.ComboBox_Lop.Size = new System.Drawing.Size(110, 21);
+            this.ComboBox_Lop.Size = new System.Drawing.Size(306, 26);
             this.ComboBox_Lop.TabIndex = 4;
             this.ComboBox_Lop.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Lop_SelectedIndexChanged);
             // 
@@ -146,40 +151,42 @@
             // 
             this.Label_MonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_MonHoc.AutoSize = true;
-            this.Label_MonHoc.Location = new System.Drawing.Point(527, 20);
+            this.Label_MonHoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_MonHoc.Location = new System.Drawing.Point(841, 27);
             this.Label_MonHoc.Name = "Label_MonHoc";
-            this.Label_MonHoc.Size = new System.Drawing.Size(52, 13);
+            this.Label_MonHoc.Size = new System.Drawing.Size(71, 18);
             this.Label_MonHoc.TabIndex = 2;
             this.Label_MonHoc.Text = "Môn học:";
             // 
             // Label_Lop
             // 
             this.Label_Lop.AutoSize = true;
-            this.Label_Lop.Location = new System.Drawing.Point(5, 20);
+            this.Label_Lop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Lop.Location = new System.Drawing.Point(5, 27);
             this.Label_Lop.Name = "Label_Lop";
-            this.Label_Lop.Size = new System.Drawing.Size(28, 13);
+            this.Label_Lop.Size = new System.Drawing.Size(41, 18);
             this.Label_Lop.TabIndex = 0;
             this.Label_Lop.Text = "Lớp:";
             // 
             // ComboBox_HocKy
             // 
-            this.ComboBox_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBox_HocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_HocKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_HocKy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_HocKy.FormattingEnabled = true;
-            this.ComboBox_HocKy.Location = new System.Drawing.Point(209, 17);
+            this.ComboBox_HocKy.Location = new System.Drawing.Point(429, 24);
             this.ComboBox_HocKy.Name = "ComboBox_HocKy";
-            this.ComboBox_HocKy.Size = new System.Drawing.Size(111, 21);
+            this.ComboBox_HocKy.Size = new System.Drawing.Size(147, 26);
             this.ComboBox_HocKy.TabIndex = 3;
             this.ComboBox_HocKy.SelectedIndexChanged += new System.EventHandler(this.ComboBox_HocKy_SelectedIndexChanged);
             // 
             // Label_HocKy
             // 
-            this.Label_HocKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_HocKy.AutoSize = true;
-            this.Label_HocKy.Location = new System.Drawing.Point(158, 20);
+            this.Label_HocKy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_HocKy.Location = new System.Drawing.Point(364, 27);
             this.Label_HocKy.Name = "Label_HocKy";
-            this.Label_HocKy.Size = new System.Drawing.Size(44, 13);
+            this.Label_HocKy.Size = new System.Drawing.Size(59, 18);
             this.Label_HocKy.TabIndex = 1;
             this.Label_HocKy.Text = "Học kỳ:";
             // 
@@ -188,13 +195,39 @@
             this.GroupBox_BangDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_BangDiem.Controls.Add(this.Panel_CoChu);
             this.GroupBox_BangDiem.Controls.Add(this.GridView_BangDiem);
-            this.GroupBox_BangDiem.Location = new System.Drawing.Point(12, 124);
+            this.GroupBox_BangDiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_BangDiem.Location = new System.Drawing.Point(2, 135);
             this.GroupBox_BangDiem.Name = "GroupBox_BangDiem";
-            this.GroupBox_BangDiem.Size = new System.Drawing.Size(739, 296);
+            this.GroupBox_BangDiem.Size = new System.Drawing.Size(1072, 480);
             this.GroupBox_BangDiem.TabIndex = 9;
             this.GroupBox_BangDiem.TabStop = false;
             this.GroupBox_BangDiem.Text = "Bảng điểm";
+            // 
+            // Panel_CoChu
+            // 
+            this.Panel_CoChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CoChu.Controls.Add(this.TrackBar_CoChu);
+            this.Panel_CoChu.Location = new System.Drawing.Point(1043, 25);
+            this.Panel_CoChu.Name = "Panel_CoChu";
+            this.Panel_CoChu.Size = new System.Drawing.Size(23, 449);
+            this.Panel_CoChu.TabIndex = 3;
+            // 
+            // TrackBar_CoChu
+            // 
+            this.TrackBar_CoChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrackBar_CoChu.Location = new System.Drawing.Point(0, 0);
+            this.TrackBar_CoChu.Maximum = 100;
+            this.TrackBar_CoChu.Minimum = 1;
+            this.TrackBar_CoChu.Name = "TrackBar_CoChu";
+            this.TrackBar_CoChu.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TrackBar_CoChu.Size = new System.Drawing.Size(45, 446);
+            this.TrackBar_CoChu.TabIndex = 3;
+            this.TrackBar_CoChu.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBar_CoChu.Value = 1;
             // 
             // GridView_BangDiem
             // 
@@ -211,10 +244,10 @@
             this.D1T,
             this.DHK,
             this.DiemTB});
-            this.GridView_BangDiem.Location = new System.Drawing.Point(6, 19);
+            this.GridView_BangDiem.Location = new System.Drawing.Point(7, 25);
             this.GridView_BangDiem.Name = "GridView_BangDiem";
             this.GridView_BangDiem.RowHeadersWidth = 62;
-            this.GridView_BangDiem.Size = new System.Drawing.Size(727, 270);
+            this.GridView_BangDiem.Size = new System.Drawing.Size(1030, 446);
             this.GridView_BangDiem.TabIndex = 0;
             // 
             // MaHocSinh
@@ -284,7 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(766, 432);
+            this.ClientSize = new System.Drawing.Size(1076, 618);
             this.Controls.Add(this.GroupBox_BangDiem);
             this.Controls.Add(this.GroupBox_BoLoc);
             this.Controls.Add(this.Panel_Title);
@@ -295,6 +328,9 @@
             this.GroupBox_BoLoc.ResumeLayout(false);
             this.GroupBox_BoLoc.PerformLayout();
             this.GroupBox_BangDiem.ResumeLayout(false);
+            this.Panel_CoChu.ResumeLayout(false);
+            this.Panel_CoChu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_BangDiem)).EndInit();
             this.ResumeLayout(false);
 
@@ -321,5 +357,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn D1T;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHK;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
+        private System.Windows.Forms.Panel Panel_CoChu;
+        private System.Windows.Forms.TrackBar TrackBar_CoChu;
     }
 }

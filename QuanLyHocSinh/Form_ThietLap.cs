@@ -68,8 +68,13 @@ namespace QuanLyHocSinh
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
 
+            foreach(DataGridViewColumn column in GridView_DSLop.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             // Edit theme
-            GridView_DSLop.BorderStyle = BorderStyle.None;
+            GridView_DSLop.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSLop.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSLop.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
@@ -101,8 +106,13 @@ namespace QuanLyHocSinh
             GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSMonHoc.CellClick += GridView_DSMonHoc_CellClick;
 
+            foreach(DataGridViewColumn column in GridView_DSMonHoc.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             // Edit theme
-            GridView_DSMonHoc.BorderStyle = BorderStyle.None;
+            GridView_DSMonHoc.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSMonHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSMonHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
@@ -180,8 +190,13 @@ namespace QuanLyHocSinh
             GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSHocKy.CellClick += GridView_DSHocKy_CellClick;
 
+            foreach(DataGridViewColumn column in GridView_DSHocKy.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             // Edit theme
-            GridView_DSHocKy.BorderStyle = BorderStyle.None;
+            GridView_DSHocKy.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSHocKy.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSHocKy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
@@ -228,8 +243,13 @@ namespace QuanLyHocSinh
             GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSNamHoc.CellClick += GridView_DSNamHoc_CellClick;
 
+            foreach(DataGridViewColumn column in GridView_DSNamHoc.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             // Edit theme
-            GridView_DSNamHoc.BorderStyle = BorderStyle.None;
+            GridView_DSNamHoc.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSNamHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSNamHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
