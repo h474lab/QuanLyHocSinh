@@ -79,6 +79,7 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocSinh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSHocSinh.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_DSHocSinh.RowHeadersVisible = false;
             GridView_DSHocSinh.ReadOnly = true;
             GridView_DSHocSinh.CellClick += GridView_DSHocSinh_CellClick;
 
@@ -86,7 +87,7 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSHocSinh.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSHocSinh.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSHocSinh.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSHocSinh.BackgroundColor = Color.White;
 
@@ -135,8 +136,17 @@ namespace QuanLyHocSinh
             temp.NgaySinh = DateTimePicker_NgaySinh.Value;
             temp.DiaChi = TextBox_DiaChi.Text;
             temp.Email = TextBox_Email.Text;
-            hocsinh.Insert_HocSinh(temp);
+            int? result = hocsinh.Insert_HocSinh(temp);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Thêm thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            currentMaHS = "";
             LoadThongTin();
+            GridView_DSHocSinh.ClearSelection();
         }
 
         private void Button_Sua_Click(object sender, EventArgs e)
@@ -157,8 +167,18 @@ namespace QuanLyHocSinh
             temp.NgaySinh = DateTimePicker_NgaySinh.Value;
             temp.DiaChi = TextBox_DiaChi.Text;
             temp.Email = TextBox_Email.Text;
-            hocsinh.Update_HocSinh(temp);
+            int? result = hocsinh.Update_HocSinh(temp);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Cập nhật thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            currentMaHS = "";
             LoadThongTin();
+            GridView_DSHocSinh.ClearSelection();
         }
 
         private void Button_Xoa_Click(object sender, EventArgs e)
@@ -166,9 +186,18 @@ namespace QuanLyHocSinh
             //if (!checkThongTin()) return;
             Console.WriteLine(currentMaHS);
             if (currentMaHS == "") return;
-            hocsinh.Delete_HocSinh(currentMaHS);
+            int? result = hocsinh.Delete_HocSinh(currentMaHS);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Xóa thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             currentMaHS = "";
             LoadThongTin();
+            GridView_DSHocSinh.ClearSelection();
         }
         // Dat bao hieu loi
         private void SetError(int index, string message)

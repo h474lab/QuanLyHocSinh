@@ -57,6 +57,7 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocSinh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSHocSinh.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_DSHocSinh.RowHeadersVisible = false;
             GridView_DSHocSinh.ReadOnly = true;
 
             foreach(DataGridViewColumn column in GridView_DSHocSinh.Columns)
@@ -68,7 +69,7 @@ namespace QuanLyHocSinh
             GridView_DSHocSinh.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSHocSinh.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSHocSinh.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSHocSinh.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSHocSinh.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSHocSinh.BackgroundColor = Color.White;
 

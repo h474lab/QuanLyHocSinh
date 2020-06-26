@@ -16,17 +16,17 @@ namespace BUS
         {
             return monhoc.GetTatCaMonHoc();
         }
-        public void Insert_MonHoc(MonHoc mh)
+        public int? Insert_MonHoc(MonHoc mh)
         {
-            monhoc.Insert_MonHoc(mh);
+            return monhoc.Insert_MonHoc(mh);
         }
-        public void Update_MonHoc(MonHoc mh)
+        public int? Update_MonHoc(MonHoc mh)
         {
-            monhoc.Update_MonHoc(mh);
+            return monhoc.Update_MonHoc(mh);
         }
-        public void Delete_MonHoc(string mamh)
+        public int? Delete_MonHoc(string mamh)
         {
-            monhoc.Delete_MonHoc(mamh);
+            return monhoc.Delete_MonHoc(mamh);
         }
     }
 }

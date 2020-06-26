@@ -15,17 +15,17 @@ namespace BUS
         {
             return diem.GetDiem(mahs, mamh, mahk, manh, makt);
         }
-        public void Insert_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
+        public int? Insert_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
         {
-            diem.Insert_Diem(mahs, malop, mahk, manh, mamh, makt, d);
+            return diem.Insert_Diem(mahs, malop, mahk, manh, mamh, makt, d);
         }
-        public void Update_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
+        public int? Update_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
         {
-            diem.Update_Diem(mahs, malop, mahk, manh, mamh, makt, d);
+            return diem.Update_Diem(mahs, malop, mahk, manh, mamh, makt, d);
         }
-        public void Delete_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt)
+        public int? Delete_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt)
         {
-            diem.Delete_Diem(mahs, malop, mahk, manh, mamh, makt);
+            return diem.Delete_Diem(mahs, malop, mahk, manh, mamh, makt);
         }
         public double? GetDiemTBHK(string mahs, string manh, string tenhk)
         {

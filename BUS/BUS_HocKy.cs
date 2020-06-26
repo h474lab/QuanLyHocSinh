@@ -16,17 +16,17 @@ namespace BUS
         {
             return hocky.GetTatCaHocKy();
         }
-        public void Insert_HocKy(string tenhk)
+        public int? Insert_HocKy(string tenhk)
         {
-            hocky.Insert_HocKy(tenhk);
+            return hocky.Insert_HocKy(tenhk);
         }
-        public void Update_HocKy(HocKy hk)
+        public int? Update_HocKy(HocKy hk)
         {
-            hocky.Update_HocKy(hk);
+            return hocky.Update_HocKy(hk);
         }
-        public void Delete_HocKy(string mahk)
+        public int? Delete_HocKy(string mahk)
         {
-            hocky.Delete_HocKy(mahk);
+            return hocky.Delete_HocKy(mahk);
         }
     }
 }

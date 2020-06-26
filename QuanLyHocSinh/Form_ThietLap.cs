@@ -64,6 +64,7 @@ namespace QuanLyHocSinh
             GridView_DSLop.DataSource = temp;
             GridView_DSLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSLop.RowHeadersVisible = false;
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
@@ -77,12 +78,12 @@ namespace QuanLyHocSinh
             GridView_DSLop.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSLop.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSLop.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSLop.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSLop.BackgroundColor = Color.White;
 
             GridView_DSLop.EnableHeadersVisualStyles = false;
-            GridView_DSLop.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSLop.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSLop.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSLop.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -102,6 +103,7 @@ namespace QuanLyHocSinh
             GridView_DSMonHoc.DataSource = temp;
             GridView_DSMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSMonHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSMonHoc.RowHeadersVisible = false;
             GridView_DSMonHoc.ReadOnly = true;
             GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSMonHoc.CellClick += GridView_DSMonHoc_CellClick;
@@ -115,12 +117,12 @@ namespace QuanLyHocSinh
             GridView_DSMonHoc.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSMonHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSMonHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSMonHoc.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSMonHoc.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSMonHoc.BackgroundColor = Color.White;
 
             GridView_DSMonHoc.EnableHeadersVisualStyles = false;
-            GridView_DSMonHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSMonHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSMonHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSMonHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -186,6 +188,7 @@ namespace QuanLyHocSinh
             GridView_DSHocKy.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GridView_DSHocKy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSHocKy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSHocKy.RowHeadersVisible = false;
             GridView_DSHocKy.ReadOnly = true;
             GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSHocKy.CellClick += GridView_DSHocKy_CellClick;
@@ -199,12 +202,12 @@ namespace QuanLyHocSinh
             GridView_DSHocKy.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSHocKy.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSHocKy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSHocKy.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSHocKy.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSHocKy.BackgroundColor = Color.White;
 
             GridView_DSHocKy.EnableHeadersVisualStyles = false;
-            GridView_DSHocKy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSHocKy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSHocKy.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSHocKy.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -239,6 +242,7 @@ namespace QuanLyHocSinh
             GridView_DSNamHoc.DataSource = temp;
             GridView_DSNamHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_DSNamHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridView_DSNamHoc.RowHeadersVisible = false;
             GridView_DSNamHoc.ReadOnly = true;
             GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSNamHoc.CellClick += GridView_DSNamHoc_CellClick;
@@ -252,12 +256,12 @@ namespace QuanLyHocSinh
             GridView_DSNamHoc.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSNamHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSNamHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSNamHoc.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSNamHoc.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSNamHoc.BackgroundColor = Color.White;
 
             GridView_DSNamHoc.EnableHeadersVisualStyles = false;
-            GridView_DSNamHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSNamHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSNamHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSNamHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -309,7 +313,15 @@ namespace QuanLyHocSinh
                 double DiemDat = double.Parse(TextBox_DiemDat.Text);
                 double DiemDatMon = double.Parse(TextBox_DiemDatMon.Text);
                 ThamSo temp = new ThamSo(TuoiMin, TuoiMax, SiSoMax, DiemMin, DiemMax, DiemDat, DiemDatMon);
-                thamso.UpdateThamSo(temp);
+                int? result = thamso.UpdateThamSo(temp);
+                if (result == 1)
+                {
+                    MessageBox.Show("Dữ liệu đã được cập nhật", "Lưu thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -324,8 +336,18 @@ namespace QuanLyHocSinh
             dslop.TenLop = TextBox_TenLop.Text;
             dslop.SiSo = 0;
             dslop.MaKhoiLop = long.Parse(currentKhoiLop);
-            danhsachlop.Insert_Lop(dslop);
+            int? result = danhsachlop.Insert_Lop(dslop); 
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Thêm thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSLop();
+            currentMaLop = "";
+            GridView_DSLop.ClearSelection();
         }
 
         private void Button_SuaLop_Click(object sender, EventArgs e)
@@ -335,22 +357,53 @@ namespace QuanLyHocSinh
             dslop.MaLop = long.Parse(currentMaLop);
             dslop.TenLop = TextBox_TenLop.Text;
             dslop.MaKhoiLop = long.Parse(ComboBox_KhoiLop.SelectedValue.ToString());
-            danhsachlop.Update_Lop(dslop);
+            int? result = danhsachlop.Update_Lop(dslop);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Cập nhật thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSLop();
+            currentMaLop = "";
+            GridView_DSLop.ClearSelection();
         }
 
         private void Button_XoaLop_Click(object sender, EventArgs e)
         {
             if (currentMaLop == "") return;
-            danhsachlop.Delete_Lop(currentMaLop);
+            int? result = danhsachlop.Delete_Lop(currentMaLop);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Xóa thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LoadDSLop();
+            currentMaLop = "";
+            GridView_DSLop.ClearSelection();
         }
 
         private void Button_ThemMon_Click(object sender, EventArgs e)
         {
             MonHoc mh = new MonHoc();
             mh.TenMonHoc = TextBox_TenMonHoc.Text;
-            monhoc.Insert_MonHoc(mh);
+            int? result = monhoc.Insert_MonHoc(mh); 
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Thêm thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSMonHoc();
+            currentMaMH = "";
+            GridView_DSMonHoc.ClearSelection();
         }
 
         private void Button_SuaMon_Click(object sender, EventArgs e)
@@ -359,21 +412,51 @@ namespace QuanLyHocSinh
             MonHoc mh = new MonHoc();
             mh.MaMonHoc = long.Parse(currentMaMH);
             mh.TenMonHoc = TextBox_TenMonHoc.Text;
-            monhoc.Update_MonHoc(mh);
+            int? result = monhoc.Update_MonHoc(mh);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Cập nhật thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSMonHoc();
+            currentMaMH = "";
+            GridView_DSMonHoc.ClearSelection();
         }
 
         private void Button_XoaMon_Click(object sender, EventArgs e)
         {
             if (currentMaMH == "") return;
-            monhoc.Delete_MonHoc(currentMaMH);
+            int? result = monhoc.Delete_MonHoc(currentMaMH);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Xóa thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSMonHoc();
+            currentMaMH = "";
+            GridView_DSMonHoc.ClearSelection();
         }
 
         private void Button_ThemHK_Click(object sender, EventArgs e)
         {
-            hocky.Insert_HocKy(TextBox_TenHocKy.Text);
+            int? result = hocky.Insert_HocKy(TextBox_TenHocKy.Text);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Thêm thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSHocKy();
+            currentHocKy = "";
+            GridView_DSHocKy.ClearSelection();
         }
 
         private void Button_SuaHK_Click(object sender, EventArgs e)
@@ -382,21 +465,51 @@ namespace QuanLyHocSinh
             HocKy hk = new HocKy();
             hk.MaHocKy = long.Parse(currentHocKy);
             hk.TenHocKy = TextBox_TenHocKy.Text;
-            hocky.Update_HocKy(hk);
+            int? result = hocky.Update_HocKy(hk);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Cập nhật thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSHocKy();
+            currentHocKy = "";
+            GridView_DSHocKy.ClearSelection();
         }
 
         private void Button_XoaHK_Click(object sender, EventArgs e)
         {
             if (currentHocKy == "") return;
-            hocky.Delete_HocKy(currentHocKy);
+            int? result = hocky.Delete_HocKy(currentHocKy);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Xóa thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSHocKy();
+            currentHocKy = "";
+            GridView_DSHocKy.ClearSelection();
         }
 
         private void Button_ThemNH_Click(object sender, EventArgs e)
         {
-            namhoc.Insert_NamHoc(TextBox_NamBD.Text, TextBox_NamKT.Text);
+            int? result = namhoc.Insert_NamHoc(TextBox_NamBD.Text, TextBox_NamKT.Text);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Thêm thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSNamHoc();
+            currentNamHoc = "";
+            GridView_DSNamHoc.ClearSelection();
         }
 
         private void Button_SuaNH_Click(object sender, EventArgs e)
@@ -406,15 +519,35 @@ namespace QuanLyHocSinh
             nh.MaNamHoc = long.Parse(currentNamHoc);
             nh.NamBD = int.Parse(TextBox_NamBD.Text);
             nh.NamKT = int.Parse(TextBox_NamKT.Text);
-            namhoc.Update_NamHoc(nh);
+            int? result = namhoc.Update_NamHoc(nh);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Cập nhật thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSNamHoc();
+            currentNamHoc = "";
+            GridView_DSNamHoc.ClearSelection();
         }
 
         private void Button_XoaNH_Click(object sender, EventArgs e)
         {
             if (currentNamHoc == "") return;
-            namhoc.Delete_NamHoc(currentNamHoc);
+            int? result = namhoc.Delete_NamHoc(currentNamHoc);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Xóa thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDSNamHoc();
+            currentNamHoc = "";
+            GridView_DSNamHoc.ClearSelection();
         }
     }
 }

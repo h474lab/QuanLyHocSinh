@@ -173,6 +173,7 @@ namespace QuanLyHocSinh
             GridView_DSLop.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GridView_DSLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSLop.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_DSLop.RowHeadersVisible = false;
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.ClearSelection();
 
@@ -184,12 +185,12 @@ namespace QuanLyHocSinh
             GridView_DSLop.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSLop.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSLop.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSLop.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSLop.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSLop.BackgroundColor = Color.White;
 
             GridView_DSLop.EnableHeadersVisualStyles = false;
-            GridView_DSLop.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSLop.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSLop.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSLop.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -236,6 +237,7 @@ namespace QuanLyHocSinh
             GridView_DSCho.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GridView_DSCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_DSCho.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_DSCho.RowHeadersVisible = false;
             GridView_DSCho.ReadOnly = true;
             GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
             GridView_DSCho.CellClick += GridView_DSCho_CellClick;
@@ -244,12 +246,12 @@ namespace QuanLyHocSinh
             GridView_DSCho.BorderStyle = BorderStyle.FixedSingle;
             GridView_DSCho.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_DSCho.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_DSCho.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_DSCho.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_DSCho.BackgroundColor = Color.White;
 
             GridView_DSCho.EnableHeadersVisualStyles = false;
-            GridView_DSCho.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_DSCho.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_DSCho.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_DSCho.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
@@ -276,7 +278,17 @@ namespace QuanLyHocSinh
                 return;
             }
             if (int.Parse(TextBox_SiSo.Text) < listThamSo.SiSoToiDa)
-                hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
+            {
+                int? result = hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
+                if (result == 1)
+                {
+                    MessageBox.Show("Dữ liệu đã được cập nhật", "Thêm thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }  
             else
             {
                 MessageBox.Show("Lớp đã đạt sĩ số tối đa", "Không thể thêm học sinh vào lớp!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,6 +297,8 @@ namespace QuanLyHocSinh
                 
             LoadDanhSachHocSinh();
             LoadHocSinhCho();
+            GridView_DSLop.ClearSelection();
+            GridView_DSCho.ClearSelection();
         }
 
         private void Button_Xoa_Click(object sender, EventArgs e)
@@ -294,9 +308,19 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Vui lòng chọn học sinh để tiếp tục!", "Chưa chọn học sinh", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            hocsinh.Delete_HSTrongLop(currentHSLop, currentLop, currentHocKy, currentNamHoc);
+            int? result = hocsinh.Delete_HSTrongLop(currentHSLop, currentLop, currentHocKy, currentNamHoc);
+            if (result == 1)
+            {
+                MessageBox.Show("Dữ liệu đã được cập nhật", "Xóa thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             LoadDanhSachHocSinh();
             LoadHocSinhCho();
+            GridView_DSLop.ClearSelection();
+            GridView_DSCho.ClearSelection();
         }
 
         private void Button_TimKiem_Click(object sender, EventArgs e)

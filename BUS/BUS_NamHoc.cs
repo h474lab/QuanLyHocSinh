@@ -16,17 +16,17 @@ namespace BUS
         {
             return namhoc.GetTatCaNamHoc();
         }
-        public void Insert_NamHoc(string nambd, string namkt)
+        public int? Insert_NamHoc(string nambd, string namkt)
         {
-            namhoc.Insert_NamHoc(nambd, namkt);
+            return namhoc.Insert_NamHoc(nambd, namkt);
         }
-        public void Update_NamHoc(NamHoc nh)
+        public int? Update_NamHoc(NamHoc nh)
         {
-            namhoc.Update_HocKy(nh);
+            return namhoc.Update_HocKy(nh);
         }
-        public void Delete_NamHoc(string manh)
+        public int? Delete_NamHoc(string manh)
         {
-            namhoc.Delete_NamHoc(manh);
+            return namhoc.Delete_NamHoc(manh);
         }
     }
 }

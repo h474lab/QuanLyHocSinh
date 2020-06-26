@@ -16,17 +16,17 @@ namespace BUS
         {
             return danhsachlop.GetTatCaLop();
         }
-        public void Insert_Lop(DanhSachLop lop)
+        public int? Insert_Lop(DanhSachLop lop)
         {
-            danhsachlop.Insert_Lop(lop);
+            return danhsachlop.Insert_Lop(lop);
         }
-        public void Update_Lop(DanhSachLop lop)
+        public int? Update_Lop(DanhSachLop lop)
         {
-            danhsachlop.Update_Lop(lop);
+            return danhsachlop.Update_Lop(lop);
         }
-        public void Delete_Lop(string malop)
+        public int? Delete_Lop(string malop)
         {
-            danhsachlop.Delete_Lop(malop);
+            return danhsachlop.Delete_Lop(malop);
         }
         public int GetSiSo(string malop, string mahk, string manh)
         {

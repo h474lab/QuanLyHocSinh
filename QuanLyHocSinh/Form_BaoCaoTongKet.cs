@@ -29,6 +29,8 @@ namespace QuanLyHocSinh
         string currentNamHoc_MH = "";
         string currentMonHoc_MH = "";
 
+        Color hoverLastColor = new Color();
+
         public Form_BaoCaoTongKet()
         {
             InitializeComponent();
@@ -84,6 +86,7 @@ namespace QuanLyHocSinh
             GridView_BCHocKy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BCHocKy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_BCHocKy.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_BCHocKy.RowHeadersVisible = false;
             GridView_BCHocKy.ReadOnly = true;
             GridView_BCHocKy.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
 
@@ -95,15 +98,16 @@ namespace QuanLyHocSinh
             GridView_BCHocKy.BorderStyle = BorderStyle.FixedSingle;
             GridView_BCHocKy.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_BCHocKy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_BCHocKy.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_BCHocKy.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_BCHocKy.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_BCHocKy.BackgroundColor = Color.White;
 
             GridView_BCHocKy.EnableHeadersVisualStyles = false;
-            GridView_BCHocKy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_BCHocKy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_BCHocKy.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_BCHocKy.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+
         void LoadBCMon()
         {
             if (currentHocKy_MH == "" | currentNamHoc_MH == "") return;
@@ -112,6 +116,7 @@ namespace QuanLyHocSinh
             GridView_BCMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BCMonHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridView_BCMonHoc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_BCMonHoc.RowHeadersVisible = false;
             GridView_BCMonHoc.ReadOnly = true;
             GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.LightGreen;
 
@@ -123,12 +128,12 @@ namespace QuanLyHocSinh
             GridView_BCMonHoc.BorderStyle = BorderStyle.FixedSingle;
             GridView_BCMonHoc.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             GridView_BCMonHoc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            GridView_BCMonHoc.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             GridView_BCMonHoc.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             GridView_BCMonHoc.BackgroundColor = Color.White;
 
             GridView_BCMonHoc.EnableHeadersVisualStyles = false;
-            GridView_BCMonHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            GridView_BCMonHoc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             GridView_BCMonHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             GridView_BCMonHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }

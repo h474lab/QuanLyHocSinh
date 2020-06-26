@@ -18,17 +18,17 @@ namespace BUS
         {
             return hocsinh.GetTatCaHocSinh();
         }
-        public void Insert_HocSinh(HocSinh hs)
+        public int? Insert_HocSinh(HocSinh hs)
         {
-            hocsinh.Insert_HocSinh(hs);
+            return hocsinh.Insert_HocSinh(hs);
         }
-        public void Update_HocSinh(HocSinh hs)
+        public int? Update_HocSinh(HocSinh hs)
         {
-            hocsinh.Update_HocSinh(hs);
+            return hocsinh.Update_HocSinh(hs);
         }
-        public void Delete_HocSinh(string MaHS)
+        public int? Delete_HocSinh(string MaHS)
         {
-            hocsinh.Delete_HocSinh(MaHS);
+            return hocsinh.Delete_HocSinh(MaHS);
         }
         public DataTable GetHocSinhCho(string mahk, string manh)
         {
@@ -38,13 +38,13 @@ namespace BUS
         {
             return hocsinh.GetHocSinh(malop, mahk, manh);
         }
-        public void AddHocSinhVaoLop(string mahs, string malop, string mahk, string manh)
+        public int? AddHocSinhVaoLop(string mahs, string malop, string mahk, string manh)
         {
-            hocsinh.AddHocSinhVaoLop(mahs, malop, mahk, manh);
+            return hocsinh.AddHocSinhVaoLop(mahs, malop, mahk, manh);
         }
-        public void Delete_HSTrongLop(string mahs, string malop, string mahk, string manh)
+        public int? Delete_HSTrongLop(string mahs, string malop, string mahk, string manh)
         {
-            hocsinh.Delete_HSTrongLop(mahs, malop, mahk, manh);
+            return hocsinh.Delete_HSTrongLop(mahs, malop, mahk, manh);
         }
         public DataTable GetThongTinTraCuu(string hoten, string manh)
         {

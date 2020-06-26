@@ -15,9 +15,9 @@ namespace BUS
         {
             return thamso.GetThamSo();
         }
-        public void UpdateThamSo(ThamSo ts)
+        public int? UpdateThamSo(ThamSo ts)
         {
-            thamso.Update_ThamSo(ts);
+            return thamso.Update_ThamSo(ts);
         }
     }
 }

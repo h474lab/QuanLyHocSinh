@@ -152,6 +152,7 @@ namespace QuanLyHocSinh
             GridView_BangDiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BangDiem.SelectionMode = DataGridViewSelectionMode.CellSelect;
             GridView_BangDiem.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            GridView_BangDiem.RowHeadersVisible = false;
 
             GridView_BangDiem.CellBeginEdit += GridView_BangDiem_CellBeginEdit;
             GridView_BangDiem.CellEndEdit += GridView_BangDiem_CellEndEdit;
@@ -215,18 +216,32 @@ namespace QuanLyHocSinh
                 return;
             }
 
+            int? result = null;
+
             if (d != null)
             {
                 if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) == null)
-                    diem.Insert_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, d);
+                {
+                    result = diem.Insert_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, d);
+                } 
                 else
-                    diem.Update_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, d);
+                {
+                    result = diem.Update_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, d);
+                }
             }
             else
             {
                 if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) != null)
-                    diem.Delete_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT);
+                {
+                    result = diem.Delete_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT);
+                }
             }
+
+            if (result != 0)
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             LoadBangDiem();
         }
 
