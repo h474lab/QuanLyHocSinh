@@ -24,9 +24,9 @@ namespace BUS
             result.Columns.Remove("NgaySinh");
             result.Columns.Remove("DiaChi");
             result.Columns.Remove("Email");
-            result.Columns.Add("1", typeof(float));
-            result.Columns.Add("2", typeof(float));
-            result.Columns.Add("3", typeof(float));
+            result.Columns.Add("1", typeof(string));
+            result.Columns.Add("2", typeof(string));
+            result.Columns.Add("3", typeof(string));
             result.Columns.Add("DiemTB", typeof(float));
 
             foreach (DataRow row in result.Rows)

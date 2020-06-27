@@ -13,27 +13,27 @@ namespace DAO
     public class DAO_Diem : ConnectionString
     {
         public DAO_Diem() : base() { }
-        public double? GetDiem(string mahs, string mamon, string mahk, string manh, string makt)
+        public List<double> GetDiem(string mahs, string mamon, string mahk, string manh, string makt)
         {
-            double? result = null;
+            List<double> result = new List<double>();
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("SELECT_DIEM", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@MAHOCSINH", SqlDbType.Decimal).Value = long.Parse(mahs);
-                command.Parameters.Add("@MAMONHOC", SqlDbType.Decimal).Value = long.Parse(mamon);
                 command.Parameters.Add("@MAHOCKY", SqlDbType.Decimal).Value = long.Parse(mahk);
                 command.Parameters.Add("@MANAMHOC", SqlDbType.Decimal).Value = long.Parse(manh);
+                command.Parameters.Add("@MAMONHOC", SqlDbType.Decimal).Value = long.Parse(mamon);
                 command.Parameters.Add("@MALOAIKT", SqlDbType.Decimal).Value = long.Parse(makt);
                 try
                 {
                     command.Connection.Open();
-                    SqlDataReader rd = command.ExecuteReader();
-                    if (rd.Read())
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    foreach(DataRow row in dt.Rows)
                     {
-                        if (rd["DiemSo"] != DBNull.Value)
-                            result = double.Parse(rd["DiemSo"].ToString());
-                        rd.Close();
+                        result.Add(double.Parse(row["DiemSo"].ToString()));
                     }
                     command.Connection.Close();
                 }
@@ -125,8 +125,9 @@ namespace DAO
                     result = 1;
                     command.Connection.Close();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                     command.Connection.Close();
                 }
             }

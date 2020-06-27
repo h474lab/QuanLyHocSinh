@@ -15,7 +15,7 @@ namespace DAO
         {
             if (connectionString != null)
                 return connectionString;
-            /* string result = null;
+            string result = null;
             string[] pathSplit = Directory.GetCurrentDirectory().ToString().Split('\\');
             int pathSplitLenght = pathSplit.Length;
             for (int i = 0; i < pathSplitLenght; i++)
@@ -26,8 +26,8 @@ namespace DAO
                     break;
             result += @"QuanLyHocSinh\DAO\CoSoDuLieu.mdf";
             result = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =" + result + "; Integrated Security = True";
-            connectionString = result;*/
-            string result = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\CoSoDuLieu.mdf;Integrated Security=True";
+            connectionString = result;
+            //string result = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\CoSoDuLieu.mdf;Integrated Security=True";
             Console.WriteLine(result);
             return result;
         }

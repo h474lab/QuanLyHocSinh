@@ -11,9 +11,17 @@ namespace BUS
     public class BUS_Diem
     {
         public DAO_Diem diem = new DAO_Diem();
-        public double? GetDiem(string mahs, string mahk, string manh, string mamh, string makt)
+        public string GetDiem(string mahs, string mahk, string manh, string mamh, string makt)
         {
-            return diem.GetDiem(mahs, mamh, mahk, manh, makt);
+            string result = "";
+            List<double> listDiem = diem.GetDiem(mahs, mamh, mahk, manh, makt);
+
+            foreach(double d in listDiem)
+            {
+                result += d.ToString() + ";";
+            }
+
+            return result;
         }
         public int? Insert_Diem(string mahs, string malop, string mahk, string manh, string mamh, string makt, double? d)
         {

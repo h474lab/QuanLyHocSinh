@@ -200,7 +200,7 @@ namespace QuanLyHocSinh
             currentHocSinh = GridView_BangDiem.Rows[row].Cells[0].Value.ToString();
             string MaLoaiKT = GridView_BangDiem.Columns[column].DataPropertyName.ToString();
             //Console.WriteLine(MaLoaiKT);
-
+            /*
             double? d;
             if (GridView_BangDiem.Rows[row].Cells[column].Value == DBNull.Value)
                 d = null;
@@ -215,9 +215,9 @@ namespace QuanLyHocSinh
                 reverseCurrentCell();
                 return;
             }
-
+            
             int? result = null;
-
+            
             if (d != null)
             {
                 if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) == null)
@@ -240,9 +240,72 @@ namespace QuanLyHocSinh
             if (result != 1)
             {
                 MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+
+            //int? result = null;
+
+            string d;
+            if (GridView_BangDiem.Rows[row].Cells[column].Value == DBNull.Value)
+                d = null;
+            else
+                d = GridView_BangDiem.Rows[row].Cells[column].Value.ToString();
+
+            if (d == null)
+            {
+                if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) != null)
+                {
+                    diem.Delete_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT);
+                }
+            }
+            else
+            {
+                List<double> listDiem = getListDiem(d);
+                if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) == null)
+                {
+                    foreach (double p in listDiem)
+                    {
+                        diem.Insert_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, p);
+                    }
+                }
+                else
+                {
+                    diem.Delete_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT);
+                    foreach(double p in listDiem)
+                    {
+                        diem.Insert_Diem(currentHocSinh, currentLop, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT, p);
+                    }
+                }
             }
 
             LoadBangDiem();
+        }
+
+        private List<double> getListDiem(string d) 
+        {
+            List<double> result = new List<double>();
+
+            string s = "";
+            for(int i = 0; i < d.Length; i++)
+            {
+                if (d[i] == ';') continue;
+                if (i == d.Length - 1 || d[i + 1] == ';')
+                {
+                    s += d[i].ToString();
+                    result.Add(double.Parse(s));
+                    s = "";
+                    continue;
+                }
+                if (i == 0 || d[i - 1] == ';')
+                {
+                    s = d[i].ToString();
+                }
+                else
+                {
+                    s += d[i].ToString();
+                }
+            }
+
+            return result;
         }
 
         private void ComboBox_Lop_SelectedIndexChanged(object sender, EventArgs e)
