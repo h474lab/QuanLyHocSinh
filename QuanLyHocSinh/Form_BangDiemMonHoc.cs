@@ -260,6 +260,13 @@ namespace QuanLyHocSinh
             else
             {
                 List<double> listDiem = getListDiem(d);
+                foreach(double p in listDiem) 
+                    if (p == -1)
+                    {
+                        MessageBox.Show("Không đúng định dạng", "Đã xảy ra lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        LoadBangDiem();
+                        return;
+                    }
                 if (diem.GetDiem(currentHocSinh, currentHocKy, currentNamHoc, currentMonHoc, MaLoaiKT) == null)
                 {
                     foreach (double p in listDiem)
@@ -287,15 +294,23 @@ namespace QuanLyHocSinh
             string s = "";
             for(int i = 0; i < d.Length; i++)
             {
-                if (d[i] == ';') continue;
-                if (i == d.Length - 1 || d[i + 1] == ';')
+                if (d[i] == ';' || d[i] == ' ') continue;
+                if (i == d.Length - 1 || d[i + 1] == ';' || d[i + 1] == ' ')
                 {
                     s += d[i].ToString();
-                    result.Add(double.Parse(s));
+                    double parseResult = 0;
+                    if (double.TryParse(s, out parseResult))
+                    {
+                        result.Add(parseResult);
+                    }
+                    else
+                    {
+                        result.Add(-1);
+                    }
                     s = "";
                     continue;
                 }
-                if (i == 0 || d[i - 1] == ';')
+                if (i == 0 || d[i - 1] == ';' || d[i - 1] == ' ')
                 {
                     s = d[i].ToString();
                 }
