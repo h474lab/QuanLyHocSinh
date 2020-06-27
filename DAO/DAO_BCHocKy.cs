@@ -43,7 +43,7 @@ namespace DAO
         }
         public double? GetTLDat(string malop, string mahk, string manh)
         {
-            double result = 0;
+            double? result = 0;
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand("SELECT_TILEDAT", conn);
@@ -59,7 +59,7 @@ namespace DAO
                     if (rd.Read())
                     {
                         if (rd["TLDat"] != DBNull.Value)
-                            result = int.Parse(rd["TLDat"].ToString());
+                            result = ((int)(float.Parse(rd["TLDat"].ToString()) * 100))/100f;
                         rd.Close();
                     }
                     command.Connection.Close();

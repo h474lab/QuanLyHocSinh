@@ -237,7 +237,7 @@ namespace QuanLyHocSinh
                 }
             }
 
-            if (result != 0)
+            if (result != 1)
             {
                 MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

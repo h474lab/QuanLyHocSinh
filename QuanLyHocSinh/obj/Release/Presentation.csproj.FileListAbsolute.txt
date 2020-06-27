@@ -24,3 +24,6 @@ C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Release
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Release\QuanLyHocSinh.exe
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Release\QuanLyHocSinh.pdb
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Release\QuanLyHocSinh.Form_TraCuuHocSinh.resources
+C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Release\CoSoDuLieu.mdf
+C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Release\CoSoDuLieu_log.ldf
+C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\obj\Release\QuanLyHocSinh.Form_GioiThieu.resources
