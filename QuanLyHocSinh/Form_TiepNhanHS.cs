@@ -34,6 +34,7 @@ namespace QuanLyHocSinh
             DateTimePicker_NgaySinh.Format = DateTimePickerFormat.Custom;
             DateTimePicker_NgaySinh.CustomFormat = "dd/MM/yyyy";
             DateTimePicker_NgaySinh.MaxDate = DateTime.Today.AddYears(-listThamSo.TuoiToiThieu);
+            DateTimePicker_NgaySinh.MinDate = DateTime.Today.AddYears(-listThamSo.TuoiToiDa);
 
             TrackBar_CoChu.Value = int.Parse(GridView_DSHocSinh.Font.Size.ToString());
             TrackBar_CoChu.ValueChanged += TrackBar_CoChu_ValueChanged;

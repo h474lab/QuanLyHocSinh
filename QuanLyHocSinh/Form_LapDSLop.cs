@@ -28,6 +28,9 @@ namespace QuanLyHocSinh
         string currentHSLop = "";
         string currentHSCho = "";
 
+        string currentNgaySinh = "";
+        string currentNamBD = "";
+
         public Form_LapDSLop()
         {
             InitializeComponent();
@@ -124,6 +127,7 @@ namespace QuanLyHocSinh
         {
             DataTable temp = namhoc.GetTatCaNH();
             temp.Columns.Add("Full_NamHoc", typeof(string), "NamBD + ' - ' + NamKT");
+
             ComboBox_NamHoc.DataSource = temp;
             ComboBox_NamHoc.DisplayMember = "Full_NamHoc";
             ComboBox_NamHoc.ValueMember = "MaNamHoc";
@@ -263,6 +267,7 @@ namespace QuanLyHocSinh
                 DataGridViewRow row = new DataGridViewRow();
                 row = GridView_DSCho.Rows[e.RowIndex];
                 currentHSCho = row.Cells[0].Value.ToString();
+                currentNgaySinh = row.Cells["NgaySinh"].Value.ToString();
             }
             catch (Exception ex)
             {

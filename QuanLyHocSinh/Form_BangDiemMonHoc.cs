@@ -156,6 +156,7 @@ namespace QuanLyHocSinh
 
             GridView_BangDiem.CellBeginEdit += GridView_BangDiem_CellBeginEdit;
             GridView_BangDiem.CellEndEdit += GridView_BangDiem_CellEndEdit;
+            
 
             foreach(DataGridViewColumn column in GridView_BangDiem.Columns)
             {

@@ -28,26 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.TabPage_MonHoc = new System.Windows.Forms.TabPage();
             this.GroupBox_CTBaoCaoMH = new System.Windows.Forms.GroupBox();
+            this.Panel_CoChu_MH = new System.Windows.Forms.Panel();
+            this.TrackBar_CoChu_MH = new System.Windows.Forms.TrackBar();
             this.GridView_BCMonHoc = new System.Windows.Forms.DataGridView();
-            this.MaLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiSo_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiLeDat_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_BoLocMH = new System.Windows.Forms.GroupBox();
             this.ComboBox_NamHoc_MH = new System.Windows.Forms.ComboBox();
             this.Label_NamHoc_MH = new System.Windows.Forms.Label();
@@ -57,36 +56,41 @@
             this.Label_HocKy_MH = new System.Windows.Forms.Label();
             this.TabPage_HocKy = new System.Windows.Forms.TabPage();
             this.GroupBox_CTBaoCao = new System.Windows.Forms.GroupBox();
+            this.Panel_CoChu_HK = new System.Windows.Forms.Panel();
+            this.TrackBar_CoChu_HK = new System.Windows.Forms.TrackBar();
             this.GridView_BCHocKy = new System.Windows.Forms.DataGridView();
-            this.MaLop_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiSo_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongDat_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiLeDat_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_BoLoc = new System.Windows.Forms.GroupBox();
             this.ComboBox_NamHoc_HK = new System.Windows.Forms.ComboBox();
             this.Label_NamHoc_HK = new System.Windows.Forms.Label();
             this.ComboBox_HocKy_HK = new System.Windows.Forms.ComboBox();
             this.Label_HocKy_HK = new System.Windows.Forms.Label();
             this.TabControl_BaoCao = new System.Windows.Forms.TabControl();
-            this.Panel_CoChu_HK = new System.Windows.Forms.Panel();
-            this.TrackBar_CoChu_HK = new System.Windows.Forms.TrackBar();
-            this.Panel_CoChu_MH = new System.Windows.Forms.Panel();
-            this.TrackBar_CoChu_MH = new System.Windows.Forms.TrackBar();
+            this.MaLop_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiSo_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongDat_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiLeDat_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiSo_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiLeDat_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_Title.SuspendLayout();
             this.TabPage_MonHoc.SuspendLayout();
             this.GroupBox_CTBaoCaoMH.SuspendLayout();
+            this.Panel_CoChu_MH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_MH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_BCMonHoc)).BeginInit();
             this.GroupBox_BoLocMH.SuspendLayout();
             this.TabPage_HocKy.SuspendLayout();
             this.GroupBox_CTBaoCao.SuspendLayout();
+            this.Panel_CoChu_HK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_HK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_BCHocKy)).BeginInit();
             this.GroupBox_BoLoc.SuspendLayout();
             this.TabControl_BaoCao.SuspendLayout();
-            this.Panel_CoChu_HK.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_HK)).BeginInit();
-            this.Panel_CoChu_MH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_MH)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -135,6 +139,30 @@
             this.GroupBox_CTBaoCaoMH.TabStop = false;
             this.GroupBox_CTBaoCaoMH.Text = "Chi tiết báo cáo";
             // 
+            // Panel_CoChu_MH
+            // 
+            this.Panel_CoChu_MH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CoChu_MH.Controls.Add(this.TrackBar_CoChu_MH);
+            this.Panel_CoChu_MH.Location = new System.Drawing.Point(1182, 25);
+            this.Panel_CoChu_MH.Name = "Panel_CoChu_MH";
+            this.Panel_CoChu_MH.Size = new System.Drawing.Size(23, 476);
+            this.Panel_CoChu_MH.TabIndex = 4;
+            // 
+            // TrackBar_CoChu_MH
+            // 
+            this.TrackBar_CoChu_MH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrackBar_CoChu_MH.Location = new System.Drawing.Point(0, 0);
+            this.TrackBar_CoChu_MH.Maximum = 100;
+            this.TrackBar_CoChu_MH.Minimum = 1;
+            this.TrackBar_CoChu_MH.Name = "TrackBar_CoChu_MH";
+            this.TrackBar_CoChu_MH.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TrackBar_CoChu_MH.Size = new System.Drawing.Size(45, 473);
+            this.TrackBar_CoChu_MH.TabIndex = 3;
+            this.TrackBar_CoChu_MH.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBar_CoChu_MH.Value = 1;
+            // 
             // GridView_BCMonHoc
             // 
             this.GridView_BCMonHoc.AllowUserToAddRows = false;
@@ -145,6 +173,7 @@
             this.GridView_BCMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_BCMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaLop_MH,
+            this.STT_MH,
             this.TenLop_MH,
             this.SiSo_MH,
             this.SoLuongDat,
@@ -154,51 +183,6 @@
             this.GridView_BCMonHoc.RowHeadersWidth = 62;
             this.GridView_BCMonHoc.Size = new System.Drawing.Size(1170, 476);
             this.GridView_BCMonHoc.TabIndex = 2;
-            // 
-            // MaLop_MH
-            // 
-            this.MaLop_MH.DataPropertyName = "MaLop";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MaLop_MH.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MaLop_MH.HeaderText = "Mã Lớp";
-            this.MaLop_MH.Name = "MaLop_MH";
-            this.MaLop_MH.ReadOnly = true;
-            // 
-            // TenLop_MH
-            // 
-            this.TenLop_MH.DataPropertyName = "TenLop";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TenLop_MH.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TenLop_MH.HeaderText = "Tên Lớp";
-            this.TenLop_MH.Name = "TenLop_MH";
-            this.TenLop_MH.ReadOnly = true;
-            // 
-            // SiSo_MH
-            // 
-            this.SiSo_MH.DataPropertyName = "SiSo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiSo_MH.DefaultCellStyle = dataGridViewCellStyle3;
-            this.SiSo_MH.HeaderText = "Sĩ Số";
-            this.SiSo_MH.Name = "SiSo_MH";
-            this.SiSo_MH.ReadOnly = true;
-            // 
-            // SoLuongDat
-            // 
-            this.SoLuongDat.DataPropertyName = "SoLuongDat";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoLuongDat.DefaultCellStyle = dataGridViewCellStyle4;
-            this.SoLuongDat.HeaderText = "Số Lượng Đạt";
-            this.SoLuongDat.Name = "SoLuongDat";
-            this.SoLuongDat.ReadOnly = true;
-            // 
-            // TiLeDat_MH
-            // 
-            this.TiLeDat_MH.DataPropertyName = "TiLe";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TiLeDat_MH.DefaultCellStyle = dataGridViewCellStyle5;
-            this.TiLeDat_MH.HeaderText = "Tỉ Lệ Đạt";
-            this.TiLeDat_MH.Name = "TiLeDat_MH";
-            this.TiLeDat_MH.ReadOnly = true;
             // 
             // GroupBox_BoLocMH
             // 
@@ -307,6 +291,30 @@
             this.GroupBox_CTBaoCao.TabStop = false;
             this.GroupBox_CTBaoCao.Text = "Chi tiết báo cáo";
             // 
+            // Panel_CoChu_HK
+            // 
+            this.Panel_CoChu_HK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CoChu_HK.Controls.Add(this.TrackBar_CoChu_HK);
+            this.Panel_CoChu_HK.Location = new System.Drawing.Point(1182, 25);
+            this.Panel_CoChu_HK.Name = "Panel_CoChu_HK";
+            this.Panel_CoChu_HK.Size = new System.Drawing.Size(23, 476);
+            this.Panel_CoChu_HK.TabIndex = 4;
+            // 
+            // TrackBar_CoChu_HK
+            // 
+            this.TrackBar_CoChu_HK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrackBar_CoChu_HK.Location = new System.Drawing.Point(0, 0);
+            this.TrackBar_CoChu_HK.Maximum = 100;
+            this.TrackBar_CoChu_HK.Minimum = 1;
+            this.TrackBar_CoChu_HK.Name = "TrackBar_CoChu_HK";
+            this.TrackBar_CoChu_HK.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TrackBar_CoChu_HK.Size = new System.Drawing.Size(45, 473);
+            this.TrackBar_CoChu_HK.TabIndex = 3;
+            this.TrackBar_CoChu_HK.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBar_CoChu_HK.Value = 1;
+            // 
             // GridView_BCHocKy
             // 
             this.GridView_BCHocKy.AllowUserToAddRows = false;
@@ -317,6 +325,7 @@
             this.GridView_BCHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_BCHocKy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaLop_HK,
+            this.STT_HK,
             this.TenLop_HK,
             this.SiSo_HK,
             this.SoLuongDat_HK,
@@ -327,51 +336,6 @@
             this.GridView_BCHocKy.RowHeadersWidth = 62;
             this.GridView_BCHocKy.Size = new System.Drawing.Size(1170, 476);
             this.GridView_BCHocKy.TabIndex = 0;
-            // 
-            // MaLop_HK
-            // 
-            this.MaLop_HK.DataPropertyName = "MaLop";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MaLop_HK.DefaultCellStyle = dataGridViewCellStyle6;
-            this.MaLop_HK.HeaderText = "Mã Lớp";
-            this.MaLop_HK.Name = "MaLop_HK";
-            this.MaLop_HK.ReadOnly = true;
-            // 
-            // TenLop_HK
-            // 
-            this.TenLop_HK.DataPropertyName = "TenLop";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TenLop_HK.DefaultCellStyle = dataGridViewCellStyle7;
-            this.TenLop_HK.HeaderText = "Tên Lớp";
-            this.TenLop_HK.Name = "TenLop_HK";
-            this.TenLop_HK.ReadOnly = true;
-            // 
-            // SiSo_HK
-            // 
-            this.SiSo_HK.DataPropertyName = "SiSo";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiSo_HK.DefaultCellStyle = dataGridViewCellStyle8;
-            this.SiSo_HK.HeaderText = "Sĩ Số";
-            this.SiSo_HK.Name = "SiSo_HK";
-            this.SiSo_HK.ReadOnly = true;
-            // 
-            // SoLuongDat_HK
-            // 
-            this.SoLuongDat_HK.DataPropertyName = "SoLuongDat";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoLuongDat_HK.DefaultCellStyle = dataGridViewCellStyle9;
-            this.SoLuongDat_HK.HeaderText = "Số Lượng Đạt";
-            this.SoLuongDat_HK.Name = "SoLuongDat_HK";
-            this.SoLuongDat_HK.ReadOnly = true;
-            // 
-            // TiLeDat_HK
-            // 
-            this.TiLeDat_HK.DataPropertyName = "TiLe";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TiLeDat_HK.DefaultCellStyle = dataGridViewCellStyle10;
-            this.TiLeDat_HK.HeaderText = "Tỉ Lệ Đạt";
-            this.TiLeDat_HK.Name = "TiLeDat_HK";
-            this.TiLeDat_HK.ReadOnly = true;
             // 
             // GroupBox_BoLoc
             // 
@@ -441,53 +405,115 @@
             this.TabControl_BaoCao.Size = new System.Drawing.Size(1228, 611);
             this.TabControl_BaoCao.TabIndex = 0;
             // 
-            // Panel_CoChu_HK
+            // MaLop_HK
             // 
-            this.Panel_CoChu_HK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_CoChu_HK.Controls.Add(this.TrackBar_CoChu_HK);
-            this.Panel_CoChu_HK.Location = new System.Drawing.Point(1182, 25);
-            this.Panel_CoChu_HK.Name = "Panel_CoChu_HK";
-            this.Panel_CoChu_HK.Size = new System.Drawing.Size(23, 476);
-            this.Panel_CoChu_HK.TabIndex = 4;
+            this.MaLop_HK.DataPropertyName = "MaLop";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaLop_HK.DefaultCellStyle = dataGridViewCellStyle7;
+            this.MaLop_HK.HeaderText = "Mã Lớp";
+            this.MaLop_HK.Name = "MaLop_HK";
+            this.MaLop_HK.ReadOnly = true;
+            this.MaLop_HK.Visible = false;
             // 
-            // TrackBar_CoChu_HK
+            // STT_HK
             // 
-            this.TrackBar_CoChu_HK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.TrackBar_CoChu_HK.Location = new System.Drawing.Point(0, 0);
-            this.TrackBar_CoChu_HK.Maximum = 100;
-            this.TrackBar_CoChu_HK.Minimum = 1;
-            this.TrackBar_CoChu_HK.Name = "TrackBar_CoChu_HK";
-            this.TrackBar_CoChu_HK.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrackBar_CoChu_HK.Size = new System.Drawing.Size(45, 473);
-            this.TrackBar_CoChu_HK.TabIndex = 3;
-            this.TrackBar_CoChu_HK.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackBar_CoChu_HK.Value = 1;
+            this.STT_HK.DataPropertyName = "STT";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT_HK.DefaultCellStyle = dataGridViewCellStyle8;
+            this.STT_HK.HeaderText = "Số Thứ Tự";
+            this.STT_HK.Name = "STT_HK";
+            this.STT_HK.ReadOnly = true;
             // 
-            // Panel_CoChu_MH
+            // TenLop_HK
             // 
-            this.Panel_CoChu_MH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_CoChu_MH.Controls.Add(this.TrackBar_CoChu_MH);
-            this.Panel_CoChu_MH.Location = new System.Drawing.Point(1182, 25);
-            this.Panel_CoChu_MH.Name = "Panel_CoChu_MH";
-            this.Panel_CoChu_MH.Size = new System.Drawing.Size(23, 476);
-            this.Panel_CoChu_MH.TabIndex = 4;
+            this.TenLop_HK.DataPropertyName = "TenLop";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenLop_HK.DefaultCellStyle = dataGridViewCellStyle9;
+            this.TenLop_HK.HeaderText = "Tên Lớp";
+            this.TenLop_HK.Name = "TenLop_HK";
+            this.TenLop_HK.ReadOnly = true;
             // 
-            // TrackBar_CoChu_MH
+            // SiSo_HK
             // 
-            this.TrackBar_CoChu_MH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.TrackBar_CoChu_MH.Location = new System.Drawing.Point(0, 0);
-            this.TrackBar_CoChu_MH.Maximum = 100;
-            this.TrackBar_CoChu_MH.Minimum = 1;
-            this.TrackBar_CoChu_MH.Name = "TrackBar_CoChu_MH";
-            this.TrackBar_CoChu_MH.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrackBar_CoChu_MH.Size = new System.Drawing.Size(45, 473);
-            this.TrackBar_CoChu_MH.TabIndex = 3;
-            this.TrackBar_CoChu_MH.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackBar_CoChu_MH.Value = 1;
+            this.SiSo_HK.DataPropertyName = "SiSo";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiSo_HK.DefaultCellStyle = dataGridViewCellStyle10;
+            this.SiSo_HK.HeaderText = "Sĩ Số";
+            this.SiSo_HK.Name = "SiSo_HK";
+            this.SiSo_HK.ReadOnly = true;
+            // 
+            // SoLuongDat_HK
+            // 
+            this.SoLuongDat_HK.DataPropertyName = "SoLuongDat";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoLuongDat_HK.DefaultCellStyle = dataGridViewCellStyle11;
+            this.SoLuongDat_HK.HeaderText = "Số Lượng Đạt";
+            this.SoLuongDat_HK.Name = "SoLuongDat_HK";
+            this.SoLuongDat_HK.ReadOnly = true;
+            // 
+            // TiLeDat_HK
+            // 
+            this.TiLeDat_HK.DataPropertyName = "TiLe";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TiLeDat_HK.DefaultCellStyle = dataGridViewCellStyle12;
+            this.TiLeDat_HK.HeaderText = "Tỉ Lệ Đạt";
+            this.TiLeDat_HK.Name = "TiLeDat_HK";
+            this.TiLeDat_HK.ReadOnly = true;
+            // 
+            // MaLop_MH
+            // 
+            this.MaLop_MH.DataPropertyName = "MaLop";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaLop_MH.DefaultCellStyle = dataGridViewCellStyle1;
+            this.MaLop_MH.HeaderText = "Mã Lớp";
+            this.MaLop_MH.Name = "MaLop_MH";
+            this.MaLop_MH.ReadOnly = true;
+            this.MaLop_MH.Visible = false;
+            // 
+            // STT_MH
+            // 
+            this.STT_MH.DataPropertyName = "STT";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT_MH.DefaultCellStyle = dataGridViewCellStyle2;
+            this.STT_MH.HeaderText = "Số Thứ Tự";
+            this.STT_MH.Name = "STT_MH";
+            this.STT_MH.ReadOnly = true;
+            // 
+            // TenLop_MH
+            // 
+            this.TenLop_MH.DataPropertyName = "TenLop";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenLop_MH.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TenLop_MH.HeaderText = "Tên Lớp";
+            this.TenLop_MH.Name = "TenLop_MH";
+            this.TenLop_MH.ReadOnly = true;
+            // 
+            // SiSo_MH
+            // 
+            this.SiSo_MH.DataPropertyName = "SiSo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiSo_MH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SiSo_MH.HeaderText = "Sĩ Số";
+            this.SiSo_MH.Name = "SiSo_MH";
+            this.SiSo_MH.ReadOnly = true;
+            // 
+            // SoLuongDat
+            // 
+            this.SoLuongDat.DataPropertyName = "SoLuongDat";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoLuongDat.DefaultCellStyle = dataGridViewCellStyle5;
+            this.SoLuongDat.HeaderText = "Số Lượng Đạt";
+            this.SoLuongDat.Name = "SoLuongDat";
+            this.SoLuongDat.ReadOnly = true;
+            // 
+            // TiLeDat_MH
+            // 
+            this.TiLeDat_MH.DataPropertyName = "TiLe";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TiLeDat_MH.DefaultCellStyle = dataGridViewCellStyle6;
+            this.TiLeDat_MH.HeaderText = "Tỉ Lệ Đạt";
+            this.TiLeDat_MH.Name = "TiLeDat_MH";
+            this.TiLeDat_MH.ReadOnly = true;
             // 
             // Form_BaoCaoTongKet
             // 
@@ -503,21 +529,21 @@
             this.Panel_Title.PerformLayout();
             this.TabPage_MonHoc.ResumeLayout(false);
             this.GroupBox_CTBaoCaoMH.ResumeLayout(false);
+            this.Panel_CoChu_MH.ResumeLayout(false);
+            this.Panel_CoChu_MH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_MH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_BCMonHoc)).EndInit();
             this.GroupBox_BoLocMH.ResumeLayout(false);
             this.GroupBox_BoLocMH.PerformLayout();
             this.TabPage_HocKy.ResumeLayout(false);
             this.GroupBox_CTBaoCao.ResumeLayout(false);
+            this.Panel_CoChu_HK.ResumeLayout(false);
+            this.Panel_CoChu_HK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_HK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_BCHocKy)).EndInit();
             this.GroupBox_BoLoc.ResumeLayout(false);
             this.GroupBox_BoLoc.PerformLayout();
             this.TabControl_BaoCao.ResumeLayout(false);
-            this.Panel_CoChu_HK.ResumeLayout(false);
-            this.Panel_CoChu_HK.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_HK)).EndInit();
-            this.Panel_CoChu_MH.ResumeLayout(false);
-            this.Panel_CoChu_MH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_MH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,19 +570,21 @@
         private System.Windows.Forms.TabControl TabControl_BaoCao;
         private System.Windows.Forms.GroupBox GroupBox_CTBaoCao;
         private System.Windows.Forms.GroupBox GroupBox_CTBaoCaoMH;
+        private System.Windows.Forms.Panel Panel_CoChu_HK;
+        private System.Windows.Forms.TrackBar TrackBar_CoChu_HK;
+        private System.Windows.Forms.Panel Panel_CoChu_MH;
+        private System.Windows.Forms.TrackBar TrackBar_CoChu_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLop_MH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLop_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn SiSo_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiLeDat_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLop_HK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLop_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn SiSo_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongDat_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiLeDat_HK;
-        private System.Windows.Forms.Panel Panel_CoChu_HK;
-        private System.Windows.Forms.TrackBar TrackBar_CoChu_HK;
-        private System.Windows.Forms.Panel Panel_CoChu_MH;
-        private System.Windows.Forms.TrackBar TrackBar_CoChu_MH;
     }
 }

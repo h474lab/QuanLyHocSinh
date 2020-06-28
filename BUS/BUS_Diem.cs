@@ -18,7 +18,7 @@ namespace BUS
 
             foreach(double d in listDiem)
             {
-                result += d.ToString() + ";";
+                result += d.ToString() + "; ";
             }
 
             return result;

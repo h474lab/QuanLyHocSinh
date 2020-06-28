@@ -45,6 +45,8 @@
             this.Panel_Tittle = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.GroupBox_DSLop = new System.Windows.Forms.GroupBox();
+            this.Panel_CoChu_Lop = new System.Windows.Forms.Panel();
+            this.TrackBar_CoChu_Lop = new System.Windows.Forms.TrackBar();
             this.Button_Xoa = new System.Windows.Forms.Button();
             this.GridView_DSLop = new System.Windows.Forms.DataGridView();
             this.SoThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +68,8 @@
             this.ComboBox_Lop = new System.Windows.Forms.ComboBox();
             this.Label_Lop = new System.Windows.Forms.Label();
             this.GroupBox_DanhSachCho = new System.Windows.Forms.GroupBox();
+            this.Panel_CoChu_Cho = new System.Windows.Forms.Panel();
+            this.TrackBar_CoChu_Cho = new System.Windows.Forms.TrackBar();
             this.Button_Them = new System.Windows.Forms.Button();
             this.GridView_DSCho = new System.Windows.Forms.DataGridView();
             this.SoThuTu_Cho = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,21 +93,17 @@
             this.Label_GioiTinh = new System.Windows.Forms.Label();
             this.Label_NgaySinh = new System.Windows.Forms.Label();
             this.Label_HoTen = new System.Windows.Forms.Label();
-            this.Panel_CoChu_Lop = new System.Windows.Forms.Panel();
-            this.TrackBar_CoChu_Lop = new System.Windows.Forms.TrackBar();
-            this.Panel_CoChu_Cho = new System.Windows.Forms.Panel();
-            this.TrackBar_CoChu_Cho = new System.Windows.Forms.TrackBar();
             this.Panel_Tittle.SuspendLayout();
             this.GroupBox_DSLop.SuspendLayout();
+            this.Panel_CoChu_Lop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_Lop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).BeginInit();
             this.GroupBox_ChonLop.SuspendLayout();
             this.GroupBox_DanhSachCho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSCho)).BeginInit();
-            this.GroupBox_BoLoc.SuspendLayout();
-            this.Panel_CoChu_Lop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_Lop)).BeginInit();
             this.Panel_CoChu_Cho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_Cho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSCho)).BeginInit();
+            this.GroupBox_BoLoc.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Tittle
@@ -136,10 +136,34 @@
             this.GroupBox_DSLop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox_DSLop.Location = new System.Drawing.Point(2, 130);
             this.GroupBox_DSLop.Name = "GroupBox_DSLop";
-            this.GroupBox_DSLop.Size = new System.Drawing.Size(1135, 362);
+            this.GroupBox_DSLop.Size = new System.Drawing.Size(1135, 363);
             this.GroupBox_DSLop.TabIndex = 6;
             this.GroupBox_DSLop.TabStop = false;
             this.GroupBox_DSLop.Text = "Danh sách lớp";
+            // 
+            // Panel_CoChu_Lop
+            // 
+            this.Panel_CoChu_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CoChu_Lop.Controls.Add(this.TrackBar_CoChu_Lop);
+            this.Panel_CoChu_Lop.Location = new System.Drawing.Point(1109, 25);
+            this.Panel_CoChu_Lop.Name = "Panel_CoChu_Lop";
+            this.Panel_CoChu_Lop.Size = new System.Drawing.Size(23, 291);
+            this.Panel_CoChu_Lop.TabIndex = 4;
+            // 
+            // TrackBar_CoChu_Lop
+            // 
+            this.TrackBar_CoChu_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrackBar_CoChu_Lop.Location = new System.Drawing.Point(0, 0);
+            this.TrackBar_CoChu_Lop.Maximum = 100;
+            this.TrackBar_CoChu_Lop.Minimum = 1;
+            this.TrackBar_CoChu_Lop.Name = "TrackBar_CoChu_Lop";
+            this.TrackBar_CoChu_Lop.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TrackBar_CoChu_Lop.Size = new System.Drawing.Size(45, 288);
+            this.TrackBar_CoChu_Lop.TabIndex = 3;
+            this.TrackBar_CoChu_Lop.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBar_CoChu_Lop.Value = 1;
             // 
             // Button_Xoa
             // 
@@ -147,7 +171,7 @@
             this.Button_Xoa.BackColor = System.Drawing.Color.RoyalBlue;
             this.Button_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Xoa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Button_Xoa.Location = new System.Drawing.Point(475, 321);
+            this.Button_Xoa.Location = new System.Drawing.Point(475, 322);
             this.Button_Xoa.Name = "Button_Xoa";
             this.Button_Xoa.Size = new System.Drawing.Size(206, 29);
             this.Button_Xoa.TabIndex = 1;
@@ -177,7 +201,7 @@
             this.GridView_DSLop.Name = "GridView_DSLop";
             this.GridView_DSLop.ReadOnly = true;
             this.GridView_DSLop.RowHeadersWidth = 62;
-            this.GridView_DSLop.Size = new System.Drawing.Size(1097, 290);
+            this.GridView_DSLop.Size = new System.Drawing.Size(1097, 291);
             this.GridView_DSLop.TabIndex = 0;
             // 
             // SoThuTu
@@ -187,16 +211,20 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.SoThuTu.DefaultCellStyle = dataGridViewCellStyle1;
             this.SoThuTu.HeaderText = "Số Thứ Tự";
+            this.SoThuTu.MinimumWidth = 8;
             this.SoThuTu.Name = "SoThuTu";
             this.SoThuTu.ReadOnly = true;
+            this.SoThuTu.Width = 150;
             // 
             // MaHocSinh
             // 
             this.MaHocSinh.DataPropertyName = "MaHocSinh";
             this.MaHocSinh.HeaderText = "Mã Học Sinh";
+            this.MaHocSinh.MinimumWidth = 8;
             this.MaHocSinh.Name = "MaHocSinh";
             this.MaHocSinh.ReadOnly = true;
             this.MaHocSinh.Visible = false;
+            this.MaHocSinh.Width = 150;
             // 
             // HoTen
             // 
@@ -204,8 +232,10 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.HoTen.DefaultCellStyle = dataGridViewCellStyle2;
             this.HoTen.HeaderText = "Họ và Tên";
+            this.HoTen.MinimumWidth = 8;
             this.HoTen.Name = "HoTen";
             this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 150;
             // 
             // GioiTinh
             // 
@@ -213,10 +243,12 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.GioiTinh.DefaultCellStyle = dataGridViewCellStyle3;
             this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.MinimumWidth = 8;
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.ReadOnly = true;
             this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.GioiTinh.Width = 150;
             // 
             // NgaySinh
             // 
@@ -224,9 +256,11 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle4;
             this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 8;
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.ReadOnly = true;
             this.NgaySinh.Visible = false;
+            this.NgaySinh.Width = 150;
             // 
             // NS
             // 
@@ -234,8 +268,10 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.NS.DefaultCellStyle = dataGridViewCellStyle5;
             this.NS.HeaderText = "Ngày Sinh";
+            this.NS.MinimumWidth = 8;
             this.NS.Name = "NS";
             this.NS.ReadOnly = true;
+            this.NS.Width = 150;
             // 
             // DiaChi
             // 
@@ -243,8 +279,10 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.DiaChi.DefaultCellStyle = dataGridViewCellStyle6;
             this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.MinimumWidth = 8;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 150;
             // 
             // Email
             // 
@@ -252,8 +290,10 @@
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Email.DefaultCellStyle = dataGridViewCellStyle7;
             this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 8;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
+            this.Email.Width = 150;
             // 
             // GioiTinh_1
             // 
@@ -261,9 +301,11 @@
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.GioiTinh_1.DefaultCellStyle = dataGridViewCellStyle8;
             this.GioiTinh_1.HeaderText = "Giới Tính";
+            this.GioiTinh_1.MinimumWidth = 8;
             this.GioiTinh_1.Name = "GioiTinh_1";
             this.GioiTinh_1.ReadOnly = true;
             this.GioiTinh_1.Visible = false;
+            this.GioiTinh_1.Width = 150;
             // 
             // GroupBox_ChonLop
             // 
@@ -374,12 +416,36 @@
             this.GroupBox_DanhSachCho.Controls.Add(this.Button_Them);
             this.GroupBox_DanhSachCho.Controls.Add(this.GridView_DSCho);
             this.GroupBox_DanhSachCho.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox_DanhSachCho.Location = new System.Drawing.Point(346, 498);
+            this.GroupBox_DanhSachCho.Location = new System.Drawing.Point(352, 499);
             this.GroupBox_DanhSachCho.Name = "GroupBox_DanhSachCho";
             this.GroupBox_DanhSachCho.Size = new System.Drawing.Size(791, 210);
             this.GroupBox_DanhSachCho.TabIndex = 8;
             this.GroupBox_DanhSachCho.TabStop = false;
             this.GroupBox_DanhSachCho.Text = "Danh sách chờ";
+            // 
+            // Panel_CoChu_Cho
+            // 
+            this.Panel_CoChu_Cho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CoChu_Cho.Controls.Add(this.TrackBar_CoChu_Cho);
+            this.Panel_CoChu_Cho.Location = new System.Drawing.Point(765, 25);
+            this.Panel_CoChu_Cho.Name = "Panel_CoChu_Cho";
+            this.Panel_CoChu_Cho.Size = new System.Drawing.Size(23, 138);
+            this.Panel_CoChu_Cho.TabIndex = 4;
+            // 
+            // TrackBar_CoChu_Cho
+            // 
+            this.TrackBar_CoChu_Cho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrackBar_CoChu_Cho.Location = new System.Drawing.Point(0, 0);
+            this.TrackBar_CoChu_Cho.Maximum = 100;
+            this.TrackBar_CoChu_Cho.Minimum = 1;
+            this.TrackBar_CoChu_Cho.Name = "TrackBar_CoChu_Cho";
+            this.TrackBar_CoChu_Cho.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.TrackBar_CoChu_Cho.Size = new System.Drawing.Size(45, 135);
+            this.TrackBar_CoChu_Cho.TabIndex = 3;
+            this.TrackBar_CoChu_Cho.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBar_CoChu_Cho.Value = 1;
             // 
             // Button_Them
             // 
@@ -425,15 +491,20 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.SoThuTu_Cho.DefaultCellStyle = dataGridViewCellStyle9;
             this.SoThuTu_Cho.HeaderText = "Số Thứ Tự";
+            this.SoThuTu_Cho.MinimumWidth = 8;
             this.SoThuTu_Cho.Name = "SoThuTu_Cho";
             this.SoThuTu_Cho.ReadOnly = true;
+            this.SoThuTu_Cho.Width = 150;
             // 
             // MaHS
             // 
             this.MaHS.DataPropertyName = "MaHocSinh";
             this.MaHS.HeaderText = "Mã Học Sinh";
+            this.MaHS.MinimumWidth = 8;
             this.MaHS.Name = "MaHS";
             this.MaHS.ReadOnly = true;
+            this.MaHS.Visible = false;
+            this.MaHS.Width = 150;
             // 
             // HTen
             // 
@@ -441,8 +512,10 @@
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.HTen.DefaultCellStyle = dataGridViewCellStyle10;
             this.HTen.HeaderText = "Họ và Tên";
+            this.HTen.MinimumWidth = 8;
             this.HTen.Name = "HTen";
             this.HTen.ReadOnly = true;
+            this.HTen.Width = 150;
             // 
             // GTinh
             // 
@@ -450,10 +523,12 @@
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.GTinh.DefaultCellStyle = dataGridViewCellStyle11;
             this.GTinh.HeaderText = "Giới Tính";
+            this.GTinh.MinimumWidth = 8;
             this.GTinh.Name = "GTinh";
             this.GTinh.ReadOnly = true;
             this.GTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.GTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.GTinh.Width = 150;
             // 
             // NSinh
             // 
@@ -461,8 +536,10 @@
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.NSinh.DefaultCellStyle = dataGridViewCellStyle12;
             this.NSinh.HeaderText = "Ngày Sinh";
+            this.NSinh.MinimumWidth = 8;
             this.NSinh.Name = "NSinh";
             this.NSinh.ReadOnly = true;
+            this.NSinh.Width = 150;
             // 
             // DChi
             // 
@@ -470,8 +547,10 @@
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.DChi.DefaultCellStyle = dataGridViewCellStyle13;
             this.DChi.HeaderText = "Địa Chỉ";
+            this.DChi.MinimumWidth = 8;
             this.DChi.Name = "DChi";
             this.DChi.ReadOnly = true;
+            this.DChi.Width = 150;
             // 
             // Em
             // 
@@ -479,16 +558,20 @@
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Em.DefaultCellStyle = dataGridViewCellStyle14;
             this.Em.HeaderText = "Email";
+            this.Em.MinimumWidth = 8;
             this.Em.Name = "Em";
             this.Em.ReadOnly = true;
+            this.Em.Width = 150;
             // 
             // GTinh_1
             // 
             this.GTinh_1.DataPropertyName = "GioiTinh";
             this.GTinh_1.HeaderText = "Giới Tính";
+            this.GTinh_1.MinimumWidth = 8;
             this.GTinh_1.Name = "GTinh_1";
             this.GTinh_1.ReadOnly = true;
             this.GTinh_1.Visible = false;
+            this.GTinh_1.Width = 150;
             // 
             // GroupBox_BoLoc
             // 
@@ -506,7 +589,7 @@
             this.GroupBox_BoLoc.Controls.Add(this.Label_NgaySinh);
             this.GroupBox_BoLoc.Controls.Add(this.Label_HoTen);
             this.GroupBox_BoLoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox_BoLoc.Location = new System.Drawing.Point(2, 498);
+            this.GroupBox_BoLoc.Location = new System.Drawing.Point(8, 499);
             this.GroupBox_BoLoc.Name = "GroupBox_BoLoc";
             this.GroupBox_BoLoc.Size = new System.Drawing.Size(338, 210);
             this.GroupBox_BoLoc.TabIndex = 9;
@@ -666,60 +749,12 @@
             this.Label_HoTen.TabIndex = 0;
             this.Label_HoTen.Text = "Họ và Tên:";
             // 
-            // Panel_CoChu_Lop
-            // 
-            this.Panel_CoChu_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_CoChu_Lop.Controls.Add(this.TrackBar_CoChu_Lop);
-            this.Panel_CoChu_Lop.Location = new System.Drawing.Point(1109, 25);
-            this.Panel_CoChu_Lop.Name = "Panel_CoChu_Lop";
-            this.Panel_CoChu_Lop.Size = new System.Drawing.Size(23, 290);
-            this.Panel_CoChu_Lop.TabIndex = 4;
-            // 
-            // TrackBar_CoChu_Lop
-            // 
-            this.TrackBar_CoChu_Lop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.TrackBar_CoChu_Lop.Location = new System.Drawing.Point(0, 0);
-            this.TrackBar_CoChu_Lop.Maximum = 100;
-            this.TrackBar_CoChu_Lop.Minimum = 1;
-            this.TrackBar_CoChu_Lop.Name = "TrackBar_CoChu_Lop";
-            this.TrackBar_CoChu_Lop.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrackBar_CoChu_Lop.Size = new System.Drawing.Size(45, 287);
-            this.TrackBar_CoChu_Lop.TabIndex = 3;
-            this.TrackBar_CoChu_Lop.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackBar_CoChu_Lop.Value = 1;
-            // 
-            // Panel_CoChu_Cho
-            // 
-            this.Panel_CoChu_Cho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_CoChu_Cho.Controls.Add(this.TrackBar_CoChu_Cho);
-            this.Panel_CoChu_Cho.Location = new System.Drawing.Point(765, 25);
-            this.Panel_CoChu_Cho.Name = "Panel_CoChu_Cho";
-            this.Panel_CoChu_Cho.Size = new System.Drawing.Size(23, 138);
-            this.Panel_CoChu_Cho.TabIndex = 4;
-            // 
-            // TrackBar_CoChu_Cho
-            // 
-            this.TrackBar_CoChu_Cho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.TrackBar_CoChu_Cho.Location = new System.Drawing.Point(0, 0);
-            this.TrackBar_CoChu_Cho.Maximum = 100;
-            this.TrackBar_CoChu_Cho.Minimum = 1;
-            this.TrackBar_CoChu_Cho.Name = "TrackBar_CoChu_Cho";
-            this.TrackBar_CoChu_Cho.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrackBar_CoChu_Cho.Size = new System.Drawing.Size(45, 135);
-            this.TrackBar_CoChu_Cho.TabIndex = 3;
-            this.TrackBar_CoChu_Cho.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackBar_CoChu_Cho.Value = 1;
-            // 
             // Form_LapDSLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1139, 709);
+            this.ClientSize = new System.Drawing.Size(1139, 715);
             this.Controls.Add(this.GroupBox_BoLoc);
             this.Controls.Add(this.GroupBox_DanhSachCho);
             this.Controls.Add(this.GroupBox_ChonLop);
@@ -730,19 +765,19 @@
             this.Panel_Tittle.ResumeLayout(false);
             this.Panel_Tittle.PerformLayout();
             this.GroupBox_DSLop.ResumeLayout(false);
+            this.Panel_CoChu_Lop.ResumeLayout(false);
+            this.Panel_CoChu_Lop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_Lop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_DSLop)).EndInit();
             this.GroupBox_ChonLop.ResumeLayout(false);
             this.GroupBox_ChonLop.PerformLayout();
             this.GroupBox_DanhSachCho.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSCho)).EndInit();
-            this.GroupBox_BoLoc.ResumeLayout(false);
-            this.GroupBox_BoLoc.PerformLayout();
-            this.Panel_CoChu_Lop.ResumeLayout(false);
-            this.Panel_CoChu_Lop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_Lop)).EndInit();
             this.Panel_CoChu_Cho.ResumeLayout(false);
             this.Panel_CoChu_Cho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar_CoChu_Cho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_DSCho)).EndInit();
+            this.GroupBox_BoLoc.ResumeLayout(false);
+            this.GroupBox_BoLoc.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -788,6 +823,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh_1;
+        private System.Windows.Forms.Panel Panel_CoChu_Lop;
+        private System.Windows.Forms.TrackBar TrackBar_CoChu_Lop;
+        private System.Windows.Forms.Panel Panel_CoChu_Cho;
+        private System.Windows.Forms.TrackBar TrackBar_CoChu_Cho;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_Cho;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn HTen;
@@ -796,9 +835,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Em;
         private System.Windows.Forms.DataGridViewTextBoxColumn GTinh_1;
-        private System.Windows.Forms.Panel Panel_CoChu_Lop;
-        private System.Windows.Forms.TrackBar TrackBar_CoChu_Lop;
-        private System.Windows.Forms.Panel Panel_CoChu_Cho;
-        private System.Windows.Forms.TrackBar TrackBar_CoChu_Cho;
     }
 }

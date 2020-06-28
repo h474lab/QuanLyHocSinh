@@ -28,9 +28,14 @@ namespace BUS
             result.Columns.Add("2", typeof(string));
             result.Columns.Add("3", typeof(string));
             result.Columns.Add("DiemTB", typeof(float));
+            result.Columns.Add("STT", typeof(int));
 
+            int stt = 1;
             foreach (DataRow row in result.Rows)
             {
+                row["STT"] = stt;
+                stt++;
+
                 string mahs = row["MaHocSinh"].ToString();
                 row["1"] = (object)diem.GetDiem(mahs, mahk, manh, mamh, "1") ?? DBNull.Value;
                 row["2"] = (object)diem.GetDiem(mahs, mahk, manh, mamh, "2") ?? DBNull.Value;
