@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace QuanLyHocSinh
 {
@@ -16,7 +17,7 @@ namespace QuanLyHocSinh
 
         ThamSo listThamSo = new ThamSo();
 
-        private bool[] val = { false, false, false, false, false };
+        private bool[] val = { false, false, false };
 
         public Form_TiepNhanHS()
         {
@@ -38,6 +39,89 @@ namespace QuanLyHocSinh
 
             TrackBar_CoChu.Value = int.Parse(GridView_DSHocSinh.Font.Size.ToString());
             TrackBar_CoChu.ValueChanged += TrackBar_CoChu_ValueChanged;
+
+            TextBox_HoTen.TextChanged += TextBox_HoTen_TextChanged;
+            TextBox_DiaChi.TextChanged += TextBox_DiaChi_TextChanged;
+            TextBox_Email.TextChanged += TextBox_Email_TextChanged;
+
+            TextBox_HoTen.LostFocus += TextBox_HoTen_LostFocus;
+            TextBox_DiaChi.LostFocus += TextBox_DiaChi_LostFocus;
+            TextBox_Email.LostFocus += TextBox_Email_LostFocus;
+        }
+
+        private void TextBox_Email_LostFocus(object sender, EventArgs e)
+        {
+            string email = TextBox_Email.Text;
+            // Chuan hoa
+            for (int i = 0; i < email.Length - 1; i++)
+                if (char.IsWhiteSpace(email[i]))
+                {
+                    if (char.IsWhiteSpace(email[i + 1]))
+                    {
+                        email = email.Substring(0, i) + email.Substring(i + 1);
+                        i--;
+                    }
+                }
+        }
+
+        private void TextBox_DiaChi_LostFocus(object sender, EventArgs e)
+        {
+            string diachi = TextBox_DiaChi.Text;
+            // Chuan hoa
+            for (int i = 0; i < diachi.Length - 1; i++)
+                if (char.IsWhiteSpace(diachi[i]))
+                {
+                    if (char.IsWhiteSpace(diachi[i + 1]))
+                    {
+                        diachi = diachi.Substring(0, i) + diachi.Substring(i + 1);
+                        i--;
+                    }
+                }
+        }
+
+        private void TextBox_HoTen_LostFocus(object sender, EventArgs e)
+        {
+            string hoten = TextBox_HoTen.Text;
+            // Chuan hoa
+            if (char.IsWhiteSpace(hoten[0]))
+                hoten = hoten.Substring(1);
+            if (char.IsWhiteSpace(hoten[hoten.Length - 1]))
+                hoten = hoten.Substring(0, hoten.Length - 1);
+            for (int i = 0; i < hoten.Length - 1; i++)
+                if (char.IsWhiteSpace(hoten[i]))
+                {
+                    if (char.IsWhiteSpace(hoten[i + 1]))
+                    {
+                        hoten = hoten.Substring(0, i) + hoten.Substring(i + 1);
+                        i--;
+                    }
+                    else if (char.IsLetter(hoten[i + 1]))
+                        hoten = hoten.Substring(0, i + 1) + char.ToUpper(hoten[i + 1]) + hoten.Substring(i + 2);
+                }
+            if (char.IsLetter(hoten[0]))
+                hoten = char.ToUpper(hoten[0]) + hoten.Substring(1);
+            TextBox_HoTen.Text = hoten;
+        }
+
+        private void TextBox_Email_TextChanged(object sender, EventArgs e)
+        {
+            int cursorPos = TextBox_Email.SelectionStart;
+            TextBox_Email_Validating(new object(), new CancelEventArgs());
+            TextBox_Email.Select(cursorPos, 0);
+        }
+
+        private void TextBox_DiaChi_TextChanged(object sender, EventArgs e)
+        {
+            int cursorPos = TextBox_DiaChi.SelectionStart;
+            TextBox_DiaChi_Validating(new object(), new CancelEventArgs());
+            TextBox_DiaChi.Select(cursorPos, 0);
+        }
+
+        private void TextBox_HoTen_TextChanged(object sender, EventArgs e)
+        {
+            int cursorPos = TextBox_HoTen.SelectionStart;
+            TextBox_HoTen_Validating(new object(), new CancelEventArgs());
+            TextBox_HoTen.Select(cursorPos, 0);
         }
 
         private void TrackBar_CoChu_ValueChanged(object sender, EventArgs e)
@@ -123,7 +207,7 @@ namespace QuanLyHocSinh
         }
         private void Button_Them_Click(object sender, EventArgs e)
         {
-            //if (!checkThongTin()) return;
+            if (!checkThongTin()) return;
             HocSinh temp = new HocSinh();
             temp.HoTen = TextBox_HoTen.Text;
             if (RadioButton_Nam.Checked)
@@ -152,7 +236,7 @@ namespace QuanLyHocSinh
 
         private void Button_Sua_Click(object sender, EventArgs e)
         {
-            //if (!checkThongTin()) return;
+            if (!checkThongTin()) return;
             if (currentMaHS == "") return;
             HocSinh temp = new HocSinh();
             temp.MaHocSinh = long.Parse(currentMaHS);
@@ -184,7 +268,7 @@ namespace QuanLyHocSinh
 
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
-            //if (!checkThongTin()) return;
+            if (!checkThongTin()) return;
             Console.WriteLine(currentMaHS);
             if (currentMaHS == "") return;
             int? result = hocsinh.Delete_HocSinh(currentMaHS);
@@ -222,7 +306,6 @@ namespace QuanLyHocSinh
                     errorProvider_Email.SetError(TextBox_Email, message);
                     break;
             }
-            val[index] = false;
         }
         // Dat bao hieu hop le
         private void SetChecked(int index, string message)
@@ -246,7 +329,6 @@ namespace QuanLyHocSinh
                     checkedProvider_Email.SetError(TextBox_Email, message);
                     break;
             }
-            val[index] = true;
         }
 
         private bool checkThongTin()
@@ -264,40 +346,25 @@ namespace QuanLyHocSinh
             if (hoten == "")
             {
                 SetError(0, "Họ tên không được để trống!");
+                val[0] = false;
                 return;
             }
             else if (hoten.Length > 30)
             {
                 SetError(0, "Họ tên phải có số kí tự nhỏ hơn 30!");
+                val[0] = false;
+                return;
             }
             for (int i = 0; i < hoten.Length; i++)
                 if (!char.IsWhiteSpace(hoten[i]) && !char.IsLetter(hoten[i]))
                 {
                     SetError(0, "Họ tên chỉ được chứa chữ cái và khoảng trắng!");
+                    val[0] = false;
                     return;
                 }
 
             SetChecked(0, "Thông tin hợp lệ!");
-
-            // Chuan hoa
-            if (char.IsWhiteSpace(hoten[0]))
-                hoten = hoten.Substring(1);
-            if (char.IsWhiteSpace(hoten[hoten.Length - 1]))
-                hoten = hoten.Substring(0, hoten.Length - 1);
-            for (int i = 0; i < hoten.Length - 1; i++)
-                if (char.IsWhiteSpace(hoten[i]))
-                {
-                    if (char.IsWhiteSpace(hoten[i + 1]))
-                    {
-                        hoten = hoten.Substring(0, i) + hoten.Substring(i + 1);
-                        i--;
-                    }
-                    else if (char.IsLetter(hoten[i + 1]))
-                        hoten = hoten.Substring(0, i + 1) + char.ToUpper(hoten[i + 1]) + hoten.Substring(i + 2);
-                }
-            if (char.IsLetter(hoten[0]))
-                hoten = char.ToUpper(hoten[0]) + hoten.Substring(1);
-            TextBox_HoTen.Text = hoten;
+            val[0] = true;
         }
 
         private void DateTimePicker_NgaySinh_Validating(object sender, CancelEventArgs e)
@@ -311,27 +378,18 @@ namespace QuanLyHocSinh
             if (diachi == "")
             {
                 SetError(2, "Địa chỉ không được để trống!");
+                val[1] = false;
                 return;
             }
             else if (diachi.Length > 30)
             {
                 SetError(2, "Địa chỉ phải có số kí tự nhỏ hơn 50!");
+                val[1] = false;
                 return;
             }
 
             SetChecked(2, "Thông tin hợp lệ!");
-
-            // Chuan hoa
-            for (int i = 0; i < diachi.Length - 1; i++)
-                if (char.IsWhiteSpace(diachi[i]))
-                {
-                    if (char.IsWhiteSpace(diachi[i + 1]))
-                    {
-                        diachi = diachi.Substring(0, i) + diachi.Substring(i + 1);
-                        i--;
-                    }
-                }
-
+            val[1] = true;
         }
 
         private void TextBox_Email_Validating(object sender, CancelEventArgs e)
@@ -340,25 +398,28 @@ namespace QuanLyHocSinh
             if (email == "")
             {
                 SetError(3, "Email không được để trống!");
+                val[2] = false;
                 return;
             }
             else if (email.Length > 40)
             {
                 SetError(3, "Email phải có số kí tự nhỏ hơn 40!");
+                val[2] = false;
                 return;
             }
 
-            SetChecked(3, "Thông tin hợp lệ");
-            // Chuan hoa
-            for (int i = 0; i < email.Length - 1; i++)
-                if (char.IsWhiteSpace(email[i]))
-                {
-                    if (char.IsWhiteSpace(email[i + 1]))
-                    {
-                        email = email.Substring(0, i) + email.Substring(i + 1);
-                        i--;
-                    }
-                }
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                SetChecked(3, "Thông tin hợp lệ");
+                val[2] = true;
+            } 
+            catch (FormatException)
+            {
+                SetError(3, "Định dạng Email không đúng!");
+                val[2] = false;
+                return;
+            }
         }
     }
 }

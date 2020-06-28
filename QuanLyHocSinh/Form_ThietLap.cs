@@ -287,12 +287,28 @@ namespace QuanLyHocSinh
             if (TextBox_TuoiMin.Text == "" || TextBox_TuoiMax.Text == "" || TextBox_SiSoMax.Text == "" ||
                 TextBox_DiemMin.Text == "" || TextBox_DiemMax.Text == "" || TextBox_DiemDat.Text == "")
                 return 0;
-            int TuoiMin = int.Parse(TextBox_TuoiMin.Text);
-            int TuoiMax = int.Parse(TextBox_TuoiMax.Text);
-            int SiSoMax = int.Parse(TextBox_SiSoMax.Text);
-            double DiemMin = double.Parse(TextBox_DiemMin.Text);
-            double DiemMax = double.Parse(TextBox_DiemMax.Text);
-            double DiemDat = double.Parse(TextBox_DiemDat.Text);
+
+            int TuoiMin;
+            int TuoiMax;
+            int SiSoMax;
+            double DiemMin;
+            double DiemMax;
+            double DiemDat;
+
+            try
+            {
+                TuoiMin = int.Parse(TextBox_TuoiMin.Text);
+                TuoiMax = int.Parse(TextBox_TuoiMax.Text);
+                SiSoMax = int.Parse(TextBox_SiSoMax.Text);
+                DiemMin = double.Parse(TextBox_DiemMin.Text);
+                DiemMax = double.Parse(TextBox_DiemMax.Text);
+                DiemDat = double.Parse(TextBox_DiemDat.Text);
+            } catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!", "Không thể lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            
             if (TuoiMin <= 0 || TuoiMax <= 0 || SiSoMax <= 0 || DiemMin < 0 || DiemMax <= 0 || DiemDat < 0 ||
                 TuoiMax - TuoiMin < 0 || DiemMax - DiemMin < 0 || DiemDat > DiemMax || DiemDat < DiemMin)
             {

@@ -1,5 +1,3 @@
-C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\CoSoDuLieu.mdf
-C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\CoSoDuLieu_log.ldf
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
