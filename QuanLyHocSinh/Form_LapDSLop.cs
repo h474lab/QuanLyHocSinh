@@ -28,9 +28,6 @@ namespace QuanLyHocSinh
         string currentHSLop = "";
         string currentHSCho = "";
 
-        string currentNgaySinh = "";
-        string currentNamBD = "";
-
         public Form_LapDSLop()
         {
             InitializeComponent();
@@ -209,7 +206,7 @@ namespace QuanLyHocSinh
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -267,11 +264,10 @@ namespace QuanLyHocSinh
                 DataGridViewRow row = new DataGridViewRow();
                 row = GridView_DSCho.Rows[e.RowIndex];
                 currentHSCho = row.Cells[0].Value.ToString();
-                currentNgaySinh = row.Cells["NgaySinh"].Value.ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
         
