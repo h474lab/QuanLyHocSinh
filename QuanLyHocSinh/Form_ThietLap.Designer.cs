@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.GroupBox_ThayDoiQD = new System.Windows.Forms.GroupBox();
@@ -64,11 +64,6 @@
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_DSLop = new System.Windows.Forms.GroupBox();
             this.GridView_DSLop = new System.Windows.Forms.DataGridView();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoThuTu_Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKhoiLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_ThaoTacLop = new System.Windows.Forms.GroupBox();
             this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
             this.Button_XoaLop = new System.Windows.Forms.Button();
@@ -109,6 +104,11 @@
             this.Button_ThemNH = new System.Windows.Forms.Button();
             this.Button_SuaNH = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MaKhoiLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoThuTu_Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_Title.SuspendLayout();
             this.GroupBox_ThayDoiQD.SuspendLayout();
             this.GroupBox_DSMonHoc.SuspendLayout();
@@ -356,8 +356,8 @@
             // SoThuTu_MH
             // 
             this.SoThuTu_MH.DataPropertyName = "SoThuTu";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoThuTu_MH.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_MH.DefaultCellStyle = dataGridViewCellStyle1;
             this.SoThuTu_MH.HeaderText = "Số Thứ Tự";
             this.SoThuTu_MH.MinimumWidth = 8;
             this.SoThuTu_MH.Name = "SoThuTu_MH";
@@ -367,8 +367,8 @@
             // TenMonHoc
             // 
             this.TenMonHoc.DataPropertyName = "TenMonHoc";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TenMonHoc.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenMonHoc.DefaultCellStyle = dataGridViewCellStyle2;
             this.TenMonHoc.HeaderText = "Tên Môn Học";
             this.TenMonHoc.MinimumWidth = 8;
             this.TenMonHoc.Name = "TenMonHoc";
@@ -409,60 +409,6 @@
             this.GridView_DSLop.RowHeadersWidth = 62;
             this.GridView_DSLop.Size = new System.Drawing.Size(296, 289);
             this.GridView_DSLop.TabIndex = 6;
-            // 
-            // MaLop
-            // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.MinimumWidth = 8;
-            this.MaLop.Name = "MaLop";
-            this.MaLop.ReadOnly = true;
-            this.MaLop.Visible = false;
-            this.MaLop.Width = 150;
-            // 
-            // SoThuTu_Lop
-            // 
-            this.SoThuTu_Lop.DataPropertyName = "SoThuTu";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoThuTu_Lop.DefaultCellStyle = dataGridViewCellStyle14;
-            this.SoThuTu_Lop.HeaderText = "Số Thứ Tự";
-            this.SoThuTu_Lop.MinimumWidth = 8;
-            this.SoThuTu_Lop.Name = "SoThuTu_Lop";
-            this.SoThuTu_Lop.ReadOnly = true;
-            this.SoThuTu_Lop.Width = 150;
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TenLop.DefaultCellStyle = dataGridViewCellStyle15;
-            this.TenLop.HeaderText = "Tên Lớp";
-            this.TenLop.MinimumWidth = 8;
-            this.TenLop.Name = "TenLop";
-            this.TenLop.ReadOnly = true;
-            this.TenLop.Width = 150;
-            // 
-            // SiSo
-            // 
-            this.SiSo.DataPropertyName = "SiSo";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiSo.DefaultCellStyle = dataGridViewCellStyle16;
-            this.SiSo.HeaderText = "Sĩ Số";
-            this.SiSo.MinimumWidth = 8;
-            this.SiSo.Name = "SiSo";
-            this.SiSo.ReadOnly = true;
-            this.SiSo.Visible = false;
-            this.SiSo.Width = 150;
-            // 
-            // MaKhoiLop
-            // 
-            this.MaKhoiLop.DataPropertyName = "MaKhoiLop";
-            this.MaKhoiLop.HeaderText = "Mã Khối Lớp";
-            this.MaKhoiLop.MinimumWidth = 8;
-            this.MaKhoiLop.Name = "MaKhoiLop";
-            this.MaKhoiLop.ReadOnly = true;
-            this.MaKhoiLop.Visible = false;
-            this.MaKhoiLop.Width = 150;
             // 
             // GroupBox_ThaoTacLop
             // 
@@ -675,8 +621,8 @@
             // SoThuTu_HK
             // 
             this.SoThuTu_HK.DataPropertyName = "SoThuTu";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoThuTu_HK.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_HK.DefaultCellStyle = dataGridViewCellStyle6;
             this.SoThuTu_HK.HeaderText = "Số Thứ Tự";
             this.SoThuTu_HK.MinimumWidth = 8;
             this.SoThuTu_HK.Name = "SoThuTu_HK";
@@ -686,8 +632,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TenHocKy";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên Học Kỳ";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -731,8 +677,8 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "MaNamHoc";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn5.HeaderText = "Mã Năm Học";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -743,8 +689,8 @@
             // SoThuTu_NH
             // 
             this.SoThuTu_NH.DataPropertyName = "SoThuTu";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoThuTu_NH.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_NH.DefaultCellStyle = dataGridViewCellStyle9;
             this.SoThuTu_NH.HeaderText = "Số Thứ Tự";
             this.SoThuTu_NH.MinimumWidth = 8;
             this.SoThuTu_NH.Name = "SoThuTu_NH";
@@ -754,8 +700,8 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "NamBD";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn6.HeaderText = "Năm Bắt Đầu";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -765,8 +711,8 @@
             // NamKT
             // 
             this.NamKT.DataPropertyName = "NamKT";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NamKT.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NamKT.DefaultCellStyle = dataGridViewCellStyle11;
             this.NamKT.HeaderText = "Năm Kết Thúc";
             this.NamKT.MinimumWidth = 8;
             this.NamKT.Name = "NamKT";
@@ -956,6 +902,60 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(629, 655);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
+            // MaKhoiLop
+            // 
+            this.MaKhoiLop.DataPropertyName = "MaKhoiLop";
+            this.MaKhoiLop.HeaderText = "Mã Khối Lớp";
+            this.MaKhoiLop.MinimumWidth = 8;
+            this.MaKhoiLop.Name = "MaKhoiLop";
+            this.MaKhoiLop.ReadOnly = true;
+            this.MaKhoiLop.Visible = false;
+            this.MaKhoiLop.Width = 150;
+            // 
+            // SiSo
+            // 
+            this.SiSo.DataPropertyName = "SiSo";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiSo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.SiSo.HeaderText = "Sĩ Số";
+            this.SiSo.MinimumWidth = 8;
+            this.SiSo.Name = "SiSo";
+            this.SiSo.ReadOnly = true;
+            this.SiSo.Visible = false;
+            this.SiSo.Width = 150;
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenLop.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TenLop.HeaderText = "Tên Lớp";
+            this.TenLop.MinimumWidth = 8;
+            this.TenLop.Name = "TenLop";
+            this.TenLop.ReadOnly = true;
+            this.TenLop.Width = 150;
+            // 
+            // SoThuTu_Lop
+            // 
+            this.SoThuTu_Lop.DataPropertyName = "SoThuTu";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoThuTu_Lop.DefaultCellStyle = dataGridViewCellStyle3;
+            this.SoThuTu_Lop.HeaderText = "Số Thứ Tự";
+            this.SoThuTu_Lop.MinimumWidth = 8;
+            this.SoThuTu_Lop.Name = "SoThuTu_Lop";
+            this.SoThuTu_Lop.ReadOnly = true;
+            this.SoThuTu_Lop.Width = 150;
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.MinimumWidth = 8;
+            this.MaLop.Name = "MaLop";
+            this.MaLop.ReadOnly = true;
+            this.MaLop.Visible = false;
+            this.MaLop.Width = 150;
+            // 
             // Form_ThietLap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,11 +1056,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_Lop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SiSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoiLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1068,5 +1063,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_NH;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoThuTu_Lop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SiSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoiLop;
     }
 }

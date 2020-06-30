@@ -1,4 +1,5 @@
 ﻿using BUS;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,12 +59,12 @@ namespace QuanLyHocSinh
 
         private void TrackBar_CoChu_MH_ValueChanged(object sender, EventArgs e)
         {
-            GridView_BCMonHoc.Font = new Font(GridView_BCMonHoc.Font.FontFamily.ToString(), TrackBar_CoChu_MH.Value);
+            GridView_BCMonHoc.Font = new System.Drawing.Font(GridView_BCMonHoc.Font.FontFamily.ToString(), TrackBar_CoChu_MH.Value);
         }
 
         private void TrackBar_CoChu_HK_ValueChanged(object sender, EventArgs e)
         {
-            GridView_BCHocKy.Font = new Font(GridView_BCHocKy.Font.FontFamily.ToString(), TrackBar_CoChu_HK.Value);
+            GridView_BCHocKy.Font = new System.Drawing.Font(GridView_BCHocKy.Font.FontFamily.ToString(), TrackBar_CoChu_HK.Value);
         }
 
         /*private void ComboBox_CoChu_HK_TextChanged(object sender, EventArgs e)
@@ -140,7 +141,7 @@ namespace QuanLyHocSinh
 
         void LoadDanhSachHocKy()
         {
-            DataTable temp = hocky.GetTatCaHK();
+            System.Data.DataTable temp = hocky.GetTatCaHK();
 
             ComboBox_HocKy_HK.DataSource = temp;
             ComboBox_HocKy_HK.DisplayMember = "TenHocKy";
@@ -173,7 +174,7 @@ namespace QuanLyHocSinh
 
         void LoadDanhSachNamHoc()
         {
-            DataTable temp = namhoc.GetTatCaNH();
+            System.Data.DataTable temp = namhoc.GetTatCaNH();
             temp.Columns.Add("Full_NamHoc", typeof(string), "NamBD + ' - ' + NamKT");
             ComboBox_NamHoc_HK.DataSource = temp;
             ComboBox_NamHoc_HK.DisplayMember = "Full_NamHoc";
@@ -219,6 +220,98 @@ namespace QuanLyHocSinh
         {
             currentMonHoc_MH = ComboBox_MonHoc_MH.SelectedValue.ToString();
             LoadBCMon();
+        }
+
+        private void ExcelExportBtn_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFile = new SaveFileDialog())
+            {
+                saveFile.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+                saveFile.FilterIndex = 2;
+                saveFile.RestoreDirectory = true;
+
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    _Application app = new Microsoft.Office.Interop.Excel.Application();
+                    _Workbook workbook = app.Workbooks.Add(Type.Missing);
+                    _Worksheet worksheet = null;
+                    app.Visible = false;
+                    worksheet = workbook.Sheets["Sheet1"];
+                    worksheet = workbook.ActiveSheet;
+                    worksheet.Name = ComboBox_HocKy_HK.Text + " (" + ComboBox_NamHoc_HK.Text + ")";
+                    worksheet.Cells[1, 1] = "BÁO CÁO TỔNG KẾT " + ComboBox_HocKy_HK.Text.ToUpper() + ", NĂM HỌC " + ComboBox_NamHoc_HK.Text.ToUpper();
+                    worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, GridView_BCHocKy.Columns.Count - 1]].Merge();
+                    worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 1]].Font.Bold = true;
+                    worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 1]].HorizontalAlignment = HorizontalAlignment.Center;
+                    for (int i = 1; i < GridView_BCHocKy.Columns.Count; i++)
+                    {
+                        worksheet.Cells[2, i] = GridView_BCHocKy.Columns[i - 1].HeaderText;
+                    }
+                    for (int i = 0; i < GridView_BCHocKy.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < GridView_BCHocKy.Columns.Count - 1; j++)
+                        {
+                            worksheet.Cells[i + 3, j + 1] = GridView_BCHocKy.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    try
+                    {
+                        workbook.SaveAs(saveFile.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                        app.Quit();
+                    } catch
+                    {
+                        app.Quit();
+                    }
+                }
+            }
+        }
+
+        private void ExcelExportBtn_MH_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFile = new SaveFileDialog())
+            {
+                saveFile.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+                saveFile.FilterIndex = 2;
+                saveFile.RestoreDirectory = true;
+
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    _Application app = new Microsoft.Office.Interop.Excel.Application();
+                    _Workbook workbook = app.Workbooks.Add(Type.Missing);
+                    _Worksheet worksheet = null;
+                    app.Visible = false;
+                    worksheet = workbook.Sheets["Sheet1"];
+                    worksheet = workbook.ActiveSheet;
+                    worksheet.Name = ComboBox_MonHoc_MH.Text + " - " + ComboBox_HocKy_HK.Text + " (" + ComboBox_NamHoc_HK.Text + ")";
+                    worksheet.Cells[1, 1] = "BÁO CÁO TỔNG KẾT MÔN " + ComboBox_MonHoc_MH.Text + " - " + ComboBox_HocKy_MH.Text.ToUpper() + ", NĂM HỌC " + ComboBox_NamHoc_MH.Text.ToUpper();
+                    worksheet.Cells[1, 1] = "BÁO CÁO TỔNG KẾT MÔN " + ComboBox_MonHoc_MH.Text + " - " + ComboBox_HocKy_MH.Text.ToUpper() + ", NĂM HỌC " + ComboBox_NamHoc_MH.Text.ToUpper();
+                    worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, GridView_BCHocKy.Columns.Count - 1]].Merge();
+                    worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 1]].Font.Bold = true;
+                    worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 1]].HorizontalAlignment = HorizontalAlignment.Center;
+                    for (int i = 1; i < GridView_BCMonHoc.Columns.Count; i++)
+                    {
+                        worksheet.Cells[2, i] = GridView_BCMonHoc.Columns[i - 1].HeaderText;
+                    }
+                    for (int i = 0; i < GridView_BCMonHoc.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < GridView_BCMonHoc.Columns.Count - 1; j++)
+                        {
+                            worksheet.Cells[i + 3, j + 1] = GridView_BCMonHoc.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    try
+                    {
+                        workbook.SaveAs(saveFile.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                        app.Quit();
+                    }
+                    catch
+                    {
+                        app.Quit();
+                    }
+                }
+            }
         }
     }
 }

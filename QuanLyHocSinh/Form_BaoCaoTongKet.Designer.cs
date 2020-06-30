@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.Label_Title = new System.Windows.Forms.Label();
             this.TabPage_MonHoc = new System.Windows.Forms.TabPage();
@@ -47,6 +47,12 @@
             this.Panel_CoChu_MH = new System.Windows.Forms.Panel();
             this.TrackBar_CoChu_MH = new System.Windows.Forms.TrackBar();
             this.GridView_BCMonHoc = new System.Windows.Forms.DataGridView();
+            this.MaLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiSo_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiLeDat_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox_BoLocMH = new System.Windows.Forms.GroupBox();
             this.ComboBox_NamHoc_MH = new System.Windows.Forms.ComboBox();
             this.Label_NamHoc_MH = new System.Windows.Forms.Label();
@@ -59,24 +65,20 @@
             this.Panel_CoChu_HK = new System.Windows.Forms.Panel();
             this.TrackBar_CoChu_HK = new System.Windows.Forms.TrackBar();
             this.GridView_BCHocKy = new System.Windows.Forms.DataGridView();
-            this.GroupBox_BoLoc = new System.Windows.Forms.GroupBox();
-            this.ComboBox_NamHoc_HK = new System.Windows.Forms.ComboBox();
-            this.Label_NamHoc_HK = new System.Windows.Forms.Label();
-            this.ComboBox_HocKy_HK = new System.Windows.Forms.ComboBox();
-            this.Label_HocKy_HK = new System.Windows.Forms.Label();
-            this.TabControl_BaoCao = new System.Windows.Forms.TabControl();
             this.MaLop_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLop_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SiSo_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongDat_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TiLeDat_HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiSo_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiLeDat_MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupBox_BoLoc = new System.Windows.Forms.GroupBox();
+            this.ComboBox_NamHoc_HK = new System.Windows.Forms.ComboBox();
+            this.Label_NamHoc_HK = new System.Windows.Forms.Label();
+            this.ComboBox_HocKy_HK = new System.Windows.Forms.ComboBox();
+            this.Label_HocKy_HK = new System.Windows.Forms.Label();
+            this.TabControl_BaoCao = new System.Windows.Forms.TabControl();
+            this.ExcelExportBtn = new System.Windows.Forms.Button();
+            this.ExcelExportBtn_MH = new System.Windows.Forms.Button();
             this.Panel_Title.SuspendLayout();
             this.TabPage_MonHoc.SuspendLayout();
             this.GroupBox_CTBaoCaoMH.SuspendLayout();
@@ -129,6 +131,7 @@
             this.GroupBox_CTBaoCaoMH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_CTBaoCaoMH.Controls.Add(this.ExcelExportBtn_MH);
             this.GroupBox_CTBaoCaoMH.Controls.Add(this.Panel_CoChu_MH);
             this.GroupBox_CTBaoCaoMH.Controls.Add(this.GridView_BCMonHoc);
             this.GroupBox_CTBaoCaoMH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,8 +184,63 @@
             this.GridView_BCMonHoc.Location = new System.Drawing.Point(6, 25);
             this.GridView_BCMonHoc.Name = "GridView_BCMonHoc";
             this.GridView_BCMonHoc.RowHeadersWidth = 62;
-            this.GridView_BCMonHoc.Size = new System.Drawing.Size(1170, 476);
+            this.GridView_BCMonHoc.Size = new System.Drawing.Size(1170, 441);
             this.GridView_BCMonHoc.TabIndex = 2;
+            // 
+            // MaLop_MH
+            // 
+            this.MaLop_MH.DataPropertyName = "MaLop";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaLop_MH.DefaultCellStyle = dataGridViewCellStyle1;
+            this.MaLop_MH.HeaderText = "Mã Lớp";
+            this.MaLop_MH.Name = "MaLop_MH";
+            this.MaLop_MH.ReadOnly = true;
+            this.MaLop_MH.Visible = false;
+            // 
+            // STT_MH
+            // 
+            this.STT_MH.DataPropertyName = "STT";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT_MH.DefaultCellStyle = dataGridViewCellStyle2;
+            this.STT_MH.HeaderText = "Số Thứ Tự";
+            this.STT_MH.Name = "STT_MH";
+            this.STT_MH.ReadOnly = true;
+            // 
+            // TenLop_MH
+            // 
+            this.TenLop_MH.DataPropertyName = "TenLop";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenLop_MH.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TenLop_MH.HeaderText = "Tên Lớp";
+            this.TenLop_MH.Name = "TenLop_MH";
+            this.TenLop_MH.ReadOnly = true;
+            // 
+            // SiSo_MH
+            // 
+            this.SiSo_MH.DataPropertyName = "SiSo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiSo_MH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SiSo_MH.HeaderText = "Sĩ Số";
+            this.SiSo_MH.Name = "SiSo_MH";
+            this.SiSo_MH.ReadOnly = true;
+            // 
+            // SoLuongDat
+            // 
+            this.SoLuongDat.DataPropertyName = "SoLuongDat";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoLuongDat.DefaultCellStyle = dataGridViewCellStyle5;
+            this.SoLuongDat.HeaderText = "Số Lượng Đạt";
+            this.SoLuongDat.Name = "SoLuongDat";
+            this.SoLuongDat.ReadOnly = true;
+            // 
+            // TiLeDat_MH
+            // 
+            this.TiLeDat_MH.DataPropertyName = "TiLe";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TiLeDat_MH.DefaultCellStyle = dataGridViewCellStyle6;
+            this.TiLeDat_MH.HeaderText = "Tỉ Lệ Đạt";
+            this.TiLeDat_MH.Name = "TiLeDat_MH";
+            this.TiLeDat_MH.ReadOnly = true;
             // 
             // GroupBox_BoLocMH
             // 
@@ -281,6 +339,7 @@
             this.GroupBox_CTBaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_CTBaoCao.Controls.Add(this.ExcelExportBtn);
             this.GroupBox_CTBaoCao.Controls.Add(this.Panel_CoChu_HK);
             this.GroupBox_CTBaoCao.Controls.Add(this.GridView_BCHocKy);
             this.GroupBox_CTBaoCao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,7 +357,7 @@
             this.Panel_CoChu_HK.Controls.Add(this.TrackBar_CoChu_HK);
             this.Panel_CoChu_HK.Location = new System.Drawing.Point(1182, 25);
             this.Panel_CoChu_HK.Name = "Panel_CoChu_HK";
-            this.Panel_CoChu_HK.Size = new System.Drawing.Size(23, 476);
+            this.Panel_CoChu_HK.Size = new System.Drawing.Size(23, 441);
             this.Panel_CoChu_HK.TabIndex = 4;
             // 
             // TrackBar_CoChu_HK
@@ -310,7 +369,7 @@
             this.TrackBar_CoChu_HK.Minimum = 1;
             this.TrackBar_CoChu_HK.Name = "TrackBar_CoChu_HK";
             this.TrackBar_CoChu_HK.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.TrackBar_CoChu_HK.Size = new System.Drawing.Size(45, 473);
+            this.TrackBar_CoChu_HK.Size = new System.Drawing.Size(45, 438);
             this.TrackBar_CoChu_HK.TabIndex = 3;
             this.TrackBar_CoChu_HK.TickStyle = System.Windows.Forms.TickStyle.None;
             this.TrackBar_CoChu_HK.Value = 1;
@@ -334,8 +393,63 @@
             this.GridView_BCHocKy.Name = "GridView_BCHocKy";
             this.GridView_BCHocKy.ReadOnly = true;
             this.GridView_BCHocKy.RowHeadersWidth = 62;
-            this.GridView_BCHocKy.Size = new System.Drawing.Size(1170, 476);
+            this.GridView_BCHocKy.Size = new System.Drawing.Size(1170, 441);
             this.GridView_BCHocKy.TabIndex = 0;
+            // 
+            // MaLop_HK
+            // 
+            this.MaLop_HK.DataPropertyName = "MaLop";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaLop_HK.DefaultCellStyle = dataGridViewCellStyle7;
+            this.MaLop_HK.HeaderText = "Mã Lớp";
+            this.MaLop_HK.Name = "MaLop_HK";
+            this.MaLop_HK.ReadOnly = true;
+            this.MaLop_HK.Visible = false;
+            // 
+            // STT_HK
+            // 
+            this.STT_HK.DataPropertyName = "STT";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT_HK.DefaultCellStyle = dataGridViewCellStyle8;
+            this.STT_HK.HeaderText = "Số Thứ Tự";
+            this.STT_HK.Name = "STT_HK";
+            this.STT_HK.ReadOnly = true;
+            // 
+            // TenLop_HK
+            // 
+            this.TenLop_HK.DataPropertyName = "TenLop";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenLop_HK.DefaultCellStyle = dataGridViewCellStyle9;
+            this.TenLop_HK.HeaderText = "Tên Lớp";
+            this.TenLop_HK.Name = "TenLop_HK";
+            this.TenLop_HK.ReadOnly = true;
+            // 
+            // SiSo_HK
+            // 
+            this.SiSo_HK.DataPropertyName = "SiSo";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiSo_HK.DefaultCellStyle = dataGridViewCellStyle10;
+            this.SiSo_HK.HeaderText = "Sĩ Số";
+            this.SiSo_HK.Name = "SiSo_HK";
+            this.SiSo_HK.ReadOnly = true;
+            // 
+            // SoLuongDat_HK
+            // 
+            this.SoLuongDat_HK.DataPropertyName = "SoLuongDat";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoLuongDat_HK.DefaultCellStyle = dataGridViewCellStyle11;
+            this.SoLuongDat_HK.HeaderText = "Số Lượng Đạt";
+            this.SoLuongDat_HK.Name = "SoLuongDat_HK";
+            this.SoLuongDat_HK.ReadOnly = true;
+            // 
+            // TiLeDat_HK
+            // 
+            this.TiLeDat_HK.DataPropertyName = "TiLe";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TiLeDat_HK.DefaultCellStyle = dataGridViewCellStyle12;
+            this.TiLeDat_HK.HeaderText = "Tỉ Lệ Đạt";
+            this.TiLeDat_HK.Name = "TiLeDat_HK";
+            this.TiLeDat_HK.ReadOnly = true;
             // 
             // GroupBox_BoLoc
             // 
@@ -405,115 +519,33 @@
             this.TabControl_BaoCao.Size = new System.Drawing.Size(1228, 611);
             this.TabControl_BaoCao.TabIndex = 0;
             // 
-            // MaLop_HK
+            // ExcelExportBtn
             // 
-            this.MaLop_HK.DataPropertyName = "MaLop";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MaLop_HK.DefaultCellStyle = dataGridViewCellStyle7;
-            this.MaLop_HK.HeaderText = "Mã Lớp";
-            this.MaLop_HK.Name = "MaLop_HK";
-            this.MaLop_HK.ReadOnly = true;
-            this.MaLop_HK.Visible = false;
+            this.ExcelExportBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ExcelExportBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ExcelExportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcelExportBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExcelExportBtn.Location = new System.Drawing.Point(563, 472);
+            this.ExcelExportBtn.Name = "ExcelExportBtn";
+            this.ExcelExportBtn.Size = new System.Drawing.Size(118, 28);
+            this.ExcelExportBtn.TabIndex = 5;
+            this.ExcelExportBtn.Text = "Xuất ra Excel";
+            this.ExcelExportBtn.UseVisualStyleBackColor = false;
+            this.ExcelExportBtn.Click += new System.EventHandler(this.ExcelExportBtn_Click);
             // 
-            // STT_HK
+            // ExcelExportBtn_MH
             // 
-            this.STT_HK.DataPropertyName = "STT";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT_HK.DefaultCellStyle = dataGridViewCellStyle8;
-            this.STT_HK.HeaderText = "Số Thứ Tự";
-            this.STT_HK.Name = "STT_HK";
-            this.STT_HK.ReadOnly = true;
-            // 
-            // TenLop_HK
-            // 
-            this.TenLop_HK.DataPropertyName = "TenLop";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TenLop_HK.DefaultCellStyle = dataGridViewCellStyle9;
-            this.TenLop_HK.HeaderText = "Tên Lớp";
-            this.TenLop_HK.Name = "TenLop_HK";
-            this.TenLop_HK.ReadOnly = true;
-            // 
-            // SiSo_HK
-            // 
-            this.SiSo_HK.DataPropertyName = "SiSo";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiSo_HK.DefaultCellStyle = dataGridViewCellStyle10;
-            this.SiSo_HK.HeaderText = "Sĩ Số";
-            this.SiSo_HK.Name = "SiSo_HK";
-            this.SiSo_HK.ReadOnly = true;
-            // 
-            // SoLuongDat_HK
-            // 
-            this.SoLuongDat_HK.DataPropertyName = "SoLuongDat";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoLuongDat_HK.DefaultCellStyle = dataGridViewCellStyle11;
-            this.SoLuongDat_HK.HeaderText = "Số Lượng Đạt";
-            this.SoLuongDat_HK.Name = "SoLuongDat_HK";
-            this.SoLuongDat_HK.ReadOnly = true;
-            // 
-            // TiLeDat_HK
-            // 
-            this.TiLeDat_HK.DataPropertyName = "TiLe";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TiLeDat_HK.DefaultCellStyle = dataGridViewCellStyle12;
-            this.TiLeDat_HK.HeaderText = "Tỉ Lệ Đạt";
-            this.TiLeDat_HK.Name = "TiLeDat_HK";
-            this.TiLeDat_HK.ReadOnly = true;
-            // 
-            // MaLop_MH
-            // 
-            this.MaLop_MH.DataPropertyName = "MaLop";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MaLop_MH.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MaLop_MH.HeaderText = "Mã Lớp";
-            this.MaLop_MH.Name = "MaLop_MH";
-            this.MaLop_MH.ReadOnly = true;
-            this.MaLop_MH.Visible = false;
-            // 
-            // STT_MH
-            // 
-            this.STT_MH.DataPropertyName = "STT";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT_MH.DefaultCellStyle = dataGridViewCellStyle2;
-            this.STT_MH.HeaderText = "Số Thứ Tự";
-            this.STT_MH.Name = "STT_MH";
-            this.STT_MH.ReadOnly = true;
-            // 
-            // TenLop_MH
-            // 
-            this.TenLop_MH.DataPropertyName = "TenLop";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TenLop_MH.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TenLop_MH.HeaderText = "Tên Lớp";
-            this.TenLop_MH.Name = "TenLop_MH";
-            this.TenLop_MH.ReadOnly = true;
-            // 
-            // SiSo_MH
-            // 
-            this.SiSo_MH.DataPropertyName = "SiSo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiSo_MH.DefaultCellStyle = dataGridViewCellStyle4;
-            this.SiSo_MH.HeaderText = "Sĩ Số";
-            this.SiSo_MH.Name = "SiSo_MH";
-            this.SiSo_MH.ReadOnly = true;
-            // 
-            // SoLuongDat
-            // 
-            this.SoLuongDat.DataPropertyName = "SoLuongDat";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoLuongDat.DefaultCellStyle = dataGridViewCellStyle5;
-            this.SoLuongDat.HeaderText = "Số Lượng Đạt";
-            this.SoLuongDat.Name = "SoLuongDat";
-            this.SoLuongDat.ReadOnly = true;
-            // 
-            // TiLeDat_MH
-            // 
-            this.TiLeDat_MH.DataPropertyName = "TiLe";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TiLeDat_MH.DefaultCellStyle = dataGridViewCellStyle6;
-            this.TiLeDat_MH.HeaderText = "Tỉ Lệ Đạt";
-            this.TiLeDat_MH.Name = "TiLeDat_MH";
-            this.TiLeDat_MH.ReadOnly = true;
+            this.ExcelExportBtn_MH.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ExcelExportBtn_MH.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ExcelExportBtn_MH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcelExportBtn_MH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExcelExportBtn_MH.Location = new System.Drawing.Point(563, 472);
+            this.ExcelExportBtn_MH.Name = "ExcelExportBtn_MH";
+            this.ExcelExportBtn_MH.Size = new System.Drawing.Size(118, 28);
+            this.ExcelExportBtn_MH.TabIndex = 6;
+            this.ExcelExportBtn_MH.Text = "Xuất ra Excel";
+            this.ExcelExportBtn_MH.UseVisualStyleBackColor = false;
+            this.ExcelExportBtn_MH.Click += new System.EventHandler(this.ExcelExportBtn_MH_Click);
             // 
             // Form_BaoCaoTongKet
             // 
@@ -586,5 +618,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SiSo_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongDat_HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiLeDat_HK;
+        private System.Windows.Forms.Button ExcelExportBtn;
+        private System.Windows.Forms.Button ExcelExportBtn_MH;
     }
 }
