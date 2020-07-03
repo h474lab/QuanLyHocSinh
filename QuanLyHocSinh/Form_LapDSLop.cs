@@ -178,7 +178,7 @@ namespace QuanLyHocSinh
             GridView_DSLop.ReadOnly = true;
             GridView_DSLop.ClearSelection();
 
-            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop, currentHocKy, currentNamHoc).ToString();
+            TextBox_SiSo.Text = danhsachlop.GetSiSo(currentLop, currentHocKy, currentNamHoc).ToString() + " / " + listThamSo.SiSoToiDa;
 
             GridView_DSLop.CellClick += GridView_DSLop_CellClick;
 
@@ -278,7 +278,7 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Vui lòng chọn học sinh để tiếp tục!", "Chưa chọn học sinh", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (int.Parse(TextBox_SiSo.Text) < listThamSo.SiSoToiDa)
+            if (int.Parse(TextBox_SiSo.Text.Substring(0, TextBox_SiSo.Text.IndexOf(' ') + 1)) < listThamSo.SiSoToiDa)
             {
                 int? result = hocsinh.AddHocSinhVaoLop(currentHSCho, currentLop, currentHocKy, currentNamHoc);
                 if (result == 1)

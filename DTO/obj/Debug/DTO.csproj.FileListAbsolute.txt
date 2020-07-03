@@ -6,3 +6,4 @@ C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\DTO\obj\Debug\DT.exe
 C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\DTO\obj\Debug\DT.pdb
+C:\Users\Quan's Macbook Pro\source\repos\QuanLyHocSinh\DTO\obj\Debug\DTO.csprojAssemblyReference.cache

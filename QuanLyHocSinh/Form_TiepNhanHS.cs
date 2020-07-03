@@ -32,10 +32,14 @@ namespace QuanLyHocSinh
 
             listThamSo = thamso.GetThamSo();
 
+            Label_DKNgaySinh.Text = "- Độ tuổi từ " + listThamSo.TuoiToiThieu + " đến " + listThamSo.TuoiToiDa + ".";
+
             DateTimePicker_NgaySinh.Format = DateTimePickerFormat.Custom;
             DateTimePicker_NgaySinh.CustomFormat = "dd/MM/yyyy";
             DateTimePicker_NgaySinh.MaxDate = DateTime.Today.AddYears(-listThamSo.TuoiToiThieu);
             DateTimePicker_NgaySinh.MinDate = DateTime.Today.AddYears(-listThamSo.TuoiToiDa);
+
+            DateTimePicker_NgaySinh_Validating(new object(), new CancelEventArgs());
 
             TrackBar_CoChu.Value = int.Parse(GridView_DSHocSinh.Font.Size.ToString());
             TrackBar_CoChu.ValueChanged += TrackBar_CoChu_ValueChanged;
@@ -51,6 +55,7 @@ namespace QuanLyHocSinh
 
         private void TextBox_Email_LostFocus(object sender, EventArgs e)
         {
+            if (TextBox_Email.Text == "") return;
             string email = TextBox_Email.Text;
             // Chuan hoa
             for (int i = 0; i < email.Length - 1; i++)
@@ -66,6 +71,7 @@ namespace QuanLyHocSinh
 
         private void TextBox_DiaChi_LostFocus(object sender, EventArgs e)
         {
+            if (TextBox_DiaChi.Text == "") return;
             string diachi = TextBox_DiaChi.Text;
             // Chuan hoa
             for (int i = 0; i < diachi.Length - 1; i++)
@@ -81,6 +87,7 @@ namespace QuanLyHocSinh
 
         private void TextBox_HoTen_LostFocus(object sender, EventArgs e)
         {
+            if (TextBox_HoTen.Text == "") return;
             string hoten = TextBox_HoTen.Text;
             // Chuan hoa
             if (char.IsWhiteSpace(hoten[0]))
@@ -292,18 +299,22 @@ namespace QuanLyHocSinh
                 case 0:
                     checkedProvider_HoTen.Clear();
                     errorProvider_HoTen.SetError(TextBox_HoTen, message);
+                    Label_DKHoTen.Font = new Font(Label_HoTen.Font, FontStyle.Regular);
                     break;
                 case 1:
                     checkedProvider_NgaySinh.Clear();
                     errorProvider_NgaySinh.SetError(DateTimePicker_NgaySinh, message);
+                    Label_DKNgaySinh.Font = new Font(Label_DKNgaySinh.Font, FontStyle.Regular);
                     break;
                 case 2:
                     checkedProvider_DiaChi.Clear();
                     errorProvider_DiaChi.SetError(TextBox_DiaChi, message);
+                    Label_DKDiaChi.Font = new Font(Label_DKDiaChi.Font, FontStyle.Regular);
                     break;
                 case 3:
                     checkedProvider_Email.Clear();
                     errorProvider_Email.SetError(TextBox_Email, message);
+                    Label_DKEmail.Font = new Font(Label_DKEmail.Font, FontStyle.Regular);
                     break;
             }
         }
@@ -315,18 +326,22 @@ namespace QuanLyHocSinh
                 case 0:
                     errorProvider_HoTen.Clear();
                     checkedProvider_HoTen.SetError(TextBox_HoTen, message);
+                    Label_DKHoTen.Font = new Font(Label_HoTen.Font, FontStyle.Bold);
                     break;
                 case 1:
                     errorProvider_NgaySinh.Clear();
                     checkedProvider_NgaySinh.SetError(DateTimePicker_NgaySinh, message);
+                    Label_DKNgaySinh.Font = new Font(Label_DKNgaySinh.Font, FontStyle.Bold);
                     break;
                 case 2:
                     errorProvider_DiaChi.Clear();
                     checkedProvider_DiaChi.SetError(TextBox_DiaChi, message);
+                    Label_DKDiaChi.Font = new Font(Label_DKDiaChi.Font, FontStyle.Bold);
                     break;
                 case 3:
                     errorProvider_Email.Clear();
                     checkedProvider_Email.SetError(TextBox_Email, message);
+                    Label_DKEmail.Font = new Font(Label_DKEmail.Font, FontStyle.Bold);
                     break;
             }
         }
@@ -356,9 +371,9 @@ namespace QuanLyHocSinh
                 return;
             }
             for (int i = 0; i < hoten.Length; i++)
-                if (!char.IsWhiteSpace(hoten[i]) && !char.IsLetter(hoten[i]))
+                if (!char.IsWhiteSpace(hoten[i]) && !char.IsLetter(hoten[i]) && hoten[i] != '\'' && hoten[i] != '.')
                 {
-                    SetError(0, "Họ tên chỉ được chứa chữ cái và khoảng trắng!");
+                    SetError(0, "Họ tên chỉ được chứa chữ cái, khoảng trắng, dấu nháy và dấu chấm!");
                     val[0] = false;
                     return;
                 }
@@ -381,9 +396,9 @@ namespace QuanLyHocSinh
                 val[1] = false;
                 return;
             }
-            else if (diachi.Length > 30)
+            else if (diachi.Length > 200)
             {
-                SetError(2, "Địa chỉ phải có số kí tự nhỏ hơn 50!");
+                SetError(2, "Địa chỉ phải có số kí tự nhỏ hơn 200!");
                 val[1] = false;
                 return;
             }

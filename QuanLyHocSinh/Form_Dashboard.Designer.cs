@@ -55,7 +55,7 @@
             this.SettingsBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.SettingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingsBtn.Image = global::QuanLyHocSinh.Properties.Resources.SettingsButton1;
             this.SettingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SettingsBtn.Location = new System.Drawing.Point(-1, 370);
@@ -73,7 +73,7 @@
             this.ReportBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ReportBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.Image = global::QuanLyHocSinh.Properties.Resources.ReportButton1;
             this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReportBtn.Location = new System.Drawing.Point(-1, 296);
@@ -91,7 +91,7 @@
             this.ScoreBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ScoreBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ScoreBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreBtn.Image = global::QuanLyHocSinh.Properties.Resources.ScoreButton_1_1;
             this.ScoreBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ScoreBtn.Location = new System.Drawing.Point(-1, 222);
@@ -109,7 +109,7 @@
             this.ClassBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClassBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClassBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassBtn.Image = global::QuanLyHocSinh.Properties.Resources.ClassroomButton1;
             this.ClassBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ClassBtn.Location = new System.Drawing.Point(-1, 148);
@@ -127,7 +127,7 @@
             this.AddStudentBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.AddStudentBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddStudentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddStudentBtn.Image = global::QuanLyHocSinh.Properties.Resources.AddStudentButton1;
             this.AddStudentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddStudentBtn.Location = new System.Drawing.Point(-1, 0);
@@ -145,7 +145,7 @@
             this.SearchBtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.Image = global::QuanLyHocSinh.Properties.Resources.SearchButton_1_1;
             this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SearchBtn.Location = new System.Drawing.Point(-1, 74);
