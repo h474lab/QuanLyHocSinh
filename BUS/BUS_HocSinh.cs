@@ -46,7 +46,7 @@ namespace BUS
         {
             return hocsinh.Delete_HSTrongLop(mahs, malop, mahk, manh);
         }
-        public DataTable GetThongTinTraCuu(string hoten, string manh)
+        public DataTable GetThongTinTraCuu(string hoten, string manh, string tenlop)
         {
             DataTable result = this.GetTatCaHS();
 
@@ -76,6 +76,13 @@ namespace BUS
                 row["TenLop"] = (object)this.GetLop(mahs, manh) ?? DBNull.Value;
                 row["TBHKI"] = (object)diem.GetDiemTBHK(mahs, manh, "Học kỳ 1") ?? DBNull.Value;
                 row["TBHKII"] = (object)diem.GetDiemTBHK(mahs, manh, "Học kỳ 2") ?? DBNull.Value;
+
+                if (row["TenLop"].ToString() != tenlop && tenlop != null)
+                {
+                    stt--;
+                    row.Delete();
+                    continue;
+                }
             }
 
             return result;

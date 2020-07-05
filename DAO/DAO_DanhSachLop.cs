@@ -34,6 +34,29 @@ namespace DAO
             }
             return result;
         }
+        public DataTable GetTatCaLopTrongKhoi(string makl)
+        {
+            DataTable result = null;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("SELECT_TATCALOPTRONGKHOI", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MAKHOILOP", SqlDbType.Decimal).Value = long.Parse(makl);
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    result = new DataTable();
+                    da.Fill(result);
+                    command.Connection.Close();
+                }
+                catch
+                {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
         public int? Insert_Lop(DanhSachLop lop)
         {
             int? result = null;

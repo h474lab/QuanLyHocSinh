@@ -16,6 +16,10 @@ namespace BUS
         {
             return danhsachlop.GetTatCaLop();
         }
+        public DataTable GetTatCaLopTrongKhoi(string makl)
+        {
+            return danhsachlop.GetTatCaLopTrongKhoi(makl);
+        }
         public int? Insert_Lop(DanhSachLop lop)
         {
             return danhsachlop.Insert_Lop(lop);

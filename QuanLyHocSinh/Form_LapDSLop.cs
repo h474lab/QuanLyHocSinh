@@ -14,6 +14,7 @@ namespace QuanLyHocSinh
 {
     public partial class Form_LapDSLop : Form
     {
+        BUS_KhoiLop khoilop = new BUS_KhoiLop();
         BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
         BUS_HocSinh hocsinh = new BUS_HocSinh();
         BUS_HocKy hocky = new BUS_HocKy();
@@ -22,6 +23,7 @@ namespace QuanLyHocSinh
 
         ThamSo listThamSo = new ThamSo();
 
+        string currentKhoiLop = "";
         string currentLop = "";
         string currentHocKy = "";
         string currentNamHoc = "";
@@ -34,6 +36,7 @@ namespace QuanLyHocSinh
 
             init();
 
+            LoadDanhSachKhoiLop();
             LoadDanhSachLop();
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
@@ -82,21 +85,35 @@ namespace QuanLyHocSinh
             DateTimePicker_NgaySinhKT.MinDate = DateTimePicker_NgaySinhBD.Value;
         }
 
+        private void LoadDanhSachKhoiLop()
+        {
+            DataTable temp = khoilop.GetTatCaKhoiLop();
+            ComboBox_KhoiLop.DataSource = temp;
+            ComboBox_KhoiLop.DisplayMember = "TenKhoiLop";
+            ComboBox_KhoiLop.ValueMember = "MaKhoiLop";
+
+            ComboBox_KhoiLop.SelectedValueChanged += ComboBox_KhoiLop_SelectedValueChanged;
+        }
+
+        private void ComboBox_KhoiLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LoadDanhSachLop();
+        }
+
         void LoadDanhSachLop()
         {
-            DataTable temp = danhsachlop.GetTatCaLop();
+            currentKhoiLop = ComboBox_KhoiLop.SelectedValue.ToString();
+
+            DataTable temp = danhsachlop.GetTatCaLopTrongKhoi(currentKhoiLop);
             ComboBox_Lop.DataSource = temp;
             ComboBox_Lop.DisplayMember = "TenLop";
             ComboBox_Lop.ValueMember = "MaLop";
-
-            currentLop = ComboBox_Lop.SelectedValue.ToString();
 
             ComboBox_Lop.SelectedValueChanged += ComboBox_Lop_SelectedValueChanged;
         }
 
         private void ComboBox_Lop_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentLop = ComboBox_Lop.SelectedValue.ToString();
             //Console.WriteLine(currentLop);
             LoadDanhSachHocSinh();
             LoadHocSinhCho();
@@ -108,14 +125,11 @@ namespace QuanLyHocSinh
             ComboBox_HocKy.DisplayMember = "TenHocKy";
             ComboBox_HocKy.ValueMember = "MaHocKy";
 
-            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
-
             ComboBox_HocKy.SelectedValueChanged += ComboBox_HocKy_SelectedValueChanged;
         }
 
         private void ComboBox_HocKy_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
             LoadDanhSachHocSinh();
             LoadHocSinhCho();
         }
@@ -129,21 +143,26 @@ namespace QuanLyHocSinh
             ComboBox_NamHoc.DisplayMember = "Full_NamHoc";
             ComboBox_NamHoc.ValueMember = "MaNamHoc";
 
-            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
-
             ComboBox_NamHoc.SelectedValueChanged += ComboBox_NamHoc_SelectedValueChanged;
         }
 
         private void ComboBox_NamHoc_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
             LoadDanhSachHocSinh();
             LoadHocSinhCho();
         }
 
         void LoadDanhSachHocSinh()
         {
-            if (currentLop == "" | currentHocKy == "" | currentNamHoc == "") return;
+            currentLop = ComboBox_Lop.SelectedValue.ToString();
+            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+
+            if (currentLop == "" | currentHocKy == "" | currentNamHoc == "")
+            {
+                GridView_DSLop.DataSource = null;
+                return;
+            }
             DataTable temp = hocsinh.GetHocSinh(currentLop, currentHocKy, currentNamHoc);
             temp.Columns.Add("GT", typeof(string));
             temp.Columns.Add("SoThuTu", typeof(int));
@@ -212,6 +231,15 @@ namespace QuanLyHocSinh
 
         void LoadHocSinhCho()
         {
+            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+
+            if (currentHocKy == "" || currentNamHoc == "")
+            {
+                GridView_DSCho.DataSource = null;
+                return;
+            }
+
             DataTable temp = hocsinh.GetHocSinhCho(currentHocKy, currentNamHoc);
             temp.Columns.Add("GT", typeof(string));
             temp.Columns.Add("SoThuTu", typeof(int));

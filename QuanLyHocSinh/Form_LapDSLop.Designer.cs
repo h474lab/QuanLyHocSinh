@@ -93,6 +93,8 @@
             this.Label_GioiTinh = new System.Windows.Forms.Label();
             this.Label_NgaySinh = new System.Windows.Forms.Label();
             this.Label_HoTen = new System.Windows.Forms.Label();
+            this.ComboBox_KhoiLop = new System.Windows.Forms.ComboBox();
+            this.Label_KhoiLop = new System.Windows.Forms.Label();
             this.Panel_Tittle.SuspendLayout();
             this.GroupBox_DSLop.SuspendLayout();
             this.Panel_CoChu_Lop.SuspendLayout();
@@ -311,6 +313,8 @@
             // 
             this.GroupBox_ChonLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBox_ChonLop.Controls.Add(this.ComboBox_KhoiLop);
+            this.GroupBox_ChonLop.Controls.Add(this.Label_KhoiLop);
             this.GroupBox_ChonLop.Controls.Add(this.ComboBox_NamHoc);
             this.GroupBox_ChonLop.Controls.Add(this.Label_NamHoc);
             this.GroupBox_ChonLop.Controls.Add(this.TextBox_SiSo);
@@ -333,7 +337,7 @@
             this.ComboBox_NamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_NamHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_NamHoc.FormattingEnabled = true;
-            this.ComboBox_NamHoc.Location = new System.Drawing.Point(555, 22);
+            this.ComboBox_NamHoc.Location = new System.Drawing.Point(775, 21);
             this.ComboBox_NamHoc.Name = "ComboBox_NamHoc";
             this.ComboBox_NamHoc.Size = new System.Drawing.Size(175, 26);
             this.ComboBox_NamHoc.TabIndex = 14;
@@ -341,7 +345,7 @@
             // Label_NamHoc
             // 
             this.Label_NamHoc.AutoSize = true;
-            this.Label_NamHoc.Location = new System.Drawing.Point(475, 25);
+            this.Label_NamHoc.Location = new System.Drawing.Point(695, 24);
             this.Label_NamHoc.Name = "Label_NamHoc";
             this.Label_NamHoc.Size = new System.Drawing.Size(74, 18);
             this.Label_NamHoc.TabIndex = 13;
@@ -374,7 +378,7 @@
             this.ComboBox_HocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_HocKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_HocKy.FormattingEnabled = true;
-            this.ComboBox_HocKy.Location = new System.Drawing.Point(301, 21);
+            this.ComboBox_HocKy.Location = new System.Drawing.Point(521, 20);
             this.ComboBox_HocKy.Name = "ComboBox_HocKy";
             this.ComboBox_HocKy.Size = new System.Drawing.Size(168, 26);
             this.ComboBox_HocKy.TabIndex = 10;
@@ -382,7 +386,7 @@
             // Label_HocKy
             // 
             this.Label_HocKy.AutoSize = true;
-            this.Label_HocKy.Location = new System.Drawing.Point(236, 25);
+            this.Label_HocKy.Location = new System.Drawing.Point(456, 24);
             this.Label_HocKy.Name = "Label_HocKy";
             this.Label_HocKy.Size = new System.Drawing.Size(59, 18);
             this.Label_HocKy.TabIndex = 9;
@@ -394,7 +398,7 @@
             this.ComboBox_Lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Lop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_Lop.FormattingEnabled = true;
-            this.ComboBox_Lop.Location = new System.Drawing.Point(51, 22);
+            this.ComboBox_Lop.Location = new System.Drawing.Point(271, 20);
             this.ComboBox_Lop.Name = "ComboBox_Lop";
             this.ComboBox_Lop.Size = new System.Drawing.Size(179, 26);
             this.ComboBox_Lop.TabIndex = 8;
@@ -402,7 +406,7 @@
             // Label_Lop
             // 
             this.Label_Lop.AutoSize = true;
-            this.Label_Lop.Location = new System.Drawing.Point(9, 25);
+            this.Label_Lop.Location = new System.Drawing.Point(229, 23);
             this.Label_Lop.Name = "Label_Lop";
             this.Label_Lop.Size = new System.Drawing.Size(41, 18);
             this.Label_Lop.TabIndex = 0;
@@ -749,6 +753,26 @@
             this.Label_HoTen.TabIndex = 0;
             this.Label_HoTen.Text = "Họ và Tên:";
             // 
+            // ComboBox_KhoiLop
+            // 
+            this.ComboBox_KhoiLop.BackColor = System.Drawing.SystemColors.Window;
+            this.ComboBox_KhoiLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_KhoiLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBox_KhoiLop.FormattingEnabled = true;
+            this.ComboBox_KhoiLop.Location = new System.Drawing.Point(83, 20);
+            this.ComboBox_KhoiLop.Name = "ComboBox_KhoiLop";
+            this.ComboBox_KhoiLop.Size = new System.Drawing.Size(140, 26);
+            this.ComboBox_KhoiLop.TabIndex = 16;
+            // 
+            // Label_KhoiLop
+            // 
+            this.Label_KhoiLop.AutoSize = true;
+            this.Label_KhoiLop.Location = new System.Drawing.Point(6, 23);
+            this.Label_KhoiLop.Name = "Label_KhoiLop";
+            this.Label_KhoiLop.Size = new System.Drawing.Size(71, 18);
+            this.Label_KhoiLop.TabIndex = 15;
+            this.Label_KhoiLop.Text = "Khối lớp:";
+            // 
             // Form_LapDSLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,5 +859,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Em;
         private System.Windows.Forms.DataGridViewTextBoxColumn GTinh_1;
+        private System.Windows.Forms.ComboBox ComboBox_KhoiLop;
+        private System.Windows.Forms.Label Label_KhoiLop;
     }
 }

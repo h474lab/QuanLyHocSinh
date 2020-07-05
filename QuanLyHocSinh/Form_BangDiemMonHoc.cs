@@ -14,6 +14,7 @@ namespace QuanLyHocSinh
 {
     public partial class Form_BangDiemMonHoc : Form
     {
+        BUS_KhoiLop khoilop = new BUS_KhoiLop();
         BUS_DanhSachLop danhsachlop = new BUS_DanhSachLop();
         BUS_HocKy hocky = new BUS_HocKy();
         BUS_NamHoc namhoc = new BUS_NamHoc();
@@ -27,6 +28,7 @@ namespace QuanLyHocSinh
         string lastScore;
 
         string currentHocSinh = "";
+        string currentKhoiLop = "";
         string currentLop = "";
         string currentHocKy = "";
         string currentNamHoc = "";
@@ -36,6 +38,7 @@ namespace QuanLyHocSinh
             InitializeComponent();
 
             init();
+            LoadDanhSachKhoiLop();
             LoadDanhSachLop();
             LoadDanhSachHocKy();
             LoadDanhSachNamHoc();
@@ -73,21 +76,36 @@ namespace QuanLyHocSinh
            GridView_BangDiem.Font = new Font(GridView_BangDiem.Font.FontFamily, cochu);
         }*/
 
+        private void LoadDanhSachKhoiLop()
+        {
+            DataTable temp = khoilop.GetTatCaKhoiLop();
+            ComboBox_KhoiLop.DataSource = temp;
+            ComboBox_KhoiLop.DisplayMember = "TenKhoiLop";
+            ComboBox_KhoiLop.ValueMember = "MaKhoiLop";
+
+            ComboBox_KhoiLop.SelectedValueChanged += ComboBox_KhoiLop_SelectedValueChanged;
+        }
+
+        private void ComboBox_KhoiLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LoadDanhSachLop();
+        }
+
         void LoadDanhSachLop()
         {
-            DataTable temp = danhsachlop.GetTatCaLop();
+            currentKhoiLop = ComboBox_KhoiLop.SelectedValue.ToString();
+            DataTable temp = danhsachlop.GetTatCaLopTrongKhoi(currentKhoiLop);
             ComboBox_Lop.DataSource = temp;
             ComboBox_Lop.DisplayMember = "TenLop";
             ComboBox_Lop.ValueMember = "MaLop";
 
-            currentLop = ComboBox_Lop.SelectedValue.ToString();
+            if (temp.Rows.Count == 0) return;
 
             ComboBox_Lop.SelectedValueChanged += ComboBox_Lop_SelectedValueChanged;
         }
 
         private void ComboBox_Lop_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentLop = ComboBox_Lop.SelectedValue.ToString();
             //Console.WriteLine(currentLop);
             LoadBangDiem();
         }
@@ -98,14 +116,11 @@ namespace QuanLyHocSinh
             ComboBox_HocKy.DisplayMember = "TenHocKy";
             ComboBox_HocKy.ValueMember = "MaHocKy";
 
-            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
-
             ComboBox_HocKy.SelectedValueChanged += ComboBox_HocKy_SelectedValueChanged;
         }
 
         private void ComboBox_HocKy_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
             LoadBangDiem();
         }
 
@@ -117,14 +132,11 @@ namespace QuanLyHocSinh
             ComboBox_NamHoc.DisplayMember = "Full_NamHoc";
             ComboBox_NamHoc.ValueMember = "MaNamHoc";
 
-            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
-
             ComboBox_NamHoc.SelectedValueChanged += ComboBox_NamHoc_SelectedValueChanged;
         }
 
         private void ComboBox_NamHoc_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
             LoadBangDiem();
         }
 
@@ -141,13 +153,20 @@ namespace QuanLyHocSinh
 
         private void ComboBox_MonHoc_SelectedValueChanged(object sender, EventArgs e)
         {
-            currentMonHoc = ComboBox_MonHoc.SelectedValue.ToString();
             LoadBangDiem();
         }
 
         void LoadBangDiem()
         {
-            if (currentLop == "" | currentHocKy == "" | currentNamHoc == "") return;
+            currentLop = ComboBox_Lop.SelectedValue.ToString();
+            currentHocKy = ComboBox_HocKy.SelectedValue.ToString();
+            currentNamHoc = ComboBox_NamHoc.SelectedValue.ToString();
+
+            if (currentLop == "" | currentHocKy == "" | currentNamHoc == "")
+            {
+                GridView_BangDiem.DataSource = null;
+                return;
+            }
             GridView_BangDiem.DataSource = bangdiemmon.GetBangDiem(currentLop, currentHocKy, currentNamHoc, currentMonHoc);
             GridView_BangDiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridView_BangDiem.SelectionMode = DataGridViewSelectionMode.CellSelect;

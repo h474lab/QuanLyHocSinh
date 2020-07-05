@@ -13,6 +13,7 @@ namespace QuanLyHocSinh
     {
         BUS_HocSinh hocsinh = new BUS_HocSinh();
         BUS_ThamSo thamso = new BUS_ThamSo();
+
         string currentMaHS = "";
 
         ThamSo listThamSo = new ThamSo();
@@ -214,7 +215,11 @@ namespace QuanLyHocSinh
         }
         private void Button_Them_Click(object sender, EventArgs e)
         {
-            if (!checkThongTin()) return;
+            if (!checkThongTin())
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             HocSinh temp = new HocSinh();
             temp.HoTen = TextBox_HoTen.Text;
             if (RadioButton_Nam.Checked)
@@ -243,8 +248,11 @@ namespace QuanLyHocSinh
 
         private void Button_Sua_Click(object sender, EventArgs e)
         {
-            if (!checkThongTin()) return;
-            if (currentMaHS == "") return;
+            if (!checkThongTin() || currentMaHS == "")
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             HocSinh temp = new HocSinh();
             temp.MaHocSinh = long.Parse(currentMaHS);
             temp.HoTen = TextBox_HoTen.Text;
@@ -275,9 +283,12 @@ namespace QuanLyHocSinh
 
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
-            if (!checkThongTin()) return;
-            Console.WriteLine(currentMaHS);
-            if (currentMaHS == "") return;
+            if (currentMaHS == "")
+            {
+                MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //Console.WriteLine(currentMaHS);
             int? result = hocsinh.Delete_HocSinh(currentMaHS);
             if (result == 1)
             {

@@ -20,6 +20,7 @@ namespace QuanLyHocSinh
         BUS_MonHoc monhoc = new BUS_MonHoc();
         BUS_HocKy hocky = new BUS_HocKy();
         BUS_NamHoc namhoc = new BUS_NamHoc();
+        BUS_SiSo siso = new BUS_SiSo();
 
         string currentMaLop = "";
         string currentKhoiLop = "";
@@ -315,6 +316,13 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Thông tin không hợp lệ!", "Không thể lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
+
+            if (SiSoMax < siso.GetSiSoMax())
+            {
+                MessageBox.Show("Vui lòng đảm bảo không tồn tại lớp có sĩ số lớn hơn sĩ số tối đa!", "Không thể lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+
             return 1;
         }
         private void Button_Luu_Click(object sender, EventArgs e)
@@ -339,15 +347,12 @@ namespace QuanLyHocSinh
                     MessageBox.Show("Không thể cập nhật thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void Button_Close_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            else SetQuyDinh();
         }
 
         private void Button_ThemLop_Click(object sender, EventArgs e)
         {
+            if (TextBox_TenLop.Text == "") return;
             DanhSachLop dslop = new DanhSachLop();
             dslop.TenLop = TextBox_TenLop.Text;
             dslop.SiSo = 0;
@@ -368,7 +373,7 @@ namespace QuanLyHocSinh
 
         private void Button_SuaLop_Click(object sender, EventArgs e)
         {
-            if (currentMaLop == "") return;
+            if (currentMaLop == "" || TextBox_TenLop.Text == "") return;
             DanhSachLop dslop = new DanhSachLop();
             dslop.MaLop = long.Parse(currentMaLop);
             dslop.TenLop = TextBox_TenLop.Text;
@@ -406,6 +411,7 @@ namespace QuanLyHocSinh
 
         private void Button_ThemMon_Click(object sender, EventArgs e)
         {
+            if (TextBox_TenMonHoc.Text == "") return;
             MonHoc mh = new MonHoc();
             mh.TenMonHoc = TextBox_TenMonHoc.Text;
             int? result = monhoc.Insert_MonHoc(mh); 
@@ -424,7 +430,7 @@ namespace QuanLyHocSinh
 
         private void Button_SuaMon_Click(object sender, EventArgs e)
         {
-            if (currentMaMH == "") return;
+            if (currentMaMH == "" || TextBox_TenMonHoc.Text == "") return;
             MonHoc mh = new MonHoc();
             mh.MaMonHoc = long.Parse(currentMaMH);
             mh.TenMonHoc = TextBox_TenMonHoc.Text;
@@ -461,6 +467,7 @@ namespace QuanLyHocSinh
 
         private void Button_ThemHK_Click(object sender, EventArgs e)
         {
+            if (TextBox_TenHocKy.Text == "") return;
             int? result = hocky.Insert_HocKy(TextBox_TenHocKy.Text);
             if (result == 1)
             {
@@ -477,7 +484,7 @@ namespace QuanLyHocSinh
 
         private void Button_SuaHK_Click(object sender, EventArgs e)
         {
-            if (currentHocKy == "") return;
+            if (currentHocKy == "" || TextBox_TenHocKy.Text == "") return;
             HocKy hk = new HocKy();
             hk.MaHocKy = long.Parse(currentHocKy);
             hk.TenHocKy = TextBox_TenHocKy.Text;
@@ -514,6 +521,7 @@ namespace QuanLyHocSinh
 
         private void Button_ThemNH_Click(object sender, EventArgs e)
         {
+            if (TextBox_NamBD.Text == "" || TextBox_NamKT.Text == "") return;
             int? result = namhoc.Insert_NamHoc(TextBox_NamBD.Text, TextBox_NamKT.Text);
             if (result == 1)
             {
@@ -530,7 +538,7 @@ namespace QuanLyHocSinh
 
         private void Button_SuaNH_Click(object sender, EventArgs e)
         {
-            if (currentNamHoc == "") return;
+            if (currentNamHoc == "" || TextBox_NamBD.Text == "" || TextBox_NamKT.Text == "") return;
             NamHoc nh = new NamHoc();
             nh.MaNamHoc = long.Parse(currentNamHoc);
             nh.NamBD = int.Parse(TextBox_NamBD.Text);
