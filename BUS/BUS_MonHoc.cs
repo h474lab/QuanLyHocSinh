@@ -28,5 +28,9 @@ namespace BUS
         {
             return monhoc.Delete_MonHoc(mamh);
         }
+        public int CheckTonTaiMonHoc(string tenmh)
+        {
+            return monhoc.CheckTonTaiMonHoc(tenmh);
+        }
     }
 }

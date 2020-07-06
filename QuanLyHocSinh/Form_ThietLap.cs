@@ -352,7 +352,16 @@ namespace QuanLyHocSinh
 
         private void Button_ThemLop_Click(object sender, EventArgs e)
         {
-            if (TextBox_TenLop.Text == "") return;
+            if (TextBox_TenLop.Text == "")
+            {
+                MessageBox.Show("Tên lớp không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (danhsachlop.CheckTonTaiLop(TextBox_TenLop.Text) > 0)
+            {
+                MessageBox.Show("Đã tồn tại lớp này", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DanhSachLop dslop = new DanhSachLop();
             dslop.TenLop = TextBox_TenLop.Text;
             dslop.SiSo = 0;
@@ -373,7 +382,16 @@ namespace QuanLyHocSinh
 
         private void Button_SuaLop_Click(object sender, EventArgs e)
         {
-            if (currentMaLop == "" || TextBox_TenLop.Text == "") return;
+            if (currentMaLop == "")
+            {
+                MessageBox.Show("Chưa chọn lớp", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (TextBox_TenLop.Text == "")
+            {
+                MessageBox.Show("Tên lớp không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DanhSachLop dslop = new DanhSachLop();
             dslop.MaLop = long.Parse(currentMaLop);
             dslop.TenLop = TextBox_TenLop.Text;
@@ -394,7 +412,11 @@ namespace QuanLyHocSinh
 
         private void Button_XoaLop_Click(object sender, EventArgs e)
         {
-            if (currentMaLop == "") return;
+            if (currentMaLop == "")
+            {
+                MessageBox.Show("Chưa chọn lớp", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int? result = danhsachlop.Delete_Lop(currentMaLop);
             if (result == 1)
             {
@@ -411,7 +433,16 @@ namespace QuanLyHocSinh
 
         private void Button_ThemMon_Click(object sender, EventArgs e)
         {
-            if (TextBox_TenMonHoc.Text == "") return;
+            if (TextBox_TenMonHoc.Text == "")
+            {
+                MessageBox.Show("Chưa chọn môn học", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (monhoc.CheckTonTaiMonHoc(TextBox_TenMonHoc.Text) > 0)
+            {
+                MessageBox.Show("Đã tồn tại môn học này", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             MonHoc mh = new MonHoc();
             mh.TenMonHoc = TextBox_TenMonHoc.Text;
             int? result = monhoc.Insert_MonHoc(mh); 
@@ -430,7 +461,16 @@ namespace QuanLyHocSinh
 
         private void Button_SuaMon_Click(object sender, EventArgs e)
         {
-            if (currentMaMH == "" || TextBox_TenMonHoc.Text == "") return;
+            if (currentMaMH == "")
+            {
+                MessageBox.Show("Chưa chọn môn học", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (TextBox_TenMonHoc.Text == "")
+            {
+                MessageBox.Show("Tên môn học không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             MonHoc mh = new MonHoc();
             mh.MaMonHoc = long.Parse(currentMaMH);
             mh.TenMonHoc = TextBox_TenMonHoc.Text;
@@ -450,7 +490,11 @@ namespace QuanLyHocSinh
 
         private void Button_XoaMon_Click(object sender, EventArgs e)
         {
-            if (currentMaMH == "") return;
+            if (currentMaMH == "")
+            {
+                MessageBox.Show("Chưa chọn môn học", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int? result = monhoc.Delete_MonHoc(currentMaMH);
             if (result == 1)
             {
@@ -467,7 +511,16 @@ namespace QuanLyHocSinh
 
         private void Button_ThemHK_Click(object sender, EventArgs e)
         {
-            if (TextBox_TenHocKy.Text == "") return;
+            if (TextBox_TenHocKy.Text == "")
+            {
+                MessageBox.Show("Tên học kỳ không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (hocky.CheckTonTaiHocKy(TextBox_TenHocKy.Text) > 0)
+            {
+                MessageBox.Show("Đã tồn tại học kỳ này", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int? result = hocky.Insert_HocKy(TextBox_TenHocKy.Text);
             if (result == 1)
             {
@@ -484,7 +537,16 @@ namespace QuanLyHocSinh
 
         private void Button_SuaHK_Click(object sender, EventArgs e)
         {
-            if (currentHocKy == "" || TextBox_TenHocKy.Text == "") return;
+            if (currentHocKy == "")
+            {
+                MessageBox.Show("Chưa chọn học kỳ", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (TextBox_TenHocKy.Text == "")
+            {
+                MessageBox.Show("Tên học kỳ không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             HocKy hk = new HocKy();
             hk.MaHocKy = long.Parse(currentHocKy);
             hk.TenHocKy = TextBox_TenHocKy.Text;
@@ -504,7 +566,11 @@ namespace QuanLyHocSinh
 
         private void Button_XoaHK_Click(object sender, EventArgs e)
         {
-            if (currentHocKy == "") return;
+            if (currentHocKy == "")
+            {
+                MessageBox.Show("Chưa chọn học kỳ", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int? result = hocky.Delete_HocKy(currentHocKy);
             if (result == 1)
             {
@@ -521,7 +587,28 @@ namespace QuanLyHocSinh
 
         private void Button_ThemNH_Click(object sender, EventArgs e)
         {
-            if (TextBox_NamBD.Text == "" || TextBox_NamKT.Text == "") return;
+            if (TextBox_NamBD.Text == "" || TextBox_NamKT.Text == "")
+            {
+                MessageBox.Show("Năm học không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (namhoc.CheckTonTaiNamHoc(TextBox_NamBD.Text, TextBox_NamKT.Text) > 0)
+            {
+                MessageBox.Show("Đã tồn tại năm học này", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                int.Parse(TextBox_NamBD.Text);
+                int.Parse(TextBox_NamKT.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int? result = namhoc.Insert_NamHoc(TextBox_NamBD.Text, TextBox_NamKT.Text);
             if (result == 1)
             {
@@ -538,7 +625,28 @@ namespace QuanLyHocSinh
 
         private void Button_SuaNH_Click(object sender, EventArgs e)
         {
-            if (currentNamHoc == "" || TextBox_NamBD.Text == "" || TextBox_NamKT.Text == "") return;
+            if (currentNamHoc == "")
+            {
+                MessageBox.Show("Chưa chọn năm học", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (TextBox_NamBD.Text == "" || TextBox_NamKT.Text== "")
+            {
+                MessageBox.Show("Năm học không được để trống", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                int.Parse(TextBox_NamBD.Text);
+                int.Parse(TextBox_NamKT.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             NamHoc nh = new NamHoc();
             nh.MaNamHoc = long.Parse(currentNamHoc);
             nh.NamBD = int.Parse(TextBox_NamBD.Text);
@@ -559,7 +667,11 @@ namespace QuanLyHocSinh
 
         private void Button_XoaNH_Click(object sender, EventArgs e)
         {
-            if (currentNamHoc == "") return;
+            if (currentNamHoc == "")
+            {
+                MessageBox.Show("Chưa chọn năm học", "Đã xảy ra lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int? result = namhoc.Delete_NamHoc(currentNamHoc);
             if (result == 1)
             {

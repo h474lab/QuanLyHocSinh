@@ -101,5 +101,33 @@ namespace DAO
             }
             return result;
         }
+        public int CheckTonTaiHocKy(string tenhk)
+        {
+            int result = 0;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("CHECK_TONTAIHOCKY", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@TENHOCKY", SqlDbType.NVarChar).Value = tenhk;
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        result++;
+                    }
+                    command.Connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
     }
 }

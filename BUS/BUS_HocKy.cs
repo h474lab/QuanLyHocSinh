@@ -28,5 +28,9 @@ namespace BUS
         {
             return hocky.Delete_HocKy(mahk);
         }
+        public int CheckTonTaiHocKy(string tenhk)
+        {
+            return hocky.CheckTonTaiHocKy(tenhk);
+        }
     }
 }

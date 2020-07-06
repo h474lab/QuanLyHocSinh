@@ -36,5 +36,9 @@ namespace BUS
         {
             return danhsachlop.GetSiSo(malop, mahk, manh);
         }
+        public int CheckTonTaiLop(string tenlop)
+        {
+            return danhsachlop.CheckTonTaiLop(tenlop);
+        }
     }
 }

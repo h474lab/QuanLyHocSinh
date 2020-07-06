@@ -213,6 +213,14 @@ namespace QuanLyHocSinh
                 //MessageBox.Show(ex.Message);
             }
         }
+
+        private void ClearTextBoxes()
+        {
+            TextBox_HoTen.Clear();
+            TextBox_DiaChi.Clear();
+            TextBox_Email.Clear();
+        }
+
         private void Button_Them_Click(object sender, EventArgs e)
         {
             if (!checkThongTin())
@@ -244,6 +252,7 @@ namespace QuanLyHocSinh
             currentMaHS = "";
             LoadThongTin();
             GridView_DSHocSinh.ClearSelection();
+            ClearTextBoxes();
         }
 
         private void Button_Sua_Click(object sender, EventArgs e)
@@ -279,6 +288,7 @@ namespace QuanLyHocSinh
             currentMaHS = "";
             LoadThongTin();
             GridView_DSHocSinh.ClearSelection();
+            ClearTextBoxes();
         }
 
         private void Button_Xoa_Click(object sender, EventArgs e)

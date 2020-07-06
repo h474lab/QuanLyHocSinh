@@ -75,6 +75,7 @@ namespace DAO
                 }
                 catch
                 {
+                    //Console.WriteLine(ex.Message);
                     command.Connection.Close();
                 }
             }
@@ -147,6 +148,34 @@ namespace DAO
                 }
                 catch
                 {
+                    command.Connection.Close();
+                }
+            }
+            return result;
+        }
+        public int CheckTonTaiLop(string tenlop)
+        {
+            int result = 0;
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                SqlCommand command = new SqlCommand("CHECK_TONTAILOP", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@TENLOP", SqlDbType.NVarChar).Value = tenlop;
+                try
+                {
+                    command.Connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        result++;
+                    }
+                    command.Connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                     command.Connection.Close();
                 }
             }

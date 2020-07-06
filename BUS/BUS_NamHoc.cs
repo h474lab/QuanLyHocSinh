@@ -28,5 +28,9 @@ namespace BUS
         {
             return namhoc.Delete_NamHoc(manh);
         }
+        public int CheckTonTaiNamHoc(string nambd, string namkt)
+        {
+            return namhoc.CheckTonTaiNamHoc(nambd, namkt);
+        }
     }
 }
